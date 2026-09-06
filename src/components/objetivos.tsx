@@ -3,6 +3,7 @@ import {
   GOAL_DEFAULTS,
   GOAL_HINT,
   GOAL_LABEL,
+  parsePlaces,
   proposeRumos,
   type Brief,
   type LifeGoal,
@@ -91,7 +92,14 @@ export function Objetivos({ onAgree }: { onAgree: (brief: Brief) => void }) {
           </ul>
           <button
             type="button"
-            onClick={() => onAgree({ goal: chosen, ...GOAL_DEFAULTS[chosen] })}
+            onClick={() =>
+              onAgree({
+                goal: chosen,
+                ...GOAL_DEFAULTS[chosen],
+                wish: text.trim(),
+                places: parsePlaces(text),
+              })
+            }
             className="pressable mt-6 h-14 w-full rounded-full bg-accent text-sm font-medium text-accent-fg"
           >
             Concordo · ver os imóveis

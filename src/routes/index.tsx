@@ -110,7 +110,7 @@ function Reading({ brief }: { brief: Brief }) {
               onClick={() => setShowDesk(true)}
               className="pressable h-12 rounded-full px-5 text-sm text-muted hover:text-fg"
             >
-              Ver a mesa completa
+              Ver todas as opções
             </button>
           </div>
         </section>
@@ -162,7 +162,7 @@ function MesaBoard() {
           João Pessoa · {CITY.sampleDate} · {CITY.refresh}
         </p>
         <h1 className="mt-2 font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
-          Mesa completa
+          Todas as opções
         </h1>
         {brief ? (
           <button

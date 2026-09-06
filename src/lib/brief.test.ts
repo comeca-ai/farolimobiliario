@@ -4,8 +4,10 @@ import {
   GOAL_DEFAULTS,
   MATCH_PER_RUMO,
   matchBrief,
+  parsePlaces,
   proposeRumos,
   punchForGoal,
+  reading,
   type LifeGoal,
 } from "./brief.ts";
 import { validBrMobile, validEmail } from "./lead.ts";
@@ -63,6 +65,26 @@ describe("agente unitário — rumo", () => {
   it("caixinha 'casa para a família' lê morar primeiro", () => {
     const [first] = proposeRumos("casa da rua para morar com a família, silêncio, filhos");
     assert.equal(first.goal, "morar");
+  });
+
+  it("quem escreve tambau vê Tambaú, não Expedicionários", () => {
+    const wish = "tambau";
+    const places = parsePlaces(wish);
+    assert.deepEqual(places, ["tambau"]);
+    const matches = matchBrief({
+      goal: "morar",
+      ...GOAL_DEFAULTS.morar,
+      wish,
+      places,
+    });
+    assert.equal(matches[0].card.nb.id, "tambau");
+    const text = reading(
+      { goal: "morar", ...GOAL_DEFAULTS.morar, wish, places },
+      matches,
+    );
+    assert.match(text, /Tambaú/);
+    assert.equal(/hóspede de Tambaú não entra/i.test(text), false);
+    assert.equal(matches.some((m) => m.card.nb.id === "expedicionarios"), false);
   });
 
   it("WhatsApp e e-mail do cadastro", () => {

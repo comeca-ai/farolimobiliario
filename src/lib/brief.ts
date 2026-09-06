@@ -1,5 +1,6 @@
 import { compactBrl, pct, pctAbs } from "@/lib/format";
 import { LISTINGS_SCORED, type Scorecard } from "@/lib/score";
+import { NEIGHBORHOODS } from "@/data/market";
 
 export type LifeGoal = "renda" | "patrimonio" | "morar" | "aposentar";
 
@@ -7,6 +8,8 @@ export type Brief = {
   age: number;
   goal: LifeGoal;
   years: number;
+  wish?: string;
+  places?: string[];
 };
 
 export const GOAL_LABEL: Record<LifeGoal, string> = {
@@ -43,6 +46,47 @@ export const GOAL_HERO_KICK: Record<LifeGoal, string> = {
   morar: "Melhor para a família",
   aposentar: "Melhor aluguel longo",
 };
+
+export function foldPt(s: string) {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+const PLACE_ALIAS: Record<string, string> = {
+  "cidade universitaria": "jcu",
+  "jardim cidade universitaria": "jcu",
+  "jd cidade universitaria": "jcu",
+  cabedelo: "intermares",
+};
+
+export function parsePlaces(text: string): string[] {
+  const t = foldPt(text);
+  const found: string[] = [];
+  for (const n of NEIGHBORHOODS) {
+    const name = foldPt(n.name);
+    const slug = n.id.replace(/-/g, " ");
+    if (
+      (name.length >= 4 && t.includes(name)) ||
+      t.includes(slug) ||
+      t.includes(n.id)
+    ) {
+      found.push(n.id);
+    }
+  }
+  for (const [alias, id] of Object.entries(PLACE_ALIAS)) {
+    if (t.includes(alias) && !found.includes(id)) found.push(id);
+  }
+  return found;
+}
+
+function askedNames(places: string[]) {
+  return places
+    .map((id) => NEIGHBORHOODS.find((n) => n.id === id)?.name)
+    .filter(Boolean)
+    .join(", ");
+}
 
 export function punchForGoal(card: Scorecard, goal: LifeGoal): { value: string; caption: string } {
   if (goal === "renda") {
@@ -177,10 +221,7 @@ export type RumoGuess = {
 };
 
 export function proposeRumos(text: string): RumoGuess[] {
-  const t = text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+  const t = foldPt(text);
   const scores: Record<LifeGoal, number> = {
     renda: 0.08,
     patrimonio: 0.08,
@@ -189,10 +230,7 @@ export function proposeRumos(text: string): RumoGuess[] {
   };
   (Object.keys(LEX) as LifeGoal[]).forEach((g) => {
     for (const w of LEX[g]) {
-      const n = w
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-      if (t.includes(n)) scores[g] += 1;
+      if (t.includes(foldPt(w))) scores[g] += 1;
     }
   });
   const whyFor: Record<LifeGoal, string> = {
@@ -216,17 +254,27 @@ export function reading(brief: Brief, matches: Match[]): string {
   const top = matches[0];
   const place = top ? top.card.nb.name : "a orla";
   const goal = GOAL_LABEL[brief.goal].toLowerCase();
+  const asked = brief.places?.length ? askedNames(brief.places) : "";
 
   if (brief.goal === "renda") {
-    return `O rumo é ${goal}. Em João Pessoa isso não é casa no Altiplano — é flat ou studio na orla, temporada cobrindo a parcela. Li a mesa. Três opções. Os mais aderentes puxam ${place}: ticket que cabe agora, ocupação de corredor turístico.`;
+    return asked
+      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`
+      : `O rumo é ${goal}. Li a mesa. Três opções puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`;
   }
   if (brief.goal === "patrimonio") {
-    return `O rumo é ${goal}. O Farol procura spread: ask abaixo do m² justo, bairro ainda em alta de 12 meses, pouco holofote de portal. Li a mesa. Três opções. O que sobra começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar, não diária de fim de semana.`;
+    return asked
+      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções. O spread começa em ${place}.`
+      : `O rumo é ${goal}. Li a mesa. Três opções. O spread começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar.`;
   }
   if (brief.goal === "morar") {
-    return `O rumo é morar ou deixar para a família. Hóspede de Tambaú não entra nesta conta. Li a mesa. Três opções de casa e apto para viver — o que o portal ainda não embalou. ${place} aparece primeiro porque o imóvel ainda é moradia, não ativo de diária.`;
+    if (asked) {
+      return `Você pediu ${asked} para viver. Li a mesa. Três opções puxando ${place} — moradia, não diária.`;
+    }
+    return `O rumo é morar ou deixar para a família. Li a mesa. Três opções de casa e apto para viver. ${place} aparece primeiro porque ainda é moradia, não ativo de diária.`;
   }
-  return `O rumo é ${goal}. Temporada cansa; o que importa é aluguel longo estável, condomínio que não coma a renda, bairro que não dependa de hóspede. Li a mesa. Três opções. ${place} entra porque o aluguel tradicional se sustenta sem check-in.`;
+  return asked
+    ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções puxando ${place}.`
+    : `O rumo é ${goal}. Li a mesa. Três opções. ${place} entra porque o aluguel tradicional se sustenta sem check-in.`;
 }
 
 export const MATCH_PER_RUMO = 3;
@@ -256,6 +304,7 @@ function fitScore(card: Scorecard, brief: Brief): number {
     listing.type === "casa" ? 1 : listing.rooms >= 3 ? 0.7 : listing.type === "apto" ? 0.35 : 0.1;
 
   let s = 0.12 * (score / 100);
+  const pinned = Boolean(brief.places?.length);
 
   if (brief.goal === "renda") {
     s += 0.38 * clamp(strYield / 0.12) + 0.22 * strOps + 0.12 * short + 0.1 * young + 0.06 * clamp(discount / 0.2);
@@ -267,7 +316,11 @@ function fitScore(card: Scorecard, brief: Brief): number {
       0.1 * radarObscurity +
       0.06 * (1 - strOps);
   } else if (brief.goal === "morar") {
-    s += 0.32 * home + 0.2 * radarObscurity + 0.14 * older + 0.12 * clamp(ltrYield / 0.07) + 0.1 * (listing.rooms / 4);
+    if (pinned) {
+      s += 0.14 * home + 0.08 * (listing.rooms / 4);
+    } else {
+      s += 0.32 * home + 0.2 * radarObscurity + 0.14 * older + 0.12 * clamp(ltrYield / 0.07) + 0.1 * (listing.rooms / 4);
+    }
   } else {
     s +=
       0.36 * clamp(ltrYield / 0.07) +
@@ -278,6 +331,14 @@ function fitScore(card: Scorecard, brief: Brief): number {
   }
 
   if (listing.ask > ticketCap(brief)) s *= 0.72;
+
+  const places = brief.places ?? [];
+  if (places.length) {
+    if (places.includes(nb.id)) s += 0.9;
+    else if (places.some((id) => NEIGHBORHOODS.find((n) => n.id === id)?.zone === nb.zone)) s += 0.22;
+    else s *= 0.12;
+  }
+
   return s;
 }
 
@@ -299,7 +360,15 @@ function why(card: Scorecard, brief: Brief): string {
     return `${pct(discount)} versus o justo de ${nb.name} (${pct(nb.yoy)} em 12 meses). Seus ${brief.years} anos são tempo de realizar o spread, não de gerir hóspede. ${listing.portalCount === 0 ? "Fora dos portais — menos gente vendo o mesmo desconto." : ""}`;
   }
   if (brief.goal === "morar") {
-    return `${listing.rooms} quarto${listing.rooms > 1 ? "s" : ""} em ${nb.name}, ${listing.area} m², ${listing.portalCount === 0 ? "ainda fora do portal." : "pouco holofote."} Serve para viver, não para turn-over de fim de semana. Aluguel equivalente ${pctAbs(Math.max(ltrYield, 0))} se o plano mudar.`;
+    const asked = brief.places?.length ? askedNames(brief.places) : "";
+    const here = asked
+      ? asked.includes(nb.name)
+        ? `Está em ${nb.name}, como você pediu.`
+        : `Você pediu ${asked}; este é o vizinho que a mesa tem — ${nb.name}.`
+      : listing.portalCount === 0
+        ? "Ainda fora do portal."
+        : "Pouco holofote.";
+    return `${listing.rooms} quarto${listing.rooms > 1 ? "s" : ""} em ${nb.name}, ${listing.area} m². ${here} Serve para viver, não para turn-over de fim de semana.`;
   }
   return `Aluguel longo ${pctAbs(Math.max(ltrYield, 0))} a.a. em ${nb.name}, condomínio ${compactBrl(listing.condo)}/mês. Pouca operação. Renda que não pede check-in.`;
 }
