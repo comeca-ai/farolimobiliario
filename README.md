@@ -33,7 +33,26 @@ npm run test:base    # integridade: bairro, coords, score, estado 0–1
 npm test             # tudo (inclui os testes do template)
 ```
 
-Última passagem (2026-09-06): unitário **11/11**, integridade **4/4**, `tsc` limpo.
+Última passagem (2026-09-06): unitário **12/12**, integridade **4/4**, `tsc` limpo.
+
+## GitHub Actions e secrets
+
+O token da Cloudflare **não** fica no git. Fica em **Settings → Secrets and variables → Actions**:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+Workflow [`.github/workflows/farol.yml`](.github/workflows/farol.yml) em todo push/`main`:
+
+1. typecheck  
+2. agente unitário  
+3. agente de integridade da base  
+4. varredura de token no git  
+5. se passou: `wrangler deploy` com os secrets
+
+```bash
+npm run audit:secrets
+```
 
 ## Rotas
 
@@ -44,13 +63,15 @@ npm test             # tudo (inclui os testes do template)
 
 ## Publicar
 
+Preferir o Action. Local:
+
 ```bash
 export CLOUDFLARE_API_TOKEN=...
 export CLOUDFLARE_ACCOUNT_ID=749b2e9b3642e4b03321d5830e81c195
 npm run deploy:cf
 ```
 
-O token **não** vai para o git. Worker: `farolimobiliario`. Domínio: `farolqueprotege.com.br`.
+Worker: `farolimobiliario`. Domínio: `farolqueprotege.com.br`.
 
 ## Stack
 
