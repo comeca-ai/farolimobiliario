@@ -1,11 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Bookmark } from "lucide-react";
 import { useMemo, useState } from "react";
-import { Facade } from "@/components/facade";
-import { ScoreBar } from "@/components/score-bar";
+import { rumoKicker } from "@/components/rumo-list";
 import { LISTING_BY_ID, type Listing } from "@/data/listings";
 import { brl, brl2, pct, pctAbs } from "@/lib/format";
-import { RADAR_LABEL, SOURCE_LABEL, TYPE_LABEL } from "@/lib/labels";
+import { SOURCE_LABEL, TYPE_LABEL } from "@/lib/labels";
 import { analyze, punch } from "@/lib/score";
 import { useDesk } from "@/lib/store";
 import { cn } from "@/lib/utils";
@@ -45,51 +44,47 @@ function ImovelBody({ listing }: { listing: Listing }) {
   );
 
   return (
-    <main className="mx-auto max-w-5xl px-4 pb-12 pt-0 md:px-6 md:pt-4">
-      <div className="sticky top-(--header-h) z-20 -mx-4 flex items-center justify-between border-b border-line bg-bg/95 px-4 backdrop-blur-sm md:mx-0 md:rounded-xl md:border md:px-3">
-        <Link
-          to="/"
-          className="inline-flex h-12 items-center gap-2 text-sm text-fg"
-        >
+    <main className="mx-auto max-w-[760px] px-4 pb-20 pt-4 md:px-6 md:pt-8">
+      <div className="flex items-center justify-between">
+        <Link to="/" className="inline-flex h-11 items-center gap-2 text-sm text-muted hover:text-fg">
           <ArrowLeft className="size-4" />
-          Mesa
+          Rumo
         </Link>
         <button
           type="button"
           onClick={() => toggleWatch(listing.id)}
-          className="flex size-12 shrink-0 items-center justify-center text-muted hover:text-fg"
+          className="flex size-11 items-center justify-center text-muted hover:text-fg"
           aria-label="Marcar"
         >
           <Bookmark className={cn("size-4", watched && "fill-accent text-accent")} />
         </button>
       </div>
 
-      <div className="relative mt-5 overflow-hidden rounded-2xl bg-raised shadow-(--shadow-border)">
-        <div className="h-72 md:h-96">
-          <Facade seed={listing.facade} type={listing.type} />
+      <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-accent">
+        {rumoKicker(live)} · {TYPE_LABEL[listing.type]}
+      </p>
+      <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="font-display text-[1.85rem] font-normal leading-tight tracking-tight md:text-[32px]">
+            {listing.title}
+          </h1>
+          <p className="mt-2 text-sm text-muted">{listing.street}</p>
         </div>
-        <div className="poster-wash absolute inset-0" />
-        <div className="absolute inset-x-0 bottom-0 p-4 md:p-6">
-          <p className="text-xs uppercase tracking-widest text-accent">
-            {RADAR_LABEL[live.primary]} · {TYPE_LABEL[listing.type]} · {live.nb.name}
-          </p>
+        <div className="shrink-0 sm:text-right">
           <p
             className={cn(
-              "mt-2 font-display text-6xl leading-none tracking-tight md:text-7xl",
+              "font-display text-5xl leading-none tracking-tight md:text-[52px]",
               (live.discount >= 0.12 || live.strYield >= 0.08) && "text-deal",
               live.primary === "rua" && "text-warn",
             )}
           >
             {hit.value}
           </p>
-          <p className="mt-2 text-sm text-muted">{hit.caption}</p>
-          <h1 className="mt-4 font-display text-3xl leading-tight tracking-tight md:text-4xl">
-            {listing.title}
-          </h1>
-          <p className="mt-1 text-sm text-muted">{listing.street}</p>
-          <ScoreBar score={live.score} className="mt-4" />
+          <p className="mt-1.5 text-xs text-subtle">{hit.caption}</p>
         </div>
       </div>
+
+      <p className="mt-8 max-w-[56ch] text-[15px] leading-relaxed text-muted">{listing.thesis}</p>
 
       <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Metric label="Ask" value={brl.format(listing.ask)} />

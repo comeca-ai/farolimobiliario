@@ -26,10 +26,10 @@ export function OrlaMap({
   compact?: boolean;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-raised shadow-(--shadow-border)">
+    <div className="relative overflow-hidden rounded-lg bg-[#f1eada]">
       <svg
         viewBox="0 0 100 100"
-        className={cn("block w-full", compact ? "h-48" : "h-60 md:h-[min(68vh,620px)]")}
+        className={cn("block w-full", compact ? "h-44" : "h-56 md:h-[min(48vh,400px)]")}
         role="img"
       >
         <title>Orla leste de João Pessoa, Atlântico à direita</title>
