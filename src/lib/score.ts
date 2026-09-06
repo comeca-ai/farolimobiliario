@@ -1,3 +1,4 @@
+import { pct, pctAbs } from "@/lib/format";
 import { LISTINGS, type Listing, type RadarTag } from "@/data/listings";
 import { NEIGHBORHOOD_BY_ID, type Neighborhood } from "@/data/market";
 
@@ -156,3 +157,22 @@ function clamp(n: number) {
 export const LISTINGS_SCORED = LISTINGS.map((l) => analyze(l)).sort(
   (a, b) => b.score - a.score,
 );
+
+export function punch(card: Scorecard): { value: string; caption: string } {
+  if (card.primary === "preco") {
+    return { value: pct(card.discount), caption: "abaixo do justo do bairro" };
+  }
+  if (card.primary === "airbnb") {
+    return {
+      value: pctAbs(Math.max(card.strYield, 0)),
+      caption: "yield STR ao ano, já líquido",
+    };
+  }
+  if (card.listing.portalCount === 0) {
+    return { value: "fora", caption: "dos portais · só na rua" };
+  }
+  return {
+    value: String(card.listing.portalCount),
+    caption: card.listing.portalCount === 1 ? "portal · ainda opaco" : "portais · ainda opaco",
+  };
+}
