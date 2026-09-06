@@ -1,5 +1,6 @@
 import { NEIGHBORHOODS } from "@/data/market";
 import type { Scorecard } from "@/lib/score";
+import { cn } from "@/lib/utils";
 
 const LAT_N = -7.03;
 const LAT_S = -7.175;
@@ -17,34 +18,40 @@ export function OrlaMap({
   cards,
   selectedId,
   onSelect,
+  compact,
 }: {
   cards: Scorecard[];
   selectedId: string | null;
   onSelect: (id: string) => void;
+  compact?: boolean;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-xl bg-raised shadow-[0_0_0_1px_rgba(236,234,228,0.08)]">
-      <svg viewBox="0 0 100 100" className="block h-[240px] w-full md:h-[min(72vh,640px)]" role="img">
+    <div className="relative overflow-hidden rounded-2xl bg-raised shadow-(--shadow-border)">
+      <svg
+        viewBox="0 0 100 100"
+        className={cn("block w-full", compact ? "h-48" : "h-60 md:h-[min(68vh,620px)]")}
+        role="img"
+      >
         <title>Orla leste de João Pessoa, Atlântico à direita</title>
-        <rect width="100" height="100" fill="#0e1312" />
+        <rect width="100" height="100" fill="var(--color-bg)" />
         <path
           d="M78 0 C80 12 76 22 79 34 C82 48 77 60 80 72 C83 86 79 94 81 100 L100 100 L100 0 Z"
-          fill="#15201e"
+          fill="var(--color-raised)"
         />
         <path
           d="M78 0 C80 12 76 22 79 34 C82 48 77 60 80 72 C83 86 79 94 81 100"
           fill="none"
-          stroke="#c5cec8"
-          strokeOpacity="0.35"
-          strokeWidth="0.4"
+          stroke="var(--color-accent)"
+          strokeOpacity="0.4"
+          strokeWidth="0.5"
         />
         {NEIGHBORHOODS.map((n) => (
           <text
             key={n.id}
-            x={xOf(n.lng) - 1.2}
-            y={yOf(n.lat) - 2.2}
-            fill="#8f9691"
-            fontSize="2.1"
+            x={xOf(n.lng) - 1.4}
+            y={yOf(n.lat) - 2.4}
+            fill="var(--color-muted)"
+            fontSize="2.2"
             textAnchor="end"
             fontFamily="Figtree, sans-serif"
           >
@@ -55,10 +62,10 @@ export function OrlaMap({
           const active = c.listing.id === selectedId;
           const fill =
             c.primary === "rua"
-              ? "#c4b08a"
+              ? "var(--color-warn)"
               : c.primary === "airbnb"
-                ? "#8fa892"
-                : "#c5cec8";
+                ? "var(--color-deal)"
+                : "var(--color-accent)";
           return (
             <g
               key={c.listing.id}
@@ -68,28 +75,37 @@ export function OrlaMap({
               <circle
                 cx={xOf(c.listing.lng)}
                 cy={yOf(c.listing.lat)}
-                r={active ? 2.4 : 1.5}
+                r="5.5"
+                fill="transparent"
+              />
+              <circle
+                cx={xOf(c.listing.lng)}
+                cy={yOf(c.listing.lat)}
+                r={active ? 2.6 : 1.8}
                 fill={fill}
-                opacity={active ? 1 : 0.85}
+                opacity={active ? 1 : 0.9}
               />
               {active ? (
                 <circle
                   cx={xOf(c.listing.lng)}
                   cy={yOf(c.listing.lat)}
-                  r="4.2"
+                  r="5"
                   fill="none"
                   stroke={fill}
-                  strokeOpacity="0.45"
+                  strokeOpacity="0.5"
                 />
               ) : null}
             </g>
           );
         })}
       </svg>
-      <div className="pointer-events-none absolute right-3 top-3 text-[10px] uppercase tracking-[0.18em] text-subtle">
+      <p className="pointer-events-none absolute right-3 top-3 text-xs uppercase tracking-widest text-subtle">
         Atlântico
-      </div>
-      <div className="pointer-events-none absolute bottom-3 left-3 flex gap-3 text-[10px] text-muted">
+      </p>
+      <p className="pointer-events-none absolute left-3 top-3 text-xs uppercase tracking-widest text-subtle">
+        Norte
+      </p>
+      <div className="pointer-events-none absolute bottom-3 left-3 flex gap-3 text-xs text-muted">
         <span className="flex items-center gap-1.5">
           <span className="size-1.5 rounded-full bg-accent" /> Preço
         </span>
@@ -100,9 +116,6 @@ export function OrlaMap({
           <span className="size-1.5 rounded-full bg-warn" /> Rua
         </span>
       </div>
-      <p className="pointer-events-none absolute left-3 top-3 text-[10px] uppercase tracking-[0.18em] text-subtle">
-        Norte · Bessa
-      </p>
     </div>
   );
 }

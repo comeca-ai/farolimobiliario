@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Bookmark } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Facade } from "@/components/facade";
+import { ScoreBar } from "@/components/score-bar";
 import { LISTING_BY_ID, type Listing } from "@/data/listings";
 import { brl, brl2, pct, pctAbs } from "@/lib/format";
 import { RADAR_LABEL, SOURCE_LABEL, TYPE_LABEL } from "@/lib/labels";
@@ -63,28 +64,32 @@ function ImovelBody({ listing }: { listing: Listing }) {
         </button>
       </div>
 
-      <div className="mt-5 overflow-hidden rounded-2xl bg-raised">
-        <div className="h-44 md:h-56">
+      <div className="relative mt-5 overflow-hidden rounded-2xl bg-raised shadow-(--shadow-border)">
+        <div className="h-72 md:h-96">
           <Facade seed={listing.facade} type={listing.type} />
         </div>
+        <div className="poster-wash absolute inset-0" />
+        <div className="absolute inset-x-0 bottom-0 p-4 md:p-6">
+          <p className="text-xs uppercase tracking-widest text-accent">
+            {RADAR_LABEL[live.primary]} · {TYPE_LABEL[listing.type]} · {live.nb.name}
+          </p>
+          <p
+            className={cn(
+              "mt-2 font-display text-6xl leading-none tracking-tight md:text-7xl",
+              (live.discount >= 0.12 || live.strYield >= 0.08) && "text-deal",
+              live.primary === "rua" && "text-warn",
+            )}
+          >
+            {hit.value}
+          </p>
+          <p className="mt-2 text-sm text-muted">{hit.caption}</p>
+          <h1 className="mt-4 font-display text-3xl leading-tight tracking-tight md:text-4xl">
+            {listing.title}
+          </h1>
+          <p className="mt-1 text-sm text-muted">{listing.street}</p>
+          <ScoreBar score={live.score} className="mt-4" />
+        </div>
       </div>
-
-      <p className="mt-5 text-xs uppercase tracking-widest text-muted">
-        {RADAR_LABEL[live.primary]} · {TYPE_LABEL[listing.type]} · {live.nb.name}
-      </p>
-      <p
-        className={cn(
-          "mt-2 font-display text-6xl leading-none tracking-tight",
-          (live.discount >= 0.12 || live.strYield >= 0.08) && "text-deal",
-        )}
-      >
-        {hit.value}
-      </p>
-      <p className="mt-2 text-sm text-muted">{hit.caption}</p>
-      <h1 className="mt-4 font-display text-3xl leading-tight tracking-tight md:text-4xl">
-        {listing.title}
-      </h1>
-      <p className="mt-2 text-sm text-muted">{listing.street}</p>
 
       <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Metric label="Ask" value={brl.format(listing.ask)} />
@@ -106,7 +111,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
         <p className="mt-2 text-sm leading-relaxed text-muted">{listing.thesis}</p>
       </section>
 
-      <section className="mt-8 rounded-2xl bg-surface p-4 shadow-[0_0_0_1px_rgba(236,234,228,0.08)] md:p-6">
+      <section className="mt-8 rounded-2xl bg-surface p-4 shadow-(--shadow-border) md:p-6">
         <h2 className="font-display text-xl">Laboratório Airbnb</h2>
         <p className="mt-1 text-sm text-subtle">
           Arraste ocupação e diária. Plataforma, limpeza, condomínio e IPTU já saem do NOI.
@@ -164,7 +169,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
       </section>
 
       <aside className="mt-8 grid gap-3 md:grid-cols-2">
-        <dl className="overflow-hidden rounded-2xl bg-surface shadow-[0_0_0_1px_rgba(236,234,228,0.08)]">
+        <dl className="overflow-hidden rounded-2xl bg-surface shadow-(--shadow-border)">
           <div className="grid grid-cols-2 gap-px bg-line text-sm">
             <Side k="Área" v={`${listing.area} m²`} />
             <Side k="Ask / m²" v={brl2.format(live.askM2)} />
@@ -176,7 +181,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
             <Side k="Portais" v={String(listing.portalCount)} />
           </div>
         </dl>
-        <div className="rounded-2xl bg-surface p-4 shadow-[0_0_0_1px_rgba(236,234,228,0.08)]">
+        <div className="rounded-2xl bg-surface p-4 shadow-(--shadow-border)">
           <p className="text-xs uppercase tracking-widest text-subtle">Fontes</p>
           <ul className="mt-2 flex flex-wrap gap-1.5">
             {listing.sources.map((s) => (
@@ -211,7 +216,7 @@ function Metric({
   tone?: "deal" | "risk";
 }) {
   return (
-    <div className="rounded-xl bg-surface px-3 py-3 shadow-[0_0_0_1px_rgba(236,234,228,0.08)]">
+    <div className="rounded-xl bg-surface px-3 py-3 shadow-(--shadow-border)">
       <p className="text-xs uppercase tracking-widest text-subtle">{label}</p>
       <p
         className={cn(

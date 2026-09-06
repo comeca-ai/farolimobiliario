@@ -22,6 +22,8 @@
   --radius-xl: 24px;
   --radius-2xl: 32px;
   --header-h: calc(3.5rem + env(safe-area-inset-top, 0px));
+  --shadow-border: 0 0 0 1px rgb(236 234 228 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(236 234 228 / 0.16);
 }
 
 @layer base {
@@ -71,10 +73,6 @@
   input[type="range"] {
     accent-color: var(--color-accent);
   }
-
-  summary::-webkit-details-marker {
-    display: none;
-  }
 }
 
 .scroll-hide {
@@ -83,6 +81,25 @@
 
 .scroll-hide::-webkit-scrollbar {
   display: none;
+}
+
+.pressable {
+  transition-property: scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.pressable:active {
+  scale: 0.96;
+}
+
+.poster-wash {
+  background: linear-gradient(
+    to top,
+    var(--color-bg) 14%,
+    rgb(11 14 13 / 0.55) 46%,
+    transparent 80%
+  );
 }
 
 @media (min-width: 768px) {
@@ -97,5 +114,9 @@
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .pressable:active {
+    scale: 1;
   }
 }

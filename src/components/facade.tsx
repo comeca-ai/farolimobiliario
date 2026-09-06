@@ -1,6 +1,33 @@
 import { cn } from "@/lib/utils";
 import type { ListingType } from "@/data/listings";
 
+type Building = { x: number; w: number; h: number; floors: number; cols: number };
+
+function skyline(seed: number, type: ListingType): Building[] {
+  if (type === "casa") {
+    return [
+      { x: 28, w: 52, h: 38, floors: 2, cols: 3 },
+      { x: 88, w: 44, h: 30, floors: 2, cols: 2 },
+    ];
+  }
+  const count = type === "flat" ? 5 : 4;
+  const out: Building[] = [];
+  let x = 10;
+  for (let i = 0; i < count; i++) {
+    const w = 22 + ((seed + i * 11) % 18);
+    const h = 42 + ((seed * (i + 3)) % (type === "flat" ? 56 : 48));
+    out.push({
+      x,
+      w,
+      h,
+      floors: 3 + ((seed + i) % 6),
+      cols: 2 + ((seed + i * 3) % 2),
+    });
+    x += w + 6;
+  }
+  return out;
+}
+
 export function Facade({
   seed,
   type,
@@ -10,62 +37,82 @@ export function Facade({
   type: ListingType;
   className?: string;
 }) {
-  const floors = type === "casa" ? 2 : 4 + (seed % 5);
-  const cols = type === "casa" ? 3 : 4;
-  const windows: { x: number; y: number; on: boolean }[] = [];
-  for (let y = 0; y < floors; y++) {
-    for (let x = 0; x < cols; x++) {
-      const on = ((seed * 17 + x * 13 + y * 29) % 7) !== 0;
-      windows.push({ x, y, on });
-    }
-  }
-  const w = 120;
-  const h = 88;
-  const bw = type === "casa" ? 54 : 40;
-  const bh = type === "casa" ? 44 : 58;
-  const bx = (w - bw) / 2;
-  const by = h - bh - 8;
+  const buildings = skyline(seed, type);
 
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className={cn("h-full w-full", className)} aria-hidden>
-      <rect width={w} height={h} fill="#0e1312" />
-      <path d="M0 72h120" stroke="#c5cec8" strokeOpacity="0.18" />
-      {type === "casa" ? (
-        <path
-          d={`M${bx - 6} ${by + 10} L${w / 2} ${by - 12} L${bx + bw + 6} ${by + 10}`}
-          fill="#181d1c"
-          stroke="#c5cec8"
-          strokeOpacity="0.35"
-        />
-      ) : null}
-      <rect
-        x={bx}
-        y={by}
-        width={bw}
-        height={bh}
-        fill="#181d1c"
-        stroke="#c5cec8"
+    <svg
+      viewBox="0 0 240 140"
+      preserveAspectRatio="xMidYMax slice"
+      className={cn("h-full w-full", className)}
+      aria-hidden
+    >
+      <rect width="240" height="140" fill="var(--color-bg)" />
+      <rect x="186" y="0" width="54" height="140" fill="var(--color-raised)" />
+      <path
+        d="M186 0 C190 28 184 54 189 82 C193 110 187 126 190 140"
+        fill="none"
+        stroke="var(--color-accent)"
         strokeOpacity="0.35"
+        strokeWidth="0.8"
       />
-      {windows.map((win, i) => {
-        const ww = 5;
-        const wh = type === "casa" ? 7 : 6;
-        const gapX = (bw - cols * ww) / (cols + 1);
-        const gapY = (bh - 8 - floors * wh) / (floors + 1);
-        const px = bx + gapX + win.x * (ww + gapX);
-        const py = by + 6 + gapY + win.y * (wh + gapY);
-        return (
-          <rect
-            key={i}
-            x={px}
-            y={py}
-            width={ww}
-            height={wh}
-            fill={win.on ? "#c5cec8" : "#0b0e0d"}
-            opacity={win.on ? 0.55 : 0.35}
-          />
-        );
-      })}
+      <rect x="0" y="118" width="186" height="22" fill="var(--color-surface)" />
+      <path d="M0 118h186" stroke="var(--color-accent)" strokeOpacity="0.2" />
+      {type === "casa"
+        ? buildings.map((b, i) => (
+            <g key={i}>
+              <path
+                d={`M${b.x - 6} ${140 - 22 - b.h + 8} L${b.x + b.w / 2} ${140 - 22 - b.h - 16} L${b.x + b.w + 6} ${140 - 22 - b.h + 8}`}
+                fill="var(--color-raised)"
+                stroke="var(--color-accent)"
+                strokeOpacity="0.3"
+              />
+              <BuildingRect b={b} seed={seed + i} />
+            </g>
+          ))
+        : buildings.map((b, i) => <BuildingRect key={i} b={b} seed={seed + i} />)}
     </svg>
+  );
+}
+
+function BuildingRect({ b, seed }: { b: Building; seed: number }) {
+  const y = 118 - b.h;
+  const windows: { x: number; y: number; on: boolean }[] = [];
+  for (let fy = 0; fy < b.floors; fy++) {
+    for (let c = 0; c < b.cols; c++) {
+      windows.push({
+        x: c,
+        y: fy,
+        on: ((seed * 17 + c * 13 + fy * 29) % 5) !== 0,
+      });
+    }
+  }
+  const ww = 3.2;
+  const wh = 4.2;
+  const gapX = (b.w - b.cols * ww) / (b.cols + 1);
+  const gapY = (b.h - 8 - b.floors * wh) / (b.floors + 1);
+
+  return (
+    <g>
+      <rect
+        x={b.x}
+        y={y}
+        width={b.w}
+        height={b.h}
+        fill="var(--color-raised)"
+        stroke="var(--color-accent)"
+        strokeOpacity="0.3"
+      />
+      {windows.map((win, i) => (
+        <rect
+          key={i}
+          x={b.x + gapX + win.x * (ww + gapX)}
+          y={y + 4 + gapY + win.y * (wh + gapY)}
+          width={ww}
+          height={wh}
+          fill={win.on ? "var(--color-accent)" : "var(--color-bg)"}
+          opacity={win.on ? 0.55 : 0.8}
+        />
+      ))}
+    </g>
   );
 }

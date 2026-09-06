@@ -37,19 +37,20 @@ function Home() {
 
   const featured = filtered.slice(0, 3);
   const rest = filtered.slice(3);
+  const open = (id: string) => {
+    select(id);
+    void navigate({ to: "/imovel/$id", params: { id } });
+  };
 
   return (
     <main className="mx-auto max-w-[1400px] px-4 pb-10 pt-5 md:px-6 md:pb-12 md:pt-8">
-      <header className="max-w-xl">
+      <header className="max-w-2xl">
         <p className="text-xs uppercase tracking-widest text-muted">
           João Pessoa · {CITY.sampleDate}
         </p>
-        <h1 className="mt-2 font-display text-3xl leading-tight tracking-tight md:text-5xl">
+        <h1 className="mt-2 font-display text-4xl leading-none tracking-tight text-balance md:text-6xl">
           As grandes da mesa.
         </h1>
-        <p className="mt-3 text-sm text-muted">
-          Toque no cartaz para o dossiê: desconto, Airbnb e o que está fora do portal.
-        </p>
       </header>
 
       <div className="sticky top-(--header-h) z-20 -mx-4 mt-5 border-b border-line bg-bg/95 px-4 py-2 backdrop-blur-sm md:mx-0 md:border-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
@@ -60,8 +61,8 @@ function Home() {
               type="button"
               onClick={() => setRadar(r)}
               className={cn(
-                "h-11 shrink-0 rounded-full px-4 text-sm font-medium transition-colors duration-150",
-                radar === r ? "bg-accent text-accent-fg" : "bg-raised text-muted hover:text-fg",
+                "pressable h-11 shrink-0 rounded-full px-4 text-sm font-medium transition-colors duration-150",
+                radar === r ? toneOn(r) : "bg-raised text-muted hover:text-fg",
               )}
             >
               {RADAR_LABEL[r]}
@@ -83,21 +84,28 @@ function Home() {
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-10 rounded-2xl bg-surface px-4 py-12 text-center text-sm text-muted shadow-[0_0_0_1px_rgba(236,234,228,0.08)]">
+        <p className="mt-10 rounded-2xl bg-surface px-4 py-12 text-center text-sm text-muted shadow-(--shadow-border)">
           Nenhum sinal com esse filtro.
         </p>
       ) : (
-        <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(260px,0.72fr)]">
-          <div className="flex flex-col gap-8">
+        <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(260px,0.7fr)]">
+          <div className="flex flex-col gap-6">
+            <section className="lg:hidden">
+              <OrlaMap cards={filtered} selectedId={selectedId} onSelect={open} compact />
+            </section>
             <section>
-              <h2 className="font-display text-lg">Grandes oportunidades</h2>
-              <ul className="mt-3 grid gap-4 md:grid-cols-3">
-                {featured.map((c, i) => (
-                  <li key={c.listing.id}>
-                    <OpportunityCard card={c} rank={i + 1} />
-                  </li>
-                ))}
-              </ul>
+              {featured[0] ? (
+                <OpportunityCard card={featured[0]} rank={1} size="hero" />
+              ) : null}
+              {featured.length > 1 ? (
+                <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+                  {featured.slice(1).map((c, i) => (
+                    <li key={c.listing.id}>
+                      <OpportunityCard card={c} rank={i + 2} />
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </section>
             {rest.length > 0 ? (
               <section>
@@ -111,37 +119,19 @@ function Home() {
                 </ul>
               </section>
             ) : null}
-            <details className="rounded-xl bg-raised px-4 py-2 lg:hidden">
-              <summary className="flex h-11 cursor-pointer list-none items-center text-sm text-fg">
-                Ver na orla
-              </summary>
-              <div className="pb-3 pt-2">
-                <OrlaMap
-                  cards={filtered}
-                  selectedId={selectedId}
-                  onSelect={(id) => {
-                    select(id);
-                    void navigate({ to: "/imovel/$id", params: { id } });
-                  }}
-                />
-              </div>
-            </details>
           </div>
           <aside className="hidden lg:sticky lg:top-(--header-h) lg:block lg:self-start lg:pt-4">
-            <OrlaMap
-              cards={filtered}
-              selectedId={selectedId}
-              onSelect={(id) => {
-                select(id);
-                void navigate({ to: "/imovel/$id", params: { id } });
-              }}
-            />
-            <p className="mt-2 text-xs text-subtle">
-              Atlântico a leste — a orla fica à direita.
-            </p>
+            <OrlaMap cards={filtered} selectedId={selectedId} onSelect={open} />
+            <p className="mt-2 text-xs text-subtle">Atlântico a leste — a orla fica à direita.</p>
           </aside>
         </div>
       )}
     </main>
   );
+}
+
+function toneOn(radar: RadarFilter) {
+  if (radar === "airbnb") return "bg-deal text-accent-fg";
+  if (radar === "rua") return "bg-warn text-accent-fg";
+  return "bg-accent text-accent-fg";
 }
