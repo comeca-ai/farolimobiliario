@@ -10,14 +10,12 @@ type DeskState = {
   query: string;
   selectedId: string | null;
   watched: string[];
-  invited: boolean;
   brief: Brief | null;
   showDesk: boolean;
   setRadar: (radar: RadarFilter) => void;
   setQuery: (query: string) => void;
   select: (id: string | null) => void;
   toggleWatch: (id: string) => void;
-  setInvited: (invited: boolean) => void;
   setBrief: (brief: Brief) => void;
   clearBrief: () => void;
   setShowDesk: (show: boolean) => void;
@@ -30,7 +28,6 @@ export const useDesk = create<DeskState>()(
       query: "",
       selectedId: null,
       watched: [],
-      invited: false,
       brief: null,
       showDesk: false,
       setRadar: (radar) => set({ radar }),
@@ -42,14 +39,13 @@ export const useDesk = create<DeskState>()(
           : [id, ...get().watched];
         set({ watched });
       },
-      setInvited: (invited) => set({ invited }),
       setBrief: (brief) => set({ brief, showDesk: false }),
       clearBrief: () => set({ brief: null, showDesk: false }),
       setShowDesk: (showDesk) => set({ showDesk }),
     }),
     {
       name: "farol-desk",
-      partialize: (s) => ({ watched: s.watched, brief: s.brief, invited: s.invited }),
+      partialize: (s) => ({ watched: s.watched, brief: s.brief }),
     },
   ),
 );

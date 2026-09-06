@@ -14,9 +14,6 @@ const NAV = [
 export function Shell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const setShowDesk = useDesk((s) => s.setShowDesk);
-  const invited = useDesk((s) => s.invited);
-  const magic = pathname.startsWith("/c/");
-  const closed = !invited && !magic;
 
   return (
     <div className="min-h-dvh bg-bg pb-[env(safe-area-inset-bottom)]">
@@ -29,13 +26,8 @@ export function Shell({ children }: { children: ReactNode }) {
           >
             <Mark className="size-7" />
             <span className="font-display text-lg tracking-tight">Farol</span>
-            <span className="text-xs text-accent sm:text-muted">
-              {closed ? "Mesa fechada" : "João Pessoa"}
-            </span>
+            <span className="hidden text-xs text-muted sm:inline">João Pessoa</span>
           </Link>
-          {closed ? (
-            <p className="text-xs uppercase tracking-widest text-accent">Somente convidados</p>
-          ) : (
           <nav className="flex items-center">
             {NAV.map((item) => {
               const active =
@@ -59,20 +51,15 @@ export function Shell({ children }: { children: ReactNode }) {
               );
             })}
           </nav>
-          )}
         </div>
       </header>
       <div>{children}</div>
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-1 px-4 py-5 text-xs text-subtle md:flex-row md:items-center md:justify-between md:px-6">
-          {closed ? (
-            <p>Mesa fechada. João Pessoa, somente quem foi convidado.</p>
-          ) : (
-            <p>
-              Sinais modelados com comps públicos · FipeZAP / MySide / AirDNA · {CITY.sampleDate}.
-              Não é oferta nem recomendação de investimento.
-            </p>
-          )}
+          <p>
+            Sinais modelados com comps públicos · FipeZAP / MySide / AirDNA · {CITY.sampleDate}.
+            Não é oferta nem recomendação de investimento.
+          </p>
           <p>Produção pensada inteira na Cloudflare.</p>
         </div>
       </footer>

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { InviteGate } from "@/components/invite-gate";
 
 export const Route = createFileRoute("/arquitetura")({ component: ArquiteturaPage });
 
@@ -32,7 +31,7 @@ const STAGES = [
     n: "05",
     title: "A mesa",
     products: "Workers + Assets · Access · Email",
-    body: "Este app. Static assets no CDN, API no mesmo Worker. Cloudflare Access na frente — a mesa não é pública. Alerta sai por Email Service ou webhook quando um DO dispara. Turnstile só se um corretor externo ganhar login. Feature flag (Flagship) para ligar tese nova sem redeploy cego.",
+    body: "Este app. Static assets no CDN, API no mesmo Worker. A mesa abre no domínio; o harvest e os bindings ficam no mesmo isolate. Alerta sai por Email Service ou webhook quando um DO dispara. Turnstile só se um corretor externo ganhar login. Feature flag (Flagship) para ligar tese nova sem redeploy cego.",
   },
   {
     n: "06",
@@ -55,14 +54,6 @@ const DATA = [
 ];
 
 export function ArquiteturaPage() {
-  return (
-    <InviteGate>
-      <ArquiteturaBoard />
-    </InviteGate>
-  );
-}
-
-function ArquiteturaBoard() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-6 md:px-6 md:py-10">
       <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Tudo via Cloudflare</p>

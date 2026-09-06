@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { InviteGate } from "@/components/invite-gate";
 import { CITY, NEIGHBORHOODS } from "@/data/market";
 import { brl, pct, pctAbs } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -7,14 +6,6 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/bairros")({ component: BairrosPage });
 
 function BairrosPage() {
-  return (
-    <InviteGate>
-      <BairrosBoard />
-    </InviteGate>
-  );
-}
-
-function BairrosBoard() {
   const maxM2 = Math.max(...NEIGHBORHOODS.map((n) => n.m2));
   const sorted = [...NEIGHBORHOODS].sort((a, b) => b.m2 - a.m2);
 
