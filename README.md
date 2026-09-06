@@ -2,7 +2,7 @@
 
 Mesa de radar para oportunidades imobiliárias em **João Pessoa**.
 
-**No ar:** [https://farolimobiliario.jhonata-emerick.workers.dev](https://farolimobiliario.jhonata-emerick.workers.dev)
+**No ar:** [https://farolqueprotege.com.br](https://farolqueprotege.com.br)
 
 Três teses:
 
