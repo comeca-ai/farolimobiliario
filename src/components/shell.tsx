@@ -57,8 +57,8 @@ export function Shell({ children }: { children: ReactNode }) {
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-1 px-4 py-5 text-xs text-subtle md:flex-row md:items-center md:justify-between md:px-6">
           <p>
-            Sinais modelados com comps públicos · FipeZAP / MySide / AirDNA · {CITY.sampleDate}.
-            Não é oferta nem recomendação de investimento.
+            Base {CITY.refresh} · comps {CITY.sampleDate}. Não é oferta nem recomendação de
+            investimento.
           </p>
           <p>Produção pensada inteira na Cloudflare.</p>
         </div>

@@ -173,7 +173,7 @@ function MesaBoard() {
     <main className="mx-auto max-w-[1400px] px-4 pb-10 pt-5 md:px-6 md:pb-12 md:pt-8">
       <header className="max-w-2xl">
         <p className="text-xs uppercase tracking-widest text-muted">
-          João Pessoa · {CITY.sampleDate}
+          João Pessoa · {CITY.sampleDate} · {CITY.refresh}
         </p>
         <h1 className="mt-2 font-display text-4xl leading-none tracking-tight text-balance md:text-6xl">
           As grandes da mesa.

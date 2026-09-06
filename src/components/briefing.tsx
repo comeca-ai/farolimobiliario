@@ -1,5 +1,5 @@
 import { GOAL_HINT, GOAL_LABEL, type Brief, type LifeGoal } from "@/lib/brief";
-import { cn } from "@/lib/utils";
+import { CITY } from "@/data/market";
 
 const GOALS: LifeGoal[] = ["renda", "patrimonio", "morar", "aposentar"];
 
@@ -13,7 +13,9 @@ const DEFAULTS: Record<LifeGoal, Pick<Brief, "age" | "years">> = {
 export function Briefing({ onSubmit }: { onSubmit: (brief: Brief) => void }) {
   return (
     <main className="mx-auto max-w-xl px-4 pb-16 pt-8 md:pt-12">
-      <p className="text-xs uppercase tracking-widest text-muted">João Pessoa</p>
+      <p className="text-xs uppercase tracking-widest text-muted">
+        João Pessoa · base {CITY.refresh}
+      </p>
       <h1 className="mt-2 font-display text-4xl leading-none tracking-tight text-balance md:text-5xl">
         O que a vida pede.
       </h1>
