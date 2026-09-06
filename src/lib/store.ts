@@ -45,11 +45,11 @@ export const useDesk = create<DeskState>()(
       },
       setBrief: (brief) => set({ brief, showDesk: false }),
       setLead: (lead) => set({ lead }),
-      clearBrief: () => set({ brief: null, lead: null, showDesk: false }),
+      clearBrief: () => set({ brief: null, showDesk: false }),
       setShowDesk: (showDesk) => set({ showDesk }),
     }),
     {
-      name: "farol-desk",
+      name: "farol-desk-v2",
       partialize: (s) => ({ watched: s.watched, brief: s.brief, lead: s.lead }),
     },
   ),

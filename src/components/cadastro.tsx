@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { GOAL_LABEL, type Brief } from "@/lib/brief";
 import { maskBrMobile, validBrMobile, validEmail, type Lead } from "@/lib/lead";
 
 export function Cadastro({
-  brief,
   onSubmit,
   onBack,
 }: {
-  brief: Brief;
   onSubmit: (lead: Lead) => void;
   onBack: () => void;
 }) {
@@ -21,14 +18,12 @@ export function Cadastro({
 
   return (
     <main className="mx-auto max-w-xl px-4 pb-20 pt-10 md:pt-16">
-      <p className="text-xs uppercase tracking-widest text-accent">Pré-cadastro · sketch</p>
-      <p className="mt-3 text-xs uppercase tracking-widest text-subtle">{GOAL_LABEL[brief.goal]}</p>
+      <p className="text-xs uppercase tracking-widest text-accent">Cadastro</p>
       <h1 className="mt-3 font-display text-4xl leading-none tracking-tight md:text-5xl">
-        O Farol manda no WhatsApp.
+        Entra. Depois a vida pede.
       </h1>
       <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-        E-mail para o link. WhatsApp para o dossiê chegar onde você já lê. Os dois são
-        obrigatórios. Sem senha.
+        E-mail para o link. WhatsApp obrigatório — o dossiê chega onde você já lê. Sem senha.
       </p>
 
       <form
@@ -74,21 +69,19 @@ export function Cadastro({
           </span>
           {tried && !waOk ? (
             <span className="mt-1 block text-xs text-risk">Celular com DDD e o 9. Ex.: (83) 98888-0000.</span>
-          ) : (
-            <span className="mt-1 block text-xs text-subtle">O dossiê e o rito de segunda saem por aqui.</span>
-          )}
+          ) : null}
         </label>
 
         <button
           type="submit"
           className="pressable mt-2 h-14 rounded-full bg-accent text-sm font-medium text-accent-fg"
         >
-          Mandar o Farol
+          Entrar
         </button>
       </form>
 
       <button type="button" onClick={onBack} className="mt-6 text-sm text-muted">
-        Trocar o rumo
+        Voltar
       </button>
     </main>
   );

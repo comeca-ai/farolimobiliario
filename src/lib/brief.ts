@@ -25,6 +25,111 @@ export const GOAL_HINT: Record<LifeGoal, string> = {
 
 export const YEAR_OPTIONS = [3, 5, 8, 10, 15, 20] as const;
 
+export const GOAL_DEFAULTS: Record<LifeGoal, Pick<Brief, "age" | "years">> = {
+  renda: { age: 34, years: 5 },
+  patrimonio: { age: 42, years: 10 },
+  morar: { age: 38, years: 8 },
+  aposentar: { age: 54, years: 15 },
+};
+
+const LEX: Record<LifeGoal, string[]> = {
+  renda: [
+    "aluguel",
+    "airbnb",
+    "renda",
+    "mes",
+    "mês",
+    "flat",
+    "diaria",
+    "diária",
+    "caixa",
+    "parcela",
+    "temporada",
+    "hospede",
+    "hóspede",
+    "studio",
+    "kitnet",
+    "short",
+  ],
+  patrimonio: [
+    "investir",
+    "investimento",
+    "patrimonio",
+    "patrimônio",
+    "valoriz",
+    "spread",
+    "desconto",
+    "abaixo",
+    "barato",
+    "oportunidade",
+    "comprar",
+    "m2",
+    "m²",
+  ],
+  morar: [
+    "morar",
+    "familia",
+    "família",
+    "casa",
+    "rua",
+    "viver",
+    "proprio",
+    "próprio",
+    "filhos",
+    "silencio",
+    "silêncio",
+    "moradia",
+    "deixar",
+  ],
+  aposentar: [
+    "aposent",
+    "parar",
+    "passivo",
+    "inquilino",
+    "reajuste",
+    "longo",
+    "tranquilo",
+    "sem trabalho",
+    "futuro",
+  ],
+};
+
+export type RumoGuess = {
+  goal: LifeGoal;
+  score: number;
+  why: string;
+};
+
+export function proposeRumos(text: string): RumoGuess[] {
+  const t = text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+  const scores: Record<LifeGoal, number> = {
+    renda: 0.08,
+    patrimonio: 0.08,
+    morar: 0.08,
+    aposentar: 0.08,
+  };
+  (Object.keys(LEX) as LifeGoal[]).forEach((g) => {
+    for (const w of LEX[g]) {
+      const n = w
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      if (t.includes(n)) scores[g] += 1;
+    }
+  });
+  const whyFor: Record<LifeGoal, string> = {
+    renda: "Li caixa agora — flat, diária, parcela.",
+    patrimonio: "Li compra abaixo do justo e tempo para o m².",
+    morar: "Li uso próprio, rua, família — não hóspede.",
+    aposentar: "Li renda longa, pouca operação.",
+  };
+  return (Object.keys(scores) as LifeGoal[])
+    .map((goal) => ({ goal, score: scores[goal], why: whyFor[goal] }))
+    .sort((a, b) => b.score - a.score);
+}
+
 export type Match = {
   card: Scorecard;
   fit: number;
