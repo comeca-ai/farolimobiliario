@@ -49,7 +49,7 @@ function Reading({ brief }: { brief: Brief }) {
   return (
     <main className="mx-auto max-w-[1400px] px-4 pb-12 pt-6 md:px-6 md:pt-10">
       <p className="text-xs uppercase tracking-widest text-muted">
-        {brief.age} anos · {GOAL_LABEL[brief.goal]} · {brief.years} anos
+        {GOAL_LABEL[brief.goal]}
       </p>
       <div className="mt-4 max-w-2xl rounded-2xl bg-surface p-5 shadow-(--shadow-border) md:p-7">
         <p className="text-xs uppercase tracking-widest text-subtle">Farol lê</p>
@@ -184,7 +184,7 @@ function MesaBoard() {
             onClick={() => setShowDesk(false)}
             className="mt-3 text-sm text-accent"
           >
-            Voltar à leitura · {brief.age} anos · {GOAL_LABEL[brief.goal]}
+            Voltar à leitura · {GOAL_LABEL[brief.goal]}
           </button>
         ) : null}
       </header>

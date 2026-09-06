@@ -38,15 +38,15 @@ export function reading(brief: Brief, matches: Match[]): string {
   const goal = GOAL_LABEL[brief.goal].toLowerCase();
 
   if (brief.goal === "renda") {
-    return `Você tem ${brief.age} anos e quer ${goal} em ${brief.years} anos. Em João Pessoa isso não é casa no Altiplano — é flat ou studio na orla, NOI de curta temporada cobrindo a parcela. Li ${n} sinais. Os mais aderentes puxam ${place}: ticket que cabe agora, ocupação de corredor turístico, operação de Airbnb. O resto da mesa continua no radar, mas não fecha a conta deste rumo.`;
+    return `O rumo é ${goal}. Em João Pessoa isso não é casa no Altiplano — é flat ou studio na orla, NOI de curta temporada cobrindo a parcela. Li ${n} sinais. Os mais aderentes puxam ${place}: ticket que cabe agora, ocupação de corredor turístico, operação de Airbnb. O resto da mesa continua no radar, mas não fecha esta conta.`;
   }
   if (brief.goal === "patrimonio") {
-    return `Você tem ${brief.age} anos e quer ${goal} em ${brief.years} anos. O Farol então procura spread: ask abaixo do m² justo, bairro ainda em alta de 12 meses, pouco holofote de portal. Li ${n} sinais. O que sobra para você começa em ${place} — desconto que o tempo do seu horizonte consegue realizar, não yield de fim de semana.`;
+    return `O rumo é ${goal}. O Farol procura spread: ask abaixo do m² justo, bairro ainda em alta de 12 meses, pouco holofote de portal. Li ${n} sinais. O que sobra começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar, não yield de fim de semana.`;
   }
   if (brief.goal === "morar") {
-    return `Você tem ${brief.age} anos e quer um lugar para morar ou deixar, em ${brief.years} anos. Hóspede de Tambaú não entra nesta conta. Li ${n} sinais e puxei casa e apto com vida de rua, inventário, placa — o que o portal ainda não embalou. ${place} aparece primeiro porque o imóvel ainda é moradia, não ativo de diária.`;
+    return `O rumo é morar ou deixar para a família. Hóspede de Tambaú não entra nesta conta. Li ${n} sinais e puxei casa e apto com vida de rua, inventário, placa — o que o portal ainda não embalou. ${place} aparece primeiro porque o imóvel ainda é moradia, não ativo de diária.`;
   }
-  return `Você tem ${brief.age} anos e quer ${goal} daqui a ${brief.years} anos. A operação de Airbnb cansa; o que importa é aluguel longo estável, condomínio que não coma a renda, bairro que não dependa de temporada. Li ${n} sinais. ${place} entra porque o NOI tradicional se sustenta sem você virar camareira.`;
+  return `O rumo é ${goal}. A operação de Airbnb cansa; o que importa é aluguel longo estável, condomínio que não coma a renda, bairro que não dependa de temporada. Li ${n} sinais. ${place} entra porque o NOI tradicional se sustenta sem check-in.`;
 }
 
 export function matchBrief(brief: Brief): Match[] {
@@ -119,7 +119,7 @@ function why(card: Scorecard, brief: Brief): string {
   if (brief.goal === "morar") {
     return `${listing.rooms} quarto${listing.rooms > 1 ? "s" : ""} em ${nb.name}, ${listing.area} m², ${listing.portalCount === 0 ? "ainda na rua." : "pouco holofote."} Serve para viver, não para turn-over de fim de semana. Aluguel equivalente ${pctAbs(Math.max(ltrYield, 0))} se o plano mudar.`;
   }
-  return `Aluguel longo ${pctAbs(Math.max(ltrYield, 0))} a.a. em ${nb.name}, condomínio ${compactBrl(listing.condo)}/mês. Pouca operação. Aos ${brief.age} anos, isso é renda que não pede check-in.`;
+  return `Aluguel longo ${pctAbs(Math.max(ltrYield, 0))} a.a. em ${nb.name}, condomínio ${compactBrl(listing.condo)}/mês. Pouca operação. Renda que não pede check-in.`;
 }
 
 function clamp(n: number) {
