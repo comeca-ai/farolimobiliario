@@ -21,6 +21,7 @@ type DeskState = {
   setBrief: (brief: Brief) => void;
   setLead: (lead: Lead) => void;
   clearBrief: () => void;
+  signOut: () => void;
   setShowDesk: (show: boolean) => void;
 };
 
@@ -46,6 +47,15 @@ export const useDesk = create<DeskState>()(
       setBrief: (brief) => set({ brief, showDesk: false }),
       setLead: (lead) => set({ lead }),
       clearBrief: () => set({ brief: null, showDesk: false }),
+      signOut: () =>
+        set({
+          lead: null,
+          brief: null,
+          showDesk: false,
+          selectedId: null,
+          query: "",
+          radar: "todos",
+        }),
       setShowDesk: (showDesk) => set({ showDesk }),
     }),
     {

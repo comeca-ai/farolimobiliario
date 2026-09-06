@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Mark } from "@/components/mark";
 import { CITY } from "@/data/market";
 import { useDesk } from "@/lib/store";
@@ -14,6 +14,9 @@ const NAV = [
 export function Shell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const setShowDesk = useDesk((s) => s.setShowDesk);
+  const lead = useDesk((s) => s.lead);
+  const signOut = useDesk((s) => s.signOut);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-dvh bg-bg pb-[env(safe-area-inset-bottom)]">
@@ -50,6 +53,18 @@ export function Shell({ children }: { children: ReactNode }) {
                 </Link>
               );
             })}
+            {lead ? (
+              <button
+                type="button"
+                onClick={() => {
+                  signOut();
+                  void navigate({ to: "/" });
+                }}
+                className="ml-1 inline-flex h-11 items-center rounded-md px-3 text-sm text-muted hover:text-fg"
+              >
+                Sair
+              </button>
+            ) : null}
           </nav>
         </div>
       </header>
