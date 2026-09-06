@@ -1,7 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Search } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Briefing } from "@/components/briefing";
+import { InviteGate } from "@/components/invite-gate";
 import { ListingCard } from "@/components/listing-card";
 import { OpportunityCard } from "@/components/opportunity-card";
 import { OrlaMap } from "@/components/orla-map";
@@ -18,21 +19,18 @@ export const Route = createFileRoute("/")({ component: Home });
 const RADARS: RadarFilter[] = ["todos", "preco", "airbnb", "rua"];
 
 function Home() {
+  return (
+    <InviteGate>
+      <DeskHome />
+    </InviteGate>
+  );
+}
+
+function DeskHome() {
   const brief = useDesk((s) => s.brief);
   const showDesk = useDesk((s) => s.showDesk);
   const setBrief = useDesk((s) => s.setBrief);
-  const [hydrated, setHydrated] = useState(false);
 
-  useEffect(() => {
-    const done = () => setHydrated(true);
-    const unsub = useDesk.persist.onFinishHydration(done);
-    if (useDesk.persist.hasHydrated()) done();
-    return unsub;
-  }, []);
-
-  if (!hydrated) {
-    return <main className="min-h-[70vh] bg-bg" />;
-  }
   if (!brief) {
     return <Briefing onSubmit={setBrief} />;
   }

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Bookmark } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Facade } from "@/components/facade";
+import { InviteGate } from "@/components/invite-gate";
 import { ScoreBar } from "@/components/score-bar";
 import { LISTING_BY_ID, type Listing } from "@/data/listings";
 import { brl, brl2, pct, pctAbs } from "@/lib/format";
@@ -15,6 +16,14 @@ export const Route = createFileRoute("/imovel/$id")({
 });
 
 function ImovelPage() {
+  return (
+    <InviteGate>
+      <ImovelDossier />
+    </InviteGate>
+  );
+}
+
+function ImovelDossier() {
   const { id } = Route.useParams();
   const listing = LISTING_BY_ID[id];
   if (!listing) {

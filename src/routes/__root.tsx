@@ -15,7 +15,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Mesa de radar para oportunidades imobiliárias em João Pessoa: abaixo do preço, flat Airbnb e casa da rua.",
+          "Mesa fechada. Radar imobiliário de João Pessoa — somente convidados.",
       },
       { name: "theme-color", content: "#f3eee4" },
     ],

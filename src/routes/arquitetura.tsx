@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { InviteGate } from "@/components/invite-gate";
 
 export const Route = createFileRoute("/arquitetura")({ component: ArquiteturaPage });
 
@@ -54,6 +55,14 @@ const DATA = [
 ];
 
 export function ArquiteturaPage() {
+  return (
+    <InviteGate>
+      <ArquiteturaBoard />
+    </InviteGate>
+  );
+}
+
+function ArquiteturaBoard() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-6 md:px-6 md:py-10">
       <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Tudo via Cloudflare</p>
