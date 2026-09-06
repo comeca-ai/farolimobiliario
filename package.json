@@ -16,7 +16,9 @@
     "preview:stop": "node scripts/preview.mjs stop",
     "typecheck": "tsc --noEmit",
     "check:auth": "node scripts/check-auth-invariant.mjs",
-    "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/app-data/app-data.test.ts src/lib/auth/gate-identity.test.ts src/lib/auth/sign-in-gate.test.ts",
+    "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/app-data/app-data.test.ts src/lib/auth/gate-identity.test.ts src/lib/auth/sign-in-gate.test.ts && npm run test:rumo && npm run test:base",
+    "test:rumo": "node scripts/agent-unit.mjs",
+    "test:base": "node scripts/agent-integrity.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "deploy:cf": "vite build --config vite.cloudflare.config.ts && wrangler deploy"

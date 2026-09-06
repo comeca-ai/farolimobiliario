@@ -7,7 +7,7 @@ import { Objetivos } from "@/components/objetivos";
 import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
 import { CITY } from "@/data/market";
-import { GOAL_LABEL, matchBrief, reading, type Brief } from "@/lib/brief";
+import { GOAL_HEADLINE, GOAL_HERO_KICK, GOAL_LABEL, GOAL_SORT, matchBrief, reading, type Brief } from "@/lib/brief";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
 import { useDesk, type RadarFilter } from "@/lib/store";
@@ -60,17 +60,23 @@ function Reading({ brief }: { brief: Brief }) {
       <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
         <section>
           <h1 className="font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
-            {GOAL_LABEL[brief.goal]}
+            {GOAL_HEADLINE[brief.goal]}
           </h1>
           <p className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">{text}</p>
           <p className="mt-2 mb-7 flex items-center gap-2.5 text-[12.5px] text-subtle">
             <span>{matches.length} imóveis</span>
             <span className="size-0.5 rounded-full bg-subtle/50" />
-            <span>ordenados por aderência</span>
+            <span>{GOAL_SORT[brief.goal]}</span>
           </p>
 
           {matches[0] ? (
-            <RumoHero card={matches[0].card} why={matches[0].why} onOpen={open} />
+            <RumoHero
+              card={matches[0].card}
+              why={matches[0].why}
+              goal={brief.goal}
+              kicker={GOAL_HERO_KICK[brief.goal]}
+              onOpen={open}
+            />
           ) : (
             <p className="rounded-[14px] bg-surface px-5 py-10 text-sm text-muted shadow-(--shadow-border)">
               Nenhum sinal neste rumo.
@@ -80,7 +86,13 @@ function Reading({ brief }: { brief: Brief }) {
           {rest.length > 0 ? (
             <ol className="mt-9">
               {rest.map((m, i) => (
-                <RumoRow key={m.card.listing.id} card={m.card} index={i + 1} onOpen={open} />
+                <RumoRow
+                  key={m.card.listing.id}
+                  card={m.card}
+                  index={i + 1}
+                  goal={brief.goal}
+                  onOpen={open}
+                />
               ))}
             </ol>
           ) : null}
@@ -104,7 +116,7 @@ function Reading({ brief }: { brief: Brief }) {
         </section>
 
         <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
-          <MapPanel>
+          <MapPanel caption={GOAL_SORT[brief.goal]}>
             <OrlaMap cards={cards} selectedId={selectedId} onSelect={open} />
           </MapPanel>
         </aside>
@@ -196,11 +208,18 @@ function MesaBoard() {
       ) : (
         <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
           <section>
-            {featured ? <RumoHero card={featured} onOpen={open} /> : null}
+            {featured ? (
+              <RumoHero
+                card={featured}
+                goal={brief?.goal}
+                kicker={brief ? GOAL_HERO_KICK[brief.goal] : undefined}
+                onOpen={open}
+              />
+            ) : null}
             {rest.length > 0 ? (
               <ol className="mt-9">
                 {rest.map((c, i) => (
-                  <RumoRow key={c.listing.id} card={c} index={i + 1} onOpen={open} />
+                  <RumoRow key={c.listing.id} card={c} index={i + 1} goal={brief?.goal} onOpen={open} />
                 ))}
               </ol>
             ) : null}

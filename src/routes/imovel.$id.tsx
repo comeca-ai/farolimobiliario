@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Bookmark } from "lucide-react";
 import { useMemo, useState } from "react";
-import { rumoKicker } from "@/components/rumo-list";
 import { LISTING_BY_ID, type Listing } from "@/data/listings";
 import { brl, brl2, pct, pctAbs } from "@/lib/format";
 import { SOURCE_LABEL, TYPE_LABEL } from "@/lib/labels";
+import { punchForGoal, rumoKickerFor } from "@/lib/brief";
 import { analyze, punch } from "@/lib/score";
 import { useDesk } from "@/lib/store";
 import { cn } from "@/lib/utils";
@@ -32,8 +32,8 @@ function ImovelPage() {
 function ImovelBody({ listing }: { listing: Listing }) {
   const watched = useDesk((s) => s.watched.includes(listing.id));
   const toggleWatch = useDesk((s) => s.toggleWatch);
+  const goal = useDesk((s) => s.brief?.goal);
   const base = analyze(listing);
-  const hit = punch(base);
   const [occ, setOcc] = useState(() => Math.round(base.nb.strOccupancy * 100));
   const [adr, setAdr] = useState(() =>
     Math.round(base.strGross / Math.max(365 * base.nb.strOccupancy, 1)),
@@ -42,6 +42,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
     () => analyze(listing, { occupancy: occ / 100, adr }),
     [listing, occ, adr],
   );
+  const hit = goal ? punchForGoal(live, goal) : punch(live);
 
   return (
     <main className="mx-auto max-w-[760px] px-4 pb-20 pt-4 md:px-6 md:pt-8">
@@ -61,7 +62,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
       </div>
 
       <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-accent">
-        {rumoKicker(live)} · {TYPE_LABEL[listing.type]}
+        {goal ? rumoKickerFor(live, goal) : rumoKickerFor(live, "patrimonio")} · {TYPE_LABEL[listing.type]}
       </p>
       <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="min-w-0">

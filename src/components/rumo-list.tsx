@@ -1,40 +1,53 @@
 import type { ReactNode } from "react";
-import { compactBrl, pct } from "@/lib/format";
-import { RADAR_LABEL } from "@/lib/labels";
+import {
+  punchForGoal,
+  rumoKickerFor,
+  rumoNote,
+  type LifeGoal,
+} from "@/lib/brief";
+import { compactBrl } from "@/lib/format";
 import { punch, type Scorecard } from "@/lib/score";
 import { cn } from "@/lib/utils";
 
-export function rumoKicker(card: Scorecard) {
-  const { listing } = card;
-  if (listing.sources.includes("leilao")) return "Leilão";
-  if (listing.portalCount === 0) return "Fora dos portais";
-  if (listing.sources.includes("inventario")) return "Inventário";
-  if (listing.sources.includes("placa")) return "Placa na rua";
-  return RADAR_LABEL[card.primary];
+function hitTone(card: Scorecard, goal?: LifeGoal) {
+  if (goal === "renda") return card.strYield >= 0.08 ? "text-deal" : "text-fg";
+  if (goal === "aposentar") return card.ltrYield >= 0.05 ? "text-deal" : "text-fg";
+  if (goal === "morar") return "text-fg";
+  if (card.discount >= 0.12) return "text-deal";
+  return "text-deal";
 }
 
-function hitTone(card: Scorecard) {
-  if (card.primary === "rua") return "text-warn";
-  if (card.discount >= 0.12 || card.strYield >= 0.08) return "text-deal";
-  return "text-deal";
+function hitOf(card: Scorecard, goal?: LifeGoal) {
+  return goal ? punchForGoal(card, goal) : punch(card);
+}
+
+export function rumoKicker(card: Scorecard, goal?: LifeGoal) {
+  if (goal) return rumoKickerFor(card, goal);
+  if (card.listing.sources.includes("leilao")) return "Leilão";
+  if (card.listing.portalCount === 0) return "Fora dos portais";
+  return "Sinal";
 }
 
 export function RumoHero({
   card,
   why,
+  goal,
+  kicker,
   onOpen,
 }: {
   card: Scorecard;
   why?: string;
+  goal?: LifeGoal;
+  kicker?: string;
   onOpen: (id: string) => void;
 }) {
   const { listing, nb } = card;
-  const hit = punch(card);
+  const hit = hitOf(card, goal);
   return (
     <article className="rounded-[14px] bg-surface px-5 py-6 shadow-(--shadow-border) md:px-7 md:py-7">
       <button type="button" onClick={() => onOpen(listing.id)} className="pressable w-full text-left">
         <p className="text-[11px] uppercase tracking-[0.14em] text-accent">
-          {rumoKicker(card)}
+          {kicker ?? rumoKicker(card, goal)}
         </p>
         <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="min-w-0">
@@ -46,7 +59,7 @@ export function RumoHero({
             </p>
           </div>
           <div className="shrink-0 sm:text-right">
-            <p className={cn("font-display text-5xl leading-none tracking-tight md:text-[44px]", hitTone(card))}>
+            <p className={cn("font-display text-5xl leading-none tracking-tight md:text-[44px]", hitTone(card, goal))}>
               {hit.value}
             </p>
             <p className="mt-1.5 text-xs text-subtle">{hit.caption}</p>
@@ -63,15 +76,16 @@ export function RumoHero({
 export function RumoRow({
   card,
   index,
+  goal,
   onOpen,
 }: {
   card: Scorecard;
   index: number;
+  goal?: LifeGoal;
   onOpen: (id: string) => void;
 }) {
   const { listing, nb } = card;
-  const hit = punch(card);
-  const kicker = rumoKicker(card);
+  const hit = hitOf(card, goal);
   return (
     <li className="border-t border-line">
       <button
@@ -83,7 +97,9 @@ export function RumoRow({
           {String(index).padStart(2, "0")}
         </span>
         <span className="min-w-0">
-          <span className="block text-[11px] uppercase tracking-[0.14em] text-subtle">{kicker}</span>
+          <span className="block text-[11px] uppercase tracking-[0.14em] text-subtle">
+            {rumoKicker(card, goal)}
+          </span>
           <span className="mt-1.5 block font-display text-lg leading-snug md:text-xl">
             {listing.title}
           </span>
@@ -92,25 +108,32 @@ export function RumoRow({
           </span>
         </span>
         <span className="col-start-2 mt-2 sm:col-start-auto sm:mt-0 sm:text-right">
-          <span className={cn("block font-display text-[1.6rem] leading-none md:text-[26px]", hitTone(card))}>
+          <span className={cn("block font-display text-[1.6rem] leading-none md:text-[26px]", hitTone(card, goal))}>
             {hit.value}
           </span>
-          <span className="mt-1.5 block text-[11px] text-subtle">bairro {pct(nb.yoy)} / 12m</span>
+          <span className="mt-1.5 block text-[11px] text-subtle">
+            {goal ? rumoNote(card, goal) : hit.caption}
+          </span>
         </span>
       </button>
     </li>
   );
 }
 
-export function MapPanel({ children }: { children: ReactNode }) {
+export function MapPanel({
+  children,
+  caption = "Só os aderentes a este rumo",
+}: {
+  children: ReactNode;
+  caption?: string;
+}) {
   return (
     <div className="rounded-[14px] bg-surface p-5 shadow-(--shadow-border)">
       <div className="mb-3 flex items-baseline justify-between gap-3">
         <p className="text-[11px] uppercase tracking-[0.14em] text-subtle">Onde estão</p>
-        <p className="text-xs text-subtle">Só os aderentes a este rumo</p>
+        <p className="text-xs text-subtle">{caption}</p>
       </div>
       {children}
     </div>
   );
 }
-

@@ -345,7 +345,7 @@ export const LISTINGS: Listing[] = [
     condo: 820,
     iptu: 2300,
     seaMeters: 40,
-    condition: 1.02,
+    condition: 1,
     daysListed: 44,
     portalCount: 2,
     sources: ["portal"],
