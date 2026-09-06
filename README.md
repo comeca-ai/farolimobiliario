@@ -2,6 +2,8 @@
 
 Mesa de radar para oportunidades imobiliárias em **João Pessoa**.
 
+**No ar:** [https://farolimobiliario.jhonata-emerick.workers.dev](https://farolimobiliario.jhonata-emerick.workers.dev)
+
 Três teses:
 
 1. **Abaixo do preço** — ask versus m² justo do bairro (FipeZAP / MySide, set/2026)
@@ -10,7 +12,7 @@ Três teses:
 
 Os sinais desta demo são **modelados** com comps públicos reais de bairro. Não são ofertas nem recomendação de investimento.
 
-## Rodar
+## Rodar local
 
 ```bash
 npm install
@@ -24,12 +26,16 @@ Rotas:
 - `/bairros` — m², variação 12 meses, ocupação STR
 - `/arquitetura` — desenho de produção **inteiro na Cloudflare**
 
-## Produção (Cloudflare)
+## Publicar (Cloudflare Workers)
 
-O alvo de produção é Workers + D1 + R2 + Queues + Pipelines, descrito em `/arquitetura`.
+```bash
+export CLOUDFLARE_API_TOKEN=...
+export CLOUDFLARE_ACCOUNT_ID=749b2e9b3642e4b03321d5830e81c195
+npm run deploy:cf
+```
 
-Este repositório ainda não contém o `wrangler.toml` de produção. Deploy na conta Cloudflare entra no próximo passo (token com `Workers Scripts:Edit` + Account ID). Token **nunca** vai para o git.
+O token **nunca** vai para o git. O build da Cloudflare (`vite.cloudflare.config.ts`) é isolado do preset Vercel da preview.
 
 ## Stack da demo
 
-TanStack Start, React 19, Tailwind v4, Zustand.
+TanStack Start, React 19, Tailwind v4, Zustand, Cloudflare Workers.
