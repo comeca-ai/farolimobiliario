@@ -102,6 +102,22 @@
   );
 }
 
+.caret {
+  display: inline-block;
+  width: 0.5ch;
+  height: 0.9em;
+  margin-left: 2px;
+  vertical-align: -0.08em;
+  background: var(--color-accent);
+  animation: farol-caret 1s steps(1, end) infinite;
+}
+
+@keyframes farol-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     --header-h: calc(4rem + env(safe-area-inset-top, 0px));
