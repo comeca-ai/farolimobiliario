@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Briefing } from "@/components/briefing";
+import { Cadastro } from "@/components/cadastro";
 import { ListingCard } from "@/components/listing-card";
 import { OpportunityCard } from "@/components/opportunity-card";
 import { OrlaMap } from "@/components/orla-map";
@@ -19,11 +20,17 @@ const RADARS: RadarFilter[] = ["todos", "preco", "airbnb", "rua"];
 
 function Home() {
   const brief = useDesk((s) => s.brief);
+  const lead = useDesk((s) => s.lead);
   const showDesk = useDesk((s) => s.showDesk);
   const setBrief = useDesk((s) => s.setBrief);
+  const setLead = useDesk((s) => s.setLead);
+  const clearBrief = useDesk((s) => s.clearBrief);
 
   if (!brief) {
     return <Briefing onSubmit={setBrief} />;
+  }
+  if (!lead) {
+    return <Cadastro brief={brief} onSubmit={setLead} onBack={clearBrief} />;
   }
   if (showDesk) {
     return <MesaBoard />;
