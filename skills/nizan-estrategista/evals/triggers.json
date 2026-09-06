@@ -1,0 +1,11 @@
+{
+  "skill": "nizan-estrategista",
+  "test_cases": [
+    { "input": "o que o Nizan diria sobre o Farol", "should_trigger": true },
+    { "input": "aplica os princípios do Nizan neste negócio", "should_trigger": true },
+    { "input": "escreve uma coluna no estilo Nizan", "should_trigger": true },
+    { "input": "conselho à la Nizan para a marca", "should_trigger": true },
+    { "input": "quando ele vendeu o ABC?", "should_trigger": false },
+    { "input": "estratégia de IA corporativa para o time de dados", "should_trigger": false }
+  ]
+}

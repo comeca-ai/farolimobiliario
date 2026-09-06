@@ -1,0 +1,34 @@
+{
+  "skill": "nizan-estrategista",
+  "test_cases": [
+    {
+      "name": "advice_has_named_sections",
+      "input": "Minha contabilidade online cresce mas ninguém lembra da marca. Verba curta. O que o Nizan diria?",
+      "assertions": [
+        "Response includes sections A Real, A Tese, O Corte, O Plano, Nizan diria",
+        "A Tese is one sentence",
+        "O Corte lists things to stop doing",
+        "Quoted Nizan lines include a short source",
+        "Does not invent a quote that is not in doutrina.md or acervo"
+      ]
+    },
+    {
+      "name": "style_text_is_labelled",
+      "input": "Escreve uma coluna no estilo Nizan sobre João Pessoa e o mercado imobiliário abaixo do radar.",
+      "assertions": [
+        "Opens by labelling the text as original in Nizan Guanaes style unless the user will sign it",
+        "Reads voz-e-estilo.md before writing",
+        "Short sentences, mirrored contrasts, circular close"
+      ]
+    },
+    {
+      "name": "factual_stays_factual",
+      "input": "Quando o Nizan vendeu o Grupo ABC?",
+      "assertions": [
+        "Answers in one or two lines without persona theatre",
+        "Checks fatos-e-trajetoria.md before stating the year or amount",
+        "Does not use the six-section advice template"
+      ]
+    }
+  ]
+}
