@@ -15,7 +15,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Farol lê o litoral de João Pessoa: abaixo do preço, flat Airbnb e casa da rua.",
+          "Farol aponta o spread em João Pessoa.",
       },
       { name: "theme-color", content: "#f3eee4" },
     ],

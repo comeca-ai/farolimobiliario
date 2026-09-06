@@ -60,7 +60,7 @@ export function Shell({ children }: { children: ReactNode }) {
             Base {CITY.refresh} · comps {CITY.sampleDate}. Não é oferta nem recomendação de
             investimento.
           </p>
-          <p>Produção pensada inteira na Cloudflare.</p>
+          <p>João Pessoa. O Farol aponta. O resto, silêncio.</p>
         </div>
       </footer>
     </div>
