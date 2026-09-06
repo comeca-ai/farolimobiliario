@@ -1,32 +1,48 @@
 # Farol
 
-Mesa de radar para oportunidades imobiliárias em **João Pessoa**.
+Aponta o spread em **João Pessoa**. Não é Zap. Não é corretor.
 
-**No ar:** [https://farolqueprotege.com.br](https://farolqueprotege.com.br)
+**No ar:** [https://farolqueprotege.com.br](https://farolqueprotege.com.br)  
+**Código:** [github.com/comeca-ai/farolimobiliario](https://github.com/comeca-ai/farolimobiliario)
 
-Três teses:
+Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP / MySide, set/2026). Não é oferta nem recomendação de investimento.
 
-1. **Abaixo do preço** — ask versus m² justo do bairro (FipeZAP / MySide, set/2026)
-2. **Flat / Airbnb** — NOI de curta temporada versus ticket e versus aluguel longo
-3. **Abaixo do radar** — placa, leilão, inventário, IPTU; pouco ou nenhum portal
+## Funil
 
-Os sinais desta demo são **modelados** com comps públicos reais de bairro. Não são ofertas nem recomendação de investimento.
+1. Landing — Farol, o m² da cidade, **Entrar**
+2. Cadastro — e-mail + WhatsApp (obrigatório)
+3. Caixinha — objetivo de vida com imóveis
+4. Rumo — a pessoa concorda
+5. Três opções daquele rumo + mapa da orla
+6. **Sair** no topo limpa a sessão
 
-## Rodar local
+Quatro rumos, cada um com **três** imóveis distintos:
+
+| Rumo | O número grande |
+|---|---|
+| O caixa agora | rentabilidade de temporada, líquida |
+| Abaixo do justo | % vs m² do bairro |
+| Para viver | ticket em R$ · uso próprio |
+| Aluguel que se paga | aluguel tradicional, líquido |
+
+## Agentes
 
 ```bash
-npm install
-npm run dev
+npm run test:rumo    # unitário: tríade, caixinha, cadastro
+npm run test:base    # integridade: bairro, coords, score, estado 0–1
+npm test             # tudo (inclui os testes do template)
 ```
 
-Rotas:
+Última passagem (2026-09-06): unitário **11/11**, integridade **4/4**, `tsc` limpo.
 
-- `/` — mesa + mapa da orla (Atlântico a leste)
-- `/imovel/$id` — tese, riscos, laboratório Airbnb
-- `/bairros` — m², variação 12 meses, ocupação STR
-- `/arquitetura` — desenho de produção **inteiro na Cloudflare**
+## Rotas
 
-## Publicar (Cloudflare Workers)
+- `/` — landing → cadastro → caixinha → três opções
+- `/imovel/$id` — dossiê do sinal
+- `/bairros` — m² e variação 12 meses
+- `/arquitetura` — desenho de produção na Cloudflare
+
+## Publicar
 
 ```bash
 export CLOUDFLARE_API_TOKEN=...
@@ -34,8 +50,8 @@ export CLOUDFLARE_ACCOUNT_ID=749b2e9b3642e4b03321d5830e81c195
 npm run deploy:cf
 ```
 
-O token **nunca** vai para o git. O build da Cloudflare (`vite.cloudflare.config.ts`) é isolado do preset Vercel da preview.
+O token **não** vai para o git. Worker: `farolimobiliario`. Domínio: `farolqueprotege.com.br`.
 
-## Stack da demo
+## Stack
 
 TanStack Start, React 19, Tailwind v4, Zustand, Cloudflare Workers.
