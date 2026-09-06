@@ -6,8 +6,8 @@ import { Landing } from "@/components/briefing";
 import { Objetivos } from "@/components/objetivos";
 import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
-import { CITY } from "@/data/market";
-import { GOAL_HEADLINE, GOAL_HERO_KICK, GOAL_LABEL, GOAL_SORT, matchBrief, reading, type Brief } from "@/lib/brief";
+import { CITY, NEIGHBORHOOD_BY_ID } from "@/data/market";
+import { GOAL_HEADLINE, GOAL_HERO_KICK, GOAL_LABEL, GOAL_SORT, inAskedPlace, matchBrief, reading, type Brief } from "@/lib/brief";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
 import { useDesk, type RadarFilter } from "@/lib/store";
@@ -138,7 +138,9 @@ function MesaBoard() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
+    const places = brief?.places ?? [];
     return LISTINGS_SCORED.filter((c) => {
+      if (!inAskedPlace(c.nb.id, places, true)) return false;
       if (radar !== "todos" && !c.listing.radars.includes(radar) && c.primary !== radar) {
         return false;
       }
@@ -146,7 +148,7 @@ function MesaBoard() {
       const blob = `${c.listing.title} ${c.listing.street} ${c.nb.name} ${c.listing.type}`;
       return blob.toLowerCase().includes(q);
     });
-  }, [radar, query]);
+  }, [radar, query, brief]);
 
   const featured = filtered[0];
   const rest = filtered.slice(1);
@@ -159,7 +161,10 @@ function MesaBoard() {
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 md:px-8 md:pt-10">
       <header className="max-w-2xl">
         <p className="text-[11px] uppercase tracking-[0.14em] text-subtle">
-          João Pessoa · {CITY.sampleDate} · {CITY.refresh}
+          {brief?.places?.length
+            ? brief.places.map((id) => NEIGHBORHOOD_BY_ID[id]?.name ?? id).join(", ")
+            : "João Pessoa"}{" "}
+          · {CITY.sampleDate} · {CITY.refresh}
         </p>
         <h1 className="mt-2 font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
           Todas as opções

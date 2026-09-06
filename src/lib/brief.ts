@@ -279,13 +279,35 @@ export function reading(brief: Brief, matches: Match[]): string {
 
 export const MATCH_PER_RUMO = 3;
 
+function sameZoneAsAsked(nbId: string, places: string[]) {
+  const asked = places
+    .map((id) => NEIGHBORHOODS.find((n) => n.id === id)?.zone)
+    .filter(Boolean);
+  const zone = NEIGHBORHOODS.find((n) => n.id === nbId)?.zone;
+  return Boolean(zone && asked.includes(zone));
+}
+
+export function inAskedPlace(nbId: string, places?: string[], allowZone = true) {
+  if (!places?.length) return true;
+  if (places.includes(nbId)) return true;
+  return allowZone && sameZoneAsAsked(nbId, places);
+}
+
 export function matchBrief(brief: Brief): Match[] {
-  return LISTINGS_SCORED.map((card) => {
+  const places = brief.places ?? [];
+  const scored = LISTINGS_SCORED.map((card) => {
     const fit = fitScore(card, brief);
     return { card, fit, why: why(card, brief) };
-  })
-    .sort((a, b) => b.fit - a.fit)
-    .slice(0, MATCH_PER_RUMO);
+  }).sort((a, b) => b.fit - a.fit);
+
+  if (!places.length) return scored.slice(0, MATCH_PER_RUMO);
+
+  const exact = scored.filter((m) => places.includes(m.card.nb.id));
+  if (exact.length >= MATCH_PER_RUMO) return exact.slice(0, MATCH_PER_RUMO);
+  const zoneFill = scored.filter(
+    (m) => !places.includes(m.card.nb.id) && sameZoneAsAsked(m.card.nb.id, places),
+  );
+  return [...exact, ...zoneFill].slice(0, MATCH_PER_RUMO);
 }
 
 function fitScore(card: Scorecard, brief: Brief): number {
@@ -335,8 +357,8 @@ function fitScore(card: Scorecard, brief: Brief): number {
   const places = brief.places ?? [];
   if (places.length) {
     if (places.includes(nb.id)) s += 0.9;
-    else if (places.some((id) => NEIGHBORHOODS.find((n) => n.id === id)?.zone === nb.zone)) s += 0.22;
-    else s *= 0.12;
+    else if (sameZoneAsAsked(nb.id, places)) s += 0.15;
+    else s *= 0.05;
   }
 
   return s;

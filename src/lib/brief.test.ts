@@ -85,6 +85,7 @@ describe("agente unitário — rumo", () => {
     assert.match(text, /Tambaú/);
     assert.equal(/hóspede de Tambaú não entra/i.test(text), false);
     assert.equal(matches.some((m) => m.card.nb.id === "expedicionarios"), false);
+    assert.ok(matches.every((m) => m.card.nb.zone === "orla" || m.card.nb.id === "tambau"));
   });
 
   it("WhatsApp e e-mail do cadastro", () => {
