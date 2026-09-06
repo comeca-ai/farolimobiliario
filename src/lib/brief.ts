@@ -19,28 +19,28 @@ export const GOAL_LABEL: Record<LifeGoal, string> = {
 export const GOAL_HINT: Record<LifeGoal, string> = {
   renda: "O caixa do imóvel precisa trabalhar agora.",
   patrimonio: "Comprar abaixo do justo e deixar o bairro subir.",
-  morar: "Uso próprio, rua, silêncio — não hóspede.",
+  morar: "Uso próprio, silêncio — não hóspede.",
   aposentar: "Aluguel longo, pouca operação, parcela que se paga.",
 };
 
 export const GOAL_HEADLINE: Record<LifeGoal, string> = {
   renda: "O caixa agora",
   patrimonio: "Abaixo do justo",
-  morar: "Vida de rua",
+  morar: "Para viver",
   aposentar: "Aluguel que se paga",
 };
 
 export const GOAL_SORT: Record<LifeGoal, string> = {
-  renda: "ordenados por yield",
+  renda: "ordenados por rentabilidade",
   patrimonio: "ordenados por spread",
-  morar: "ordenados por moradia",
+  morar: "ordenados para morar",
   aposentar: "ordenados por aluguel longo",
 };
 
 export const GOAL_HERO_KICK: Record<LifeGoal, string> = {
   renda: "Maior caixa · temporada",
   patrimonio: "Maior spread",
-  morar: "Melhor para viver",
+  morar: "Melhor para a família",
   aposentar: "Melhor aluguel longo",
 };
 
@@ -49,24 +49,21 @@ export function punchForGoal(card: Scorecard, goal: LifeGoal): { value: string; 
     const pay = card.paybackMonths ? ` · payback ${Math.round(card.paybackMonths)} meses` : "";
     return {
       value: pctAbs(Math.max(card.strYield, 0)),
-      caption: `yield STR líquido${pay}`,
+      caption: `rentabilidade de temporada, já líquida${pay}`,
     };
   }
   if (goal === "patrimonio") {
     return { value: pct(card.discount), caption: "abaixo do justo do bairro" };
   }
   if (goal === "morar") {
-    if (card.listing.portalCount === 0) {
-      return { value: "rua", caption: "fora dos portais · para viver" };
-    }
     return {
-      value: `${card.listing.rooms}q`,
-      caption: `${card.listing.area} m² · moradia, não diária`,
+      value: compactBrl(card.listing.ask),
+      caption: `${card.listing.area} m² · ${card.nb.name} · uso próprio`,
     };
   }
   return {
     value: pctAbs(Math.max(card.ltrYield, 0)),
-    caption: "aluguel longo ao ano, já líquido",
+    caption: "aluguel tradicional ao ano, já líquido",
   };
 }
 
@@ -92,8 +89,8 @@ export function rumoKickerFor(card: Scorecard, goal: LifeGoal) {
   }
   if (goal === "morar") {
     if (listing.type === "casa") return "Casa";
-    if (listing.portalCount === 0) return "Rua";
-    return "Moradia";
+    if (listing.portalCount === 0) return "Fora dos portais";
+    return "Uso próprio";
   }
   if (goal === "aposentar") return "Aluguel longo";
   if (listing.sources.includes("leilao")) return "Leilão";
@@ -201,7 +198,7 @@ export function proposeRumos(text: string): RumoGuess[] {
   const whyFor: Record<LifeGoal, string> = {
     renda: "Li caixa agora — flat, diária, parcela.",
     patrimonio: "Li compra abaixo do justo e tempo para o m².",
-    morar: "Li uso próprio, rua, família — não hóspede.",
+    morar: "Li uso próprio, família — não hóspede.",
     aposentar: "Li renda longa, pouca operação.",
   };
   return (Object.keys(scores) as LifeGoal[])
@@ -221,15 +218,15 @@ export function reading(brief: Brief, matches: Match[]): string {
   const goal = GOAL_LABEL[brief.goal].toLowerCase();
 
   if (brief.goal === "renda") {
-    return `O rumo é ${goal}. Em João Pessoa isso não é casa no Altiplano — é flat ou studio na orla, NOI de curta temporada cobrindo a parcela. Li a mesa. Três opções. Os mais aderentes puxam ${place}: ticket que cabe agora, ocupação de corredor turístico, operação de Airbnb.`;
+    return `O rumo é ${goal}. Em João Pessoa isso não é casa no Altiplano — é flat ou studio na orla, temporada cobrindo a parcela. Li a mesa. Três opções. Os mais aderentes puxam ${place}: ticket que cabe agora, ocupação de corredor turístico.`;
   }
   if (brief.goal === "patrimonio") {
-    return `O rumo é ${goal}. O Farol procura spread: ask abaixo do m² justo, bairro ainda em alta de 12 meses, pouco holofote de portal. Li a mesa. Três opções. O que sobra começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar, não yield de fim de semana.`;
+    return `O rumo é ${goal}. O Farol procura spread: ask abaixo do m² justo, bairro ainda em alta de 12 meses, pouco holofote de portal. Li a mesa. Três opções. O que sobra começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar, não diária de fim de semana.`;
   }
   if (brief.goal === "morar") {
-    return `O rumo é morar ou deixar para a família. Hóspede de Tambaú não entra nesta conta. Li a mesa. Três opções de casa e apto com vida de rua — o que o portal ainda não embalou. ${place} aparece primeiro porque o imóvel ainda é moradia, não ativo de diária.`;
+    return `O rumo é morar ou deixar para a família. Hóspede de Tambaú não entra nesta conta. Li a mesa. Três opções de casa e apto para viver — o que o portal ainda não embalou. ${place} aparece primeiro porque o imóvel ainda é moradia, não ativo de diária.`;
   }
-  return `O rumo é ${goal}. A operação de Airbnb cansa; o que importa é aluguel longo estável, condomínio que não coma a renda, bairro que não dependa de temporada. Li a mesa. Três opções. ${place} entra porque o NOI tradicional se sustenta sem check-in.`;
+  return `O rumo é ${goal}. Temporada cansa; o que importa é aluguel longo estável, condomínio que não coma a renda, bairro que não dependa de hóspede. Li a mesa. Três opções. ${place} entra porque o aluguel tradicional se sustenta sem check-in.`;
 }
 
 export const MATCH_PER_RUMO = 3;
@@ -296,13 +293,13 @@ function why(card: Scorecard, brief: Brief): string {
   const pay = paybackMonths ? `${Math.round(paybackMonths)} meses` : "não fecha";
 
   if (brief.goal === "renda") {
-    return `Yield STR ${pctAbs(Math.max(strYield, 0))} em ${nb.name}, payback ${pay}. Com horizonte de ${brief.years} anos, o caixa da diária pesa mais que esperar o m² — e o ticket ${compactBrl(listing.ask)} ainda cabe numa operação que você consegue tocar.`;
+    return `Yield de temporada ${pctAbs(Math.max(strYield, 0))} em ${nb.name}, payback ${pay}. Com horizonte de ${brief.years} anos, o caixa da diária pesa mais que esperar o m² — e o ticket ${compactBrl(listing.ask)} ainda cabe numa operação que você consegue tocar.`;
   }
   if (brief.goal === "patrimonio") {
     return `${pct(discount)} versus o justo de ${nb.name} (${pct(nb.yoy)} em 12 meses). Seus ${brief.years} anos são tempo de realizar o spread, não de gerir hóspede. ${listing.portalCount === 0 ? "Fora dos portais — menos gente vendo o mesmo desconto." : ""}`;
   }
   if (brief.goal === "morar") {
-    return `${listing.rooms} quarto${listing.rooms > 1 ? "s" : ""} em ${nb.name}, ${listing.area} m², ${listing.portalCount === 0 ? "ainda na rua." : "pouco holofote."} Serve para viver, não para turn-over de fim de semana. Aluguel equivalente ${pctAbs(Math.max(ltrYield, 0))} se o plano mudar.`;
+    return `${listing.rooms} quarto${listing.rooms > 1 ? "s" : ""} em ${nb.name}, ${listing.area} m², ${listing.portalCount === 0 ? "ainda fora do portal." : "pouco holofote."} Serve para viver, não para turn-over de fim de semana. Aluguel equivalente ${pctAbs(Math.max(ltrYield, 0))} se o plano mudar.`;
   }
   return `Aluguel longo ${pctAbs(Math.max(ltrYield, 0))} a.a. em ${nb.name}, condomínio ${compactBrl(listing.condo)}/mês. Pouca operação. Renda que não pede check-in.`;
 }

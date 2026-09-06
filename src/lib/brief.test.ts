@@ -37,8 +37,16 @@ describe("agente unitário — rumo", () => {
   it("renda privilegia yield STR no número", () => {
     const top = matchBrief({ goal: "renda", ...GOAL_DEFAULTS.renda })[0].card;
     const punch = punchForGoal(top, "renda");
-    assert.match(punch.caption, /STR/);
+    assert.match(punch.caption, /temporada/);
     assert.match(punch.value, /%/);
+  });
+
+  it("morar mostra ticket, nunca a palavra rua", () => {
+    const top = matchBrief({ goal: "morar", ...GOAL_DEFAULTS.morar })[0].card;
+    const punch = punchForGoal(top, "morar");
+    assert.match(punch.value, /R\$/);
+    assert.equal(/rua/i.test(punch.value + punch.caption), false);
+    assert.equal(/vida de rua/i.test(punch.caption), false);
   });
 
   it("patrimônio privilegia spread", () => {

@@ -113,7 +113,7 @@ export function OrlaMap({
           <span className="size-1.5 rounded-full bg-deal" /> Airbnb
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="size-1.5 rounded-full bg-warn" /> Rua
+          <span className="size-1.5 rounded-full bg-warn" /> Fora do portal
         </span>
       </div>
     </div>
