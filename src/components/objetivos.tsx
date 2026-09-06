@@ -22,10 +22,10 @@ export function Objetivos({ onAgree }: { onAgree: (brief: Brief) => void }) {
     <main className="mx-auto max-w-xl px-4 pb-20 pt-10 md:pt-16">
       <p className="text-xs uppercase tracking-widest text-accent">O que a vida pede</p>
       <h1 className="mt-3 font-display text-4xl leading-none tracking-tight md:text-5xl">
-        Escreve. O Farol lê o rumo.
+        Escreva seu objetivo de vida com imóveis.
       </h1>
       <p className="mt-3 text-sm leading-relaxed text-muted">
-        Como se fosse para alguém que aponta. Sem lista. Sem corretor.
+        Vamos iluminar para chegar lá.
       </p>
 
       <form
