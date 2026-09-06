@@ -49,7 +49,7 @@ export const useDesk = create<DeskState>()(
       setShowDesk: (showDesk) => set({ showDesk }),
     }),
     {
-      name: "farol-desk-v2",
+      name: "farol-desk-v3",
       partialize: (s) => ({ watched: s.watched, brief: s.brief, lead: s.lead }),
     },
   ),
