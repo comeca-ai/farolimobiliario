@@ -33,16 +33,17 @@ export function Landing({ onUnlock }: { onUnlock: () => void }) {
 
       <form onSubmit={submit} className="mt-10">
         <label className="text-xs uppercase tracking-widest text-subtle" htmlFor="convite">
-          Link ou código do convite
+          E-mail convidado ou link
         </label>
         <div className="mt-2 flex flex-col gap-2 sm:flex-row">
           <input
             id="convite"
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            autoComplete="off"
+            autoComplete="email"
+            inputMode="email"
             spellCheck={false}
-            placeholder="Cole o convite"
+            placeholder="O e-mail do convite"
             className="h-12 min-w-0 flex-1 rounded-full bg-surface px-5 text-sm text-fg outline-none ring-1 ring-transparent placeholder:text-subtle focus:ring-accent/40"
           />
           <button
@@ -57,7 +58,7 @@ export function Landing({ onUnlock }: { onUnlock: () => void }) {
       </form>
 
       <p className="mt-8 text-sm text-subtle">
-        O convite é um link mágico. Quem tem, entra. Quem não tem, permanece fora.
+        O convite é o e-mail que foi chamado, ou o link. Quem não está na mesa, permanece fora.
       </p>
     </main>
   );
