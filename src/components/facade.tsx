@@ -46,25 +46,25 @@ export function Facade({
       className={cn("h-full w-full", className)}
       aria-hidden
     >
-      <rect width="240" height="140" fill="var(--color-bg)" />
-      <rect x="186" y="0" width="54" height="140" fill="var(--color-raised)" />
+      <rect width="240" height="140" fill="var(--color-sky)" />
+      <rect x="186" y="0" width="54" height="140" fill="var(--color-sea)" />
       <path
         d="M186 0 C190 28 184 54 189 82 C193 110 187 126 190 140"
         fill="none"
         stroke="var(--color-accent)"
-        strokeOpacity="0.35"
+        strokeOpacity="0.45"
         strokeWidth="0.8"
       />
-      <rect x="0" y="118" width="186" height="22" fill="var(--color-surface)" />
-      <path d="M0 118h186" stroke="var(--color-accent)" strokeOpacity="0.2" />
+      <rect x="0" y="118" width="186" height="22" fill="var(--color-ground)" />
+      <path d="M0 118h186" stroke="var(--color-fg)" strokeOpacity="0.12" />
       {type === "casa"
         ? buildings.map((b, i) => (
             <g key={i}>
               <path
                 d={`M${b.x - 6} ${140 - 22 - b.h + 8} L${b.x + b.w / 2} ${140 - 22 - b.h - 16} L${b.x + b.w + 6} ${140 - 22 - b.h + 8}`}
-                fill="var(--color-raised)"
-                stroke="var(--color-accent)"
-                strokeOpacity="0.3"
+                fill="var(--color-building)"
+                stroke="var(--color-fg)"
+                strokeOpacity="0.2"
               />
               <BuildingRect b={b} seed={seed + i} />
             </g>
@@ -98,9 +98,9 @@ function BuildingRect({ b, seed }: { b: Building; seed: number }) {
         y={y}
         width={b.w}
         height={b.h}
-        fill="var(--color-raised)"
-        stroke="var(--color-accent)"
-        strokeOpacity="0.3"
+        fill="var(--color-building)"
+        stroke="var(--color-fg)"
+        strokeOpacity="0.18"
       />
       {windows.map((win, i) => (
         <rect
@@ -109,8 +109,8 @@ function BuildingRect({ b, seed }: { b: Building; seed: number }) {
           y={y + 4 + gapY + win.y * (wh + gapY)}
           width={ww}
           height={wh}
-          fill={win.on ? "var(--color-accent)" : "var(--color-bg)"}
-          opacity={win.on ? 0.55 : 0.8}
+          fill={win.on ? "var(--color-accent)" : "var(--color-sky)"}
+          opacity={win.on ? 0.8 : 0.55}
         />
       ))}
     </g>

@@ -33,16 +33,16 @@ export function OrlaMap({
         role="img"
       >
         <title>Orla leste de João Pessoa, Atlântico à direita</title>
-        <rect width="100" height="100" fill="var(--color-bg)" />
+        <rect width="100" height="100" fill="var(--color-ground)" />
         <path
           d="M78 0 C80 12 76 22 79 34 C82 48 77 60 80 72 C83 86 79 94 81 100 L100 100 L100 0 Z"
-          fill="var(--color-raised)"
+          fill="var(--color-sea)"
         />
         <path
           d="M78 0 C80 12 76 22 79 34 C82 48 77 60 80 72 C83 86 79 94 81 100"
           fill="none"
           stroke="var(--color-accent)"
-          strokeOpacity="0.4"
+          strokeOpacity="0.55"
           strokeWidth="0.5"
         />
         {NEIGHBORHOODS.map((n) => (

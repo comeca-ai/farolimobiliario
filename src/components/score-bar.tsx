@@ -13,7 +13,7 @@ export function ScoreBar({
       className={cn("h-1 w-full overflow-hidden rounded-full bg-raised", className)}
       aria-hidden
     >
-      <div className="h-full rounded-full bg-accent" style={{ width: `${width}%` }} />
+      <div className="h-full rounded-full bg-deal" style={{ width: `${width}%` }} />
     </div>
   );
 }
