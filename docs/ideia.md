@@ -10,8 +10,10 @@
 
 **Restrição.** Só JP. Sinais desta versão são modelados (comps públicos). Não é estoque real — a UI diz isso. Sem dado demo que pareça preço de anúncio.
 
-**Cortar da home.** Lenda, “como funciona”, “nota de quem construiu”. Cadastro na frente do job. Rumos “para viver” e “aluguel que se paga”.
+**Cadastro mínimo.** E-mail + WhatsApp no mesmo viewport do job. Sem isso o Farol não vê quem chegou. Sem senha, sem cartão, sem lenda antes.
 
-**Tela.** Escolhe caixa ou preço → vê 3 oportunidades. Problema do imóvel no card. Sem rolar para achar o que o produto faz. Cadastro, se existir, depois do resultado.
+**Cortar da home.** Lenda, “como funciona”, “nota de quem construiu”, caixinha de objetivo de vida. Rumos “para viver” e “aluguel que se paga”.
+
+**Tela.** Escolhe Airbnb ou abaixo do preço + deixa e-mail e WhatsApp → vê 3 oportunidades. Problema do imóvel no card. Sem rolar para achar o que o produto faz.
 
 **No ar.** [farolqueprotege.com.br](https://farolqueprotege.com.br) · Worker `farolimobiliario` · `farolimobiliario.jhonata-emerick.workers.dev`.

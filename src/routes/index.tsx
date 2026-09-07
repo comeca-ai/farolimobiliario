@@ -1,10 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Search } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-import { Cadastro } from "@/components/cadastro";
-import { Landing } from "@/components/briefing";
+import { useMemo } from "react";
+import { JobDoor } from "@/components/job-door";
 import { ListingCard } from "@/components/listing-card";
-import { Objetivos } from "@/components/objetivos";
 import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
 import { CITY, NEIGHBORHOOD_BY_ID } from "@/data/market";
@@ -21,6 +19,7 @@ import {
   surfaceBrief,
   type Brief,
 } from "@/lib/brief";
+import { isHomeGoal, openJobBrief } from "@/lib/job";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
 import { useDesk, type RadarFilter } from "@/lib/store";
@@ -36,24 +35,17 @@ function Home() {
   const showDesk = useDesk((s) => s.showDesk);
   const setBrief = useDesk((s) => s.setBrief);
   const setLead = useDesk((s) => s.setLead);
-  const enterIntent = useDesk((s) => s.enterIntent);
-  const consumeEnterIntent = useDesk((s) => s.consumeEnterIntent);
-  const [door, setDoor] = useState<"landing" | "cadastro">("landing");
 
-  useEffect(() => {
-    if (lead || !enterIntent) return;
-    consumeEnterIntent();
-    setDoor("cadastro");
-  }, [enterIntent, lead, consumeEnterIntent]);
-
-  if (!lead) {
-    if (door === "cadastro") {
-      return <Cadastro onSubmit={setLead} onBack={() => setDoor("landing")} />;
-    }
-    return <Landing onEnter={() => setDoor("cadastro")} />;
-  }
-  if (!brief) {
-    return <Objetivos onAgree={setBrief} />;
+  if (!lead || !brief || !isHomeGoal(brief.goal)) {
+    return (
+      <JobDoor
+        existingLead={lead}
+        onGo={(nextLead, goal) => {
+          setLead(nextLead);
+          setBrief(openJobBrief(goal));
+        }}
+      />
+    );
   }
   if (showDesk) {
     return <MesaBoard />;
@@ -88,7 +80,7 @@ function Reading({ brief }: { brief: Brief }) {
           </h1>
           <p className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">{text}</p>
           <p className="mt-2 mb-7 flex items-center gap-2.5 text-[12.5px] text-subtle">
-            <span>{matches.length} encaixes principais</span>
+            <span>{matches.length} oportunidades</span>
             <span className="size-0.5 rounded-full bg-subtle/50" />
             <span>{totalMatches} sinais aderentes</span>
             <span className="size-0.5 rounded-full bg-subtle/50" />
@@ -105,7 +97,7 @@ function Reading({ brief }: { brief: Brief }) {
             />
           ) : (
             <p className="rounded-[14px] bg-surface px-5 py-10 text-sm text-muted shadow-(--shadow-border)">
-              Nenhum sinal neste rumo.
+              Nenhum sinal neste rumo. Os comps desta visita não fecharam conta.
             </p>
           )}
 
@@ -177,7 +169,6 @@ function Reading({ brief }: { brief: Brief }) {
         </aside>
       </div>
 
-      {/* Mobile sticky CTA — mirrors landing sticky; desktop keeps inline CTAs */}
       <div
         className="fixed inset-x-0 bottom-0 z-40 border-t border-line/80 bg-bg/95 px-4 pt-3 backdrop-blur md:hidden"
         style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}

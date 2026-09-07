@@ -9,6 +9,8 @@ const r = spawnSync(
     "--experimental-strip-types",
     "--test",
     "src/lib/brief.test.ts",
+    "src/lib/job.test.ts",
+    "scripts/job-tela.test.mjs",
   ],
   { stdio: "inherit" },
 );

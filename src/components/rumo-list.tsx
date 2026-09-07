@@ -1,3 +1,4 @@
+import { listingProblem } from "@/lib/job";
 import type { ReactNode } from "react";
 import {
   punchForGoal,
@@ -43,6 +44,7 @@ export function RumoHero({
 }) {
   const { listing, nb } = card;
   const hit = hitOf(card, goal);
+  const problem = listingProblem(listing);
   return (
     <article className="rounded-[14px] bg-surface px-5 py-6 shadow-(--shadow-border) md:px-7 md:py-7">
       <button type="button" onClick={() => onOpen(listing.id)} className="pressable w-full text-left">
@@ -65,8 +67,9 @@ export function RumoHero({
             <p className="mt-1.5 text-xs text-subtle">{hit.caption}</p>
           </div>
         </div>
+        <p className="mt-4 text-sm font-medium text-risk">Problema: {problem}</p>
         {why ? (
-          <p className="mt-5 max-w-[56ch] text-sm leading-relaxed text-muted">{why}</p>
+          <p className="mt-3 max-w-[56ch] text-sm leading-relaxed text-muted">{why}</p>
         ) : null}
       </button>
     </article>
@@ -86,6 +89,7 @@ export function RumoRow({
 }) {
   const { listing, nb } = card;
   const hit = hitOf(card, goal);
+  const problem = listingProblem(listing);
   return (
     <li className="border-t border-line">
       <button
@@ -106,6 +110,7 @@ export function RumoRow({
           <span className="mt-1 block text-[13px] text-subtle">
             {nb.name} · {listing.area} m² · {compactBrl(listing.ask)}
           </span>
+          <span className="mt-1 block text-[13px] text-risk">Problema: {problem}</span>
         </span>
         <span className="col-start-2 mt-2 sm:col-start-auto sm:mt-0 sm:text-right">
           <span className={cn("block font-display text-[1.6rem] leading-none md:text-[26px]", hitTone(card, goal))}>
