@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
 import { CITY } from "@/data/market";
 import { brl } from "@/lib/format";
 
 export function Landing({ onEnter }: { onEnter: () => void }) {
+  const [showSticky, setShowSticky] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      // Sticky discreto no mobile depois do hero (~primeiro bloco)
+      setShowSticky(window.scrollY > 420);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <main>
       <section className="mx-auto grid max-w-[1120px] items-end gap-12 px-5 pb-16 pt-14 md:grid-cols-2 md:gap-12 md:pt-20">
@@ -23,19 +36,19 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
               onClick={onEnter}
               className="pressable inline-flex h-14 items-center rounded-full bg-accent px-10 text-[15px] font-medium text-accent-fg"
             >
-              Entrar
+              Entrar · ver o spread
             </button>
             <span className="text-sm text-muted">Grátis. Sem plano, sem cartão.</span>
           </div>
         </div>
 
         <div className="border-line md:border-l md:pl-7">
-          <p className="text-xs uppercase tracking-[0.18em] text-subtle">O metro da cidade hoje</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-muted">O metro da cidade hoje</p>
           <p className="mt-3 font-display text-[clamp(3rem,7vw,4.75rem)] leading-none tracking-tight text-deal">
             {brl.format(CITY.m2).replace(/\s/g, "\u00a0")}
           </p>
           <p className="mt-2 text-base">por m², João Pessoa</p>
-          <p className="mt-5 text-xs leading-relaxed text-subtle">
+          <p className="mt-5 text-[13px] leading-relaxed text-muted">
             Fonte: FipeZAP / MySide, set 2026. Comps por bairro; a leitura do imóvel ajusta pelo
             estado.
           </p>
@@ -47,7 +60,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
           <h2 className="max-w-lg font-display text-[clamp(1.9rem,4vw,2.6rem)] font-normal leading-tight tracking-tight">
             Como funciona
           </h2>
-          <ol className="mt-9 grid gap-5 sm:grid-cols-3">
+          <ol className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3">
             <li className="rounded-2xl bg-surface p-6 shadow-(--shadow-border)">
               <p className="font-display text-[22px] text-accent">01</p>
               <p className="mt-3 font-display text-xl leading-snug">Entra</p>
@@ -64,7 +77,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
             </li>
             <li className="rounded-2xl bg-surface p-6 shadow-(--shadow-border)">
               <p className="font-display text-[22px] text-accent">03</p>
-              <p className="mt-3 font-display text-xl leading-snug">Concordar</p>
+              <p className="mt-3 font-display text-xl leading-snug">Concorda</p>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">
                 Você diz sim. Aí os imóveis — spread, risco e a rua. Base nova toda segunda, 9h.
               </p>
@@ -76,7 +89,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
       <section className="border-t border-line">
         <div className="mx-auto grid max-w-[1120px] gap-10 px-5 py-16 md:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-subtle">Nota de quem construiu</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-muted">Nota de quem construiu</p>
             <h2 className="mt-4 font-display text-[clamp(1.75rem,3.6vw,2.4rem)] font-normal leading-tight tracking-tight">
               Não é Zap. Não é corretor.
             </h2>
@@ -98,7 +111,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
           <div className="grid items-center gap-8 rounded-3xl bg-surface px-6 py-10 shadow-(--shadow-border) md:grid-cols-2 md:px-14 md:py-14">
             <div>
               <h2 className="font-display text-[clamp(1.9rem,4.4vw,2.9rem)] font-normal leading-[1.08] tracking-tight">
-                Entrar — grátis.
+                Entrar · ver o spread.
                 <br />
                 Sem plano.
               </h2>
@@ -112,9 +125,9 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
                 onClick={onEnter}
                 className="pressable inline-flex h-14 items-center rounded-full bg-accent px-11 text-[15px] font-medium text-accent-fg"
               >
-                Entrar
+                Entrar · ver o spread
               </button>
-              <p className="max-w-sm text-[13px] leading-relaxed text-subtle">
+              <p className="max-w-sm text-[13px] leading-relaxed text-muted">
                 Sinais desta versão são modelados com comps públicos de bairro. Não é oferta nem
                 recomendação de investimento.
               </p>
@@ -122,7 +135,18 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
           </div>
         </div>
       </section>
+
+      {showSticky ? (
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md md:hidden">
+          <button
+            type="button"
+            onClick={onEnter}
+            className="pressable flex h-12 w-full items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
+          >
+            Entrar · ver o spread
+          </button>
+        </div>
+      ) : null}
     </main>
   );
 }
-

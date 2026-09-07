@@ -18,14 +18,14 @@ function BairrosPage() {
         O m² é o chão.
       </h1>
       <p className="mt-3 max-w-xl text-sm text-muted">
-        João Pessoa {brl.format(CITY.m2)}/m² · {pct(CITY.yoy)} em 12 meses. STR da cidade{" "}
+        João Pessoa {brl.format(CITY.m2)}/m² · {pct(CITY.yoy)} em 12 meses. STR · ocupação da cidade{" "}
         {pctAbs(CITY.strOccupancy)} · ADR {brl.format(CITY.strAdr)}.
       </p>
 
       <ul className="mt-8 grid gap-3 sm:grid-cols-2">
         {sorted.map((n) => (
           <li key={n.id} className="rounded-2xl bg-surface p-4 shadow-(--shadow-border) md:p-5">
-            <p className="text-xs uppercase tracking-widest text-subtle">
+            <p className="text-xs uppercase tracking-widest text-muted">
               {n.zone === "cabedelo" ? "Cabedelo" : n.zone === "orla" ? "Orla" : "Interior"}
             </p>
             <div className="mt-1 flex items-end justify-between gap-3">
@@ -36,23 +36,34 @@ function BairrosPage() {
               <div
                 className="h-full rounded-full bg-accent"
                 style={{ width: `${(n.m2 / maxM2) * 100}%` }}
+                aria-hidden
               />
             </div>
+            <p className="mt-1.5 text-[12px] leading-relaxed text-muted">
+              Barra relativa ao m² mais alto da cidade nesta lista — não ao m² médio de João Pessoa
+              ({brl.format(CITY.m2)}).
+            </p>
             <dl className="mt-4 grid grid-cols-3 gap-2 text-sm">
               <div>
-                <dt className="text-xs uppercase tracking-widest text-subtle">12 meses</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                  12 meses
+                </dt>
                 <dd className={cn("mt-1 tabular-nums", n.yoy >= 0.12 ? "text-deal" : "text-fg")}>
                   {pct(n.yoy)}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-widest text-subtle">Aluguel</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                  Aluguel
+                </dt>
                 <dd className="mt-1 tabular-nums">
                   {n.rentM2.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-widest text-subtle">STR</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                  STR · ocupação
+                </dt>
                 <dd className="mt-1 tabular-nums">{pctAbs(n.strOccupancy)}</dd>
               </div>
             </dl>
