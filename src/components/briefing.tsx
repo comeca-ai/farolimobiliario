@@ -11,11 +11,11 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
             Farol
           </h1>
           <p className="mt-5 max-w-md font-display text-[clamp(1.5rem,3.4vw,2.1rem)] leading-snug">
-            Aponta o spread.
+            Mostra primeiro o imóvel que fecha conta.
           </p>
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
-            Abaixo do metro justo da cidade — ou fora do portal — a luz acende. Não é Zap. Não é
-            corretor.
+            Menos vitrine, mais decisão. O Farol lê João Pessoa, separa os encaixes mais fortes e
+            abre o mapa completo quando vale a visita.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <button
@@ -23,10 +23,15 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
               onClick={onEnter}
               className="pressable inline-flex h-14 items-center rounded-full bg-accent px-10 text-[15px] font-medium text-accent-fg"
             >
-              Entrar
+              Ver imóveis agora
             </button>
-            <span className="text-sm text-muted">Grátis. Sem plano, sem cartão.</span>
+            <span className="text-sm text-muted">Grátis. Cadastro rápido. Sem plano, sem cartão.</span>
           </div>
+          <ul className="mt-6 grid gap-2 text-sm text-muted sm:max-w-lg">
+            <li>• 3 melhores encaixes primeiro, depois mais imóveis no mapa da cidade.</li>
+            <li>• Inventário recarregado em toda visita; comps públicos seguem visíveis.</li>
+            <li>• Copy honesta: sem promessa de ganho, com risco e contexto de bairro.</li>
+          </ul>
         </div>
 
         <div className="border-line md:border-l md:pl-7">
@@ -52,21 +57,21 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
               <p className="font-display text-[22px] text-accent">01</p>
               <p className="mt-3 font-display text-xl leading-snug">Entra</p>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">
-                E-mail e WhatsApp. Sem senha, sem cartão.
+                E-mail e WhatsApp. Sem senha, sem cartão, sem conversa solta antes de mostrar a mesa.
               </p>
             </li>
             <li className="rounded-2xl bg-surface p-6 shadow-(--shadow-border)">
               <p className="font-display text-[22px] text-accent">02</p>
               <p className="mt-3 font-display text-xl leading-snug">Escreve</p>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">
-                O que a vida pede, numa caixinha. O Farol lê o rumo.
+                O que a vida pede, numa caixinha. O Farol lê o rumo e separa os encaixes.
               </p>
             </li>
             <li className="rounded-2xl bg-surface p-6 shadow-(--shadow-border)">
               <p className="font-display text-[22px] text-accent">03</p>
               <p className="mt-3 font-display text-xl leading-snug">Concordar</p>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">
-                Você diz sim. Aí os imóveis — spread, risco e a rua. Base nova toda segunda, 9h.
+                Você diz sim. Aí vêm os 3 melhores imóveis, mais sinais no mapa e a base recarregada em toda visita.
               </p>
             </li>
           </ol>
@@ -98,12 +103,12 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
           <div className="grid items-center gap-8 rounded-3xl bg-surface px-6 py-10 shadow-(--shadow-border) md:grid-cols-2 md:px-14 md:py-14">
             <div>
               <h2 className="font-display text-[clamp(1.9rem,4.4vw,2.9rem)] font-normal leading-[1.08] tracking-tight">
-                Entrar — grátis.
+                Abrir a mesa — grátis.
                 <br />
                 Sem plano.
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
-                E-mail e WhatsApp, depois a caixinha. Sem cartão, sem mensalidade.
+                E-mail e WhatsApp, depois a caixinha. Em segundos você vê os 3 melhores encaixes e pode abrir mais imóveis no mapa completo.
               </p>
             </div>
             <div className="flex flex-col items-start gap-3">
@@ -112,7 +117,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
                 onClick={onEnter}
                 className="pressable inline-flex h-14 items-center rounded-full bg-accent px-11 text-[15px] font-medium text-accent-fg"
               >
-                Entrar
+                Começar cadastro
               </button>
               <p className="max-w-sm text-[13px] leading-relaxed text-subtle">
                 Sinais desta versão são modelados com comps públicos de bairro. Não é oferta nem
@@ -125,4 +130,3 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
     </main>
   );
 }
-

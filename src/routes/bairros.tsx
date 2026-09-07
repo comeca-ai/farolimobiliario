@@ -12,7 +12,7 @@ function BairrosPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
       <p className="text-xs uppercase tracking-widest text-muted">
-        Comps de bairro · {CITY.sampleDate} · atualiza {CITY.refresh}
+        Inventário {CITY.refresh} · comps de bairro {CITY.sampleDate}
       </p>
       <h1 className="mt-2 font-display text-4xl tracking-tight text-balance md:text-5xl">
         O m² é o chão.

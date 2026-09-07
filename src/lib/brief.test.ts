@@ -3,11 +3,14 @@ import assert from "node:assert/strict";
 import {
   GOAL_DEFAULTS,
   MATCH_PER_RUMO,
+  SURFACE_PER_RUMO,
+  countBriefMatches,
   matchBrief,
   parsePlaces,
   proposeRumos,
   punchForGoal,
   reading,
+  surfaceBrief,
   type LifeGoal,
 } from "./brief.ts";
 import { validBrMobile, validEmail } from "./lead.ts";
@@ -34,6 +37,19 @@ describe("agente unitário — rumo", () => {
         .join("|"),
     );
     assert.equal(new Set(keys).size, GOALS.length);
+  });
+
+  it("surface mostra mais imóveis que a tríade principal", () => {
+    const top = matchBrief({ goal: "patrimonio", ...GOAL_DEFAULTS.patrimonio });
+    const surface = surfaceBrief({ goal: "patrimonio", ...GOAL_DEFAULTS.patrimonio });
+    assert.equal(top.length, MATCH_PER_RUMO);
+    assert.equal(surface.length, SURFACE_PER_RUMO);
+    assert.ok(surface.length > top.length);
+    assert.deepEqual(
+      surface.slice(0, MATCH_PER_RUMO).map((m) => m.card.listing.id),
+      top.map((m) => m.card.listing.id),
+    );
+    assert.equal(countBriefMatches({ goal: "patrimonio", ...GOAL_DEFAULTS.patrimonio }) >= surface.length, true);
   });
 
   it("renda privilegia yield STR no número", () => {
@@ -86,6 +102,14 @@ describe("agente unitário — rumo", () => {
     assert.equal(/hóspede de Tambaú não entra/i.test(text), false);
     assert.equal(matches.some((m) => m.card.nb.id === "expedicionarios"), false);
     assert.ok(matches.every((m) => m.card.nb.zone === "orla" || m.card.nb.id === "tambau"));
+    const surfaced = surfaceBrief({
+      goal: "morar",
+      ...GOAL_DEFAULTS.morar,
+      wish,
+      places,
+    });
+    assert.ok(surfaced.length > MATCH_PER_RUMO);
+    assert.ok(surfaced.every((m) => m.card.nb.zone === "orla" || m.card.nb.id === "tambau"));
   });
 
   it("WhatsApp e e-mail do cadastro", () => {

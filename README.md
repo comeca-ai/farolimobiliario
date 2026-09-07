@@ -5,7 +5,7 @@ Aponta o spread em **João Pessoa**. Não é Zap. Não é corretor.
 **No ar:** [https://farolqueprotege.com.br](https://farolqueprotege.com.br)  
 **Código:** [github.com/comeca-ai/farolimobiliario](https://github.com/comeca-ai/farolimobiliario)
 
-Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP / MySide, set/2026). Não é oferta nem recomendação de investimento.
+Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP / MySide, set/2026). O inventário da vitrine é recarregado em toda visita. Não é oferta nem recomendação de investimento.
 
 ## Funil
 
@@ -14,9 +14,10 @@ Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP /
 3. Caixinha — objetivo de vida com imóveis
 4. Rumo — a pessoa concorda
 5. Três opções daquele rumo + mapa da orla
-6. **Sair** no topo limpa a sessão
+6. Mais sinais aderentes logo abaixo e mesa completa para abrir toda a cidade
+7. **Sair** no topo limpa a sessão
 
-Quatro rumos, cada um com **três** imóveis distintos:
+Quatro rumos, cada um com **três** imóveis principais distintos, com mais sinais aderentes logo abaixo:
 
 | Rumo | O número grande |
 |---|---|
@@ -33,7 +34,7 @@ npm run test:base    # integridade: bairro, coords, score, estado 0–1
 npm test             # tudo (inclui os testes do template)
 ```
 
-Última passagem (2026-09-06): unitário **12/12**, integridade **4/4**, `tsc` limpo.
+Última passagem (2026-09-07): unitário **13/13**, integridade **4/4**, `tsc` limpo.
 
 ## GitHub Actions e secrets
 

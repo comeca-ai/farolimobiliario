@@ -20,10 +20,11 @@ export function Cadastro({
     <main className="mx-auto max-w-xl px-4 pb-20 pt-10 md:pt-16">
       <p className="text-xs uppercase tracking-widest text-accent">Cadastro</p>
       <h1 className="mt-3 font-display text-4xl leading-none tracking-tight md:text-5xl">
-        Entra. Depois a vida pede.
+        Seu mapa começa aqui.
       </h1>
       <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-        E-mail para o link. WhatsApp obrigatório — o dossiê chega onde você já lê. Sem senha.
+        E-mail para o link. WhatsApp obrigatório para mandar o dossiê onde você já responde. Sem
+        senha, sem corretagem, sem cartão.
       </p>
 
       <form
@@ -76,9 +77,13 @@ export function Cadastro({
           type="submit"
           className="pressable mt-2 h-14 rounded-full bg-accent text-sm font-medium text-accent-fg"
         >
-          Entrar
+          Continuar para a caixinha
         </button>
       </form>
+      <p className="mt-4 max-w-md text-xs leading-relaxed text-subtle">
+        Você ainda vai validar o rumo antes de ver os imóveis. Nada de promessa automática de
+        retorno.
+      </p>
 
       <button type="button" onClick={onBack} className="mt-6 text-sm text-muted">
         Voltar
