@@ -38,18 +38,27 @@ describe("job da home", () => {
     }
   });
 
-  it("cadastro mínimo: e-mail e WhatsApp, senão erro visível", () => {
+  it("cadastro mínimo: e-mail obrigatório, WhatsApp opcional", () => {
     assert.equal(
-      jobSubmitError({ goal: null, email: "a@b.com", whatsapp: "(83) 98888-0000", skipCadastro: false }),
+      jobSubmitError({ goal: null, email: "a@b.com", whatsapp: "", skipCadastro: false }),
       "Escolha Airbnb ou abaixo do preço.",
     );
     assert.match(
-      jobSubmitError({ goal: "renda", email: "x", whatsapp: "(83) 98888-0000", skipCadastro: false }) ?? "",
+      jobSubmitError({ goal: "renda", email: "x", whatsapp: "", skipCadastro: false }) ?? "",
       /e-mail/,
+    );
+    assert.equal(
+      jobSubmitError({
+        goal: "renda",
+        email: "rafinha_n1@hotmail.com",
+        whatsapp: "",
+        skipCadastro: false,
+      }),
+      null,
     );
     assert.match(
       jobSubmitError({ goal: "renda", email: "a@b.com", whatsapp: "8388880000", skipCadastro: false }) ?? "",
-      /DDD/,
+      /WhatsApp opcional/,
     );
     assert.equal(
       jobSubmitError({

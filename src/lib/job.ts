@@ -1,5 +1,5 @@
 import { GOAL_DEFAULTS, type Brief, type LifeGoal } from "@/lib/brief";
-import { validBrMobile, validEmail, type Lead } from "@/lib/lead";
+import { digits, validBrMobile, validEmail, type Lead } from "@/lib/lead";
 import type { Listing } from "@/data/listings";
 
 /** Rumos da home. O resto não paga o job. */
@@ -39,7 +39,10 @@ export function jobSubmitError(input: {
   if (!input.goal) return "Escolha Airbnb ou abaixo do preço.";
   if (input.skipCadastro) return null;
   if (!validEmail(input.email)) return "Precisamos de um e-mail válido — é por onde o Farol te vê.";
-  if (!validBrMobile(input.whatsapp)) return "Celular com DDD e o 9. Ex.: (83) 98888-0000.";
+  const wa = digits(input.whatsapp);
+  if (wa.length > 0 && !validBrMobile(input.whatsapp)) {
+    return "WhatsApp opcional. Se preencher, use DDD e o 9. Ex.: (83) 98888-0000.";
+  }
   return null;
 }
 

@@ -11,7 +11,7 @@ Job (fonte: [`docs/ideia.md`](docs/ideia.md)): localizar oportunidade — **flat
 
 ## Funil
 
-1. Home — dois rumos + cadastro mínimo (e-mail e WhatsApp)
+1. Home — dois rumos + e-mail (WhatsApp opcional)
 2. Três oportunidades daquele rumo, com o problema no card + mapa
 3. Mesa completa, se a pessoa pedir
 4. **Sair** no topo limpa a sessão
