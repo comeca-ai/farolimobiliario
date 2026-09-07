@@ -45,7 +45,7 @@ export function JobDoor({
           if (message) {
             if (!goal) return;
             if (!skipCadastro && message.includes("e-mail")) emailRef.current?.focus();
-            else waRef.current?.focus();
+            else if (message.includes("WhatsApp")) waRef.current?.focus();
             return;
           }
           if (!goal) return;
@@ -97,7 +97,7 @@ export function JobDoor({
             </label>
             <label className="block">
               <span className="text-xs uppercase tracking-widest text-muted">
-                WhatsApp <span className="text-accent">obrigatório</span>
+                WhatsApp <span className="text-subtle">opcional</span>
               </span>
               <span className="mt-2 flex h-14 items-center rounded-2xl bg-surface px-4 shadow-(--shadow-border)">
                 <span className="pr-3 font-medium text-muted">+55</span>
@@ -109,12 +109,12 @@ export function JobDoor({
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(maskBrMobile(e.target.value))}
                   placeholder="(83) 9 0000-0000"
-                  aria-invalid={Boolean(error?.includes("DDD"))}
+                  aria-invalid={Boolean(error?.includes("WhatsApp"))}
                   className="h-full min-w-0 flex-1 bg-transparent text-base text-fg outline-none placeholder:text-muted/70"
                 />
               </span>
               <span className="mt-1.5 block text-[13px] text-muted">
-                Sem cadastro o Farol não te vê. Sem senha, sem cartão.
+                Agora o Farol te vê pelo e-mail. WhatsApp entra quando o envio estiver no ar.
               </span>
             </label>
           </div>
