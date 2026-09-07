@@ -19,7 +19,7 @@ import {
   surfaceBrief,
   type Brief,
 } from "@/lib/brief";
-import { isHomeGoal, openJobBrief } from "@/lib/job";
+import { isHomeGoal, HOME_LABEL, openJobBrief } from "@/lib/job";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
 import { useDesk, type RadarFilter } from "@/lib/store";
@@ -76,15 +76,12 @@ function Reading({ brief }: { brief: Brief }) {
       <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
         <section>
           <h1 className="font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
-            {GOAL_HEADLINE[brief.goal]}
+            {isHomeGoal(brief.goal) ? HOME_LABEL[brief.goal] : GOAL_HEADLINE[brief.goal]}
           </h1>
-          <p className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">{text}</p>
-          <p className="mt-2 mb-7 flex items-center gap-2.5 text-[12.5px] text-subtle">
-            <span>{matches.length} oportunidades</span>
-            <span className="size-0.5 rounded-full bg-subtle/50" />
-            <span>{totalMatches} sinais aderentes</span>
-            <span className="size-0.5 rounded-full bg-subtle/50" />
-            <span>{GOAL_SORT[brief.goal]}</span>
+          <p className="mt-2 mb-6 max-w-[46ch] text-[15px] leading-relaxed text-muted">
+            {isHomeGoal(brief.goal)
+              ? `${matches.length} oportunidades em João Pessoa. Problema à vista · ${GOAL_SORT[brief.goal]}.`
+              : text}
           </p>
 
           {matches[0] ? (
