@@ -5,11 +5,18 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 /**
- * Isolated Cloudflare build. The default vite.config.ts stays on the Vercel
- * Nitro preset so the Grok preview / platform deploy keep working.
+ * Cloudflare Workers production build (source of truth for farolqueprotege.com.br).
+ *
+ * Default vite.config.ts still uses Nitro vercel only for the Grok live-preview
+ * contract. Ship path is always this config + Wrangler.
  */
 export default defineConfig({
   resolve: { tsconfigPaths: true },
+  build: {
+    target: "es2022",
+    cssMinify: true,
+    reportCompressedSize: true,
+  },
   plugins: [
     cloudflare({ viteEnvironment: { name: "ssr" } }),
     tailwindcss(),
