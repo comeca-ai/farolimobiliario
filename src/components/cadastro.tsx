@@ -33,10 +33,11 @@ export function Cadastro({
     <main className="mx-auto max-w-xl px-4 pb-20 pt-10 md:pt-16">
       <p className="text-xs uppercase tracking-widest text-accent">Cadastro</p>
       <h1 className="mt-3 font-display text-4xl leading-none tracking-tight md:text-5xl">
-        Entra. Depois a vida pede.
+        Seu mapa começa aqui.
       </h1>
       <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-        E-mail para o link. WhatsApp obrigatório — o dossiê chega onde você já lê. Sem senha.
+        E-mail para o link. WhatsApp obrigatório para mandar o dossiê onde você já responde. Sem
+        senha, sem corretagem, sem cartão.
       </p>
       <p className="mt-2 text-[13px] leading-relaxed text-muted">
         Destino: link no e-mail · resumo no WhatsApp.
@@ -101,8 +102,8 @@ export function Cadastro({
             />
           </span>
           <span id="wa-trust" className="mt-1.5 block text-[13px] leading-relaxed text-muted">
-            Só para o resumo do dossiê. Sem lista, sem blast — se um dia houver política pública,
-            o link aparece aqui.
+            Só para o resumo do dossiê. Sem lista, sem blast — se um dia houver política pública, o
+            link aparece aqui.
           </span>
           <span
             id="wa-hint"
@@ -123,9 +124,13 @@ export function Cadastro({
           type="submit"
           className="pressable mt-2 h-14 rounded-full bg-accent text-sm font-medium text-accent-fg transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
-          Entrar · ver o spread
+          Continuar para a caixinha
         </button>
       </form>
+      <p className="mt-4 max-w-md text-xs leading-relaxed text-subtle">
+        Você ainda vai validar o rumo antes de ver os imóveis. Nada de promessa automática de
+        retorno.
+      </p>
 
       <button type="button" onClick={onBack} className="mt-6 text-sm text-muted">
         Voltar

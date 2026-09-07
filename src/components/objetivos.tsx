@@ -23,10 +23,11 @@ export function Objetivos({ onAgree }: { onAgree: (brief: Brief) => void }) {
     <main className="mx-auto max-w-xl px-4 pb-20 pt-10 md:pt-16">
       <p className="text-xs uppercase tracking-widest text-accent">O que a vida pede</p>
       <h1 className="mt-3 font-display text-4xl leading-none tracking-tight md:text-5xl">
-        Escreva seu objetivo de vida com imóveis.
+        Diga o que esse imóvel precisa fazer por você.
       </h1>
       <p className="mt-3 text-sm leading-relaxed text-muted">
-        Vamos iluminar para chegar lá.
+        Pode ser renda, patrimônio, moradia ou aposentadoria. Eu separo os encaixes mais fortes e
+        deixo mais sinais no mapa.
       </p>
 
       <form
@@ -57,7 +58,7 @@ export function Objetivos({ onAgree }: { onAgree: (brief: Brief) => void }) {
             disabled={text.trim().length < 12}
             className="pressable mt-4 h-14 w-full rounded-full bg-accent text-sm font-medium text-accent-fg disabled:opacity-40"
           >
-            Ler o rumo
+            Ler meu rumo
           </button>
         ) : null}
       </form>
@@ -102,8 +103,11 @@ export function Objetivos({ onAgree }: { onAgree: (brief: Brief) => void }) {
             }
             className="pressable mt-6 h-14 w-full rounded-full bg-accent text-sm font-medium text-accent-fg"
           >
-            Concordo · ver os imóveis
+            Concordo · ver meus 3 melhores imóveis
           </button>
+          <p className="mt-3 text-xs leading-relaxed text-subtle">
+            Depois você pode abrir mais imóveis aderentes sem sair do funil.
+          </p>
         </div>
       ) : null}
     </main>

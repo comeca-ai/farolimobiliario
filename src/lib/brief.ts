@@ -258,26 +258,27 @@ export function reading(brief: Brief, matches: Match[]): string {
 
   if (brief.goal === "renda") {
     return asked
-      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`
-      : `O rumo é ${goal}. Li a mesa. Três opções puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`;
+      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Separei os 3 encaixes mais fortes e deixei mais sinais abertos no mapa, puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`
+      : `O rumo é ${goal}. Li a mesa. Separei os 3 encaixes mais fortes e deixei mais sinais abertos no mapa, puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`;
   }
   if (brief.goal === "patrimonio") {
     return asked
-      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções. O spread começa em ${place}.`
-      : `O rumo é ${goal}. Li a mesa. Três opções. O spread começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar.`;
+      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Separei os 3 melhores encaixes e deixei mais sinais no mapa. O spread começa em ${place}.`
+      : `O rumo é ${goal}. Li a mesa. Separei os 3 melhores encaixes e deixei mais sinais no mapa. O spread começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar.`;
   }
   if (brief.goal === "morar") {
     if (asked) {
-      return `Você pediu ${asked} para viver. Li a mesa. Três opções puxando ${place} — moradia, não diária.`;
+      return `Você pediu ${asked} para viver. Li a mesa. Separei 3 opções puxando ${place} e deixei mais sinais no mapa — moradia, não diária.`;
     }
-    return `O rumo é morar ou deixar para a família. Li a mesa. Três opções de casa e apto para viver. ${place} aparece primeiro porque ainda é moradia, não ativo de diária.`;
+    return `O rumo é morar ou deixar para a família. Li a mesa. Separei 3 opções de casa e apto para viver, com mais sinais no mapa. ${place} aparece primeiro porque ainda é moradia, não ativo de diária.`;
   }
   return asked
-    ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções puxando ${place}.`
-    : `O rumo é ${goal}. Li a mesa. Três opções. ${place} entra porque o aluguel tradicional se sustenta sem check-in.`;
+    ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Separei 3 opções puxando ${place} e deixei mais sinais no mapa.`
+    : `O rumo é ${goal}. Li a mesa. Separei 3 opções e deixei mais sinais no mapa. ${place} entra porque o aluguel tradicional se sustenta sem check-in.`;
 }
 
 export const MATCH_PER_RUMO = 3;
+export const SURFACE_PER_RUMO = 8;
 
 function sameZoneAsAsked(nbId: string, places: string[]) {
   const asked = places
@@ -293,21 +294,38 @@ export function inAskedPlace(nbId: string, places?: string[], allowZone = true) 
   return allowZone && sameZoneAsAsked(nbId, places);
 }
 
-export function matchBrief(brief: Brief): Match[] {
-  const places = brief.places ?? [];
+function rankBrief(brief: Brief): Match[] {
   const scored = LISTINGS_SCORED.map((card) => {
     const fit = fitScore(card, brief);
     return { card, fit, why: why(card, brief) };
   }).sort((a, b) => b.fit - a.fit);
 
-  if (!places.length) return scored.slice(0, MATCH_PER_RUMO);
+  return scored;
+}
+
+function scopeMatches(scored: Match[], places: string[]) {
+  if (!places.length) return scored;
 
   const exact = scored.filter((m) => places.includes(m.card.nb.id));
-  if (exact.length >= MATCH_PER_RUMO) return exact.slice(0, MATCH_PER_RUMO);
+  if (exact.length >= SURFACE_PER_RUMO) return exact;
   const zoneFill = scored.filter(
     (m) => !places.includes(m.card.nb.id) && sameZoneAsAsked(m.card.nb.id, places),
   );
-  return [...exact, ...zoneFill].slice(0, MATCH_PER_RUMO);
+  return [...exact, ...zoneFill];
+}
+
+export function surfaceBrief(brief: Brief, limit = SURFACE_PER_RUMO): Match[] {
+  const places = brief.places ?? [];
+  return scopeMatches(rankBrief(brief), places).slice(0, limit);
+}
+
+export function countBriefMatches(brief: Brief): number {
+  const places = brief.places ?? [];
+  return scopeMatches(rankBrief(brief), places).length;
+}
+
+export function matchBrief(brief: Brief): Match[] {
+  return surfaceBrief(brief, MATCH_PER_RUMO);
 }
 
 function fitScore(card: Scorecard, brief: Brief): number {

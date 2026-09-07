@@ -3,11 +3,24 @@ import { Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Cadastro } from "@/components/cadastro";
 import { Landing } from "@/components/briefing";
+import { ListingCard } from "@/components/listing-card";
 import { Objetivos } from "@/components/objetivos";
 import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
 import { CITY, NEIGHBORHOOD_BY_ID } from "@/data/market";
-import { GOAL_HEADLINE, GOAL_HERO_KICK, GOAL_LABEL, GOAL_SORT, inAskedPlace, matchBrief, reading, type Brief } from "@/lib/brief";
+import {
+  GOAL_HEADLINE,
+  GOAL_HERO_KICK,
+  GOAL_LABEL,
+  GOAL_SORT,
+  MATCH_PER_RUMO,
+  countBriefMatches,
+  inAskedPlace,
+  matchBrief,
+  reading,
+  surfaceBrief,
+  type Brief,
+} from "@/lib/brief";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
 import { useDesk, type RadarFilter } from "@/lib/store";
@@ -50,18 +63,21 @@ function Home() {
 
 function Reading({ brief }: { brief: Brief }) {
   const matches = useMemo(() => matchBrief(brief), [brief]);
+  const surfaced = useMemo(() => surfaceBrief(brief), [brief]);
+  const totalMatches = useMemo(() => countBriefMatches(brief), [brief]);
   const text = useMemo(() => reading(brief, matches), [brief, matches]);
   const clearBrief = useDesk((s) => s.clearBrief);
   const setShowDesk = useDesk((s) => s.setShowDesk);
   const selectedId = useDesk((s) => s.selectedId);
   const select = useDesk((s) => s.select);
   const navigate = useNavigate();
-  const cards = matches.map((m) => m.card);
+  const cards = surfaced.map((m) => m.card);
   const open = (id: string) => {
     select(id);
     void navigate({ to: "/imovel/$id", params: { id } });
   };
   const rest = matches.slice(1);
+  const more = surfaced.slice(MATCH_PER_RUMO);
 
   return (
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 md:px-8 md:pt-10">
@@ -72,7 +88,9 @@ function Reading({ brief }: { brief: Brief }) {
           </h1>
           <p className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">{text}</p>
           <p className="mt-2 mb-7 flex items-center gap-2.5 text-[12.5px] text-subtle">
-            <span>{matches.length} imóveis</span>
+            <span>{matches.length} encaixes principais</span>
+            <span className="size-0.5 rounded-full bg-subtle/50" />
+            <span>{totalMatches} sinais aderentes</span>
             <span className="size-0.5 rounded-full bg-subtle/50" />
             <span>{GOAL_SORT[brief.goal]}</span>
           </p>
@@ -118,13 +136,42 @@ function Reading({ brief }: { brief: Brief }) {
               onClick={() => setShowDesk(true)}
               className="pressable h-12 rounded-full px-5 text-sm text-muted hover:text-fg"
             >
-              Ver todas as opções
+              Ver {totalMatches} opções no mapa completo
             </button>
           </div>
+
+          {more.length > 0 ? (
+            <section className="mt-12">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-subtle">Mais sinais</p>
+                  <h2 className="mt-1 font-display text-[1.45rem] font-normal leading-tight tracking-tight">
+                    Mais imóveis aderentes antes de abrir a mesa toda
+                  </h2>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowDesk(true)}
+                  className="text-sm text-accent"
+                >
+                  Abrir mesa completa
+                </button>
+              </div>
+              <div className="mt-5 grid gap-3">
+                {more.map((match) => (
+                  <ListingCard
+                    key={match.card.listing.id}
+                    card={match.card}
+                    active={selectedId === match.card.listing.id}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
         </section>
 
         <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
-          <MapPanel caption={GOAL_SORT[brief.goal]}>
+          <MapPanel caption={`${totalMatches} sinais aderentes · ${GOAL_SORT[brief.goal]}`}>
             <OrlaMap cards={cards} selectedId={selectedId} onSelect={open} />
           </MapPanel>
         </aside>
@@ -172,7 +219,7 @@ function MesaBoard() {
           {brief?.places?.length
             ? brief.places.map((id) => NEIGHBORHOOD_BY_ID[id]?.name ?? id).join(", ")
             : "João Pessoa"}{" "}
-          · {CITY.sampleDate} · {CITY.refresh}
+          · {CITY.refresh} · comps {CITY.sampleDate}
         </p>
         <h1 className="mt-2 font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
           Todas as opções
@@ -232,7 +279,13 @@ function MesaBoard() {
             {rest.length > 0 ? (
               <ol className="mt-9">
                 {rest.map((c, i) => (
-                  <RumoRow key={c.listing.id} card={c} index={i + 1} goal={brief?.goal} onOpen={open} />
+                  <RumoRow
+                    key={c.listing.id}
+                    card={c}
+                    index={i + 1}
+                    goal={brief?.goal}
+                    onOpen={open}
+                  />
                 ))}
               </ol>
             ) : null}

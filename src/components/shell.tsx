@@ -85,7 +85,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-1 px-4 py-5 text-[13px] text-muted md:flex-row md:items-center md:justify-between md:px-6">
           <p>
-            Base {CITY.refresh} · comps {CITY.sampleDate}. Não é oferta nem recomendação de
+            Inventário {CITY.refresh} · comps {CITY.sampleDate}. Não é oferta nem recomendação de
             investimento.
           </p>
           <p>João Pessoa. O Farol aponta. O resto, silêncio.</p>
