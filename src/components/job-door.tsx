@@ -26,17 +26,17 @@ export function JobDoor({
   const waRef = useRef<HTMLInputElement>(null);
 
   return (
-    <main className="mx-auto max-w-xl px-4 pb-20 pt-8 md:pt-12">
+    <main className="mx-auto max-w-xl px-4 pb-16 pt-6 md:pt-8">
       <p className="text-[11px] uppercase tracking-[0.14em] text-accent">João Pessoa · negócio</p>
-      <h1 className="mt-3 font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
+      <h1 className="mt-2 font-display text-[1.85rem] font-normal leading-tight tracking-tight md:text-[32px]">
         Onde está a oportunidade
       </h1>
-      <p className="mt-3 max-w-[42ch] text-[15px] leading-relaxed text-muted">
-        Flat para Airbnb ou imóvel abaixo do preço — com o problema à vista. Sem vitrine.
+      <p className="mt-2 max-w-[42ch] text-sm leading-relaxed text-muted">
+        Flat para Airbnb ou abaixo do preço — com o problema à vista.
       </p>
 
       <form
-        className="mt-8 flex flex-col gap-5"
+        className="mt-5 flex flex-col gap-4"
         noValidate
         onSubmit={(e) => {
           e.preventDefault();
@@ -53,8 +53,8 @@ export function JobDoor({
         }}
       >
         <fieldset>
-          <legend className="text-xs uppercase tracking-widest text-muted">O job</legend>
-          <div className="mt-3 grid gap-2">
+          <legend className="sr-only">O job</legend>
+          <div className="grid gap-2">
             {HOME_GOALS.map((g) => (
               <button
                 key={g}
@@ -64,78 +64,72 @@ export function JobDoor({
                   setError(null);
                 }}
                 className={cn(
-                  "pressable rounded-2xl px-4 py-4 text-left shadow-(--shadow-border)",
+                  "pressable rounded-2xl px-4 py-3.5 text-left shadow-(--shadow-border)",
                   goal === g ? "bg-surface shadow-(--shadow-border-hover)" : "bg-raised/70",
                 )}
               >
-                <span className="block font-display text-2xl leading-snug">{HOME_LABEL[g]}</span>
-                <span className="mt-1 block text-sm text-muted">{HOME_HINT[g]}</span>
+                <span className="block font-display text-xl leading-snug md:text-2xl">{HOME_LABEL[g]}</span>
+                <span className="mt-0.5 block text-sm text-muted">{HOME_HINT[g]}</span>
               </button>
             ))}
           </div>
         </fieldset>
 
         {skipCadastro ? (
-          <p className="text-[13px] text-muted">
-            Já te vemos em {existingLead?.email}. Só falta o rumo.
-          </p>
+          <p className="text-[13px] text-muted">Já te vemos em {existingLead?.email}. Só falta o rumo.</p>
         ) : (
-          <div className="flex flex-col gap-4">
-            <label className="block">
-              <span className="text-xs uppercase tracking-widest text-muted">E-mail</span>
-              <input
-                ref={emailRef}
-                type="email"
-                autoComplete="email"
-                inputMode="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="voce@email.com"
-                aria-invalid={Boolean(error?.includes("e-mail"))}
-                className="mt-2 h-14 w-full rounded-2xl bg-surface px-4 text-base text-fg outline-none shadow-(--shadow-border) placeholder:text-muted/70"
-              />
-            </label>
-            <label className="block">
-              <span className="text-xs uppercase tracking-widest text-muted">
-                WhatsApp <span className="text-subtle">opcional</span>
-              </span>
-              <span className="mt-2 flex h-14 items-center rounded-2xl bg-surface px-4 shadow-(--shadow-border)">
-                <span className="pr-3 font-medium text-muted">+55</span>
-                <input
-                  ref={waRef}
-                  type="tel"
-                  autoComplete="tel"
-                  inputMode="numeric"
-                  value={whatsapp}
-                  onChange={(e) => setWhatsapp(maskBrMobile(e.target.value))}
-                  placeholder="(83) 9 0000-0000"
-                  aria-invalid={Boolean(error?.includes("WhatsApp"))}
-                  className="h-full min-w-0 flex-1 bg-transparent text-base text-fg outline-none placeholder:text-muted/70"
-                />
-              </span>
-              <span className="mt-1.5 block text-[13px] text-muted">
-                Agora o Farol te vê pelo e-mail. WhatsApp entra quando o envio estiver no ar.
-              </span>
-            </label>
-          </div>
+          <label className="block">
+            <span className="text-xs uppercase tracking-widest text-muted">E-mail</span>
+            <input
+              ref={emailRef}
+              type="email"
+              autoComplete="email"
+              inputMode="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="voce@email.com"
+              aria-invalid={Boolean(error?.includes("e-mail"))}
+              className="mt-2 h-12 w-full rounded-2xl bg-surface px-4 text-base text-fg outline-none shadow-(--shadow-border) placeholder:text-muted/70"
+            />
+          </label>
         )}
 
         {error ? (
-          <p role="alert" className="min-h-11 font-medium text-risk">
+          <p role="alert" className="font-medium text-risk">
             {error}
           </p>
         ) : (
-          <p className="min-h-11 text-[13px] text-subtle">
-            Sinais modelados com comps públicos. Não é oferta nem estoque real.
-          </p>
+          <p className="text-[13px] text-subtle">Sinais modelados. Não é oferta nem estoque real.</p>
         )}
 
         <button
           type="submit"
-          className="pressable h-14 rounded-full bg-accent text-sm font-medium text-accent-fg hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="pressable h-12 rounded-full bg-accent text-sm font-medium text-accent-fg hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Ver 3 oportunidades
         </button>
+
+        {skipCadastro ? null : (
+          <label className="block">
+            <span className="text-xs uppercase tracking-widest text-muted">
+              WhatsApp <span className="text-subtle">opcional</span>
+            </span>
+            <span className="mt-2 flex h-12 items-center rounded-2xl bg-surface px-4 shadow-(--shadow-border)">
+              <span className="pr-3 font-medium text-muted">+55</span>
+              <input
+                ref={waRef}
+                type="tel"
+                autoComplete="tel"
+                inputMode="numeric"
+                value={whatsapp}
+                onChange={(e) => setWhatsapp(maskBrMobile(e.target.value))}
+                placeholder="(83) 9 0000-0000"
+                aria-invalid={Boolean(error?.includes("WhatsApp"))}
+                className="h-full min-w-0 flex-1 bg-transparent text-base text-fg outline-none placeholder:text-muted/70"
+              />
+            </span>
+          </label>
+        )}
       </form>
     </main>
   );

@@ -6,6 +6,7 @@ const index = readFileSync("src/routes/index.tsx", "utf8");
 const door = readFileSync("src/components/job-door.tsx", "utf8");
 const rumo = readFileSync("src/components/rumo-list.tsx", "utf8");
 const job = readFileSync("src/lib/job.ts", "utf8");
+const shell = readFileSync("src/components/shell.tsx", "utf8");
 
 describe("tela do job", () => {
   it("home carrega o job, não a lenda", () => {
@@ -15,13 +16,15 @@ describe("tela do job", () => {
     assert.equal(/from "@\/components\/objetivos"/.test(index), false);
   });
 
-  it("caminho feliz: rumo + cadastro mínimo + CTA no primeiro viewport", () => {
+  it("caminho feliz: rumo + e-mail + CTA no primeiro viewport", () => {
     assert.match(job, /Flat → Airbnb/);
     assert.match(job, /Abaixo do preço/);
     assert.match(door, /HOME_LABEL/);
     assert.match(door, /type="email"/);
-    assert.match(door, /WhatsApp/);
     assert.match(door, /Ver 3 oportunidades/);
+    const cta = door.indexOf("Ver 3 oportunidades");
+    const wa = door.indexOf('type="tel"');
+    assert.ok(cta > 0 && wa > cta, "CTA vem antes do WhatsApp opcional");
   });
 
   it("erro visível no cadastro", () => {
@@ -32,5 +35,11 @@ describe("tela do job", () => {
   it("card mostra o problema", () => {
     assert.match(rumo, /listingProblem/);
     assert.match(rumo, /Problema:/);
+  });
+
+  it("topo da home não compete com o job", () => {
+    assert.equal(/Arquitetura/.test(shell), false);
+    assert.equal(/Bairros/.test(shell), false);
+    assert.equal(/>Entrar</.test(shell), false);
   });
 });
