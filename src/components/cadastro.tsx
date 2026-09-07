@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { maskBrMobile, validBrMobile, validEmail, type Lead } from "@/lib/lead";
 
 export function Cadastro({
@@ -11,12 +11,23 @@ export function Cadastro({
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [tried, setTried] = useState(false);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const waRef = useRef<HTMLInputElement>(null);
 
   const emailOk = validEmail(email);
   const waOk = validBrMobile(whatsapp);
   const ready = emailOk && waOk;
   const emailEmpty = email.trim().length === 0;
   const waEmpty = whatsapp.replace(/\D/g, "").length === 0;
+
+  useEffect(() => {
+    if (!tried) return;
+    if (!emailOk) {
+      emailRef.current?.focus();
+      return;
+    }
+    if (!waOk) waRef.current?.focus();
+  }, [tried, emailOk, waOk]);
 
   return (
     <main className="mx-auto max-w-xl px-4 pb-20 pt-10 md:pt-16">
@@ -44,6 +55,7 @@ export function Cadastro({
         <label className="block">
           <span className="text-xs uppercase tracking-widest text-muted">E-mail</span>
           <input
+            ref={emailRef}
             type="email"
             autoComplete="email"
             inputMode="email"
@@ -54,12 +66,23 @@ export function Cadastro({
             aria-describedby="email-hint"
             className="mt-2 h-14 w-full rounded-2xl bg-surface px-4 text-base text-fg outline-none shadow-(--shadow-border) placeholder:text-muted/70 focus:shadow-(--shadow-border-hover)"
           />
-          <span id="email-hint" className="mt-1 block text-[13px] leading-relaxed" role="status">
+          <span
+            id="email-hint"
+            className="mt-1.5 block min-h-[2.5rem] text-[13px] leading-relaxed"
+            role="status"
+          >
             {tried && !emailOk ? (
-              <span className="text-risk">Precisamos de um e-mail válido — é por onde vai o link.</span>
+              <span className="font-medium text-risk">
+                Precisamos de um e-mail válido — é por onde vai o link.
+              </span>
             ) : emailEmpty ? (
               <span className="text-muted">Onde você abre o link do dossiê.</span>
-            ) : null}
+            ) : (
+              <span className="invisible" aria-hidden>
+                &
+bsp;
+              </span>
+            )}
           </span>
         </label>
 
@@ -70,6 +93,7 @@ export function Cadastro({
           <span className="mt-2 flex h-14 items-center rounded-2xl bg-surface px-4 shadow-(--shadow-border) focus-within:shadow-(--shadow-border-hover)">
             <span className="pr-3 font-medium text-muted">+55</span>
             <input
+              ref={waRef}
               type="tel"
               autoComplete="tel"
               inputMode="numeric"
@@ -77,7 +101,7 @@ export function Cadastro({
               onChange={(e) => setWhatsapp(maskBrMobile(e.target.value))}
               placeholder="(83) 9 0000-0000"
               aria-invalid={tried && !waOk}
-              aria-describedby="wa-hint wa-trust"
+              aria-describedby="wa-trust wa-hint"
               className="h-full min-w-0 flex-1 bg-transparent text-base text-fg outline-none placeholder:text-muted/70"
             />
           </span>
@@ -85,18 +109,29 @@ export function Cadastro({
             Só para o resumo do dossiê. Sem lista, sem blast — se um dia houver política pública,
             o link aparece aqui.
           </span>
-          <span id="wa-hint" className="mt-1 block text-[13px] leading-relaxed" role="status">
+          <span
+            id="wa-hint"
+            className="mt-1 block min-h-[2.5rem] text-[13px] leading-relaxed"
+            role="status"
+          >
             {tried && !waOk ? (
-              <span className="text-risk">Celular com DDD e o 9. Ex.: (83) 98888-0000.</span>
+              <span className="font-medium text-risk">
+                Celular com DDD e o 9. Ex.: (83) 98888-0000.
+              </span>
             ) : waEmpty ? (
               <span className="text-muted">O número em que você já lê mensagens.</span>
-            ) : null}
+            ) : (
+              <span className="invisible" aria-hidden>
+                &
+bsp;
+              </span>
+            )}
           </span>
         </label>
 
         <button
           type="submit"
-          className="pressable mt-2 h-14 rounded-full bg-accent text-sm font-medium text-accent-fg"
+          className="pressable mt-2 h-14 rounded-full bg-accent text-sm font-medium text-accent-fg transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Entrar · ver o spread
         </button>
