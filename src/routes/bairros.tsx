@@ -61,9 +61,7 @@ function BairrosPage() {
                 </dd>
               </div>
               <div>
-                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">
-                  STR · ocupação
-                </dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">STR</dt>
                 <dd className="mt-1 tabular-nums">{pctAbs(n.strOccupancy)}</dd>
               </div>
             </dl>
