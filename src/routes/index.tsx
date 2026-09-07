@@ -80,7 +80,7 @@ function Reading({ brief }: { brief: Brief }) {
   const more = surfaced.slice(MATCH_PER_RUMO);
 
   return (
-    <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 md:px-8 md:pt-10">
+    <main className="mx-auto max-w-[1240px] px-4 pb-28 pt-8 md:px-8 md:pb-24 md:pt-10">
       <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
         <section>
           <h1 className="font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
@@ -123,18 +123,18 @@ function Reading({ brief }: { brief: Brief }) {
             </ol>
           ) : null}
 
-          <div className="mt-10 flex flex-col gap-2 sm:flex-row sm:gap-3">
+          <div className="mt-10 hidden flex-col gap-2 sm:flex-row sm:gap-3 md:flex">
             <button
               type="button"
               onClick={clearBrief}
-              className="pressable h-12 rounded-full bg-raised px-5 text-sm text-fg"
+              className="pressable h-12 min-h-11 rounded-full bg-raised px-5 text-sm text-fg"
             >
               Trocar o rumo
             </button>
             <button
               type="button"
               onClick={() => setShowDesk(true)}
-              className="pressable h-12 rounded-full px-5 text-sm text-muted hover:text-fg"
+              className="pressable h-12 min-h-11 rounded-full px-5 text-sm text-muted hover:text-fg"
             >
               Ver {totalMatches} opções no mapa completo
             </button>
@@ -152,7 +152,7 @@ function Reading({ brief }: { brief: Brief }) {
                 <button
                   type="button"
                   onClick={() => setShowDesk(true)}
-                  className="text-sm text-accent"
+                  className="min-h-11 text-sm text-accent"
                 >
                   Abrir mesa completa
                 </button>
@@ -175,6 +175,29 @@ function Reading({ brief }: { brief: Brief }) {
             <OrlaMap cards={cards} selectedId={selectedId} onSelect={open} />
           </MapPanel>
         </aside>
+      </div>
+
+      {/* Mobile sticky CTA — mirrors landing sticky; desktop keeps inline CTAs */}
+      <div
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-line/80 bg-bg/95 px-4 pt-3 backdrop-blur md:hidden"
+        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+      >
+        <div className="mx-auto flex max-w-[1240px] gap-2">
+          <button
+            type="button"
+            onClick={clearBrief}
+            className="pressable h-12 min-h-11 shrink-0 rounded-full bg-raised px-4 text-sm text-fg"
+          >
+            Trocar rumo
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowDesk(true)}
+            className="pressable h-12 min-h-11 flex-1 rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
+          >
+            Ver mapa completo
+          </button>
+        </div>
       </div>
     </main>
   );
@@ -211,6 +234,15 @@ function MesaBoard() {
     select(id);
     void navigate({ to: "/imovel/$id", params: { id } });
   };
+  const resetFilters = () => {
+    setRadar("todos");
+    setQuery("");
+  };
+  const emptyWhy = query.trim()
+    ? "Nenhum sinal bate com essa busca."
+    : radar !== "todos"
+      ? "Nenhum sinal neste filtro do radar."
+      : "Nenhum sinal neste recorte de bairro.";
 
   return (
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 md:px-8 md:pt-10">
@@ -228,7 +260,7 @@ function MesaBoard() {
           <button
             type="button"
             onClick={() => setShowDesk(false)}
-            className="mt-3 text-sm text-accent"
+            className="mt-3 min-h-11 text-sm text-accent"
           >
             Voltar ao rumo · {GOAL_LABEL[brief.goal]}
           </button>
@@ -242,7 +274,7 @@ function MesaBoard() {
             type="button"
             onClick={() => setRadar(r)}
             className={cn(
-              "pressable h-10 shrink-0 rounded-full px-4 text-sm",
+              "pressable h-11 min-h-11 shrink-0 rounded-full px-4 text-sm",
               radar === r ? "bg-raised text-fg" : "text-muted hover:text-fg",
             )}
           >
@@ -256,15 +288,34 @@ function MesaBoard() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Bairro, rua, flat, leilão"
-          className="h-11 w-full rounded-lg bg-raised pl-10 pr-3 text-sm text-fg outline-none placeholder:text-subtle"
+          className="h-11 min-h-11 w-full rounded-lg bg-raised pl-10 pr-3 text-sm text-fg outline-none placeholder:text-subtle"
         />
       </label>
       {radar !== "todos" ? <p className="mt-2 text-xs text-subtle">{RADAR_HINT[radar]}</p> : null}
 
       {filtered.length === 0 ? (
-        <p className="mt-10 rounded-[14px] bg-surface px-5 py-10 text-sm text-muted shadow-(--shadow-border)">
-          Nenhum sinal com esse filtro.
-        </p>
+        <div className="mt-10 max-w-md rounded-[14px] bg-surface px-5 py-10 shadow-(--shadow-border)">
+          <h2 className="font-display text-xl font-normal tracking-tight">Nada neste filtro</h2>
+          <p className="mt-2 text-sm text-muted">{emptyWhy}</p>
+          <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+            <button
+              type="button"
+              onClick={resetFilters}
+              className="pressable h-12 min-h-11 rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
+            >
+              Limpar filtro e busca
+            </button>
+            {brief ? (
+              <button
+                type="button"
+                onClick={() => setShowDesk(false)}
+                className="pressable h-12 min-h-11 rounded-full bg-raised px-5 text-sm text-fg"
+              >
+                Voltar ao rumo
+              </button>
+            ) : null}
+          </div>
+        </div>
       ) : (
         <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
           <section>

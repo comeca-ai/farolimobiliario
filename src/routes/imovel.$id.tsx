@@ -33,6 +33,8 @@ function ImovelBody({ listing }: { listing: Listing }) {
   const watched = useDesk((s) => s.watched.includes(listing.id));
   const toggleWatch = useDesk((s) => s.toggleWatch);
   const goal = useDesk((s) => s.brief?.goal);
+  const brief = useDesk((s) => s.brief);
+  const setShowDesk = useDesk((s) => s.setShowDesk);
   const base = analyze(listing);
   const [occ, setOcc] = useState(() => Math.round(base.nb.strOccupancy * 100));
   const [adr, setAdr] = useState(() =>
@@ -44,27 +46,31 @@ function ImovelBody({ listing }: { listing: Listing }) {
   );
   const hit = goal ? punchForGoal(live, goal) : punch(live);
 
+  const backToEncaixes = () => {
+    if (brief) setShowDesk(true);
+  };
+
   return (
-    <main className="mx-auto max-w-[760px] px-4 pb-20 pt-4 md:px-6 md:pt-8">
+    <main className="mx-auto max-w-[760px] px-4 pb-28 pt-4 md:px-6 md:pb-20 md:pt-8">
       <div className="flex items-center justify-between">
-        <Link to="/" className="inline-flex h-11 items-center gap-2 text-sm text-muted hover:text-fg">
+        <Link to="/" className="inline-flex h-11 min-h-11 items-center gap-2 text-sm text-muted hover:text-fg">
           <ArrowLeft className="size-4" />
           Rumo
         </Link>
         <button
           type="button"
           onClick={() => toggleWatch(listing.id)}
-          className="flex size-11 items-center justify-center text-muted hover:text-fg"
+          className="hidden size-11 min-h-11 items-center justify-center text-muted hover:text-fg md:flex"
           aria-label="Marcar"
         >
           <Bookmark className={cn("size-4", watched && "fill-accent text-accent")} />
         </button>
       </div>
 
-      <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-accent">
+      <p className="mt-6 text-[11px] uppercase tracking-[0.14em] text-accent md:mt-8">
         {goal ? rumoKickerFor(live, goal) : rumoKickerFor(live, "patrimonio")} · {TYPE_LABEL[listing.type]}
       </p>
-      <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between md:mt-4 md:gap-5">
         <div className="min-w-0">
           <h1 className="font-display text-[1.85rem] font-normal leading-tight tracking-tight md:text-[32px]">
             {listing.title}
@@ -85,9 +91,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
         </div>
       </div>
 
-      <p className="mt-8 max-w-[56ch] text-[15px] leading-relaxed text-muted">{listing.thesis}</p>
-
-      <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 md:mt-6">
         <Metric label="Ask" value={brl.format(listing.ask)} />
         <Metric
           label="Justo do bairro"
@@ -104,7 +108,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
 
       <section className="mt-8">
         <h2 className="font-display text-xl">Tese</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{listing.thesis}</p>
+        <p className="mt-2 max-w-[56ch] text-[15px] leading-relaxed text-muted">{listing.thesis}</p>
       </section>
 
       <section className="mt-8 rounded-2xl bg-surface p-4 shadow-(--shadow-border) md:p-6">
@@ -196,6 +200,39 @@ function ImovelBody({ listing }: { listing: Listing }) {
           </p>
         </div>
       </aside>
+
+      {/* Sticky mobile actions */}
+      <div
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-line/80 bg-bg/95 px-4 pt-3 backdrop-blur md:hidden"
+        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+      >
+        <div className="mx-auto flex max-w-[760px] gap-2">
+          <button
+            type="button"
+            onClick={() => toggleWatch(listing.id)}
+            className="pressable flex size-12 min-h-11 shrink-0 items-center justify-center rounded-full bg-raised text-muted"
+            aria-label="Marcar"
+          >
+            <Bookmark className={cn("size-4", watched && "fill-accent text-accent")} />
+          </button>
+          {brief ? (
+            <Link
+              to="/"
+              onClick={backToEncaixes}
+              className="pressable flex h-12 min-h-11 flex-1 items-center justify-center rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
+            >
+              Voltar aos encaixes
+            </Link>
+          ) : (
+            <Link
+              to="/"
+              className="pressable flex h-12 min-h-11 flex-1 items-center justify-center rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
+            >
+              Voltar ao rumo
+            </Link>
+          )}
+        </div>
+      </div>
     </main>
   );
 }
@@ -270,7 +307,7 @@ function Slider({
         max={max}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-2 h-11 w-full accent-accent"
+        className="mt-2 h-11 min-h-11 w-full accent-accent"
       />
     </label>
   );
