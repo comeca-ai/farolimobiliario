@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Cadastro } from "@/components/cadastro";
 import { Landing } from "@/components/briefing";
 import { Objetivos } from "@/components/objetivos";
@@ -23,7 +23,15 @@ function Home() {
   const showDesk = useDesk((s) => s.showDesk);
   const setBrief = useDesk((s) => s.setBrief);
   const setLead = useDesk((s) => s.setLead);
+  const enterIntent = useDesk((s) => s.enterIntent);
+  const consumeEnterIntent = useDesk((s) => s.consumeEnterIntent);
   const [door, setDoor] = useState<"landing" | "cadastro">("landing");
+
+  useEffect(() => {
+    if (lead || !enterIntent) return;
+    consumeEnterIntent();
+    setDoor("cadastro");
+  }, [enterIntent, lead, consumeEnterIntent]);
 
   if (!lead) {
     if (door === "cadastro") {
@@ -239,5 +247,3 @@ function MesaBoard() {
     </main>
   );
 }
-
-
