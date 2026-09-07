@@ -7,34 +7,29 @@ Aponta o spread em **João Pessoa**. Não é Zap. Não é corretor.
 
 Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP / MySide, set/2026). O inventário da vitrine é recarregado em toda visita. Não é oferta nem recomendação de investimento.
 
+Job (fonte: [`docs/ideia.md`](docs/ideia.md)): localizar oportunidade — **flat → Airbnb** ou **abaixo do preço com o problema visível**.
+
 ## Funil
 
-1. Landing — Farol, o m² da cidade, **Entrar**
-2. Cadastro — e-mail + WhatsApp (obrigatório)
-3. Caixinha — objetivo de vida com imóveis
-4. Rumo — a pessoa concorda
-5. Três opções daquele rumo + mapa da orla
-6. Mais sinais aderentes logo abaixo e mesa completa para abrir toda a cidade
-7. **Sair** no topo limpa a sessão
+1. Home — dois rumos + cadastro mínimo (e-mail e WhatsApp)
+2. Três oportunidades daquele rumo, com o problema no card + mapa
+3. Mesa completa, se a pessoa pedir
+4. **Sair** no topo limpa a sessão
 
-Quatro rumos, cada um com **três** imóveis principais distintos, com mais sinais aderentes logo abaixo:
+Dois rumos na home:
 
 | Rumo | O número grande |
 |---|---|
-| O caixa agora | rentabilidade de temporada, líquida |
-| Abaixo do justo | % vs m² do bairro |
-| Para viver | ticket em R$ · uso próprio |
-| Aluguel que se paga | aluguel tradicional, líquido |
+| Flat → Airbnb | rentabilidade de temporada, líquida |
+| Abaixo do preço | % vs m² do bairro |
 
 ## Agentes
 
 ```bash
-npm run test:rumo    # unitário: tríade, caixinha, cadastro
+npm run test:rumo    # unitário: tríade, job, cadastro, tela
 npm run test:base    # integridade: bairro, coords, score, estado 0–1
 npm test             # tudo (inclui os testes do template)
 ```
-
-Última passagem (2026-09-07): unitário **13/13**, integridade **4/4**, `tsc` limpo.
 
 ## GitHub Actions e secrets
 
@@ -57,7 +52,7 @@ npm run audit:secrets
 
 ## Rotas
 
-- `/` — landing → cadastro → caixinha → três opções
+- `/` — job (Airbnb ou preço) + cadastro mínimo → três opções
 - `/imovel/$id` — dossiê do sinal
 - `/bairros` — m² e variação 12 meses
 - `/arquitetura` — desenho de produção na Cloudflare
