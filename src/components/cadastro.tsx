@@ -77,12 +77,7 @@ export function Cadastro({
               </span>
             ) : emailEmpty ? (
               <span className="text-muted">Onde você abre o link do dossiê.</span>
-            ) : (
-              <span className="invisible" aria-hidden>
-                &
-bsp;
-              </span>
-            )}
+            ) : null}
           </span>
         </label>
 
@@ -120,12 +115,7 @@ bsp;
               </span>
             ) : waEmpty ? (
               <span className="text-muted">O número em que você já lê mensagens.</span>
-            ) : (
-              <span className="invisible" aria-hidden>
-                &
-bsp;
-              </span>
-            )}
+            ) : null}
           </span>
         </label>
 
