@@ -1,13 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useMemo, useState } from "react";
 import { CITY, NEIGHBORHOODS } from "@/data/market";
 import { brl, pct, pctAbs } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/bairros")({ component: BairrosPage });
 
+type ZoneFilter = "todos" | "orla" | "interior" | "cabedelo";
+
+const ZONE_LABEL: Record<ZoneFilter, string> = {
+  todos: "Todos",
+  orla: "Orla",
+  interior: "Interior",
+  cabedelo: "Cabedelo",
+};
+
 function BairrosPage() {
+  const [zone, setZone] = useState<ZoneFilter>("todos");
   const maxM2 = Math.max(...NEIGHBORHOODS.map((n) => n.m2));
-  const sorted = [...NEIGHBORHOODS].sort((a, b) => b.m2 - a.m2);
+  const sorted = useMemo(() => {
+    const list =
+      zone === "todos" ? NEIGHBORHOODS : NEIGHBORHOODS.filter((n) => n.zone === zone);
+    return [...list].sort((a, b) => b.m2 - a.m2);
+  }, [zone]);
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
@@ -18,14 +33,37 @@ function BairrosPage() {
         O m² é o chão.
       </h1>
       <p className="mt-3 max-w-xl text-sm text-muted">
-        João Pessoa {brl.format(CITY.m2)}/m² · {pct(CITY.yoy)} em 12 meses. STR da cidade{" "}
+        João Pessoa {brl.format(CITY.m2)}/m² · {pct(CITY.yoy)} em 12 meses. STR · ocupação da cidade{" "}
         {pctAbs(CITY.strOccupancy)} · ADR {brl.format(CITY.strAdr)}.
       </p>
 
-      <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-[13px] text-muted">
+          Ordenação padrão: <span className="font-medium text-fg">m² ↓</span> (mais caro → mais
+          barato).
+        </p>
+        <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar por zona">
+          {(Object.keys(ZONE_LABEL) as ZoneFilter[]).map((z) => (
+            <button
+              key={z}
+              type="button"
+              onClick={() => setZone(z)}
+              className={cn(
+                "pressable h-9 rounded-full px-3 text-[13px] transition-colors",
+                "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+                zone === z ? "bg-raised text-fg" : "text-muted hover:text-fg",
+              )}
+            >
+              {ZONE_LABEL[z]}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <ul className="mt-6 grid gap-3 sm:grid-cols-2">
         {sorted.map((n) => (
           <li key={n.id} className="rounded-2xl bg-surface p-4 shadow-(--shadow-border) md:p-5">
-            <p className="text-xs uppercase tracking-widest text-subtle">
+            <p className="text-xs uppercase tracking-widest text-muted">
               {n.zone === "cabedelo" ? "Cabedelo" : n.zone === "orla" ? "Orla" : "Interior"}
             </p>
             <div className="mt-1 flex items-end justify-between gap-3">
@@ -36,29 +74,42 @@ function BairrosPage() {
               <div
                 className="h-full rounded-full bg-accent"
                 style={{ width: `${(n.m2 / maxM2) * 100}%` }}
+                aria-hidden
               />
             </div>
+            <p className="mt-1.5 text-[12px] leading-relaxed text-muted">
+              Barra relativa ao m² mais alto da cidade nesta lista — não ao m² médio de João Pessoa
+              ({brl.format(CITY.m2)}).
+            </p>
             <dl className="mt-4 grid grid-cols-3 gap-2 text-sm">
               <div>
-                <dt className="text-xs uppercase tracking-widest text-subtle">12 meses</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                  12 meses
+                </dt>
                 <dd className={cn("mt-1 tabular-nums", n.yoy >= 0.12 ? "text-deal" : "text-fg")}>
                   {pct(n.yoy)}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-widest text-subtle">Aluguel</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                  Aluguel
+                </dt>
                 <dd className="mt-1 tabular-nums">
                   {n.rentM2.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-widest text-subtle">STR</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-widest text-muted">STR</dt>
                 <dd className="mt-1 tabular-nums">{pctAbs(n.strOccupancy)}</dd>
               </div>
             </dl>
           </li>
         ))}
       </ul>
+
+      {sorted.length === 0 ? (
+        <p className="mt-8 text-sm text-muted">Nenhum bairro nesta zona.</p>
+      ) : null}
 
       <section className="mt-10 grid gap-4 md:grid-cols-3">
         <Note
