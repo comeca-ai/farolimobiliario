@@ -54,7 +54,7 @@ export function JobDoor({
       >
         <fieldset>
           <legend className="sr-only">O job</legend>
-          <div className="grid gap-2">
+          <div className="grid gap-2 sm:grid-cols-2">
             {HOME_GOALS.map((g) => (
               <button
                 key={g}
@@ -68,7 +68,7 @@ export function JobDoor({
                   goal === g ? "bg-surface shadow-(--shadow-border-hover)" : "bg-raised/70",
                 )}
               >
-                <span className="block font-display text-xl leading-snug md:text-2xl">{HOME_LABEL[g]}</span>
+                <span className="block font-display text-xl leading-snug">{HOME_LABEL[g]}</span>
                 <span className="mt-0.5 block text-sm text-muted">{HOME_HINT[g]}</span>
               </button>
             ))}
