@@ -255,5 +255,5 @@ export const CITY = {
   strAnnualMedian: 51818,
   listingsSTR: 6470,
   sampleDate: "setembro 2026",
-  refresh: "toda segunda-feira, 9h",
+  refresh: "recarregado em toda visita",
 };

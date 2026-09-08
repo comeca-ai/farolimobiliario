@@ -1,9 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Search } from "lucide-react";
-import { useMemo, useState } from "react";
-import { Cadastro } from "@/components/cadastro";
-import { Landing } from "@/components/briefing";
-import { Objetivos } from "@/components/objetivos";
+import { useMemo } from "react";
+import { JobDoor } from "@/components/job-door";
+import { ListingCard } from "@/components/listing-card";
 import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
 import { CITY, NEIGHBORHOOD_BY_ID } from "@/data/market";
@@ -32,16 +31,17 @@ function Home() {
   const showDesk = useDesk((s) => s.showDesk);
   const setBrief = useDesk((s) => s.setBrief);
   const setLead = useDesk((s) => s.setLead);
-  const [door, setDoor] = useState<"landing" | "cadastro">("landing");
 
-  if (!lead) {
-    if (door === "cadastro") {
-      return <Cadastro onSubmit={setLead} onBack={() => setDoor("landing")} />;
-    }
-    return <Landing onEnter={() => setDoor("cadastro")} />;
-  }
-  if (!brief) {
-    return <Objetivos onAgree={setBrief} />;
+  if (!lead || !brief || !isHomeGoal(brief.goal)) {
+    return (
+      <JobDoor
+        existingLead={lead}
+        onGo={(nextLead, goal) => {
+          setLead(nextLead);
+          setBrief(openJobBrief(goal));
+        }}
+      />
+    );
   }
   if (showDesk) {
     return <MesaBoard />;
@@ -51,6 +51,8 @@ function Home() {
 
 function Reading({ brief }: { brief: Brief }) {
   const matches = useMemo(() => matchBrief(brief), [brief]);
+  const surfaced = useMemo(() => surfaceBrief(brief), [brief]);
+  const totalMatches = useMemo(() => countBriefMatches(brief), [brief]);
   const text = useMemo(() => reading(brief, matches), [brief, matches]);
   const clearBrief = useDesk((s) => s.clearBrief);
   const setShowDesk = useDesk((s) => s.setShowDesk);
@@ -64,6 +66,7 @@ function Reading({ brief }: { brief: Brief }) {
     void navigate({ to: "/imovel/$id", params: { id } });
   };
   const rest = matches.slice(1);
+  const more = surfaced.slice(MATCH_PER_RUMO);
 
   return (
     <main className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
@@ -128,9 +131,38 @@ function Reading({ brief }: { brief: Brief }) {
               onClick={() => setShowDesk(true)}
               className="pressable h-12 rounded-xl px-5 text-sm font-semibold text-subtle hover:text-fg"
             >
-              Ver todas as opções
+              Ver {totalMatches} opções no mapa completo
             </button>
           </div>
+
+          {more.length > 0 ? (
+            <section className="mt-12">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-subtle">Mais sinais</p>
+                  <h2 className="mt-1 font-display text-[1.45rem] font-normal leading-tight tracking-tight">
+                    Mais imóveis aderentes antes de abrir a mesa toda
+                  </h2>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowDesk(true)}
+                  className="min-h-11 text-sm text-accent"
+                >
+                  Abrir mesa completa
+                </button>
+              </div>
+              <div className="mt-5 grid gap-3">
+                {more.map((match) => (
+                  <ListingCard
+                    key={match.card.listing.id}
+                    card={match.card}
+                    active={selectedId === match.card.listing.id}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
         </section>
 
         <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
@@ -143,6 +175,28 @@ function Reading({ brief }: { brief: Brief }) {
             />
           </MapPanel>
         </aside>
+      </div>
+
+      <div
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-line/80 bg-bg/95 px-4 pt-3 backdrop-blur md:hidden"
+        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+      >
+        <div className="mx-auto flex max-w-[1240px] gap-2">
+          <button
+            type="button"
+            onClick={clearBrief}
+            className="pressable h-12 min-h-11 shrink-0 rounded-full bg-raised px-4 text-sm text-fg"
+          >
+            Trocar rumo
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowDesk(true)}
+            className="pressable h-12 min-h-11 flex-1 rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
+          >
+            Ver mapa completo
+          </button>
+        </div>
       </div>
     </main>
   );
@@ -179,6 +233,15 @@ function MesaBoard() {
     select(id);
     void navigate({ to: "/imovel/$id", params: { id } });
   };
+  const resetFilters = () => {
+    setRadar("todos");
+    setQuery("");
+  };
+  const emptyWhy = query.trim()
+    ? "Nenhum sinal bate com essa busca."
+    : radar !== "todos"
+      ? "Nenhum sinal neste filtro do radar."
+      : "Nenhum sinal neste recorte de bairro.";
 
   return (
     <main className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
@@ -187,7 +250,7 @@ function MesaBoard() {
           {brief?.places?.length
             ? brief.places.map((id) => NEIGHBORHOOD_BY_ID[id]?.name ?? id).join(", ")
             : "João Pessoa"}{" "}
-          · {CITY.sampleDate} · {CITY.refresh}
+          · {CITY.refresh} · comps {CITY.sampleDate}
         </p>
         <h1 className="mt-3 font-display text-[clamp(2rem,4vw,2.75rem)] leading-tight tracking-tight">
           Todas as opções
@@ -210,7 +273,7 @@ function MesaBoard() {
             type="button"
             onClick={() => setRadar(r)}
             className={cn(
-              "pressable h-10 shrink-0 rounded-full px-4 text-sm",
+              "pressable h-11 min-h-11 shrink-0 rounded-full px-4 text-sm",
               radar === r ? "bg-raised text-fg" : "text-muted hover:text-fg",
             )}
           >
@@ -247,7 +310,13 @@ function MesaBoard() {
             {rest.length > 0 ? (
               <ol className="mt-2">
                 {rest.map((c, i) => (
-                  <RumoRow key={c.listing.id} card={c} index={i + 1} goal={brief?.goal} onOpen={open} />
+                  <RumoRow
+                    key={c.listing.id}
+                    card={c}
+                    index={i + 1}
+                    goal={brief?.goal}
+                    onOpen={open}
+                  />
                 ))}
               </ol>
             ) : null}

@@ -5,7 +5,9 @@ Aponta o spread em **João Pessoa**. Não é Zap. Não é corretor.
 **No ar:** [https://farolqueprotege.com.br](https://farolqueprotege.com.br)  
 **Código:** [github.com/comeca-ai/farolimobiliario](https://github.com/comeca-ai/farolimobiliario)
 
-Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP / MySide, set/2026). Não é oferta nem recomendação de investimento.
+Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP / MySide, set/2026). O inventário da vitrine é recarregado em toda visita. Não é oferta nem recomendação de investimento.
+
+Job (fonte: [`docs/ideia.md`](docs/ideia.md)): localizar oportunidade — **flat → Airbnb** ou **abaixo do preço com o problema visível**.
 
 ## Funil
 
@@ -15,7 +17,7 @@ Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP /
 4. Resultado — 3 encaixes + problema à vista + mapa da orla
 5. **Sair** no topo limpa a sessão
 
-Quatro rumos, cada um com **três** imóveis distintos:
+Dois rumos na home:
 
 | Rumo | O número grande |
 |---|---|
@@ -29,7 +31,7 @@ Quem pede um bairro na caixinha vê aquele bairro (ou a mesma zona). Tambaú nã
 ## Agentes
 
 ```bash
-npm run test:rumo    # unitário: tríade, caixinha, cadastro
+npm run test:rumo    # unitário: tríade, job, cadastro, tela
 npm run test:base    # integridade: bairro, coords, score, estado 0–1
 npm test             # tudo (inclui os testes do template)
 ```
@@ -55,7 +57,7 @@ npm run audit:secrets
 
 ## Rotas
 
-- `/` — landing → cadastro → caixinha → três opções
+- `/` — job (Airbnb ou preço) + cadastro mínimo → três opções
 - `/imovel/$id` — dossiê do sinal
 - `/bairros` — m² e variação 12 meses
 - `/arquitetura` — desenho de produção na Cloudflare

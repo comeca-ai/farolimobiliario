@@ -1,3 +1,4 @@
+import { listingProblem } from "@/lib/job";
 import type { ReactNode } from "react";
 import { punchForGoal, rumoKickerFor, rumoNote, type LifeGoal } from "@/lib/brief";
 import { compactBrl } from "@/lib/format";
@@ -29,6 +30,7 @@ export function RumoHero({
 }) {
   const { listing, nb } = card;
   const hit = hitOf(card, goal);
+  const problem = listingProblem(listing);
   return (
     <article className="flex flex-col gap-[18px] rounded-[18px] border border-line bg-surface px-7 py-[26px] shadow-card">
       <button type="button" onClick={() => onOpen(listing.id)} className="pressable w-full text-left">
@@ -51,6 +53,7 @@ export function RumoHero({
             </p>
           </div>
         </div>
+        <p className="mt-4 text-sm font-medium text-risk">Problema: {problem}</p>
         {why ? (
           <p className="mt-4 border-t border-line pt-4 text-base leading-relaxed text-muted">{why}</p>
         ) : null}
@@ -77,6 +80,7 @@ export function RumoRow({
 }) {
   const { listing, nb } = card;
   const hit = hitOf(card, goal);
+  const problem = listingProblem(listing);
   return (
     <li className="border-t border-line">
       <button
@@ -95,6 +99,7 @@ export function RumoRow({
           <span className="text-sm tabular-nums text-subtle">
             {nb.name} · {listing.area} m² · {compactBrl(listing.ask)}
           </span>
+          <span className="mt-1 block text-[13px] text-risk">Problema: {problem}</span>
         </span>
         <span className="col-start-2 mt-2 flex flex-col items-end gap-0.5 text-right sm:col-start-auto sm:mt-0">
           <span className="font-display text-[34px] leading-none tabular-nums text-accent">
