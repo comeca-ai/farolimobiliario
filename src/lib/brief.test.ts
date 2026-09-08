@@ -5,6 +5,8 @@ import {
   MATCH_PER_RUMO,
   SURFACE_PER_RUMO,
   countBriefMatches,
+  leadFor,
+  listBrief,
   matchBrief,
   parsePlaces,
   proposeRumos,
@@ -110,6 +112,20 @@ describe("agente unitário — rumo", () => {
     });
     assert.ok(surfaced.length > MATCH_PER_RUMO);
     assert.ok(surfaced.every((m) => m.card.nb.zone === "orla" || m.card.nb.id === "tambau"));
+  });
+
+  it("lista de patrimônio ordena pelo spread, o maior primeiro", () => {
+    const list = listBrief({ goal: "patrimonio", ...GOAL_DEFAULTS.patrimonio });
+    assert.equal(list.length, 5);
+    for (let i = 0; i < list.length - 1; i++) {
+      assert.ok(list[i].card.discount >= list[i + 1].card.discount);
+    }
+  });
+
+  it("lead do patrimônio fala spread e justo do bairro", () => {
+    const text = leadFor({ goal: "patrimonio", ...GOAL_DEFAULTS.patrimonio });
+    assert.match(text, /spread/);
+    assert.match(text, /justo/);
   });
 
   it("WhatsApp e e-mail do cadastro", () => {

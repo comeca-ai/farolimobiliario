@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { LISTING_BY_ID, type Listing } from "@/data/listings";
 import { brl, brl2, pct, pctAbs } from "@/lib/format";
 import { SOURCE_LABEL, TYPE_LABEL } from "@/lib/labels";
-import { punchForGoal, rumoKickerFor } from "@/lib/brief";
+import { punchForGoal, rumoKickerFor, type LifeGoal } from "@/lib/brief";
 import { analyze, punch } from "@/lib/score";
 import { useDesk } from "@/lib/store";
 import { cn } from "@/lib/utils";
@@ -45,7 +45,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
   const hit = goal ? punchForGoal(live, goal) : punch(live);
 
   return (
-    <main className="mx-auto max-w-[760px] px-6 pb-20 pt-6">
+    <main className="mx-auto max-w-[760px] px-4 pb-20 pt-6 sm:px-6">
       <div className="flex items-center justify-between">
         <Link to="/" className="inline-flex h-11 items-center gap-2 text-sm font-semibold text-subtle">
           <span aria-hidden>←</span>
@@ -67,70 +67,31 @@ function ImovelBody({ listing }: { listing: Listing }) {
       </p>
       <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="min-w-0">
-          <h1 className="font-display text-[clamp(1.9rem,3.4vw,2.6rem)] leading-[1.02] tracking-tight">
+          <h1 className="font-display text-[clamp(1.55rem,3vw,1.85rem)] leading-snug tracking-tight">
             {listing.title}
           </h1>
-          <p className="mt-2 text-[15px] text-subtle">{listing.street}</p>
+          <p className="mt-2 text-sm text-subtle">{listing.street}</p>
         </div>
         <div className="shrink-0 sm:text-right">
-          <p className="font-display text-[clamp(3.2rem,6vw,4.4rem)] leading-none tracking-tight text-accent">
-            {hit.value}
-          </p>
-          <p className="mt-1.5 max-w-[26ch] text-[13.5px] leading-snug text-muted sm:ml-auto">
+          <p className="metric text-[clamp(2.4rem,5vw,2.75rem)] leading-none">{hit.value}</p>
+          <p className="mt-1.5 max-w-[26ch] text-xs leading-snug text-muted sm:ml-auto">
             {hit.caption}
           </p>
         </div>
       </div>
 
       {listing.risks[0] ? (
-        <p className="mt-6 rounded-[10px] bg-surface px-3.5 py-3 text-sm leading-snug">
-          <strong>O problema à vista:</strong> {listing.risks[0]}
+        <p className="mt-6 text-[15px] leading-snug text-muted">
+          <strong className="font-semibold text-fg">O problema à vista.</strong> {listing.risks[0]}
         </p>
       ) : null}
 
-      <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-muted">{listing.thesis}</p>
+      <p className="mt-5 max-w-[56ch] text-[15px] leading-relaxed text-muted">{listing.thesis}</p>
 
-      <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <Metric label="Ask" value={brl.format(listing.ask)} />
-        <Metric
-          label="Justo do bairro"
-          value={brl.format(live.fair)}
-          hint={`${brl.format(live.fairM2)}/m² × estado`}
-        />
-        <Metric label="Desconto" value={pct(live.discount)} tone={live.discount >= 0.12} />
-        <Metric label="Score Farol" value={String(Math.round(live.score))} />
-      </dl>
-
-      <section className="mt-10 rounded-[18px] border border-line bg-surface p-5 md:p-6">
-        <h2 className="font-display text-[26px] leading-tight">Laboratório Airbnb</h2>
-        <p className="mt-1 text-sm text-subtle">
-          Arraste ocupação e diária. Plataforma, limpeza, condomínio e IPTU já saem do NOI.
-        </p>
-        <div className="mt-5 grid gap-5 sm:grid-cols-2">
-          <Slider label="Ocupação" value={occ} min={25} max={85} suffix="%" onChange={setOcc} />
-          <Slider label="Diária" value={adr} min={120} max={520} prefix="R$ " onChange={setAdr} />
-        </div>
-        <dl className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-          <Metric label="Receita bruta" value={brl.format(live.strGross)} />
-          <Metric label="NOI" value={brl.format(live.strNoi)} />
-          <Metric label="Yield STR" value={pctAbs(Math.max(live.strYield, 0))} tone={live.strYield >= 0.08} />
-          <Metric
-            label="vs aluguel longo"
-            value={live.strVsLtr > 0 ? `${live.strVsLtr.toFixed(1)}×` : "—"}
-          />
-        </dl>
-        <p className="mt-4 text-[13px] text-subtle">
-          Aluguel tradicional: {brl.format(live.ltrNoi)}/ano (
-          {pctAbs(Math.max(live.ltrYield, 0))} a.a.).{" "}
-          {live.paybackMonths
-            ? `Payback ~${Math.round(live.paybackMonths)} meses.`
-            : "NOI negativo neste cenário."}{" "}
-          Condomínio {brl.format(listing.condo)}/mês · IPTU {brl.format(listing.iptu)}/ano.
-        </p>
-      </section>
+      <GoalLab goal={goal} listing={listing} live={live} occ={occ} adr={adr} setOcc={setOcc} setAdr={setAdr} />
 
       <section className="mt-10">
-        <h2 className="font-display text-[26px] leading-tight">Riscos</h2>
+        <h2 className="font-display text-[22px] leading-tight">Riscos</h2>
         <ul className="mt-3 space-y-2">
           {listing.risks.map((r) => (
             <li key={r} className="border-l-2 border-accent/40 pl-3 text-[15px] text-muted">
@@ -141,7 +102,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
       </section>
 
       <aside className="mt-10 grid gap-3 md:grid-cols-2">
-        <dl className="overflow-hidden rounded-[18px] border border-line bg-surface">
+        <dl className="overflow-hidden rounded-[14px] border border-line bg-surface">
           <div className="grid grid-cols-2 text-sm">
             <Side k="Área" v={`${listing.area} m²`} />
             <Side k="Ask / m²" v={brl2.format(live.askM2)} />
@@ -153,7 +114,7 @@ function ImovelBody({ listing }: { listing: Listing }) {
             <Side k="Portais" v={String(listing.portalCount)} />
           </div>
         </dl>
-        <div className="rounded-[18px] border border-line bg-surface p-5">
+        <div className="rounded-[14px] border border-line bg-surface p-5">
           <p className="eyebrow text-subtle">Fontes</p>
           <ul className="mt-3 flex flex-wrap gap-1.5">
             {listing.sources.map((s) => (
@@ -174,6 +135,106 @@ function ImovelBody({ listing }: { listing: Listing }) {
   );
 }
 
+function GoalLab({
+  goal,
+  listing,
+  live,
+  occ,
+  adr,
+  setOcc,
+  setAdr,
+}: {
+  goal?: LifeGoal;
+  listing: Listing;
+  live: ReturnType<typeof analyze>;
+  occ: number;
+  adr: number;
+  setOcc: (n: number) => void;
+  setAdr: (n: number) => void;
+}) {
+  if (goal === "morar") {
+    return (
+      <section className="mt-10 rounded-[14px] border border-line bg-surface p-5 md:p-6">
+        <h2 className="font-display text-[22px] leading-tight">Para viver</h2>
+        <p className="mt-1 text-sm text-subtle">Uso próprio. Sem conta de hóspede.</p>
+        <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <Metric label="Ask" value={brl.format(listing.ask)} />
+          <Metric label="Quartos" value={listing.rooms === 1 ? "1 quarto" : `${listing.rooms} quartos`} />
+          <Metric label="Área" value={`${listing.area} m²`} />
+          <Metric label="Condomínio" value={`${brl.format(listing.condo)}/mês`} />
+        </dl>
+      </section>
+    );
+  }
+
+  if (goal === "aposentar") {
+    return (
+      <section className="mt-10 rounded-[14px] border border-line bg-surface p-5 md:p-6">
+        <h2 className="font-display text-[22px] leading-tight">Contrato longo</h2>
+        <p className="mt-1 text-sm text-subtle">
+          Aluguel anual, já descontado condomínio e IPTU. Pouca gestão.
+        </p>
+        <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <Metric label="Yield LTR" value={pctAbs(Math.max(live.ltrYield, 0))} tone />
+          <Metric label="NOI anual" value={brl.format(live.ltrNoi)} />
+          <Metric label="Condomínio" value={`${brl.format(listing.condo)}/mês`} />
+          <Metric label="IPTU" value={`${brl.format(listing.iptu)}/ano`} />
+        </dl>
+      </section>
+    );
+  }
+
+  if (goal === "patrimonio") {
+    return (
+      <section className="mt-10 rounded-[14px] border border-line bg-surface p-5 md:p-6">
+        <h2 className="font-display text-[22px] leading-tight">O spread</h2>
+        <p className="mt-1 text-sm text-subtle">
+          Pedido contra o m² justo do bairro × estado do imóvel.
+        </p>
+        <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <Metric label="Ask" value={brl.format(listing.ask)} />
+          <Metric
+            label="Justo do bairro"
+            value={brl.format(live.fair)}
+            hint={`${brl.format(live.fairM2)}/m² × estado`}
+          />
+          <Metric label="Desconto" value={pct(live.discount)} tone={live.discount >= 0.12} />
+          <Metric label="Bairro / 12m" value={pct(live.nb.yoy)} />
+        </dl>
+      </section>
+    );
+  }
+
+  return (
+    <section className="mt-10 rounded-[14px] border border-line bg-surface p-5 md:p-6">
+      <h2 className="font-display text-[22px] leading-tight">Laboratório Airbnb</h2>
+      <p className="mt-1 text-sm text-subtle">
+        Arraste ocupação e diária. Plataforma, limpeza, condomínio e IPTU já saem do NOI.
+      </p>
+      <div className="mt-5 grid gap-5 sm:grid-cols-2">
+        <Slider label="Ocupação" value={occ} min={25} max={85} suffix="%" onChange={setOcc} />
+        <Slider label="Diária" value={adr} min={120} max={520} prefix="R$ " onChange={setAdr} />
+      </div>
+      <dl className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+        <Metric label="Receita bruta" value={brl.format(live.strGross)} />
+        <Metric label="NOI" value={brl.format(live.strNoi)} />
+        <Metric label="Yield STR" value={pctAbs(Math.max(live.strYield, 0))} tone={live.strYield >= 0.08} />
+        <Metric
+          label="vs aluguel longo"
+          value={live.strVsLtr > 0 ? `${live.strVsLtr.toFixed(1)}×` : "—"}
+        />
+      </dl>
+      <p className="mt-4 text-[13px] text-subtle">
+        Aluguel tradicional: {brl.format(live.ltrNoi)}/ano ({pctAbs(Math.max(live.ltrYield, 0))} a.a.).{" "}
+        {live.paybackMonths
+          ? `Payback ~${Math.round(live.paybackMonths)} meses.`
+          : "NOI negativo neste cenário."}{" "}
+        Condomínio {brl.format(listing.condo)}/mês · IPTU {brl.format(listing.iptu)}/ano.
+      </p>
+    </section>
+  );
+}
+
 function Metric({
   label,
   value,
@@ -186,9 +247,9 @@ function Metric({
   tone?: boolean;
 }) {
   return (
-    <div className="rounded-xl border border-line bg-surface px-3 py-3">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-subtle">{label}</p>
-      <p className={cn("mt-1 font-display text-lg tabular-nums", tone && "text-accent")}>{value}</p>
+    <div className="rounded-[10px] border border-line bg-bg px-3 py-3">
+      <p className="eyebrow text-subtle">{label}</p>
+      <p className={cn("mt-1 font-display text-lg tabular-nums", tone && "text-deal")}>{value}</p>
       {hint ? <p className="mt-0.5 text-xs text-subtle">{hint}</p> : null}
     </div>
   );
@@ -197,7 +258,7 @@ function Metric({
 function Side({ k, v }: { k: string; v: string }) {
   return (
     <div className="border-b border-line px-4 py-3 last:border-0">
-      <dt className="text-[11px] font-semibold uppercase tracking-[0.12em] text-subtle">{k}</dt>
+      <dt className="eyebrow text-subtle">{k}</dt>
       <dd className="tabular-nums text-sm">{v}</dd>
     </div>
   );

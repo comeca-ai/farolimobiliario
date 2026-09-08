@@ -41,10 +41,24 @@ export const GOAL_SORT: Record<LifeGoal, string> = {
 };
 
 export const GOAL_HERO_KICK: Record<LifeGoal, string> = {
-  renda: "Melhor encaixe · temporada",
-  patrimonio: "Melhor encaixe · spread",
-  morar: "Melhor encaixe · uso próprio",
-  aposentar: "Melhor encaixe · aluguel anual",
+  renda: "Melhor caixa",
+  patrimonio: "Maior spread",
+  morar: "Melhor para morar",
+  aposentar: "Melhor aluguel anual",
+};
+
+export const GOAL_CHIP: Record<LifeGoal, string> = {
+  renda: "Renda",
+  patrimonio: "Patrimônio",
+  morar: "Morar",
+  aposentar: "Aposentar",
+};
+
+export const GOAL_MAP_CAPTION: Record<LifeGoal, string> = {
+  renda: "Só o que fecha caixa de temporada",
+  patrimonio: "Só os aderentes a este rumo",
+  morar: "Onde dá para viver",
+  aposentar: "Onde o aluguel se sustenta",
 };
 
 export function foldPt(s: string) {
@@ -137,6 +151,50 @@ export function rumoKickerFor(card: Scorecard, goal: LifeGoal) {
   if (listing.portalCount === 0) return "Fora dos portais";
   if (listing.sources.includes("inventario")) return "Inventário";
   return "Spread";
+}
+
+export function heroKicker(card: Scorecard, goal: LifeGoal) {
+  const specific = rumoKickerFor(card, goal);
+  const lead = GOAL_HERO_KICK[goal];
+  if (!specific) return lead;
+  const s = foldPt(specific);
+  const l = foldPt(lead);
+  if (s === l || l.includes(s)) return lead;
+  return `${lead} · ${specific}`;
+}
+
+export function leadFor(brief: Brief): string {
+  const asked = brief.places?.length ? askedNames(brief.places) : "";
+  const askedLead = asked ? `Você pediu ${asked}. ` : "";
+
+  if (brief.goal === "renda") {
+    return `${askedLead}Horizonte de ${brief.years} anos. A diária precisa pagar a parcela agora — só o que fecha caixa de temporada, já líquido.`;
+  }
+  if (brief.goal === "patrimonio") {
+    return `${askedLead}Seus ${brief.years} anos são tempo de realizar o spread, não de gerir hóspede. Todos os imóveis desta lista estão abaixo do preço justo do próprio bairro.`;
+  }
+  if (brief.goal === "morar") {
+    return asked
+      ? `Você pediu ${asked} para viver. Uso próprio — não hóspede. A rua é de morador, o m² está honesto.`
+      : `Uso próprio — não hóspede. Separei onde a rua é de morador e o m² está honesto.`;
+  }
+  return `${askedLead}Renda previsível para os próximos ${brief.years} anos. Contrato anual, pouca gestão, sem check-in.`;
+}
+
+export function heroWhy(card: Scorecard, goal: LifeGoal): string {
+  if (goal === "renda") {
+    const pay = card.paybackMonths ? `, payback ${Math.round(card.paybackMonths)} meses` : "";
+    return `Temporada ${pctAbs(Math.max(card.strYield, 0))} em ${card.nb.name}${pay}. O caixa da diária pesa mais que esperar o m².`;
+  }
+  if (goal === "patrimonio") {
+    const hidden = card.listing.portalCount === 0 ? " e o anúncio não circula nos portais — menos gente vendo o mesmo desconto" : "";
+    return `Bairro ${pct(card.nb.yoy)} em 12 meses${hidden}.`;
+  }
+  if (goal === "morar") {
+    const q = card.listing.rooms === 1 ? "1 quarto" : `${card.listing.rooms} quartos`;
+    return `${q} em ${card.nb.name}, ${card.listing.area} m². Serve para viver, não para turn-over de fim de semana.`;
+  }
+  return `Aluguel longo ${pctAbs(Math.max(card.ltrYield, 0))} a.a. em ${card.nb.name}. Pouca operação, sem check-in.`;
 }
 
 export const YEAR_OPTIONS = [3, 5, 8, 10, 15, 20] as const;
@@ -268,6 +326,7 @@ export function reading(brief: Brief, matches: Match[]): string {
 
 export const MATCH_PER_RUMO = 3;
 export const SURFACE_PER_RUMO = 8;
+export const LIST_ON_RUMO = 5;
 
 function sameZoneAsAsked(nbId: string, places: string[]) {
   const asked = places
@@ -306,6 +365,20 @@ function scopeMatches(scored: Match[], places: string[]) {
 export function surfaceBrief(brief: Brief, limit = SURFACE_PER_RUMO): Match[] {
   const places = brief.places ?? [];
   return scopeMatches(rankBrief(brief), places).slice(0, limit);
+}
+
+export function listBrief(brief: Brief, limit = LIST_ON_RUMO): Match[] {
+  const pool = surfaceBrief(brief, Math.max(limit, SURFACE_PER_RUMO));
+  return [...pool]
+    .sort((a, b) => metricFor(b.card, brief.goal) - metricFor(a.card, brief.goal))
+    .slice(0, limit);
+}
+
+function metricFor(card: Scorecard, goal: LifeGoal) {
+  if (goal === "renda") return card.strYield;
+  if (goal === "patrimonio") return card.discount;
+  if (goal === "morar") return -card.askM2;
+  return card.ltrYield;
 }
 
 export function countBriefMatches(brief: Brief): number {

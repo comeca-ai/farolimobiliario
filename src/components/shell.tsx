@@ -25,19 +25,19 @@ export function Shell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col bg-bg pb-[env(safe-area-inset-bottom)]">
       <header className="sticky top-0 z-30 bg-bg/90 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
+        <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-3 px-4 py-[18px] sm:px-8">
           <Link
             to="/"
             onClick={() => setShowDesk(false)}
             className="flex items-center gap-2.5 text-fg"
           >
-            <Mark className="h-[26px] w-4" />
+            <Mark className="h-[22px] w-3.5" />
             <span className="flex items-baseline gap-2.5">
-              <span className="font-display text-[28px] leading-none tracking-tight">Farol</span>
+              <span className="font-display text-[22px] leading-none tracking-tight">Farol</span>
               <span className="hidden text-[13px] text-subtle sm:inline">João Pessoa</span>
             </span>
           </Link>
-          <nav className="flex flex-wrap items-center gap-1.5 text-sm font-medium">
+          <nav className="flex flex-wrap items-center gap-1 text-sm">
             {NAV.map((item) => {
               const active =
                 item.to === "/"
@@ -74,7 +74,7 @@ export function Shell({ children }: { children: ReactNode }) {
       </header>
       <div className="flex-1">{children}</div>
       <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-2 px-6 py-6 text-[13px] leading-relaxed text-subtle md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-4 py-6 text-[13px] leading-relaxed text-subtle sm:px-8 md:flex-row md:items-center md:justify-between">
           <p>
             Inventário recarregado em toda visita · comps {CITY.sampleDate}. Não é oferta nem
             recomendação de investimento.

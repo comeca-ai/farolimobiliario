@@ -16,7 +16,7 @@ export const Route = createRootRoute({
         name: "description",
         content: "Onde está a oportunidade em João Pessoa. Três sinais, um job.",
       },
-      { name: "theme-color", content: "#f3eee4" },
+      { name: "theme-color", content: "#f7f3ea" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -27,7 +27,7 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap",
       },
     ],
   }),

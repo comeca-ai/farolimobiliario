@@ -12,10 +12,10 @@ Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP /
 1. Landing — job (Flat → Airbnb / Abaixo do preço) + e-mail; WhatsApp opcional
 2. Cadastro — WhatsApp obrigatório, sem senha
 3. Caixinha — o que o imóvel precisa fazer; o Farol lê o rumo ao vivo
-4. Resultado — 3 encaixes + problema à vista + mapa da orla
+4. Resultado — 5 encaixes (destaque + 4) + mapa só desses pinos
 5. **Sair** no topo limpa a sessão
 
-Quatro rumos, cada um com **três** imóveis distintos:
+Quatro rumos, cada um com **cinco** imóveis distintos:
 
 | Rumo | O número grande |
 |---|---|

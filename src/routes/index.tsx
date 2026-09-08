@@ -4,18 +4,23 @@ import { useMemo, useState } from "react";
 import { Cadastro } from "@/components/cadastro";
 import { Landing } from "@/components/briefing";
 import { Objetivos } from "@/components/objetivos";
-import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
+import { MapPanel, RumoHero, RumoRow, RumoSwitch } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
 import { CITY, NEIGHBORHOOD_BY_ID } from "@/data/market";
 import {
+  GOAL_DEFAULTS,
   GOAL_HEADLINE,
-  GOAL_HERO_KICK,
   GOAL_LABEL,
+  GOAL_MAP_CAPTION,
   GOAL_SORT,
+  LIST_ON_RUMO,
+  heroKicker,
+  heroWhy,
   inAskedPlace,
-  matchBrief,
-  reading,
+  leadFor,
+  listBrief,
   type Brief,
+  type LifeGoal,
 } from "@/lib/brief";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
@@ -50,96 +55,105 @@ function Home() {
 }
 
 function Reading({ brief }: { brief: Brief }) {
-  const matches = useMemo(() => matchBrief(brief), [brief]);
-  const text = useMemo(() => reading(brief, matches), [brief, matches]);
+  const matches = useMemo(() => listBrief(brief, LIST_ON_RUMO), [brief]);
+  const text = useMemo(() => leadFor(brief), [brief]);
   const clearBrief = useDesk((s) => s.clearBrief);
+  const setBrief = useDesk((s) => s.setBrief);
   const setShowDesk = useDesk((s) => s.setShowDesk);
   const selectedId = useDesk((s) => s.selectedId);
   const select = useDesk((s) => s.select);
   const navigate = useNavigate();
   const cards = matches.map((m) => m.card);
-  const scoped = LISTINGS_SCORED.filter((c) => inAskedPlace(c.nb.id, brief.places, true)).length;
   const open = (id: string) => {
     select(id);
     void navigate({ to: "/imovel/$id", params: { id } });
   };
   const rest = matches.slice(1);
+  const switchGoal = (goal: LifeGoal) => {
+    setBrief({
+      ...brief,
+      goal,
+      age: GOAL_DEFAULTS[goal].age,
+      years: GOAL_DEFAULTS[goal].years,
+    });
+  };
 
   return (
-    <main className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
-      <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.9fr)]">
-        <section className="flex flex-col gap-7">
-          <button
-            type="button"
-            onClick={clearBrief}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-subtle"
-          >
-            <span aria-hidden>←</span> Refazer o rumo
-          </button>
-          <div className="flex flex-col gap-3.5">
-            <p className="eyebrow text-accent">Rumo: {GOAL_LABEL[brief.goal].toLowerCase()}</p>
-            <h1 className="font-display text-[clamp(2.5rem,4.8vw,4rem)] leading-[0.98] tracking-tight">
-              {GOAL_HEADLINE[brief.goal]}
-            </h1>
-            <p className="max-w-[56ch] text-[17px] leading-relaxed text-muted">{text}</p>
-            <p className="text-sm text-subtle">
-              3 encaixes principais · {scoped} sinais aderentes · {GOAL_SORT[brief.goal]}
-            </p>
+    <main className="mx-auto max-w-[1240px] px-4 pb-20 pt-8 sm:px-8">
+      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
+        <section className="min-w-0">
+          <h1 className="font-display text-[clamp(1.85rem,3.4vw,2.15rem)] leading-[1.15] tracking-tight">
+            {GOAL_HEADLINE[brief.goal]}
+          </h1>
+          <p className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">{text}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-[12.5px] text-faint">
+            <span>
+              {matches.length} {matches.length === 1 ? "imóvel" : "imóveis"}
+            </span>
+            <span aria-hidden className="size-[3px] rounded-full bg-sand" />
+            <span>{GOAL_SORT[brief.goal]}</span>
+          </div>
+          <div className="mt-5">
+            <RumoSwitch value={brief.goal} onChange={switchGoal} />
           </div>
 
-          {matches[0] ? (
-            <RumoHero
-              card={matches[0].card}
-              why={matches[0].why}
-              goal={brief.goal}
-              kicker={GOAL_HERO_KICK[brief.goal]}
-              onOpen={open}
-            />
-          ) : (
-            <p className="rounded-[14px] border border-line bg-surface px-5 py-10 text-sm text-muted">
-              Nenhum sinal neste rumo.
-            </p>
-          )}
+          <div className="mt-7 flex flex-col gap-9">
+            {matches[0] ? (
+              <RumoHero
+                card={matches[0].card}
+                why={heroWhy(matches[0].card, brief.goal)}
+                goal={brief.goal}
+                kicker={heroKicker(matches[0].card, brief.goal)}
+                onOpen={open}
+              />
+            ) : (
+              <p className="rounded-[14px] border border-line bg-surface px-5 py-10 text-sm text-muted">
+                Nenhum sinal neste rumo.
+              </p>
+            )}
 
-          {rest.length > 0 ? (
-            <ol>
-              {rest.map((m, i) => (
-                <RumoRow
-                  key={m.card.listing.id}
-                  card={m.card}
-                  index={i + 1}
-                  goal={brief.goal}
-                  onOpen={open}
-                />
-              ))}
-            </ol>
-          ) : null}
+            {rest.length > 0 ? (
+              <ol>
+                {rest.map((m, i) => (
+                  <RumoRow
+                    key={m.card.listing.id}
+                    card={m.card}
+                    index={i + 1}
+                    goal={brief.goal}
+                    onOpen={open}
+                  />
+                ))}
+                <li className="border-t border-line" />
+              </ol>
+            ) : null}
+          </div>
 
-          <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
+          <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5">
             <button
               type="button"
               onClick={clearBrief}
-              className="pressable h-12 rounded-xl bg-raised px-5 text-sm font-semibold text-fg"
+              className="pressable inline-flex h-11 items-center text-sm font-semibold text-subtle hover:text-fg"
             >
               Refazer o rumo
             </button>
             <button
               type="button"
               onClick={() => setShowDesk(true)}
-              className="pressable h-12 rounded-xl px-5 text-sm font-semibold text-subtle hover:text-fg"
+              className="pressable inline-flex h-11 items-center text-sm font-semibold text-subtle hover:text-fg"
             >
               Ver todas as opções
             </button>
           </div>
         </section>
 
-        <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
-          <MapPanel caption={`${scoped} sinais · mapa esquemático`}>
+        <aside className="min-w-0 lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
+          <MapPanel caption={GOAL_MAP_CAPTION[brief.goal]}>
             <OrlaMap
-              cards={LISTINGS_SCORED.filter((c) => inAskedPlace(c.nb.id, brief.places, true))}
+              cards={cards}
               selectedId={selectedId}
               onSelect={open}
-              highlight={3}
+              highlight={cards.length}
+              goal={brief.goal}
             />
           </MapPanel>
         </aside>
@@ -181,7 +195,7 @@ function MesaBoard() {
   };
 
   return (
-    <main className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
+    <main className="mx-auto max-w-[1240px] px-4 pb-20 pt-8 sm:px-8">
       <header className="max-w-2xl">
         <p className="eyebrow text-subtle">
           {brief?.places?.length
@@ -189,7 +203,7 @@ function MesaBoard() {
             : "João Pessoa"}{" "}
           · {CITY.sampleDate} · {CITY.refresh}
         </p>
-        <h1 className="mt-3 font-display text-[clamp(2rem,4vw,2.75rem)] leading-tight tracking-tight">
+        <h1 className="mt-3 font-display text-[clamp(1.85rem,3.4vw,2.15rem)] leading-snug tracking-tight">
           Todas as opções
         </h1>
         {brief ? (
@@ -234,13 +248,13 @@ function MesaBoard() {
           Nenhum sinal com esse filtro.
         </p>
       ) : (
-        <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.9fr)]">
-          <section>
+        <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
+          <section className="min-w-0">
             {featured ? (
               <RumoHero
                 card={featured}
                 goal={brief?.goal}
-                kicker={brief ? GOAL_HERO_KICK[brief.goal] : undefined}
+                kicker={brief ? heroKicker(featured, brief.goal) : undefined}
                 onOpen={open}
               />
             ) : null}
@@ -249,12 +263,19 @@ function MesaBoard() {
                 {rest.map((c, i) => (
                   <RumoRow key={c.listing.id} card={c} index={i + 1} goal={brief?.goal} onOpen={open} />
                 ))}
+                <li className="border-t border-line" />
               </ol>
             ) : null}
           </section>
-          <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
+          <aside className="min-w-0 lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
             <MapPanel caption={`${filtered.length} sinais · mapa esquemático`}>
-              <OrlaMap cards={filtered} selectedId={selectedId} onSelect={open} />
+              <OrlaMap
+                cards={filtered}
+                selectedId={selectedId}
+                onSelect={open}
+                highlight={5}
+                goal={brief?.goal}
+              />
             </MapPanel>
           </aside>
         </div>

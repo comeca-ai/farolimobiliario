@@ -2,38 +2,38 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-bg: #f3eee4;
-  --color-surface: #faf7f0;
-  --color-raised: #e8e1d2;
+  --color-bg: #f7f3ea;
+  --color-surface: #fffcf6;
+  --color-raised: #ede6d7;
   --color-paper: #ffffff;
-  --color-fg: #1b1a17;
-  --color-muted: #4a463f;
-  --color-subtle: #5a554b;
-  --color-faint: #8b8477;
-  --color-accent: #8f5500;
-  --color-accent-fg: #f3eee4;
+  --color-fg: #23201c;
+  --color-muted: #6e675e;
+  --color-subtle: #8a8278;
+  --color-faint: #9c948a;
+  --color-accent: #b85c38;
+  --color-accent-fg: #f7f3ea;
+  --color-deal: #2f5d45;
   --color-gold: #e0a020;
   --color-sand: #d9d2c3;
-  --color-line: #d9d2c3;
-  --color-deal: #8f5500;
-  --color-warn: #8f5500;
-  --color-risk: #8f5500;
-  --color-sky: #cfd9d5;
+  --color-line: #e7e1d3;
+  --color-warn: #b85c38;
+  --color-risk: #b85c38;
+  --color-sky: #dde7e3;
   --color-sea: #4a6a63;
-  --color-building: #faf7f0;
-  --color-ground: #ebe4d4;
-  --color-ink: #1b1a17;
+  --color-building: #fffcf6;
+  --color-ground: #f1eada;
+  --color-ink: #23201c;
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "Spectral", ui-serif, Georgia, serif;
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --radius-xl: 18px;
   --radius-2xl: 20px;
   --header-h: calc(4.25rem + env(safe-area-inset-top, 0px));
-  --shadow-border: 0 0 0 1px #d9d2c3;
-  --shadow-border-hover: 0 0 0 1px #1b1a17;
-  --shadow-card: 0 18px 50px rgb(27 26 23 / 0.08);
+  --shadow-border: 0 0 0 1px #e7e1d3;
+  --shadow-border-hover: 0 0 0 1px #23201c;
+  --shadow-card: 0 18px 50px rgb(35 32 28 / 0.07);
 }
 
 @layer base {
@@ -49,6 +49,7 @@
     min-height: 100%;
     background: var(--color-bg);
     color: var(--color-fg);
+    overflow-x: clip;
   }
 
   body {
@@ -122,6 +123,13 @@
   color: var(--color-accent-fg);
 }
 
+.metric {
+  font-family: var(--font-display);
+  color: var(--color-deal);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
 .beam {
   background: conic-gradient(
     from 262deg at 0% 42%,
@@ -148,7 +156,7 @@
 }
 
 .eyebrow {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
