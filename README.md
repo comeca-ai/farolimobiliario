@@ -28,6 +28,20 @@ Quatro rumos, cada um com **cinco** imóveis distintos:
 
 Quem pede um bairro na caixinha vê aquele bairro (ou a mesma zona). Tambaú não devolve Expedicionários.
 
+## Colheita
+
+A mesa não vive dos 20 dossiês escritos. Uma camada antes raspa o que o colo alcança:
+
+- **Chaves na Mão** — JSON-LD público (~15 mil anúncios em João Pessoa)
+- **Capta Leilões** — editais Caixa
+- Zap / OLX / VivaReal — ainda 403 no edge; entram quando o Browser Run ligar
+
+```bash
+npm run harvest    # reescreve src/data/harvested.ts
+```
+
+Toda segunda, 9h de Recife, o Action tenta colher de novo.
+
 ## Agentes
 
 ```bash

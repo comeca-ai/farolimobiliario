@@ -4,8 +4,32 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: "0 12 * * 1"
 
 jobs:
+  harvest:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run harvest
+      - name: Grava a colheita
+        run: |
+          git config user.name "farol-harvest"
+          git config user.email "harvest@farolqueprotege.com.br"
+          git add src/data/harvested.ts
+          git diff --cached --quiet && echo "sem mudança" && exit 0
+          git commit -m "Colheita semanal da mesa $(date -u +%Y-%m-%d)"
+          git push
+
   audit:
     runs-on: ubuntu-latest
     steps:

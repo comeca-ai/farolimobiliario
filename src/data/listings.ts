@@ -1,3 +1,5 @@
+import { HARVESTED_LISTINGS } from "./harvested.ts";
+
 export type SourceKind =
   | "portal"
   | "olx"
@@ -39,7 +41,7 @@ export type Listing = {
   facade: number;
 };
 
-export const LISTINGS: Listing[] = [
+export const CURATED_LISTINGS: Listing[] = [
   {
     id: "sgn-01",
     title: "Studio com serviço, 80 m da feirinha",
@@ -657,6 +659,8 @@ export const LISTINGS: Listing[] = [
     facade: 20,
   },
 ];
+
+export const LISTINGS: Listing[] = [...CURATED_LISTINGS, ...HARVESTED_LISTINGS];
 
 export const LISTING_BY_ID = Object.fromEntries(LISTINGS.map((l) => [l.id, l])) as Record<
   string,

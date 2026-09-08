@@ -21,6 +21,7 @@
     "test:rumo": "node scripts/agent-unit.mjs",
     "test:base": "node scripts/agent-integrity.mjs",
     "audit:secrets": "node scripts/audit-secrets.mjs",
+    "harvest": "node --import ./scripts/register-alias.mjs --experimental-strip-types scripts/harvest.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "deploy:cf": "npm run build:cf && wrangler deploy"

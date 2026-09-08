@@ -11,6 +11,7 @@ const r = spawnSync(
     "src/lib/brief.test.ts",
     "src/lib/job.test.ts",
     "src/lib/evento.test.ts",
+    "src/lib/harvest.test.ts",
     "scripts/job-tela.test.mjs",
   ],
   { stdio: "inherit" },

@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CITY, NEIGHBORHOODS } from "@/data/market";
+import { CURATED_LISTINGS, LISTINGS } from "@/data/listings";
+import { HARVESTED_LISTINGS, HARVEST_REPORT } from "@/data/harvested";
 import { brl, pct, pctAbs } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
@@ -17,9 +19,12 @@ function BairrosPage() {
       <h1 className="mt-3.5 font-display text-[clamp(2.4rem,4.5vw,4rem)] leading-none tracking-tight">
         O m² é o chão.
       </h1>
-      <p className="mt-3.5 max-w-[44ch] text-[17px] leading-relaxed text-muted">
+      <p className="mt-3.5 max-w-[46ch] text-[17px] leading-relaxed text-muted">
         João Pessoa {brl.format(CITY.m2)}/m² · {pct(CITY.yoy)} em 12 meses. STR da cidade{" "}
-        {pctAbs(CITY.strOccupancy)} · ADR {brl.format(CITY.strAdr)}.
+        {pctAbs(CITY.strOccupancy)} · ADR {brl.format(CITY.strAdr)}. A mesa lê {LISTINGS.length}{" "}
+        sinais — {CURATED_LISTINGS.length} dossiês escritos e {HARVESTED_LISTINGS.length} colhidos
+        no portal{HARVEST_REPORT.portalListed ? ` (o Chaves anuncia ${HARVEST_REPORT.portalListed.toLocaleString("pt-BR")})` : ""}.
+        Zap e OLX ainda fecham o colo.
       </p>
 
       <ul className="mt-10 grid gap-3 sm:grid-cols-2">

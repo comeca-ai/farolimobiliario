@@ -7,7 +7,7 @@ const STAGES = [
     n: "01",
     title: "Coleta no edge",
     products: "Workers Cron · Browser Run · Tunnel",
-    body: "Toda manhã, um Worker dispara harvest. Portais (Zap, VivaReal, OLX, ImovelWeb) entram por fetch no colo de GRU/FOR. Placa na calçada e Street View passam pelo Browser Run — OCR da faixa vende-se. Editais Caixa e IPTU municipal entram por Tunnel, sem IP público na origem. Nada disso vive numa VPS.",
+    body: "Toda segunda, 9h de Recife, o harvest roda de novo. Chaves na Mão e Capta Leilões entram por fetch no colo — JSON-LD público, sem VPS. Zap, VivaReal e OLX ainda respondem 403; quando o Browser Run ligar, entram no mesmo cano. Placa na calçada fica para a onda seguinte.",
   },
   {
     n: "02",

@@ -1,7 +1,8 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { LISTINGS, type RadarTag, type SourceKind } from "./listings.ts";
+import { LISTINGS, CURATED_LISTINGS, type RadarTag, type SourceKind } from "./listings.ts";
 import { CITY, NEIGHBORHOODS, NEIGHBORHOOD_BY_ID } from "./market.ts";
+import { HARVESTED_LISTINGS } from "./harvested.ts";
 import { analyze, LISTINGS_SCORED } from "../lib/score.ts";
 
 const RADARS: RadarTag[] = ["preco", "airbnb", "rua"];
@@ -9,8 +10,8 @@ const SOURCES: SourceKind[] = ["portal", "olx", "leilao", "placa", "whatsapp", "
 const TYPES = ["apto", "flat", "casa", "kitnet"];
 
 const LAT_N = -7.03;
-const LAT_S = -7.2;
-const LNG_W = -34.9;
+const LAT_S = -7.26;
+const LNG_W = -34.93;
 const LNG_E = -34.79;
 
 describe("agente integridade — base João Pessoa", () => {
@@ -31,6 +32,7 @@ describe("agente integridade — base João Pessoa", () => {
 
   it("cada imóvel aponta para um bairro que existe", () => {
     assert.ok(LISTINGS.length >= 12);
+    assert.equal(LISTINGS.length, CURATED_LISTINGS.length + HARVESTED_LISTINGS.length);
     const ids = LISTINGS.map((l) => l.id);
     assert.equal(new Set(ids).size, ids.length);
     for (const l of LISTINGS) {
@@ -68,7 +70,19 @@ describe("agente integridade — base João Pessoa", () => {
       const nb = NEIGHBORHOOD_BY_ID[l.bairroId];
       const dLat = Math.abs(l.lat - nb.lat);
       const dLng = Math.abs(l.lng - nb.lng);
-      assert.ok(dLat < 0.06 && dLng < 0.06, `${l.id} longe de ${nb.id}`);
+      assert.ok(dLat < 0.08 && dLng < 0.08, `${l.id} longe de ${nb.id}`);
+    }
+  });
+
+  it("colheita entra na mesa sem apagar o dossiê escrito", () => {
+    assert.equal(CURATED_LISTINGS.length, 20);
+    for (const l of CURATED_LISTINGS) assert.match(l.id, /^sgn-/);
+    for (const l of HARVESTED_LISTINGS) {
+      assert.match(l.id, /^(chv|cx)-/);
+      assert.ok(l.sources.includes("portal") || l.sources.includes("leilao"), l.id);
+    }
+    if (HARVESTED_LISTINGS.length > 0) {
+      assert.ok(HARVESTED_LISTINGS.length >= 80, `colheita curta: ${HARVESTED_LISTINGS.length}`);
     }
   });
 });

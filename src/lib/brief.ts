@@ -73,6 +73,10 @@ const PLACE_ALIAS: Record<string, string> = {
   "jardim cidade universitaria": "jcu",
   "jd cidade universitaria": "jcu",
   cabedelo: "intermares",
+  "altiplano cabo branco": "altiplano",
+  "ernesto geisel": "geisel",
+  "cristo redentor": "cristo",
+  "13 de maio": "treze-de-maio",
 };
 
 export function parsePlaces(text: string): string[] {
