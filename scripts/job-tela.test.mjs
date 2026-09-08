@@ -3,43 +3,46 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
 const index = readFileSync("src/routes/index.tsx", "utf8");
-const door = readFileSync("src/components/job-door.tsx", "utf8");
+const landing = readFileSync("src/components/briefing.tsx", "utf8");
+const login = readFileSync("src/components/cadastro.tsx", "utf8");
 const rumo = readFileSync("src/components/rumo-list.tsx", "utf8");
-const job = readFileSync("src/lib/job.ts", "utf8");
 const shell = readFileSync("src/components/shell.tsx", "utf8");
+const caixinha = readFileSync("src/components/objetivos.tsx", "utf8");
 
-describe("tela do job", () => {
-  it("home carrega o job, não a lenda", () => {
-    assert.match(index, /JobDoor/);
-    assert.equal(/from "@\/components\/briefing"/.test(index), false);
-    assert.equal(/<Landing/.test(index), false);
-    assert.equal(/from "@\/components\/objetivos"/.test(index), false);
+describe("tela do Farol", () => {
+  it("home é landing → cadastro → caixinha", () => {
+    assert.match(index, /from "@\/components\/briefing"/);
+    assert.match(index, /<Landing/);
+    assert.match(index, /from "@\/components\/objetivos"/);
+    assert.match(index, /<Cadastro/);
+    assert.equal(/JobDoor/.test(index), false);
   });
 
-  it("caminho feliz: rumo + e-mail + CTA no primeiro viewport", () => {
-    assert.match(job, /Flat → Airbnb/);
-    assert.match(job, /Abaixo do preço/);
-    assert.match(door, /HOME_LABEL/);
-    assert.match(door, /type="email"/);
-    assert.match(door, /Ver 3 oportunidades/);
-    const cta = door.indexOf("Ver 3 oportunidades");
-    const wa = door.indexOf('type="tel"');
-    assert.ok(cta > 0 && wa > cta, "CTA vem antes do WhatsApp opcional");
+  it("landing tem os dois jobs e o e-mail no hero", () => {
+    assert.match(landing, /Flat → Airbnb/);
+    assert.match(landing, /Abaixo do preço/);
+    assert.match(landing, /type="email"/);
+    assert.match(landing, /Ver 3 oportunidades/);
   });
 
-  it("erro visível no cadastro", () => {
-    assert.match(door, /role="alert"/);
-    assert.match(door, /jobSubmitError/);
+  it("cadastro exige WhatsApp", () => {
+    assert.match(login, /Continuar para a caixinha/);
+    assert.match(login, /obrigatório/);
+    assert.match(login, /type="tel"/);
   });
 
-  it("card mostra o problema", () => {
-    assert.match(rumo, /listingProblem/);
-    assert.match(rumo, /Problema:/);
+  it("caixinha lê o rumo ao vivo", () => {
+    assert.match(caixinha, /Ler meu rumo/);
+    assert.match(caixinha, /O Farol leu/);
   });
 
-  it("topo da home não compete com o job", () => {
-    assert.equal(/Arquitetura/.test(shell), false);
-    assert.equal(/Bairros/.test(shell), false);
-    assert.equal(/>Entrar</.test(shell), false);
+  it("card mostra o problema à vista", () => {
+    assert.match(rumo, /O problema à vista/);
+  });
+
+  it("topo autenticado tem Rumo, Bairros, Arquitetura e Sair", () => {
+    assert.match(shell, /Bairros/);
+    assert.match(shell, /Arquitetura/);
+    assert.match(shell, />\s*Sair\s*</);
   });
 });

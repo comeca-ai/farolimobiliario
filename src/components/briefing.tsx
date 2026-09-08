@@ -168,11 +168,6 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
               porcentagem — e o motivo de estar barato aparece junto. Sem surpresa na visita.
             </p>
           </div>
-          <ul className="mt-6 grid gap-2 text-sm text-muted sm:max-w-lg">
-            <li>• 3 melhores encaixes primeiro, depois mais imóveis no mapa da cidade.</li>
-            <li>• Inventário recarregado em toda visita; comps públicos seguem visíveis.</li>
-            <li>• Copy honesta: sem promessa de ganho, com risco e contexto de bairro.</li>
-          </ul>
         </div>
       </section>
 

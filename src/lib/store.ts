@@ -23,8 +23,6 @@ type DeskState = {
   lead: Lead | null;
   draft: Draft;
   showDesk: boolean;
-  /** Ephemeral: header Entrar opens cadastro on /. Not persisted. */
-  enterIntent: boolean;
   setRadar: (radar: RadarFilter) => void;
   setQuery: (query: string) => void;
   select: (id: string | null) => void;
@@ -35,8 +33,6 @@ type DeskState = {
   clearBrief: () => void;
   signOut: () => void;
   setShowDesk: (show: boolean) => void;
-  requestEnter: () => void;
-  consumeEnterIntent: () => boolean;
 };
 
 export const useDesk = create<DeskState>()(
@@ -50,7 +46,6 @@ export const useDesk = create<DeskState>()(
       lead: null,
       draft: { email: "", whatsapp: "", job: "airbnb" },
       showDesk: false,
-      enterIntent: false,
       setRadar: (radar) => set({ radar }),
       setQuery: (query) => set({ query }),
       select: (id) => set({ selectedId: id }),
@@ -72,15 +67,8 @@ export const useDesk = create<DeskState>()(
           selectedId: null,
           query: "",
           radar: "todos",
-          enterIntent: false,
         }),
       setShowDesk: (showDesk) => set({ showDesk }),
-      requestEnter: () => set({ enterIntent: true, showDesk: false }),
-      consumeEnterIntent: () => {
-        if (!get().enterIntent) return false;
-        set({ enterIntent: false });
-        return true;
-      },
     }),
     {
       name: "farol-desk-v3",

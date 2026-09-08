@@ -1,28 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
 import { CITY, NEIGHBORHOODS } from "@/data/market";
 import { brl, pct, pctAbs } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/bairros")({ component: BairrosPage });
 
-type ZoneFilter = "todos" | "orla" | "interior" | "cabedelo";
-
-const ZONE_LABEL: Record<ZoneFilter, string> = {
-  todos: "Todos",
-  orla: "Orla",
-  interior: "Interior",
-  cabedelo: "Cabedelo",
-};
-
 function BairrosPage() {
-  const [zone, setZone] = useState<ZoneFilter>("todos");
   const maxM2 = Math.max(...NEIGHBORHOODS.map((n) => n.m2));
-  const sorted = useMemo(() => {
-    const list =
-      zone === "todos" ? NEIGHBORHOODS : NEIGHBORHOODS.filter((n) => n.zone === zone);
-    return [...list].sort((a, b) => b.m2 - a.m2);
-  }, [zone]);
+  const sorted = [...NEIGHBORHOODS].sort((a, b) => b.m2 - a.m2);
 
   return (
     <main className="mx-auto max-w-[1200px] px-6 py-10 md:py-14">
@@ -53,7 +38,6 @@ function BairrosPage() {
               <div
                 className="h-full rounded-full bg-accent"
                 style={{ width: `${(n.m2 / maxM2) * 100}%` }}
-                aria-hidden
               />
             </div>
             <dl className="mt-4 grid grid-cols-3 gap-2 text-sm">

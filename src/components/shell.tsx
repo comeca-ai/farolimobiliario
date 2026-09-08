@@ -1,10 +1,18 @@
 import type { ReactNode } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Mark } from "@/components/mark";
 import { CITY } from "@/data/market";
 import { useDesk } from "@/lib/store";
+import { cn } from "@/lib/utils";
+
+const NAV = [
+  { to: "/", label: "Rumo" },
+  { to: "/bairros", label: "Bairros" },
+  { to: "/arquitetura", label: "Arquitetura" },
+] as const;
 
 export function Shell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const setShowDesk = useDesk((s) => s.setShowDesk);
   const lead = useDesk((s) => s.lead);
   const signOut = useDesk((s) => s.signOut);
@@ -71,6 +79,7 @@ export function Shell({ children }: { children: ReactNode }) {
             Inventário recarregado em toda visita · comps {CITY.sampleDate}. Não é oferta nem
             recomendação de investimento.
           </p>
+          <p>João Pessoa. O Farol aponta. O resto, silêncio.</p>
         </div>
       </footer>
     </div>
