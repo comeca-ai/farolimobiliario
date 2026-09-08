@@ -7,7 +7,7 @@ const STAGES = [
     n: "01",
     title: "Coleta no edge",
     products: "Workers Cron · Browser Run · Tunnel",
-    body: "Toda segunda, 9h de Recife, o harvest roda de novo. Chaves na Mão e Capta Leilões entram por fetch no colo — JSON-LD público, sem VPS. Zap, VivaReal e OLX ainda respondem 403; quando o Browser Run ligar, entram no mesmo cano. Placa na calçada fica para a onda seguinte.",
+    body: "Toda segunda, 9h de Recife, o harvest roda de novo. Chaves na Mão e Capta entram por fetch. Zap/OLX/VivaReal passam pelo Browser Run — Chromium no edge, binding BROWSER neste Worker. Cloudflare não vende proxy residencial nem gira IP: o tráfego sai da rede da própria Cloudflare e se identifica (cf-biso-*). Se o portal também estiver atrás de Bot Fight, o Chrome da CF bate no muro da CF. A porta /api/colheita lê o HTML renderizado, não o objeto vazio do Response.",
   },
   {
     n: "02",

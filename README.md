@@ -34,7 +34,9 @@ A mesa não vive dos 20 dossiês escritos. Uma camada antes raspa o que o colo a
 
 - **Chaves na Mão** — JSON-LD público (~15 mil anúncios em João Pessoa)
 - **Capta Leilões** — editais Caixa
-- Zap / OLX / VivaReal — ainda 403 no edge; entram quando o Browser Run ligar
+- **Zap / OLX / VivaReal** — via **Browser Run** (Chromium no Worker). Não é proxy residencial: o IP é da Cloudflare, o tráfego se identifica, e o portal pode continuar 403.
+
+A colheita semanal chama `POST /api/colheita` (header `x-farol-colheita`) e, se o token tiver *Browser Rendering - Edit*, o REST `/content`.
 
 ```bash
 npm run harvest    # reescreve src/data/harvested.ts

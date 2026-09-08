@@ -11,6 +11,96 @@ function foldPt(s: string) {
 export const HARVEST_UA =
   "FarolQueProtege/1.0 (+https://farolqueprotege.com.br; mesa de sinais João Pessoa)";
 
+const CHROME_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36";
+
+export const COLHEITA_HOSTS = [
+  "www.zapimoveis.com.br",
+  "zapimoveis.com.br",
+  "www.vivareal.com.br",
+  "vivareal.com.br",
+  "glue-api.zapimoveis.com.br",
+  "glue-api.vivareal.com",
+  "www.olx.com.br",
+  "olx.com.br",
+  "pb.olx.com.br",
+  "www.chavesnamao.com.br",
+  "www.captaleiloes.com.br",
+  "www.imovelweb.com.br",
+] as const;
+
+export function isColheitaHost(host: string) {
+  return (COLHEITA_HOSTS as readonly string[]).includes(host.toLowerCase());
+}
+
+export async function unwrapBrowserResult(result: unknown): Promise<string> {
+  if (result == null) return "";
+  if (typeof result === "string") return peelJsonShell(result);
+  if (typeof result !== "object") return "";
+
+  const rec = result as Record<string, unknown> & {
+    text?: () => Promise<string> | string;
+    headers?: unknown;
+    body?: unknown;
+    status?: unknown;
+  };
+
+  const readBody = rec.text;
+  const looksResponse =
+    typeof readBody === "function" &&
+    (rec.headers != null || rec.body !== undefined || typeof rec.status === "number");
+
+  if (looksResponse && typeof readBody === "function") {
+    try {
+      const text = await readBody.call(rec);
+      if (typeof text === "string" && text.length) return peelJsonShell(text);
+    } catch {
+      /* keep looking */
+    }
+  }
+
+  const picked = pickHtmlField(rec);
+  if (picked) return peelJsonShell(picked);
+  try {
+    const dumped = JSON.stringify(result);
+    return dumped === "{}" ? "" : dumped;
+  } catch {
+    return "";
+  }
+}
+
+function pickHtmlField(rec: Record<string, unknown>): string {
+  for (const key of ["html", "content", "result", "markdown"]) {
+    const v = rec[key];
+    if (typeof v === "string" && v.length) return v;
+  }
+  const inner = rec.result;
+  if (inner && typeof inner === "object") {
+    const nested = inner as Record<string, unknown>;
+    for (const key of ["html", "content", "markdown"]) {
+      const v = nested[key];
+      if (typeof v === "string" && v.length) return v;
+    }
+  }
+  return "";
+}
+
+function peelJsonShell(text: string) {
+  const trimmed = text.trim();
+  if (!trimmed.startsWith("{") && !trimmed.startsWith("[")) return text;
+  try {
+    const parsed = JSON.parse(trimmed) as unknown;
+    if (typeof parsed === "string") return parsed;
+    if (parsed && typeof parsed === "object") {
+      const picked = pickHtmlField(parsed as Record<string, unknown>);
+      if (picked && picked !== trimmed) return picked;
+    }
+  } catch {
+    return text;
+  }
+  return text;
+}
+
 export const CHAVES_ORIGIN = "https://www.chavesnamao.com.br";
 export const CAPTA_ORIGIN = "https://www.captaleiloes.com.br";
 
@@ -88,7 +178,7 @@ const NAME_ALIAS: Record<string, string> = {
 };
 
 export type HarvestRaw = {
-  source: "chaves" | "capta";
+  source: "chaves" | "capta" | "zap" | "olx";
   id: string;
   name: string;
   price: number;
@@ -113,6 +203,8 @@ export type HarvestReport = {
   byBairro: Record<string, number>;
   feedsOk: number;
   feedsFail: number;
+  browserOk?: number;
+  browserFail?: number;
 };
 
 function intish(value: unknown, fallback = 0) {
@@ -315,7 +407,14 @@ export function rawToListing(raw: HarvestRaw, at: string): Listing | null {
   if (spread > 0.18) risks.push("Spread alto pede motivo: reforma, processo ou liquidez.");
   if (raw.rooms <= 1 && type !== "casa") risks.push("Unidade compacta: teses de diária e de moradia não se misturam.");
   return {
-    id: raw.source === "capta" ? `cx-${raw.id}` : `chv-${raw.id}`,
+    id:
+      raw.source === "capta"
+        ? `cx-${raw.id}`
+        : raw.source === "zap"
+          ? `zap-${raw.id}`
+          : raw.source === "olx"
+            ? `olx-${raw.id}`
+            : `chv-${raw.id}`,
     title,
     type,
     bairroId,
@@ -362,7 +461,7 @@ export async function fetchText(url: string) {
     headers: {
       "user-agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-      accept: "text/html,application/xhtml+xml",
+      accept: "text/html,application/xhtml+xml,application/json",
       "accept-language": "pt-BR,pt;q=0.9",
     },
     redirect: "follow",
@@ -371,12 +470,200 @@ export async function fetchText(url: string) {
   return res.text();
 }
 
+function extractJson(html: string, from: number) {
+  const open = html[from];
+  if (open !== "{" && open !== "[") return null;
+  let depth = 0;
+  let inStr = false;
+  let esc = false;
+  const limit = Math.min(html.length, from + 2_500_000);
+  for (let i = from; i < limit; i++) {
+    const c = html[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (c === "\\") esc = true;
+      else if (c === '"') inStr = false;
+      continue;
+    }
+    if (c === '"') inStr = true;
+    else if (c === "{" || c === "[") depth += 1;
+    else if (c === "}" || c === "]") {
+      depth -= 1;
+      if (depth === 0) {
+        try {
+          return JSON.parse(html.slice(from, i + 1));
+        } catch {
+          return null;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+function walkListings(node: unknown, acc: HarvestRaw[], source: HarvestRaw["source"]) {
+  if (!node || typeof node !== "object") return;
+  if (Array.isArray(node)) {
+    for (const item of node) walkListings(item, acc, source);
+    return;
+  }
+  const rec = node as Record<string, unknown>;
+  const listing = (rec.listing ?? rec) as Record<string, unknown>;
+  const id = listing.id ?? rec.id;
+  const pricing = listing.pricingInfos ?? rec.pricingInfos;
+  if (id && Array.isArray(pricing) && pricing[0] && typeof pricing[0] === "object") {
+    const price = Number((pricing[0] as { price?: number }).price ?? 0);
+    const addr = (listing.address ?? rec.address ?? {}) as Record<string, unknown>;
+    const geo =
+      ((addr.geoLocation as Record<string, unknown> | undefined)?.location as Record<string, unknown> | undefined) ??
+      {};
+    const areas = (listing.usableAreas ?? rec.usableAreas ?? listing.usableArea) as unknown;
+    const beds = listing.bedrooms ?? rec.bedrooms;
+    const baths = listing.bathrooms ?? rec.bathrooms;
+    const area = Array.isArray(areas) ? Number(areas[0]) : Number(areas ?? 0);
+    const rooms = Array.isArray(beds) ? Number(beds[0]) : Number(beds ?? 0);
+    acc.push({
+      source,
+      id: String(id),
+      name: String(listing.title ?? rec.title ?? ""),
+      price,
+      url: String(listing.link ?? rec.url ?? `https://www.zapimoveis.com.br/imovel/${id}`),
+      rooms: Number.isFinite(rooms) ? rooms : 0,
+      baths: Array.isArray(baths) ? Number(baths[0] ?? 0) : Number(baths ?? 0),
+      area: Number.isFinite(area) ? area : 0,
+      bairro: String(addr.neighborhood ?? addr.neighborhoodName ?? ""),
+      street: String(addr.street ?? ""),
+      schema: String((listing.unitTypes as string[] | undefined)?.[0] ?? "Apartment"),
+      lat: Number(geo.lat ?? geo.latitude ?? 0) || 0,
+      lng: Number(geo.lon ?? geo.lng ?? geo.longitude ?? 0) || 0,
+    });
+    return;
+  }
+  for (const v of Object.values(rec)) walkListings(v, acc, source);
+}
+
+export function parseZapHtml(html: string): HarvestRaw[] {
+  const rows: HarvestRaw[] = [];
+  const chaves = parseChavesHtml(html);
+  rows.push(...chaves.rows.map((r) => ({ ...r, source: "zap" as const })));
+  const needles = ['"listings":', '"result":{"listings"', "search.result.listings"];
+  for (const needle of needles) {
+    let from = 0;
+    while (from < html.length) {
+      const i = html.indexOf(needle, from);
+      if (i < 0) break;
+      const bracket = html.indexOf("[", i);
+      if (bracket < 0 || bracket - i > 40) {
+        from = i + needle.length;
+        continue;
+      }
+      const json = extractJson(html, bracket);
+      if (json) walkListings(json, rows, "zap");
+      from = i + needle.length;
+    }
+  }
+  const seen = new Set<string>();
+  return rows.filter((r) => {
+    if (!r.id || seen.has(r.id)) return false;
+    seen.add(r.id);
+    return true;
+  });
+}
+
+export const ZAP_FEEDS = [
+  "https://www.zapimoveis.com.br/venda/apartamentos/pb+joao-pessoa/",
+  "https://www.zapimoveis.com.br/venda/casas/pb+joao-pessoa/",
+  "https://www.zapimoveis.com.br/venda/kitnet/pb+joao-pessoa/",
+  "https://www.zapimoveis.com.br/venda/apartamentos/pb+joao-pessoa/tambaú/",
+  "https://www.zapimoveis.com.br/venda/apartamentos/pb+joao-pessoa/manaíra/",
+  "https://www.zapimoveis.com.br/venda/apartamentos/pb+joao-pessoa/bessa/",
+  "https://www.zapimoveis.com.br/venda/apartamentos/pb+joao-pessoa/cabo-branco/",
+  "https://www.vivareal.com.br/venda/paraiba/joao-pessoa/",
+  "https://www.olx.com.br/imoveis/venda/estado-pb/joao-pessoa",
+];
+
+export async function fetchViaBrowserRest(url: string) {
+  const token = process.env.CLOUDFLARE_API_TOKEN;
+  const account = process.env.CLOUDFLARE_ACCOUNT_ID ?? "749b2e9b3642e4b03321d5830e81c195";
+  if (!token) return null;
+  const res = await fetch(
+    `https://api.cloudflare.com/client/v4/accounts/${account}/browser-rendering/content`,
+    {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${token}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        url,
+        gotoOptions: { waitUntil: "networkidle2", timeout: 45000 },
+        rejectResourceTypes: ["image", "media", "font"],
+        userAgent: CHROME_UA,
+        setExtraHTTPHeaders: { "accept-language": "pt-BR,pt;q=0.9" },
+      }),
+    },
+  );
+  if (!res.ok) {
+    console.error(`browser-rest ${res.status} ${url}`);
+    return null;
+  }
+  const json = (await res.json()) as { success?: boolean; result?: unknown };
+  const html = await unwrapBrowserResult(json.result ?? json);
+  return html.length > 400 ? html : null;
+}
+
+export async function fetchViaWorkerBrowser(url: string) {
+  const key = process.env.HARVEST_KEY ?? "farol-colheita-jp-2026";
+  const listed = [
+    process.env.HARVEST_RENDER_URL,
+    "https://farolqueprotege.com.br/api/colheita",
+    "https://farolimobiliario.jhonata-emerick.workers.dev/api/colheita",
+  ].filter((x, i, arr): x is string => Boolean(x) && arr.indexOf(x) === i);
+
+  for (const endpoint of listed) {
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-farol-colheita": key,
+          "user-agent": CHROME_UA,
+        },
+        body: JSON.stringify({ url }),
+      });
+      if (!res.ok) {
+        console.error(`colheita ${res.status} ${endpoint}`);
+        continue;
+      }
+      const json = (await res.json()) as { ok?: boolean; html?: string; blocked?: boolean };
+      const html = json.html ?? "";
+      if (html.length > 400 && html !== "{}" && !json.blocked) return html;
+      console.error(`colheita vazio ${endpoint} bytes=${html.length} blocked=${json.blocked ?? false}`);
+    } catch (err) {
+      console.error(`colheita fail ${endpoint}`, err);
+    }
+  }
+  return null;
+}
+
+export async function fetchHtml(url: string, preferBrowser = false) {
+  if (preferBrowser) {
+    const rest = await fetchViaBrowserRest(url);
+    if (rest && rest.length > 400) return rest;
+    const worker = await fetchViaWorkerBrowser(url);
+    if (worker && worker.length > 400) return worker;
+  }
+  return fetchText(url);
+}
+
 export async function harvestAll(now = new Date()): Promise<{ listings: Listing[]; report: HarvestReport }> {
   const at = now.toLocaleDateString("pt-BR", { day: "numeric", month: "short", year: "numeric" });
   const raws: HarvestRaw[] = [];
   let portalListed: number | null = null;
   let feedsOk = 0;
   let feedsFail = 0;
+  let browserOk = 0;
+  let browserFail = 0;
 
   for (const url of chavesFeeds()) {
     try {
@@ -400,6 +687,26 @@ export async function harvestAll(now = new Date()): Promise<{ listings: Listing[
       raws.push(...parseCaptaHtml(html));
       feedsOk += 1;
     } catch {
+      feedsFail += 1;
+    }
+  }
+
+  for (const url of ZAP_FEEDS) {
+    try {
+      const html = await fetchHtml(url, true);
+      const blocked = /just a moment|cf-challenge|attention required|radware|access denied/i.test(html);
+      if (blocked) {
+        browserFail += 1;
+        feedsFail += 1;
+        continue;
+      }
+      const parsed = parseZapHtml(html);
+      raws.push(...parsed);
+      if (parsed.length) browserOk += 1;
+      else browserFail += 1;
+      feedsOk += 1;
+    } catch {
+      browserFail += 1;
       feedsFail += 1;
     }
   }
@@ -431,6 +738,8 @@ export async function harvestAll(now = new Date()): Promise<{ listings: Listing[
       byBairro,
       feedsOk,
       feedsFail,
+      browserOk,
+      browserFail,
     },
   };
 }

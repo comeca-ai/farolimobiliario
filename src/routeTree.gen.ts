@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArquiteturaRouteImport } from './routes/arquitetura'
 import { Route as BairrosRouteImport } from './routes/bairros'
 import { Route as EventoRouteImport } from './routes/evento'
+import { Route as ApiColheitaRouteImport } from './routes/api/colheita'
 import { Route as ImovelIdRouteImport } from './routes/imovel.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const EventoRoute = EventoRouteImport.update({
   path: '/evento',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiColheitaRoute = ApiColheitaRouteImport.update({
+  id: '/api/colheita',
+  path: '/api/colheita',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImovelIdRoute = ImovelIdRouteImport.update({
   id: '/imovel/$id',
   path: '/imovel/$id',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/arquitetura': typeof ArquiteturaRoute
   '/bairros': typeof BairrosRoute
   '/evento': typeof EventoRoute
+  '/api/colheita': typeof ApiColheitaRoute
   '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/arquitetura': typeof ArquiteturaRoute
   '/bairros': typeof BairrosRoute
   '/evento': typeof EventoRoute
+  '/api/colheita': typeof ApiColheitaRoute
   '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,34 @@ export interface FileRoutesById {
   '/arquitetura': typeof ArquiteturaRoute
   '/bairros': typeof BairrosRoute
   '/evento': typeof EventoRoute
+  '/api/colheita': typeof ApiColheitaRoute
   '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/arquitetura' | '/bairros' | '/evento' | '/imovel/$id'
+  fullPaths:
+    | '/'
+    | '/arquitetura'
+    | '/bairros'
+    | '/evento'
+    | '/api/colheita'
+    | '/imovel/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/arquitetura' | '/bairros' | '/evento' | '/imovel/$id'
-  id: '__root__' | '/' | '/arquitetura' | '/bairros' | '/evento' | '/imovel/$id'
+  to:
+    | '/'
+    | '/arquitetura'
+    | '/bairros'
+    | '/evento'
+    | '/api/colheita'
+    | '/imovel/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/arquitetura'
+    | '/bairros'
+    | '/evento'
+    | '/api/colheita'
+    | '/imovel/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +104,7 @@ export interface RootRouteChildren {
   ArquiteturaRoute: typeof ArquiteturaRoute
   BairrosRoute: typeof BairrosRoute
   EventoRoute: typeof EventoRoute
+  ApiColheitaRoute: typeof ApiColheitaRoute
   ImovelIdRoute: typeof ImovelIdRoute
 }
 
@@ -109,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/colheita': {
+      id: '/api/colheita'
+      path: '/api/colheita'
+      fullPath: '/api/colheita'
+      preLoaderRoute: typeof ApiColheitaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/imovel/$id': {
       id: '/imovel/$id'
       path: '/imovel/$id'
@@ -124,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArquiteturaRoute: ArquiteturaRoute,
   BairrosRoute: BairrosRoute,
   EventoRoute: EventoRoute,
+  ApiColheitaRoute: ApiColheitaRoute,
   ImovelIdRoute: ImovelIdRoute,
 }
 export const routeTree = rootRouteImport

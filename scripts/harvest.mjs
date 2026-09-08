@@ -10,7 +10,7 @@ function dump(value) {
 
 const { listings, report } = await harvestAll();
 console.log(
-  `harvest: raw ${report.raw} · kept ${report.kept} · dropped ${report.dropped} · portal ${report.portalListed ?? "?"} · feeds ${report.feedsOk}/${report.feedsOk + report.feedsFail}`,
+  `harvest: raw ${report.raw} · kept ${report.kept} · dropped ${report.dropped} · portal ${report.portalListed ?? "?"} · feeds ${report.feedsOk}/${report.feedsOk + report.feedsFail} · browser ${report.browserOk ?? 0}/${(report.browserOk ?? 0) + (report.browserFail ?? 0)}`,
 );
 console.log("por fonte", report.bySource);
 console.log("bairros", Object.keys(report.byBairro).length);

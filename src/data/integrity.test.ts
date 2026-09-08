@@ -78,7 +78,7 @@ describe("agente integridade — base João Pessoa", () => {
     assert.equal(CURATED_LISTINGS.length, 20);
     for (const l of CURATED_LISTINGS) assert.match(l.id, /^sgn-/);
     for (const l of HARVESTED_LISTINGS) {
-      assert.match(l.id, /^(chv|cx)-/);
+      assert.match(l.id, /^(chv|cx|zap|olx)-/);
       assert.ok(l.sources.includes("portal") || l.sources.includes("leilao"), l.id);
     }
     if (HARVESTED_LISTINGS.length > 0) {

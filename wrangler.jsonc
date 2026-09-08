@@ -10,6 +10,10 @@
   "keep_vars": true,
   "placement": { "mode": "smart" },
   "observability": { "enabled": true },
+  "browser": { "binding": "BROWSER" },
+  "vars": {
+    "HARVEST_KEY": "farol-colheita-jp-2026"
+  },
   "routes": [
     { "pattern": "farolqueprotege.com.br", "custom_domain": true },
     { "pattern": "www.farolqueprotege.com.br", "custom_domain": true }
