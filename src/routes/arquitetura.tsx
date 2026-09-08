@@ -53,50 +53,55 @@ const DATA = [
   { product: "Analytics Engine", use: "Telemetria do score, não o lake." },
 ];
 
-export function ArquiteturaPage() {
+function ArquiteturaPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-6 md:px-6 md:py-10">
-      <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Tudo via Cloudflare</p>
-      <h1 className="mt-2 font-display text-3xl tracking-tight md:text-4xl">
+    <main className="mx-auto max-w-[760px] px-6 py-10 md:py-14">
+      <p className="eyebrow text-accent">Tudo via Cloudflare</p>
+      <h1 className="mt-3.5 font-display text-[clamp(2.2rem,4vw,3.5rem)] leading-none tracking-tight">
         Uma rede, três teses, zero VPS.
       </h1>
-      <p className="mt-4 text-sm leading-relaxed text-muted">
-        João Pessoa cabe num isolate. O que não cabe é a ilusão de que oportunidade imobiliária
-        vive só no Zap. Abaixo do preço é um spread contra o m². Flat Airbnb é um NOI contra a
-        parcela. Casa da rua é um canal que o portal não indexa. Os três são jobs de dados no
-        edge — não um CRM com mapa.
+      <p className="mt-4 text-[17px] leading-relaxed text-muted">
+        João Pessoa cabe num isolate. O que não cabe é a ilusão de que oportunidade imobiliária vive
+        só no Zap. Abaixo do preço é um spread contra o m². Flat Airbnb é um NOI contra a parcela.
+        Casa da rua é um canal que o portal não indexa. Os três são jobs de dados no edge — não um
+        CRM com mapa.
       </p>
 
-      <ol className="mt-10 space-y-8">
+      <ol className="mt-12 space-y-8">
         {STAGES.map((s) => (
-          <li key={s.n} className="grid grid-cols-[auto_1fr] gap-4">
-            <span className="font-display text-sm tabular-nums text-subtle">{s.n}</span>
+          <li
+            key={s.n}
+            className="grid grid-cols-[44px_minmax(0,1fr)] gap-4 border-t border-line pt-5"
+          >
+            <span className="font-display text-[30px] leading-none tabular-nums text-accent">
+              {s.n}
+            </span>
             <div>
-              <h2 className="font-display text-xl leading-snug">{s.title}</h2>
-              <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-accent">
+              <h2 className="font-display text-[26px] leading-tight">{s.title}</h2>
+              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent">
                 {s.products}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.body}</p>
             </div>
           </li>
         ))}
       </ol>
 
-      <section className="mt-14">
-        <h2 className="font-display text-xl">Onde cada dado mora</h2>
-        <ul className="mt-4 divide-y divide-line overflow-hidden rounded-2xl bg-surface shadow-[0_0_0_1px_rgba(236,234,228,0.08)]">
+      <section className="mt-16">
+        <h2 className="font-display text-[30px] leading-tight">Onde cada dado mora</h2>
+        <ul className="mt-4 divide-y divide-line overflow-hidden rounded-[18px] border border-line bg-surface">
           {DATA.map((d) => (
-            <li key={d.product} className="grid gap-1 px-4 py-3 sm:grid-cols-[140px_1fr] sm:gap-4">
-              <span className="text-sm font-medium">{d.product}</span>
+            <li key={d.product} className="grid gap-1 px-5 py-3.5 sm:grid-cols-[140px_1fr] sm:gap-4">
+              <span className="text-sm font-semibold">{d.product}</span>
               <span className="text-sm text-muted">{d.use}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="mt-14">
-        <h2 className="font-display text-xl">GitOps da mesa</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted">
+      <section className="mt-16">
+        <h2 className="font-display text-[30px] leading-tight">GitOps da mesa</h2>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted">
           Terraform segura zona, Access, R2, D1, Queues. Wrangler segura o Worker:{" "}
           <code className="text-fg">versions upload</code> cria artefato, deploy gradual 5/25/50/100,
           rollback é apontar a versão. Bindings no toml. Segredo de API de portal no Secrets Store,

@@ -16,35 +16,35 @@ export const GOAL_LABEL: Record<LifeGoal, string> = {
   renda: "Renda todo mês",
   patrimonio: "Patrimônio que valoriza",
   morar: "Morar / deixar para a família",
-  aposentar: "Aposentar com aluguel",
+  aposentar: "Aposentadoria tranquila",
 };
 
 export const GOAL_HINT: Record<LifeGoal, string> = {
   renda: "O caixa do imóvel precisa trabalhar agora.",
   patrimonio: "Comprar abaixo do justo e deixar o bairro subir.",
   morar: "Uso próprio, silêncio — não hóspede.",
-  aposentar: "Aluguel longo, pouca operação, parcela que se paga.",
+  aposentar: "Contrato longo, inquilino estável, pouca gestão.",
 };
 
 export const GOAL_HEADLINE: Record<LifeGoal, string> = {
-  renda: "O caixa agora",
-  patrimonio: "Abaixo do justo",
-  morar: "Para viver",
-  aposentar: "Aluguel que se paga",
+  renda: "O caixa agora.",
+  patrimonio: "Abaixo do justo.",
+  morar: "Morar bem, em silêncio.",
+  aposentar: "Renda previsível.",
 };
 
 export const GOAL_SORT: Record<LifeGoal, string> = {
   renda: "ordenados por rentabilidade",
   patrimonio: "ordenados por spread",
-  morar: "ordenados para morar",
-  aposentar: "ordenados por aluguel longo",
+  morar: "ordenados por preço/m²",
+  aposentar: "ordenados por yield de aluguel",
 };
 
 export const GOAL_HERO_KICK: Record<LifeGoal, string> = {
-  renda: "Maior caixa · temporada",
-  patrimonio: "Maior spread",
-  morar: "Melhor para a família",
-  aposentar: "Melhor aluguel longo",
+  renda: "Melhor encaixe · temporada",
+  patrimonio: "Melhor encaixe · spread",
+  morar: "Melhor encaixe · uso próprio",
+  aposentar: "Melhor encaixe · aluguel anual",
 };
 
 export function foldPt(s: string) {
@@ -67,11 +67,7 @@ export function parsePlaces(text: string): string[] {
   for (const n of NEIGHBORHOODS) {
     const name = foldPt(n.name);
     const slug = n.id.replace(/-/g, " ");
-    if (
-      (name.length >= 4 && t.includes(name)) ||
-      t.includes(slug) ||
-      t.includes(n.id)
-    ) {
+    if ((name.length >= 4 && t.includes(name)) || t.includes(slug) || t.includes(n.id)) {
       found.push(n.id);
     }
   }
@@ -107,7 +103,7 @@ export function punchForGoal(card: Scorecard, goal: LifeGoal): { value: string; 
   }
   return {
     value: pctAbs(Math.max(card.ltrYield, 0)),
-    caption: "aluguel tradicional ao ano, já líquido",
+    caption: "yield de aluguel anual, já líquido",
   };
 }
 
@@ -136,7 +132,7 @@ export function rumoKickerFor(card: Scorecard, goal: LifeGoal) {
     if (listing.portalCount === 0) return "Fora dos portais";
     return "Uso próprio";
   }
-  if (goal === "aposentar") return "Aluguel longo";
+  if (goal === "aposentar") return "Aluguel anual";
   if (listing.sources.includes("leilao")) return "Leilão";
   if (listing.portalCount === 0) return "Fora dos portais";
   if (listing.sources.includes("inventario")) return "Inventário";
@@ -237,7 +233,7 @@ export function proposeRumos(text: string): RumoGuess[] {
     renda: "Li caixa agora — flat, diária, parcela.",
     patrimonio: "Li compra abaixo do justo e tempo para o m².",
     morar: "Li uso próprio, família — não hóspede.",
-    aposentar: "Li renda longa, pouca operação.",
+    aposentar: "Li renda previsível, sem rotatividade.",
   };
   return (Object.keys(scores) as LifeGoal[])
     .map((goal) => ({ goal, score: scores[goal], why: whyFor[goal] }))
@@ -253,28 +249,21 @@ export type Match = {
 export function reading(brief: Brief, matches: Match[]): string {
   const top = matches[0];
   const place = top ? top.card.nb.name : "a orla";
-  const goal = GOAL_LABEL[brief.goal].toLowerCase();
   const asked = brief.places?.length ? askedNames(brief.places) : "";
+  const askedLead = asked ? `Você pediu ${asked}. ` : "";
 
   if (brief.goal === "renda") {
-    return asked
-      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`
-      : `O rumo é ${goal}. Li a mesa. Três opções puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`;
+    return `${askedLead}Li a mesa. Separei os 3 encaixes mais fortes e deixei mais sinais no mapa, puxando ${place}: ticket que cabe agora, temporada cobrindo a parcela.`;
   }
   if (brief.goal === "patrimonio") {
-    return asked
-      ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções. O spread começa em ${place}.`
-      : `O rumo é ${goal}. Li a mesa. Três opções. O spread começa em ${place} — desconto que o horizonte de ${brief.years} anos consegue realizar.`;
+    return `${askedLead}Li compra abaixo do m² do bairro e tempo para o bairro subir. Separei os 3 spreads mais largos com motivo conhecido — e deixei o resto no mapa. O spread começa em ${place}.`;
   }
   if (brief.goal === "morar") {
-    if (asked) {
-      return `Você pediu ${asked} para viver. Li a mesa. Três opções puxando ${place} — moradia, não diária.`;
-    }
-    return `O rumo é morar ou deixar para a família. Li a mesa. Três opções de casa e apto para viver. ${place} aparece primeiro porque ainda é moradia, não ativo de diária.`;
+    return asked
+      ? `Você pediu ${asked} para viver. Li uso próprio — não hóspede. Separei os 3 encaixes puxando ${place}: a rua é de morador, o m² está honesto.`
+      : `Li uso próprio — não hóspede. Separei os 3 encaixes onde a rua é de morador, o m² está honesto e a escola e o mercado ficam a pé. ${place} aparece primeiro.`;
   }
-  return asked
-    ? `Você pediu ${asked}. O rumo é ${goal}. Li a mesa. Três opções puxando ${place}.`
-    : `O rumo é ${goal}. Li a mesa. Três opções. ${place} entra porque o aluguel tradicional se sustenta sem check-in.`;
+  return `${askedLead}Li renda estável, sem rotatividade. Separei os 3 encaixes onde o contrato anual paga mais que a poupança. ${place} entra porque o aluguel se sustenta sem check-in.`;
 }
 
 export const MATCH_PER_RUMO = 3;
@@ -329,7 +318,12 @@ function fitScore(card: Scorecard, brief: Brief): number {
   const pinned = Boolean(brief.places?.length);
 
   if (brief.goal === "renda") {
-    s += 0.38 * clamp(strYield / 0.12) + 0.22 * strOps + 0.12 * short + 0.1 * young + 0.06 * clamp(discount / 0.2);
+    s +=
+      0.38 * clamp(strYield / 0.12) +
+      0.22 * strOps +
+      0.12 * short +
+      0.1 * young +
+      0.06 * clamp(discount / 0.2);
   } else if (brief.goal === "patrimonio") {
     s +=
       0.34 * clamp(discount / 0.25) +
@@ -341,7 +335,12 @@ function fitScore(card: Scorecard, brief: Brief): number {
     if (pinned) {
       s += 0.14 * home + 0.08 * (listing.rooms / 4);
     } else {
-      s += 0.32 * home + 0.2 * radarObscurity + 0.14 * older + 0.12 * clamp(ltrYield / 0.07) + 0.1 * (listing.rooms / 4);
+      s +=
+        0.32 * home +
+        0.2 * radarObscurity +
+        0.14 * older +
+        0.12 * clamp(ltrYield / 0.07) +
+        0.1 * (listing.rooms / 4);
     }
   } else {
     s +=

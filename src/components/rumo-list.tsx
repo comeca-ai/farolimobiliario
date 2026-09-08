@@ -1,21 +1,7 @@
 import type { ReactNode } from "react";
-import {
-  punchForGoal,
-  rumoKickerFor,
-  rumoNote,
-  type LifeGoal,
-} from "@/lib/brief";
+import { punchForGoal, rumoKickerFor, rumoNote, type LifeGoal } from "@/lib/brief";
 import { compactBrl } from "@/lib/format";
 import { punch, type Scorecard } from "@/lib/score";
-import { cn } from "@/lib/utils";
-
-function hitTone(card: Scorecard, goal?: LifeGoal) {
-  if (goal === "renda") return card.strYield >= 0.08 ? "text-deal" : "text-fg";
-  if (goal === "aposentar") return card.ltrYield >= 0.05 ? "text-deal" : "text-fg";
-  if (goal === "morar") return "text-fg";
-  if (card.discount >= 0.12) return "text-deal";
-  return "text-deal";
-}
 
 function hitOf(card: Scorecard, goal?: LifeGoal) {
   return goal ? punchForGoal(card, goal) : punch(card);
@@ -44,29 +30,34 @@ export function RumoHero({
   const { listing, nb } = card;
   const hit = hitOf(card, goal);
   return (
-    <article className="rounded-[14px] bg-surface px-5 py-6 shadow-(--shadow-border) md:px-7 md:py-7">
+    <article className="flex flex-col gap-[18px] rounded-[18px] border border-line bg-surface px-7 py-[26px] shadow-card">
       <button type="button" onClick={() => onOpen(listing.id)} className="pressable w-full text-left">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-accent">
-          {kicker ?? rumoKicker(card, goal)}
-        </p>
-        <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <p className="eyebrow text-accent">{kicker ?? rumoKicker(card, goal)}</p>
+        <div className="mt-4 grid items-end gap-5 sm:grid-cols-[minmax(0,1fr)_auto]">
           <div className="min-w-0">
-            <h2 className="font-display text-[1.6rem] font-normal leading-snug md:text-[26px]">
+            <h2 className="font-display text-[clamp(1.85rem,3vw,2.6rem)] leading-[1.02]">
               {listing.title}
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-[15px] tabular-nums text-subtle">
               {nb.name} · {listing.area} m² · {compactBrl(listing.ask)}
             </p>
           </div>
           <div className="shrink-0 sm:text-right">
-            <p className={cn("font-display text-5xl leading-none tracking-tight md:text-[44px]", hitTone(card, goal))}>
+            <p className="font-display text-[clamp(3.5rem,6vw,4.75rem)] leading-none tracking-tight text-accent">
               {hit.value}
             </p>
-            <p className="mt-1.5 text-xs text-subtle">{hit.caption}</p>
+            <p className="mt-1 max-w-[26ch] text-[13.5px] leading-snug text-muted sm:ml-auto">
+              {hit.caption}
+            </p>
           </div>
         </div>
         {why ? (
-          <p className="mt-5 max-w-[56ch] text-sm leading-relaxed text-muted">{why}</p>
+          <p className="mt-4 border-t border-line pt-4 text-base leading-relaxed text-muted">{why}</p>
+        ) : null}
+        {listing.risks[0] ? (
+          <p className="mt-4 rounded-[10px] bg-bg px-3.5 py-3 text-sm leading-snug">
+            <strong>O problema à vista:</strong> {listing.risks[0]}
+          </p>
         ) : null}
       </button>
     </article>
@@ -91,27 +82,25 @@ export function RumoRow({
       <button
         type="button"
         onClick={() => onOpen(listing.id)}
-        className="pressable grid w-full grid-cols-[1.6rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-1 py-5 text-left sm:grid-cols-[1.6rem_minmax(0,1fr)_auto] sm:gap-x-6"
+        className="pressable grid w-full grid-cols-[36px_minmax(0,1fr)] items-start gap-x-4 py-[22px] text-left sm:grid-cols-[36px_minmax(0,1fr)_auto]"
       >
-        <span className="font-display text-[13px] text-subtle">
+        <span className="pt-1 font-display text-xl tabular-nums text-accent">
           {String(index).padStart(2, "0")}
         </span>
-        <span className="min-w-0">
-          <span className="block text-[11px] uppercase tracking-[0.14em] text-subtle">
+        <span className="flex min-w-0 flex-col gap-1.5">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-subtle">
             {rumoKicker(card, goal)}
           </span>
-          <span className="mt-1.5 block font-display text-lg leading-snug md:text-xl">
-            {listing.title}
-          </span>
-          <span className="mt-1 block text-[13px] text-subtle">
+          <span className="font-display text-[26px] leading-tight">{listing.title}</span>
+          <span className="text-sm tabular-nums text-subtle">
             {nb.name} · {listing.area} m² · {compactBrl(listing.ask)}
           </span>
         </span>
-        <span className="col-start-2 mt-2 sm:col-start-auto sm:mt-0 sm:text-right">
-          <span className={cn("block font-display text-[1.6rem] leading-none md:text-[26px]", hitTone(card, goal))}>
+        <span className="col-start-2 mt-2 flex flex-col items-end gap-0.5 text-right sm:col-start-auto sm:mt-0">
+          <span className="font-display text-[34px] leading-none tabular-nums text-accent">
             {hit.value}
           </span>
-          <span className="mt-1.5 block text-[11px] text-subtle">
+          <span className="text-[13px] whitespace-nowrap text-subtle">
             {goal ? rumoNote(card, goal) : hit.caption}
           </span>
         </span>
@@ -128,10 +117,10 @@ export function MapPanel({
   caption?: string;
 }) {
   return (
-    <div className="rounded-[14px] bg-surface p-5 shadow-(--shadow-border)">
-      <div className="mb-3 flex items-baseline justify-between gap-3">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-subtle">Onde estão</p>
-        <p className="text-xs text-subtle">{caption}</p>
+    <div className="flex flex-col gap-4 rounded-[18px] border border-line bg-surface p-[22px]">
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="eyebrow text-subtle">Onde estão</p>
+        <p className="text-[13px] text-faint">{caption}</p>
       </div>
       {children}
     </div>

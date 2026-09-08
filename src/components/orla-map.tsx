@@ -19,53 +19,49 @@ export function OrlaMap({
   selectedId,
   onSelect,
   compact,
+  highlight = 3,
 }: {
   cards: Scorecard[];
   selectedId: string | null;
   onSelect: (id: string) => void;
   compact?: boolean;
+  highlight?: number;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-lg bg-[#f1eada]">
+    <div className="relative overflow-hidden rounded-xl bg-ground">
       <svg
         viewBox="0 0 100 100"
-        className={cn("block w-full", compact ? "h-44" : "h-56 md:h-[min(48vh,400px)]")}
+        className={cn("block w-full", compact ? "h-44" : "aspect-[4/5] h-auto max-h-[min(52vh,440px)]")}
         role="img"
       >
         <title>Orla leste de João Pessoa, Atlântico à direita</title>
         <rect width="100" height="100" fill="var(--color-ground)" />
         <path
           d="M78 0 C80 12 76 22 79 34 C82 48 77 60 80 72 C83 86 79 94 81 100 L100 100 L100 0 Z"
-          fill="var(--color-sea)"
+          fill="var(--color-sky)"
         />
         <path
           d="M78 0 C80 12 76 22 79 34 C82 48 77 60 80 72 C83 86 79 94 81 100"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeOpacity="0.55"
-          strokeWidth="0.5"
+          stroke="var(--color-surface)"
+          strokeWidth="0.6"
         />
         {NEIGHBORHOODS.map((n) => (
           <text
             key={n.id}
             x={xOf(n.lng) - 1.4}
             y={yOf(n.lat) - 2.4}
-            fill="var(--color-muted)"
+            fill="var(--color-subtle)"
             fontSize="2.2"
             textAnchor="end"
-            fontFamily="Figtree, sans-serif"
+            fontFamily="Instrument Sans, sans-serif"
           >
             {n.name}
           </text>
         ))}
-        {cards.map((c) => {
+        {cards.map((c, i) => {
           const active = c.listing.id === selectedId;
-          const fill =
-            c.primary === "rua"
-              ? "var(--color-warn)"
-              : c.primary === "airbnb"
-                ? "var(--color-deal)"
-                : "var(--color-accent)";
+          const main = i < highlight;
           return (
             <g
               key={c.listing.id}
@@ -81,9 +77,9 @@ export function OrlaMap({
               <circle
                 cx={xOf(c.listing.lng)}
                 cy={yOf(c.listing.lat)}
-                r={active ? 2.6 : 1.8}
-                fill={fill}
-                opacity={active ? 1 : 0.9}
+                r={active ? 2.8 : main ? 2.2 : 1.5}
+                fill={main ? "var(--color-accent)" : "var(--color-fg)"}
+                opacity={main ? 1 : 0.35}
               />
               {active ? (
                 <circle
@@ -91,29 +87,26 @@ export function OrlaMap({
                   cy={yOf(c.listing.lat)}
                   r="5"
                   fill="none"
-                  stroke={fill}
-                  strokeOpacity="0.5"
+                  stroke="var(--color-surface)"
+                  strokeWidth="0.7"
                 />
               ) : null}
             </g>
           );
         })}
       </svg>
-      <p className="pointer-events-none absolute right-3 top-3 text-xs uppercase tracking-widest text-subtle">
+      <p className="pointer-events-none absolute right-3 top-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-sea">
         Atlântico
       </p>
-      <p className="pointer-events-none absolute left-3 top-3 text-xs uppercase tracking-widest text-subtle">
+      <p className="pointer-events-none absolute left-3 top-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-subtle">
         Norte
       </p>
-      <div className="pointer-events-none absolute bottom-3 left-3 flex gap-3 text-xs text-muted">
+      <div className="flex flex-wrap gap-4 px-3 pb-3 pt-1 text-[13px] text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="size-1.5 rounded-full bg-accent" /> Preço
+          <span className="size-3 rounded-full bg-accent" /> Encaixes principais
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="size-1.5 rounded-full bg-deal" /> Airbnb
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="size-1.5 rounded-full bg-warn" /> Fora do portal
+          <span className="size-3 rounded-full bg-fg/35" /> Outros sinais aderentes
         </span>
       </div>
     </div>

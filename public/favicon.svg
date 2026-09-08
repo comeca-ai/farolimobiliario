@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="7" fill="#f3eee4"/>
-  <polygon points="16,5 22,24 10,24" fill="#1a2a28"/>
-  <rect x="12.4" y="13.2" width="7.2" height="2.2" fill="#c45c38"/>
-  <polygon points="10,24 6.2,27.4 12.2,27.4" fill="#1a2a28"/>
-  <polygon points="16,24 13.4,28.4 18.6,28.4" fill="#1a2a28"/>
-  <polygon points="22,24 19.8,27.4 25.8,27.4" fill="#1a2a28"/>
+  <g transform="translate(8 3)">
+    <path d="M8 .5v3" stroke="#1b1a17" stroke-width="1.6" stroke-linecap="round"/>
+    <rect x="3" y="4" width="10" height="5" rx="1" fill="#1b1a17"/>
+    <circle cx="8" cy="6.5" r="1.4" fill="#e0a020"/>
+    <path d="M5 9h6l1.4 15H3.6L5 9z" fill="#1b1a17"/>
+    <rect x="1" y="24" width="14" height="1.6" rx=".8" fill="#1b1a17"/>
+  </g>
 </svg>

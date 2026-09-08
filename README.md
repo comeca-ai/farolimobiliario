@@ -9,12 +9,11 @@ Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP /
 
 ## Funil
 
-1. Landing — Farol, o m² da cidade, **Entrar**
-2. Cadastro — e-mail + WhatsApp (obrigatório)
-3. Caixinha — objetivo de vida com imóveis
-4. Rumo — a pessoa concorda
-5. Três opções daquele rumo + mapa da orla
-6. **Sair** no topo limpa a sessão
+1. Landing — job (Flat → Airbnb / Abaixo do preço) + e-mail; WhatsApp opcional
+2. Cadastro — WhatsApp obrigatório, sem senha
+3. Caixinha — o que o imóvel precisa fazer; o Farol lê o rumo ao vivo
+4. Resultado — 3 encaixes + problema à vista + mapa da orla
+5. **Sair** no topo limpa a sessão
 
 Quatro rumos, cada um com **três** imóveis distintos:
 
@@ -22,8 +21,10 @@ Quatro rumos, cada um com **três** imóveis distintos:
 |---|---|
 | O caixa agora | rentabilidade de temporada, líquida |
 | Abaixo do justo | % vs m² do bairro |
-| Para viver | ticket em R$ · uso próprio |
-| Aluguel que se paga | aluguel tradicional, líquido |
+| Morar bem, em silêncio | ticket em R$ · uso próprio |
+| Renda previsível | aluguel anual, líquido |
+
+Quem pede um bairro na caixinha vê aquele bairro (ou a mesma zona). Tambaú não devolve Expedicionários.
 
 ## Agentes
 
@@ -32,8 +33,6 @@ npm run test:rumo    # unitário: tríade, caixinha, cadastro
 npm run test:base    # integridade: bairro, coords, score, estado 0–1
 npm test             # tudo (inclui os testes do template)
 ```
-
-Última passagem (2026-09-06): unitário **12/12**, integridade **4/4**, `tsc` limpo.
 
 ## GitHub Actions e secrets
 
@@ -44,10 +43,10 @@ O token da Cloudflare **não** fica no git. Fica em **Settings → Secrets and v
 
 Workflow [`.github/workflows/farol.yml`](.github/workflows/farol.yml) em todo push/`main`:
 
-1. typecheck  
-2. agente unitário  
-3. agente de integridade da base  
-4. varredura de token no git  
+1. typecheck
+2. agente unitário
+3. agente de integridade da base
+4. varredura de token no git
 5. se passou: `wrangler deploy` com os secrets
 
 ```bash

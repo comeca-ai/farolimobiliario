@@ -7,7 +7,16 @@ import { Objetivos } from "@/components/objetivos";
 import { MapPanel, RumoHero, RumoRow } from "@/components/rumo-list";
 import { OrlaMap } from "@/components/orla-map";
 import { CITY, NEIGHBORHOOD_BY_ID } from "@/data/market";
-import { GOAL_HEADLINE, GOAL_HERO_KICK, GOAL_LABEL, GOAL_SORT, inAskedPlace, matchBrief, reading, type Brief } from "@/lib/brief";
+import {
+  GOAL_HEADLINE,
+  GOAL_HERO_KICK,
+  GOAL_LABEL,
+  GOAL_SORT,
+  inAskedPlace,
+  matchBrief,
+  reading,
+  type Brief,
+} from "@/lib/brief";
 import { RADAR_HINT, RADAR_LABEL } from "@/lib/labels";
 import { LISTINGS_SCORED } from "@/lib/score";
 import { useDesk, type RadarFilter } from "@/lib/store";
@@ -49,6 +58,7 @@ function Reading({ brief }: { brief: Brief }) {
   const select = useDesk((s) => s.select);
   const navigate = useNavigate();
   const cards = matches.map((m) => m.card);
+  const scoped = LISTINGS_SCORED.filter((c) => inAskedPlace(c.nb.id, brief.places, true)).length;
   const open = (id: string) => {
     select(id);
     void navigate({ to: "/imovel/$id", params: { id } });
@@ -56,18 +66,26 @@ function Reading({ brief }: { brief: Brief }) {
   const rest = matches.slice(1);
 
   return (
-    <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 md:px-8 md:pt-10">
-      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
-        <section>
-          <h1 className="font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
-            {GOAL_HEADLINE[brief.goal]}
-          </h1>
-          <p className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">{text}</p>
-          <p className="mt-2 mb-7 flex items-center gap-2.5 text-[12.5px] text-subtle">
-            <span>{matches.length} imóveis</span>
-            <span className="size-0.5 rounded-full bg-subtle/50" />
-            <span>{GOAL_SORT[brief.goal]}</span>
-          </p>
+    <main className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
+      <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.9fr)]">
+        <section className="flex flex-col gap-7">
+          <button
+            type="button"
+            onClick={clearBrief}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-subtle"
+          >
+            <span aria-hidden>←</span> Refazer o rumo
+          </button>
+          <div className="flex flex-col gap-3.5">
+            <p className="eyebrow text-accent">Rumo: {GOAL_LABEL[brief.goal].toLowerCase()}</p>
+            <h1 className="font-display text-[clamp(2.5rem,4.8vw,4rem)] leading-[0.98] tracking-tight">
+              {GOAL_HEADLINE[brief.goal]}
+            </h1>
+            <p className="max-w-[56ch] text-[17px] leading-relaxed text-muted">{text}</p>
+            <p className="text-sm text-subtle">
+              3 encaixes principais · {scoped} sinais aderentes · {GOAL_SORT[brief.goal]}
+            </p>
+          </div>
 
           {matches[0] ? (
             <RumoHero
@@ -78,13 +96,13 @@ function Reading({ brief }: { brief: Brief }) {
               onOpen={open}
             />
           ) : (
-            <p className="rounded-[14px] bg-surface px-5 py-10 text-sm text-muted shadow-(--shadow-border)">
+            <p className="rounded-[14px] border border-line bg-surface px-5 py-10 text-sm text-muted">
               Nenhum sinal neste rumo.
             </p>
           )}
 
           {rest.length > 0 ? (
-            <ol className="mt-9">
+            <ol>
               {rest.map((m, i) => (
                 <RumoRow
                   key={m.card.listing.id}
@@ -97,18 +115,18 @@ function Reading({ brief }: { brief: Brief }) {
             </ol>
           ) : null}
 
-          <div className="mt-10 flex flex-col gap-2 sm:flex-row sm:gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
             <button
               type="button"
               onClick={clearBrief}
-              className="pressable h-12 rounded-full bg-raised px-5 text-sm text-fg"
+              className="pressable h-12 rounded-xl bg-raised px-5 text-sm font-semibold text-fg"
             >
-              Trocar o rumo
+              Refazer o rumo
             </button>
             <button
               type="button"
               onClick={() => setShowDesk(true)}
-              className="pressable h-12 rounded-full px-5 text-sm text-muted hover:text-fg"
+              className="pressable h-12 rounded-xl px-5 text-sm font-semibold text-subtle hover:text-fg"
             >
               Ver todas as opções
             </button>
@@ -116,8 +134,13 @@ function Reading({ brief }: { brief: Brief }) {
         </section>
 
         <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
-          <MapPanel caption={GOAL_SORT[brief.goal]}>
-            <OrlaMap cards={cards} selectedId={selectedId} onSelect={open} />
+          <MapPanel caption={`${scoped} sinais · mapa esquemático`}>
+            <OrlaMap
+              cards={LISTINGS_SCORED.filter((c) => inAskedPlace(c.nb.id, brief.places, true))}
+              selectedId={selectedId}
+              onSelect={open}
+              highlight={3}
+            />
           </MapPanel>
         </aside>
       </div>
@@ -158,22 +181,22 @@ function MesaBoard() {
   };
 
   return (
-    <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 md:px-8 md:pt-10">
+    <main className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
       <header className="max-w-2xl">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-subtle">
+        <p className="eyebrow text-subtle">
           {brief?.places?.length
             ? brief.places.map((id) => NEIGHBORHOOD_BY_ID[id]?.name ?? id).join(", ")
             : "João Pessoa"}{" "}
           · {CITY.sampleDate} · {CITY.refresh}
         </p>
-        <h1 className="mt-2 font-display text-[2rem] font-normal leading-tight tracking-tight md:text-[34px]">
+        <h1 className="mt-3 font-display text-[clamp(2rem,4vw,2.75rem)] leading-tight tracking-tight">
           Todas as opções
         </h1>
         {brief ? (
           <button
             type="button"
             onClick={() => setShowDesk(false)}
-            className="mt-3 text-sm text-accent"
+            className="mt-3 text-sm font-semibold text-accent"
           >
             Voltar ao rumo · {GOAL_LABEL[brief.goal]}
           </button>
@@ -201,17 +224,17 @@ function MesaBoard() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Bairro, rua, flat, leilão"
-          className="h-11 w-full rounded-lg bg-raised pl-10 pr-3 text-sm text-fg outline-none placeholder:text-subtle"
+          className="h-11 w-full rounded-xl border border-line bg-paper pl-10 pr-3 text-sm text-fg outline-none focus:border-fg"
         />
       </label>
       {radar !== "todos" ? <p className="mt-2 text-xs text-subtle">{RADAR_HINT[radar]}</p> : null}
 
       {filtered.length === 0 ? (
-        <p className="mt-10 rounded-[14px] bg-surface px-5 py-10 text-sm text-muted shadow-(--shadow-border)">
+        <p className="mt-10 rounded-[14px] border border-line bg-surface px-5 py-10 text-sm text-muted">
           Nenhum sinal com esse filtro.
         </p>
       ) : (
-        <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-14">
+        <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.9fr)]">
           <section>
             {featured ? (
               <RumoHero
@@ -222,7 +245,7 @@ function MesaBoard() {
               />
             ) : null}
             {rest.length > 0 ? (
-              <ol className="mt-9">
+              <ol className="mt-2">
                 {rest.map((c, i) => (
                   <RumoRow key={c.listing.id} card={c} index={i + 1} goal={brief?.goal} onOpen={open} />
                 ))}
@@ -230,7 +253,7 @@ function MesaBoard() {
             ) : null}
           </section>
           <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.25rem)]">
-            <MapPanel>
+            <MapPanel caption={`${filtered.length} sinais · mapa esquemático`}>
               <OrlaMap cards={filtered} selectedId={selectedId} onSelect={open} />
             </MapPanel>
           </aside>
@@ -239,5 +262,3 @@ function MesaBoard() {
     </main>
   );
 }
-
-

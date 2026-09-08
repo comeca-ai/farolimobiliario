@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, Bookmark } from "lucide-react";
+import { Bookmark } from "lucide-react";
 import { useMemo, useState } from "react";
 import { LISTING_BY_ID, type Listing } from "@/data/listings";
 import { brl, brl2, pct, pctAbs } from "@/lib/format";
@@ -18,10 +18,10 @@ function ImovelPage() {
   const listing = LISTING_BY_ID[id];
   if (!listing) {
     return (
-      <main className="mx-auto max-w-xl px-4 py-16 text-center">
-        <h1 className="font-display text-2xl">Sinal não encontrado</h1>
-        <Link to="/" className="mt-4 inline-flex h-11 items-center text-sm text-accent">
-          Voltar à mesa
+      <main className="mx-auto max-w-xl px-6 py-16 text-center">
+        <h1 className="font-display text-[32px]">Sinal não encontrado</h1>
+        <Link to="/" className="mt-4 inline-flex h-11 items-center text-sm font-semibold text-accent">
+          Voltar ao rumo
         </Link>
       </main>
     );
@@ -45,10 +45,10 @@ function ImovelBody({ listing }: { listing: Listing }) {
   const hit = goal ? punchForGoal(live, goal) : punch(live);
 
   return (
-    <main className="mx-auto max-w-[760px] px-4 pb-20 pt-4 md:px-6 md:pt-8">
+    <main className="mx-auto max-w-[760px] px-6 pb-20 pt-6">
       <div className="flex items-center justify-between">
-        <Link to="/" className="inline-flex h-11 items-center gap-2 text-sm text-muted hover:text-fg">
-          <ArrowLeft className="size-4" />
+        <Link to="/" className="inline-flex h-11 items-center gap-2 text-sm font-semibold text-subtle">
+          <span aria-hidden>←</span>
           Rumo
         </Link>
         <button
@@ -61,31 +61,34 @@ function ImovelBody({ listing }: { listing: Listing }) {
         </button>
       </div>
 
-      <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-accent">
-        {goal ? rumoKickerFor(live, goal) : rumoKickerFor(live, "patrimonio")} · {TYPE_LABEL[listing.type]}
+      <p className="eyebrow mt-8 text-accent">
+        {goal ? rumoKickerFor(live, goal) : rumoKickerFor(live, "patrimonio")} ·{" "}
+        {TYPE_LABEL[listing.type]}
       </p>
       <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="min-w-0">
-          <h1 className="font-display text-[1.85rem] font-normal leading-tight tracking-tight md:text-[32px]">
+          <h1 className="font-display text-[clamp(1.9rem,3.4vw,2.6rem)] leading-[1.02] tracking-tight">
             {listing.title}
           </h1>
-          <p className="mt-2 text-sm text-muted">{listing.street}</p>
+          <p className="mt-2 text-[15px] text-subtle">{listing.street}</p>
         </div>
         <div className="shrink-0 sm:text-right">
-          <p
-            className={cn(
-              "font-display text-5xl leading-none tracking-tight md:text-[52px]",
-              (live.discount >= 0.12 || live.strYield >= 0.08) && "text-deal",
-              live.primary === "rua" && "text-warn",
-            )}
-          >
+          <p className="font-display text-[clamp(3.2rem,6vw,4.4rem)] leading-none tracking-tight text-accent">
             {hit.value}
           </p>
-          <p className="mt-1.5 text-xs text-subtle">{hit.caption}</p>
+          <p className="mt-1.5 max-w-[26ch] text-[13.5px] leading-snug text-muted sm:ml-auto">
+            {hit.caption}
+          </p>
         </div>
       </div>
 
-      <p className="mt-8 max-w-[56ch] text-[15px] leading-relaxed text-muted">{listing.thesis}</p>
+      {listing.risks[0] ? (
+        <p className="mt-6 rounded-[10px] bg-surface px-3.5 py-3 text-sm leading-snug">
+          <strong>O problema à vista:</strong> {listing.risks[0]}
+        </p>
+      ) : null}
+
+      <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-muted">{listing.thesis}</p>
 
       <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Metric label="Ask" value={brl.format(listing.ask)} />
@@ -94,56 +97,29 @@ function ImovelBody({ listing }: { listing: Listing }) {
           value={brl.format(live.fair)}
           hint={`${brl.format(live.fairM2)}/m² × estado`}
         />
-        <Metric
-          label="Desconto"
-          value={pct(live.discount)}
-          tone={live.discount >= 0.12 ? "deal" : undefined}
-        />
+        <Metric label="Desconto" value={pct(live.discount)} tone={live.discount >= 0.12} />
         <Metric label="Score Farol" value={String(Math.round(live.score))} />
       </dl>
 
-      <section className="mt-8">
-        <h2 className="font-display text-xl">Tese</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{listing.thesis}</p>
-      </section>
-
-      <section className="mt-8 rounded-2xl bg-surface p-4 shadow-(--shadow-border) md:p-6">
-        <h2 className="font-display text-xl">Laboratório Airbnb</h2>
+      <section className="mt-10 rounded-[18px] border border-line bg-surface p-5 md:p-6">
+        <h2 className="font-display text-[26px] leading-tight">Laboratório Airbnb</h2>
         <p className="mt-1 text-sm text-subtle">
           Arraste ocupação e diária. Plataforma, limpeza, condomínio e IPTU já saem do NOI.
         </p>
         <div className="mt-5 grid gap-5 sm:grid-cols-2">
-          <Slider
-            label="Ocupação"
-            value={occ}
-            min={25}
-            max={85}
-            suffix="%"
-            onChange={setOcc}
-          />
-          <Slider
-            label="Diária"
-            value={adr}
-            min={120}
-            max={520}
-            prefix="R$ "
-            onChange={setAdr}
-          />
+          <Slider label="Ocupação" value={occ} min={25} max={85} suffix="%" onChange={setOcc} />
+          <Slider label="Diária" value={adr} min={120} max={520} prefix="R$ " onChange={setAdr} />
         </div>
         <dl className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
           <Metric label="Receita bruta" value={brl.format(live.strGross)} />
           <Metric label="NOI" value={brl.format(live.strNoi)} />
-          <Metric
-            label="Yield STR"
-            value={pctAbs(Math.max(live.strYield, 0))}
-            tone={live.strYield >= 0.08 ? "deal" : live.strYield < 0 ? "risk" : undefined}
-          />
+          <Metric label="Yield STR" value={pctAbs(Math.max(live.strYield, 0))} tone={live.strYield >= 0.08} />
           <Metric
             label="vs aluguel longo"
             value={live.strVsLtr > 0 ? `${live.strVsLtr.toFixed(1)}×` : "—"}
           />
         </dl>
-        <p className="mt-4 text-xs text-subtle">
+        <p className="mt-4 text-[13px] text-subtle">
           Aluguel tradicional: {brl.format(live.ltrNoi)}/ano (
           {pctAbs(Math.max(live.ltrYield, 0))} a.a.).{" "}
           {live.paybackMonths
@@ -153,20 +129,20 @@ function ImovelBody({ listing }: { listing: Listing }) {
         </p>
       </section>
 
-      <section className="mt-8">
-        <h2 className="font-display text-xl">Riscos</h2>
+      <section className="mt-10">
+        <h2 className="font-display text-[26px] leading-tight">Riscos</h2>
         <ul className="mt-3 space-y-2">
           {listing.risks.map((r) => (
-            <li key={r} className="border-l border-risk/40 pl-3 text-sm text-muted">
+            <li key={r} className="border-l-2 border-accent/40 pl-3 text-[15px] text-muted">
               {r}
             </li>
           ))}
         </ul>
       </section>
 
-      <aside className="mt-8 grid gap-3 md:grid-cols-2">
-        <dl className="overflow-hidden rounded-2xl bg-surface shadow-(--shadow-border)">
-          <div className="grid grid-cols-2 gap-px bg-line text-sm">
+      <aside className="mt-10 grid gap-3 md:grid-cols-2">
+        <dl className="overflow-hidden rounded-[18px] border border-line bg-surface">
+          <div className="grid grid-cols-2 text-sm">
             <Side k="Área" v={`${listing.area} m²`} />
             <Side k="Ask / m²" v={brl2.format(live.askM2)} />
             <Side k="Quartos" v={String(listing.rooms)} />
@@ -177,20 +153,18 @@ function ImovelBody({ listing }: { listing: Listing }) {
             <Side k="Portais" v={String(listing.portalCount)} />
           </div>
         </dl>
-        <div className="rounded-2xl bg-surface p-4 shadow-(--shadow-border)">
-          <p className="text-xs uppercase tracking-widest text-subtle">Fontes</p>
-          <ul className="mt-2 flex flex-wrap gap-1.5">
+        <div className="rounded-[18px] border border-line bg-surface p-5">
+          <p className="eyebrow text-subtle">Fontes</p>
+          <ul className="mt-3 flex flex-wrap gap-1.5">
             {listing.sources.map((s) => (
-              <li key={s} className="rounded-full bg-raised px-3 py-2 text-xs text-muted">
+              <li key={s} className="rounded-full bg-raised px-3 py-2 text-xs font-medium text-muted">
                 {SOURCE_LABEL[s]}
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs uppercase tracking-widest text-subtle">
-            Bairro {live.nb.name}
-          </p>
-          <p className="mt-1 text-sm leading-relaxed text-muted">{live.nb.note}</p>
-          <p className="mt-2 text-xs text-subtle">
+          <p className="eyebrow mt-5 text-subtle">Bairro {live.nb.name}</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted">{live.nb.note}</p>
+          <p className="mt-2 text-[13px] text-subtle">
             m² {brl.format(live.nb.m2)} · {pct(live.nb.yoy)} em 12 meses · STR{" "}
             {pctAbs(live.nb.strOccupancy)} · ADR {brl.format(live.nb.strAdr)}
           </p>
@@ -209,20 +183,12 @@ function Metric({
   label: string;
   value: string;
   hint?: string;
-  tone?: "deal" | "risk";
+  tone?: boolean;
 }) {
   return (
-    <div className="rounded-xl bg-surface px-3 py-3 shadow-(--shadow-border)">
-      <p className="text-xs uppercase tracking-widest text-subtle">{label}</p>
-      <p
-        className={cn(
-          "mt-1 font-display text-lg tabular-nums",
-          tone === "deal" && "text-deal",
-          tone === "risk" && "text-risk",
-        )}
-      >
-        {value}
-      </p>
+    <div className="rounded-xl border border-line bg-surface px-3 py-3">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-subtle">{label}</p>
+      <p className={cn("mt-1 font-display text-lg tabular-nums", tone && "text-accent")}>{value}</p>
       {hint ? <p className="mt-0.5 text-xs text-subtle">{hint}</p> : null}
     </div>
   );
@@ -230,8 +196,8 @@ function Metric({
 
 function Side({ k, v }: { k: string; v: string }) {
   return (
-    <div className="bg-surface px-3 py-3">
-      <dt className="text-xs uppercase tracking-widest text-subtle">{k}</dt>
+    <div className="border-b border-line px-4 py-3 last:border-0">
+      <dt className="text-[11px] font-semibold uppercase tracking-[0.12em] text-subtle">{k}</dt>
       <dd className="tabular-nums text-sm">{v}</dd>
     </div>
   );

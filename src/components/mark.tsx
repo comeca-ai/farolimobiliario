@@ -2,25 +2,12 @@ import { cn } from "@/lib/utils";
 
 export function Mark({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 32 32"
-      className={cn("text-accent", className)}
-      fill="none"
-      aria-hidden
-    >
-      <path
-        d="M16 3v3.2M11.8 8.4h8.4L18.4 13h-4.8L11.8 8.4Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M13.2 13h5.6v13H13.2Z" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M9 28h14M14.6 17h2.8M14.6 21.2h2.8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+    <svg viewBox="0 0 16 26" className={cn("text-fg", className)} aria-hidden>
+      <path d="M5 9h6l1.4 15H3.6L5 9z" fill="currentColor" />
+      <rect x="3" y="4" width="10" height="5" rx="1" fill="currentColor" />
+      <circle cx="8" cy="6.5" r="1.4" fill="var(--color-gold)" />
+      <path d="M8 0.5v3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <rect x="1" y="24" width="14" height="1.6" rx="0.8" fill="currentColor" />
     </svg>
   );
 }
