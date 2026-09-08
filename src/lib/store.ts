@@ -42,14 +42,8 @@ export const useDesk = create<DeskState>()(
       query: "",
       selectedId: null,
       watched: [],
-      brief: {
-        goal: "patrimonio",
-        age: 42,
-        years: 10,
-        wish: "comprar abaixo do justo e deixar o bairro subir",
-        places: [],
-      },
-      lead: { email: "voce@farol.jp", whatsapp: "83 98888-0000" },
+      brief: null,
+      lead: null,
       draft: { email: "", whatsapp: "", job: "airbnb" },
       showDesk: false,
       setRadar: (radar) => set({ radar }),
@@ -77,7 +71,7 @@ export const useDesk = create<DeskState>()(
       setShowDesk: (showDesk) => set({ showDesk }),
     }),
     {
-      name: "farol-desk-v4",
+      name: "farol-desk-v5",
       partialize: (s) => ({
         watched: s.watched,
         brief: s.brief,

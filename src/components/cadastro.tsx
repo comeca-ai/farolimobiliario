@@ -57,7 +57,7 @@ export function Cadastro({
               setEmailErr(nextEmail);
               setWhatsErr(nextWhats);
               if (nextEmail || nextWhats) return;
-              onSubmit({ email: draft.email.trim().toLowerCase(), whatsapp: draft.whatsapp });
+              onSubmit({ email: draft.email.trim().toLowerCase(), whatsapp: draft.whatsapp, source: "site" });
             }}
           >
             <label className="flex flex-col gap-2">

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArquiteturaRouteImport } from './routes/arquitetura'
 import { Route as BairrosRouteImport } from './routes/bairros'
+import { Route as EventoRouteImport } from './routes/evento'
 import { Route as ImovelIdRouteImport } from './routes/imovel.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const BairrosRoute = BairrosRouteImport.update({
   path: '/bairros',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventoRoute = EventoRouteImport.update({
+  id: '/evento',
+  path: '/evento',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImovelIdRoute = ImovelIdRouteImport.update({
   id: '/imovel/$id',
   path: '/imovel/$id',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/arquitetura': typeof ArquiteturaRoute
   '/bairros': typeof BairrosRoute
+  '/evento': typeof EventoRoute
   '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/arquitetura': typeof ArquiteturaRoute
   '/bairros': typeof BairrosRoute
+  '/evento': typeof EventoRoute
   '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/arquitetura': typeof ArquiteturaRoute
   '/bairros': typeof BairrosRoute
+  '/evento': typeof EventoRoute
   '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/arquitetura' | '/bairros' | '/imovel/$id'
+  fullPaths: '/' | '/arquitetura' | '/bairros' | '/evento' | '/imovel/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/arquitetura' | '/bairros' | '/imovel/$id'
-  id: '__root__' | '/' | '/arquitetura' | '/bairros' | '/imovel/$id'
+  to: '/' | '/arquitetura' | '/bairros' | '/evento' | '/imovel/$id'
+  id: '__root__' | '/' | '/arquitetura' | '/bairros' | '/evento' | '/imovel/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArquiteturaRoute: typeof ArquiteturaRoute
   BairrosRoute: typeof BairrosRoute
+  EventoRoute: typeof EventoRoute
   ImovelIdRoute: typeof ImovelIdRoute
 }
 
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BairrosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/evento': {
+      id: '/evento'
+      path: '/evento'
+      fullPath: '/evento'
+      preLoaderRoute: typeof EventoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/imovel/$id': {
       id: '/imovel/$id'
       path: '/imovel/$id'
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArquiteturaRoute: ArquiteturaRoute,
   BairrosRoute: BairrosRoute,
+  EventoRoute: EventoRoute,
   ImovelIdRoute: ImovelIdRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Link } from "@tanstack/react-router";
 import { maskBrMobile, validBrMobile, validEmail } from "@/lib/lead";
 import { useDesk, type JobHint } from "@/lib/store";
 import { cn } from "@/lib/utils";
@@ -21,7 +22,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
       return;
     }
     if (validBrMobile(draft.whatsapp)) {
-      setLead({ email: draft.email.trim().toLowerCase(), whatsapp: draft.whatsapp });
+      setLead({ email: draft.email.trim().toLowerCase(), whatsapp: draft.whatsapp, source: "site" });
       return;
     }
     onEnter();
@@ -29,12 +30,21 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
 
   return (
     <div>
+      <Link
+        to="/evento"
+        className="block border-b border-line bg-raised px-5 py-2.5 text-center text-sm text-fg"
+      >
+        Primeira mesa · Brasília — entra por aqui →
+      </Link>
       <header className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
         <a href="#topo" className="flex items-baseline gap-2.5 text-fg">
           <span className="font-display text-[28px] leading-none tracking-tight">Farol</span>
           <span className="text-[13px] text-subtle">João Pessoa</span>
         </a>
         <nav className="flex flex-wrap items-center gap-5 text-sm font-medium">
+          <Link to="/evento" className="text-accent">
+            Evento Brasília
+          </Link>
           <a href="#job" className="text-fg">
             O job
           </a>
@@ -243,7 +253,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
   );
 }
 
-function JobPick({
+export function JobPick({
   active,
   title,
   hint,

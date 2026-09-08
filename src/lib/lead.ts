@@ -1,6 +1,9 @@
+export type LeadSource = "site" | "evento-brasilia";
+
 export type Lead = {
   email: string;
   whatsapp: string;
+  source?: LeadSource;
 };
 
 export function digits(value: string) {

@@ -8,6 +8,7 @@ const login = readFileSync("src/components/cadastro.tsx", "utf8");
 const rumo = readFileSync("src/components/rumo-list.tsx", "utf8");
 const shell = readFileSync("src/components/shell.tsx", "utf8");
 const caixinha = readFileSync("src/components/objetivos.tsx", "utf8");
+const evento = readFileSync("src/routes/evento.tsx", "utf8");
 
 describe("tela do Farol", () => {
   it("home é landing → cadastro → caixinha", () => {
@@ -44,5 +45,14 @@ describe("tela do Farol", () => {
     assert.match(shell, /Bairros/);
     assert.match(shell, /Arquitetura/);
     assert.match(shell, />\s*Sair\s*</);
+  });
+
+  it("porta do evento Brasília pede e-mail e WhatsApp", () => {
+    assert.match(evento, /createFileRoute\("\/evento"\)/);
+    assert.match(evento, /Brasília/);
+    assert.match(evento, /João Pessoa/);
+    assert.match(evento, /Entrar na mesa/);
+    assert.match(evento, /obrigatório/);
+    assert.match(evento, /EVENTO_SOURCE/);
   });
 });

@@ -15,6 +15,8 @@ Os sinais desta demo são **modelados** com comps públicos de bairro (FipeZAP /
 4. Resultado — 5 encaixes (destaque + 4) + mapa só desses pinos
 5. **Sair** no topo limpa a sessão
 
+**Evento Brasília (primeiros clientes):** [farolqueprotege.com.br/evento](https://farolqueprotege.com.br/evento) — um ecrã no celular, e-mail + WhatsApp obrigatórios, depois a caixinha e os cinco sinais. O mercado continua João Pessoa.
+
 Quatro rumos, cada um com **cinco** imóveis distintos:
 
 | Rumo | O número grande |
@@ -55,7 +57,8 @@ npm run audit:secrets
 
 ## Rotas
 
-- `/` — landing → cadastro → caixinha → três opções
+- `/` — landing → cadastro → caixinha → cinco opções
+- `/evento` — porta dos primeiros clientes (Brasília)
 - `/imovel/$id` — dossiê do sinal
 - `/bairros` — m² e variação 12 meses
 - `/arquitetura` — desenho de produção na Cloudflare
