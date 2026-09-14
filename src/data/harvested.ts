@@ -2,120 +2,51 @@ import type { Listing } from "./listings.ts";
 import type { HarvestReport } from "@/lib/harvest";
 
 export const HARVEST_REPORT: HarvestReport = {
-  "at": "2026-09-08T18:20:37.430Z",
-  "portalListed": 15492,
-  "raw": 774,
-  "kept": 598,
-  "dropped": 176,
+  "at": "2026-09-14T17:12:34.573Z",
+  "portalListed": 12299,
+  "raw": 754,
+  "kept": 608,
+  "dropped": 146,
   "bySource": {
-    "portal": 595,
-    "leilao": 3
+    "portal": 603,
+    "leilao": 5
   },
   "byBairro": {
-    "treze-de-maio": 22,
-    "tambau": 23,
-    "cabo-branco": 23,
+    "cabo-branco": 26,
+    "altiplano": 31,
+    "jcu": 28,
+    "manaira": 28,
+    "torre": 26,
+    "portal-do-sol": 22,
     "aeroclube": 18,
-    "portal-do-sol": 23,
-    "altiplano": 27,
-    "jardim-oceania": 30,
+    "bessa": 24,
+    "cristo": 32,
     "miramar": 22,
-    "jcu": 27,
-    "manaira": 26,
-    "cristo": 28,
-    "torre": 28,
-    "bessa": 23,
-    "gramame": 28,
+    "gramame": 31,
+    "jardim-oceania": 38,
     "estados": 27,
-    "bancarios": 28,
-    "brisamar": 19,
-    "expedicionarios": 24,
-    "centro": 16,
-    "mangabeira": 26,
-    "cruz-das-armas": 12,
-    "geisel": 26,
-    "castelo-branco": 16,
-    "oitizeiro": 7,
-    "funcionarios": 19,
-    "alto-do-mateus": 13,
-    "industrias": 17
+    "tambau": 21,
+    "brisamar": 17,
+    "bancarios": 25,
+    "expedicionarios": 23,
+    "centro": 14,
+    "mangabeira": 27,
+    "cruz-das-armas": 6,
+    "geisel": 25,
+    "castelo-branco": 10,
+    "oitizeiro": 4,
+    "funcionarios": 27,
+    "treze-de-maio": 22,
+    "alto-do-mateus": 11,
+    "industrias": 23
   },
   "feedsOk": 65,
-  "feedsFail": 0
+  "feedsFail": 9,
+  "browserOk": 0,
+  "browserFail": 9
 } as HarvestReport;
 
 export const HARVESTED_LISTINGS: Listing[] = [
-  {
-    "id": "chv-45430756",
-    "title": "Seu novo apartamento em João Pessoa em excelente localização e estrutura de lazer!",
-    "type": "apto",
-    "bairroId": "treze-de-maio",
-    "street": "Treze de Maio, João Pessoa",
-    "area": 46,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 286000,
-    "condo": 414,
-    "iptu": 1430,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.141,
-    "lng": -34.85672,
-    "thesis": "Portal · 46 m² em Treze de Maio, pedido R$ 6.217/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 15
-  },
-  {
-    "id": "chv-44982467",
-    "title": "Apartamento 210m² 3 quartos sendo 3 suítes em Tambaú para Alugar",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Tambaú, João Pessoa",
-    "area": 210,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1700000,
-    "condo": 1890,
-    "iptu": 8500,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.11716,
-    "lng": -34.81928,
-    "thesis": "Portal · 210 m² em Tambaú, pedido R$ 8.095/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
-  },
   {
     "id": "chv-43241368",
     "title": "Pronto para morar em uma das localizações mais desejadas de João Pessoa.",
@@ -142,7 +73,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.114820000000001,
     "lng": -34.83428,
-    "thesis": "Portal · 48 m² em Cabo Branco, pedido R$ 12.520/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 48 m² em Cabo Branco, pedido R$ 12.520/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -152,20 +83,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 6
   },
   {
-    "id": "chv-38990692",
-    "title": "Apartamento - 3 dormitórios - 2 Suítes - localizado em João Pessoa / Aeroclube",
+    "id": "chv-45799396",
+    "title": "Apartamento com 3 quartos à venda na Avenida João Cirilo da Silva, 707, Altiplano Cabo Bra",
     "type": "apto",
-    "bairroId": "aeroclube",
-    "street": "Aeroclube, João Pessoa",
-    "area": 84,
+    "bairroId": "altiplano",
+    "street": "Avenida João Cirilo Da Silva, 707",
+    "area": 105,
     "rooms": 3,
-    "suites": 0,
+    "suites": 1,
     "parking": 1,
     "year": 2012,
-    "ask": 1221683,
-    "condo": 756,
-    "iptu": 6108,
-    "seaMeters": 1400,
+    "ask": 1720072,
+    "condo": 945,
+    "iptu": 8600,
+    "seaMeters": 900,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -175,51 +106,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.06192,
-    "lng": -34.8461,
-    "thesis": "Portal · 84 m² em Aeroclube, pedido R$ 14.544/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1329,
+    "lng": -34.824,
+    "thesis": "Portal · 105 m² em Altiplano, pedido R$ 16.382/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 9
-  },
-  {
-    "id": "chv-34098065",
-    "title": "Apartamento com 2 quartos à venda na Maurício De Araújo Gama Filho, 201, Portal do Sol, Jo",
-    "type": "apto",
-    "bairroId": "portal-do-sol",
-    "street": "Maurício De Araújo Gama Filho, 201",
-    "area": 42,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 270000,
-    "condo": 378,
-    "iptu": 1350,
-    "seaMeters": 1600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.15713,
-    "lng": -34.82203,
-    "thesis": "Portal · 42 m² em Portal do Sol, pedido R$ 6.429/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 3
+    "facade": 13
   },
   {
     "id": "chv-45431943",
@@ -248,7 +144,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13012,
     "lng": -34.83894,
-    "thesis": "Portal · 54 m² em Altiplano, pedido R$ 7.870/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Altiplano, pedido R$ 7.870/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -257,6 +153,293 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 2
+  },
+  {
+    "id": "chv-32119215",
+    "title": "Apartamento com 2 quartos à venda na Travessa Rui Costa, Altiplano Cabo Branco, João Pesso",
+    "type": "apto",
+    "bairroId": "altiplano",
+    "street": "Travessa Rui Costa, ",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 412000,
+    "condo": 495,
+    "iptu": 2060,
+    "seaMeters": 900,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.1151,
+    "lng": -34.86108,
+    "thesis": "Portal · 55 m² em Altiplano, pedido R$ 7.491/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-45969009",
+    "title": "Apartamento à venda em João Pessoa, Jardim Cidade Universitária, com 2 quartos, 60m²",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Rua Carlos Sérgio Da Silva Brandão, 1",
+    "area": 60,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 310000,
+    "condo": 540,
+    "iptu": 1550,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.15742,
+    "lng": -34.8439,
+    "thesis": "Portal · 60 m² em Jd. Cidade Universitária, pedido R$ 5.167/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 10
+  },
+  {
+    "id": "chv-45431690",
+    "title": "LANÇAMENTO no Altiplano Cabo Branco - João Pessoa",
+    "type": "apto",
+    "bairroId": "altiplano",
+    "street": "Altiplano, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 408614,
+    "condo": 495,
+    "iptu": 2043,
+    "seaMeters": 900,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.1283199999999995,
+    "lng": -34.8405,
+    "thesis": "Portal · 55 m² em Altiplano, pedido R$ 7.429/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 7
+  },
+  {
+    "id": "chv-43008177",
+    "title": "Apartamento com 3 quartos à venda na Rua Comerciante Aristides Costa, --, Jardim Cidade Un",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Rua Comerciante Aristides Costa, --",
+    "area": 75,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 650000,
+    "condo": 675,
+    "iptu": 3250,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15603,
+    "lng": -34.83744,
+    "thesis": "Portal · 75 m² em Jd. Cidade Universitária, pedido R$ 8.667/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
+  },
+  {
+    "id": "chv-27311316",
+    "title": "Apartamento para Venda em João Pessoa, Manaíra, 2 dormitórios, 1 suíte, 2 banheiros, 1 vag",
+    "type": "apto",
+    "bairroId": "manaira",
+    "street": "Manaíra, João Pessoa",
+    "area": 54,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 395000,
+    "condo": 486,
+    "iptu": 1975,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.09676,
+    "lng": -34.82748,
+    "thesis": "Portal · 54 m² em Manaíra, pedido R$ 7.315/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 17
+  },
+  {
+    "id": "chv-31794599",
+    "title": "Excelente apartamento à Venda no Bairro da Torre 2 Quartos 1 Suíte",
+    "type": "apto",
+    "bairroId": "torre",
+    "street": "Avenida Júlia Freire, 01",
+    "area": 60,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 459793,
+    "condo": 540,
+    "iptu": 2299,
+    "seaMeters": 2800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.12126,
+    "lng": -34.85793,
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 7.663/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-34098065",
+    "title": "Apartamento com 2 quartos à venda na Maurício De Araújo Gama Filho, 201, Portal do Sol, Jo",
+    "type": "apto",
+    "bairroId": "portal-do-sol",
+    "street": "Maurício De Araújo Gama Filho, 201",
+    "area": 42,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 270000,
+    "condo": 378,
+    "iptu": 1350,
+    "seaMeters": 1600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15713,
+    "lng": -34.82203,
+    "thesis": "Portal · 42 m² em Portal do Sol, pedido R$ 6.429/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
+  },
+  {
+    "id": "chv-44281988",
+    "title": "Apartamento 03 quartos com vista mar definitiva à venda no Altiplano",
+    "type": "apto",
+    "bairroId": "altiplano",
+    "street": "Altiplano, João Pessoa",
+    "area": 106,
+    "rooms": 3,
+    "suites": 1,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1437289,
+    "condo": 954,
+    "iptu": 7186,
+    "seaMeters": 900,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.12688,
+    "lng": -34.84122,
+    "thesis": "Portal · 106 m² em Altiplano, pedido R$ 13.559/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 5
   },
   {
     "id": "chv-46385374",
@@ -284,7 +467,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06072,
     "lng": -34.8557,
-    "thesis": "Portal · 84 m² em Aeroclube, pedido R$ 5.476/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 84 m² em Aeroclube, pedido R$ 5.476/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -295,55 +478,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 12
   },
   {
-    "id": "chv-46029855",
-    "title": "Apartamento com 4 quartos à venda na Rua Themístocles da Costa Brito, 315, Jardim Oceania,",
-    "type": "apto",
-    "bairroId": "jardim-oceania",
-    "street": "Rua Themístocles Da Costa Brito, 315",
-    "area": 98,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1300000,
-    "condo": 882,
-    "iptu": 6500,
-    "seaMeters": 220,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.09236,
-    "lng": -34.84132,
-    "thesis": "Portal · 98 m² em Jardim Oceania, pedido R$ 13.265/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 14
-  },
-  {
-    "id": "chv-33489903",
-    "title": "Apartamento a venda oportunidade no Altiplano em excelente localização e muito ventilado !",
-    "type": "apto",
-    "bairroId": "altiplano",
-    "street": "Rua Bancário Elias Feliciano Madruga, ",
-    "area": 80,
+    "id": "chv-43965079",
+    "title": "Casa com 3 quartos à venda no Bessa, João Pessoa",
+    "type": "casa",
+    "bairroId": "bessa",
+    "street": "Bessa, João Pessoa",
+    "area": 210,
     "rooms": 3,
     "suites": 0,
     "parking": 1,
-    "year": 2012,
-    "ask": 550000,
-    "condo": 720,
-    "iptu": 2750,
-    "seaMeters": 900,
+    "year": 1998,
+    "ask": 900000,
+    "condo": 0,
+    "iptu": 4500,
+    "seaMeters": 120,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -351,11 +499,12 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco"
+      "preco",
+      "rua"
     ],
-    "lat": -7.13189,
-    "lng": -34.82983,
-    "thesis": "Portal · 80 m² em Altiplano, pedido R$ 6.875/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.071059999999999,
+    "lng": -34.846039999999995,
+    "thesis": "Portal · 210 m² em Bessa, pedido R$ 4.286/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -363,113 +512,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 4
-  },
-  {
-    "id": "chv-46279685",
-    "title": "Apartamento com 2 quartos à venda na Avenida Nego, Tambaú, João Pessoa",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Avenida Nego, ",
-    "area": 61,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 750000,
-    "condo": 549,
-    "iptu": 3750,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1139,
-    "lng": -34.82679,
-    "thesis": "Portal · 61 m² em Tambaú, pedido R$ 12.295/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
-  },
-  {
-    "id": "chv-43345620",
-    "title": "Apartamento à venda 04 quartos 167 metros 04 quartos R$ 899.000,00 João Pessoa -PB",
-    "type": "apto",
-    "bairroId": "miramar",
-    "street": "Rua Coronel Souza Lemos, ",
-    "area": 167,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 899000,
-    "condo": 1503,
-    "iptu": 4495,
-    "seaMeters": 1800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.12175,
-    "lng": -34.83483,
-    "thesis": "Portal · 167 m² em Miramar, pedido R$ 5.383/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
-  },
-  {
-    "id": "chv-46152655",
-    "title": "Apartamento para Venda em João Pessoa, Jardim Cidade Universitária, 3 dormitórios, 1 suíte",
-    "type": "apto",
-    "bairroId": "jcu",
-    "street": "Jd. Cidade Universitária, João Pessoa",
-    "area": 123,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 630000,
-    "condo": 1107,
-    "iptu": 3150,
-    "seaMeters": 4500,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.14468,
-    "lng": -34.84844,
-    "thesis": "Portal · 123 m² em Jd. Cidade Universitária, pedido R$ 5.122/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 14
+    "facade": 17
   },
   {
     "id": "chv-46081399",
@@ -498,7 +541,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15164,
     "lng": -34.8494,
-    "thesis": "Portal · 148 m² em Jd. Cidade Universitária, pedido R$ 5.338/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 148 m² em Jd. Cidade Universitária, pedido R$ 5.338/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -518,9 +561,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "suites": 1,
     "parking": 1,
     "year": 1998,
-    "ask": 1540000,
+    "ask": 1590000,
     "condo": 0,
-    "iptu": 7700,
+    "iptu": 7950,
     "seaMeters": 1600,
     "condition": 0.88,
     "daysListed": 28,
@@ -533,7 +576,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15648,
     "lng": -34.84768,
-    "thesis": "Portal · 170 m² em Portal do Sol, pedido R$ 9.059/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 170 m² em Portal do Sol, pedido R$ 9.353/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -543,20 +586,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 16
   },
   {
-    "id": "chv-45631703",
-    "title": "Casa com 4 quartos à venda na Rua Desembargador Rivaldo Pereira, Altiplano Cabo Branco, Jo",
+    "id": "chv-44591597",
+    "title": "Casa dos sonhos no bairro do cristo - acabamento de alto padrao",
     "type": "casa",
-    "bairroId": "altiplano",
-    "street": "Rua Desembargador Rivaldo Pereira, ",
-    "area": 196,
-    "rooms": 4,
+    "bairroId": "cristo",
+    "street": "Rua Arnaldo Costa, 1645",
+    "area": 80,
+    "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 750000,
+    "ask": 550000,
     "condo": 0,
-    "iptu": 3750,
-    "seaMeters": 900,
+    "iptu": 2750,
+    "seaMeters": 6400,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -564,20 +607,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "rua"
     ],
-    "lat": -7.1302258,
-    "lng": -34.8305558,
-    "thesis": "Portal · 196 m² em Altiplano, pedido R$ 3.827/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.15687,
+    "lng": -34.871,
+    "thesis": "Portal · 80 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 4
+    "facade": 14
   },
   {
     "id": "chv-41676076",
@@ -606,7 +647,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12242,
     "lng": -34.83873,
-    "thesis": "Portal · 400 m² em Miramar, pedido R$ 3.750/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 400 m² em Miramar, pedido R$ 3.750/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -617,93 +658,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 14
   },
   {
-    "id": "chv-42986034",
-    "title": "Casa com 4 quartos à venda no Manaíra, João Pessoa",
+    "id": "chv-39902093",
+    "title": "Ótima casa em terreno de 12 x 32m, 3 salas, 4 quartos sendo 2 suítes",
     "type": "casa",
-    "bairroId": "manaira",
-    "street": "Manaíra, João Pessoa",
-    "area": 220,
-    "rooms": 4,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1400000,
-    "condo": 0,
-    "iptu": 7000,
-    "seaMeters": 180,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.103,
-    "lng": -34.83588,
-    "thesis": "Portal · 220 m² em Manaíra, pedido R$ 6.364/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 14
-  },
-  {
-    "id": "chv-45322080",
-    "title": "Flat com 1 dormitório à venda, 28 m² por R$ 445.000,00 - Cabo Branco - João Pessoa/PB",
-    "type": "flat",
-    "bairroId": "cabo-branco",
-    "street": "Cabo Branco, João Pessoa",
-    "area": 28,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 445000,
-    "condo": 252,
-    "iptu": 2225,
-    "seaMeters": 80,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1195,
-    "lng": -34.8188,
-    "thesis": "Portal · 28 m² em Cabo Branco, pedido R$ 15.893/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 18
-  },
-  {
-    "id": "chv-31808025",
-    "title": "Casa com 4 quartos à venda na Rua Pedro Ivo de Paiva, 111, Cristo Redentor, João Pessoa, 1",
-    "type": "casa",
-    "bairroId": "cristo",
-    "street": "Rua Pedro Ivo De Paiva, 111",
-    "area": 150,
+    "bairroId": "jcu",
+    "street": "Rua Tabelião Erinaldo Nunes Oliveira, 102",
+    "area": 200,
     "rooms": 4,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 510000,
+    "ask": 690000,
     "condo": 0,
-    "iptu": 2550,
-    "seaMeters": 6400,
+    "iptu": 3450,
+    "seaMeters": 4500,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -714,9 +682,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "rua"
     ],
-    "lat": -7.16542,
-    "lng": -34.87173,
-    "thesis": "Portal · 150 m² em Cristo Redentor, pedido R$ 3.400/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1535,
+    "lng": -34.83337,
+    "thesis": "Portal · 200 m² em Jd. Cidade Universitária, pedido R$ 3.450/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -724,23 +692,23 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 5
+    "facade": 10
   },
   {
-    "id": "chv-43386164",
-    "title": "Casa com 3 quartos à venda no Tambauzinho, João Pessoa",
+    "id": "chv-45477803",
+    "title": "Casa com 2 quartos à venda na Rua Geraldo Brandão Rocha, Gramame, João Pessoa",
     "type": "casa",
-    "bairroId": "tambau",
-    "street": "Tambaú, João Pessoa",
-    "area": 320,
-    "rooms": 3,
-    "suites": 1,
+    "bairroId": "gramame",
+    "street": "Rua Geraldo Brandão Rocha, ",
+    "area": 56,
+    "rooms": 2,
+    "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 1400000,
+    "ask": 234000,
     "condo": 0,
-    "iptu": 7000,
-    "seaMeters": 60,
+    "iptu": 1170,
+    "seaMeters": 8200,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -748,20 +716,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
+      "airbnb",
       "rua"
     ],
-    "lat": -7.11632,
-    "lng": -34.83416,
-    "thesis": "Portal · 320 m² em Tambaú, pedido R$ 4.375/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.2012,
+    "lng": -34.86285,
+    "thesis": "Portal · 56 m² em Gramame, pedido R$ 4.179/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 2
+    "facade": 4
   },
   {
     "id": "chv-39667500",
@@ -790,7 +757,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12976,
     "lng": -34.842659999999995,
-    "thesis": "Portal · 54 m² em Altiplano, pedido R$ 7.315/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Altiplano, pedido R$ 7.315/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -801,20 +768,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 1
   },
   {
-    "id": "chv-46211096",
-    "title": "Apartamento em Jardim Cidade Universitária, João Pessoa/PB",
+    "id": "chv-44610336",
+    "title": "Apartamento a beira mar do jardim oceania em uma excelente localizacao",
     "type": "apto",
-    "bairroId": "jcu",
-    "street": "Jd. Cidade Universitária, João Pessoa",
-    "area": 76,
-    "rooms": 3,
+    "bairroId": "jardim-oceania",
+    "street": "Rua Doutor Ivanildo Guedes Pessoa, 1223",
+    "area": 50,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 320000,
-    "condo": 684,
-    "iptu": 1600,
-    "seaMeters": 4500,
+    "ask": 618000,
+    "condo": 450,
+    "iptu": 3090,
+    "seaMeters": 220,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -822,19 +789,54 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco"
+      "airbnb"
     ],
-    "lat": -7.14336,
-    "lng": -34.8464,
-    "thesis": "Portal · 76 m² em Jd. Cidade Universitária, pedido R$ 4.211/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.08623,
+    "lng": -34.83697,
+    "thesis": "Portal · 50 m² em Jardim Oceania, pedido R$ 12.360/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 13
+    "facade": 16
+  },
+  {
+    "id": "chv-44320524",
+    "title": "Flat para Venda em João Pessoa, Jardim Oceania, 1 dormitório, 1 suíte, 1 banheiro, 1 vaga",
+    "type": "flat",
+    "bairroId": "jardim-oceania",
+    "street": "Jardim Oceania, João Pessoa",
+    "area": 22,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 440000,
+    "condo": 198,
+    "iptu": 2200,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.09224,
+    "lng": -34.83124,
+    "thesis": "Portal · 22 m² em Jardim Oceania, pedido R$ 20.000/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 4
   },
   {
     "id": "chv-43352223",
@@ -862,7 +864,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08785,
     "lng": -34.83424,
-    "thesis": "Portal · 25 m² em Jardim Oceania, pedido R$ 16.796/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 25 m² em Jardim Oceania, pedido R$ 16.796/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -873,55 +875,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 3
   },
   {
-    "id": "chv-42520277",
-    "title": "Apartamento com 2 dormitórios à venda, 60 m² por R$ 335.000 - Torre - João Pessoa/PB",
+    "id": "chv-45477808",
+    "title": "Apartamento com 2 quartos à venda na Rua Defensora Pública Fátima Lopes, Gramame, João Pes",
     "type": "apto",
-    "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 60,
+    "bairroId": "gramame",
+    "street": "Rua Defensora Pública Fátima Lopes, ",
+    "area": 54,
     "rooms": 2,
     "suites": 0,
-    "parking": 1,
+    "parking": 0,
     "year": 2012,
-    "ask": 335000,
-    "condo": 540,
-    "iptu": 1675,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11971,
-    "lng": -34.85065,
-    "thesis": "Portal · 60 m² em Torre, pedido R$ 5.583/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 15
-  },
-  {
-    "id": "chv-46268398",
-    "title": "Apartamento com 2 quartos à venda na Avenida Presidente Epitácio Pessoa, Cabo Branco, João",
-    "type": "apto",
-    "bairroId": "cabo-branco",
-    "street": "Avenida Presidente Epitácio Pessoa, ",
-    "area": 65,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 689000,
-    "condo": 585,
-    "iptu": 3445,
-    "seaMeters": 80,
+    "ask": 187000,
+    "condo": 486,
+    "iptu": 935,
+    "seaMeters": 8200,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -932,16 +899,158 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "airbnb"
     ],
-    "lat": -7.11948,
-    "lng": -34.8303,
-    "thesis": "Portal · 65 m² em Cabo Branco, pedido R$ 10.600/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.20065,
+    "lng": -34.86593,
+    "thesis": "Portal · 54 m² em Gramame, pedido R$ 3.463/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 15
+    "facade": 9
+  },
+  {
+    "id": "chv-39679339",
+    "title": "Flat na praia do Bessa prontinho para morar ou rentabilizar!",
+    "type": "flat",
+    "bairroId": "jardim-oceania",
+    "street": "Jardim Oceania, João Pessoa",
+    "area": 32,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 359000,
+    "condo": 288,
+    "iptu": 1795,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1151,
+    "lng": -34.86108,
+    "thesis": "Portal · 32 m² em Jardim Oceania, pedido R$ 11.219/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
+  },
+  {
+    "id": "chv-44649343",
+    "title": "Vendo Apartamento Térreo de 3 quartos ,sendo 1 suíte , Jardim Cidade Universitária -João P",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Jd. Cidade Universitária, João Pessoa",
+    "area": 79,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 280000,
+    "condo": 711,
+    "iptu": 1400,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.1443200000000004,
+    "lng": -34.83848,
+    "thesis": "Portal · 79 m² em Jd. Cidade Universitária, pedido R$ 3.544/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
+  },
+  {
+    "id": "chv-44865518",
+    "title": "Apartamento com 3 quartos à venda na Rua Doutor José Aloysio da Costa Machado, Aeroclube, ",
+    "type": "apto",
+    "bairroId": "aeroclube",
+    "street": "Rua Doutor José Aloysio Da Costa Machado, ",
+    "area": 70,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 620000,
+    "condo": 630,
+    "iptu": 3100,
+    "seaMeters": 1400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.08614,
+    "lng": -34.84336,
+    "thesis": "Portal · 70 m² em Aeroclube, pedido R$ 8.857/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
+  },
+  {
+    "id": "chv-46002176",
+    "title": "Apto 2 quartos em manaíra - excelente oportunidade para investidores",
+    "type": "apto",
+    "bairroId": "manaira",
+    "street": "Manaíra, João Pessoa",
+    "area": 56,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 506277,
+    "condo": 504,
+    "iptu": 2531,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1042,
+    "lng": -34.84296,
+    "thesis": "Portal · 56 m² em Manaíra, pedido R$ 9.041/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-18404709",
@@ -969,7 +1078,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09565,
     "lng": -34.83359,
-    "thesis": "Portal · 51 m² em Jardim Oceania, pedido R$ 17.824/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 51 m² em Jardim Oceania, pedido R$ 17.824/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -978,116 +1087,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
-  },
-  {
-    "id": "chv-44593492",
-    "title": "️ Apartamento novo no Bessa a 600 metros do mar com 2 quartos e excelente localização",
-    "type": "apto",
-    "bairroId": "bessa",
-    "street": "Rua Maria Das Graças Ribeiro De Alencar, ",
-    "area": 55,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 379000,
-    "condo": 495,
-    "iptu": 1895,
-    "seaMeters": 120,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.06069,
-    "lng": -34.84572,
-    "thesis": "Portal · 55 m² em Bessa, pedido R$ 6.891/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
-  },
-  {
-    "id": "chv-43445437",
-    "title": "Oferta da Caixa — Apartamento no Gramame, Joao Pessoa - PB, Apto 302, 2 quartos, 1 vaga, 4",
-    "type": "apto",
-    "bairroId": "gramame",
-    "street": "Rua Luiz Spinelli, N. 712 APT",
-    "area": 42,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 81203,
-    "condo": 378,
-    "iptu": 800,
-    "seaMeters": 8200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.21437,
-    "lng": -34.85016,
-    "thesis": "Portal · 42 m² em Gramame, pedido R$ 1.933/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 17
-  },
-  {
-    "id": "chv-43966002",
-    "title": "Apartamento com 3 quartos à venda na Rua Bacharel Irenaldo de Albuquerque Chaves, 201, Aer",
-    "type": "apto",
-    "bairroId": "aeroclube",
-    "street": "Rua Bacharel Irenaldo De Albuquerque Chaves, 201",
-    "area": 75,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 300000,
-    "condo": 675,
-    "iptu": 1500,
-    "seaMeters": 1400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.08412,
-    "lng": -34.84607,
-    "thesis": "Portal · 75 m² em Aeroclube, pedido R$ 4.000/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 3
   },
   {
     "id": "chv-44877903",
@@ -1115,7 +1114,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09008,
     "lng": -34.83544,
-    "thesis": "Portal · 136 m² em Jardim Oceania, pedido R$ 7.221/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 136 m² em Jardim Oceania, pedido R$ 7.221/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1124,42 +1123,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 4
-  },
-  {
-    "id": "chv-40962470",
-    "title": "Flat duplex na Cobertura com varanda /sacada a 200m da praia de Tambaú -CO0116",
-    "type": "flat",
-    "bairroId": "tambau",
-    "street": "Tambaú, João Pessoa",
-    "area": 44,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 654719,
-    "condo": 396,
-    "iptu": 3274,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11454,
-    "lng": -34.82278,
-    "thesis": "Portal · 44 m² em Tambaú, pedido R$ 14.880/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 8
   },
   {
     "id": "chv-33296005",
@@ -1187,7 +1150,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11852,
     "lng": -34.86072,
-    "thesis": "Portal · 248 m² em Estados, pedido R$ 5.040/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 248 m² em Estados, pedido R$ 5.040/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1196,6 +1159,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
+  },
+  {
+    "id": "chv-36433624",
+    "title": "Cobertura Duplex de Altíssimo Luxo em Tambaú ⚜ codigo: 110069",
+    "type": "apto",
+    "bairroId": "tambau",
+    "street": "Tambaú, João Pessoa",
+    "area": 311,
+    "rooms": 6,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 2500000,
+    "condo": 2799,
+    "iptu": 12500,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.11104,
+    "lng": -34.830439999999996,
+    "thesis": "Portal · 311 m² em Tambaú, pedido R$ 8.039/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 4
   },
   {
     "id": "chv-37762974",
@@ -1223,7 +1222,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06099,
     "lng": -34.84419,
-    "thesis": "Portal · 78 m² em Bessa, pedido R$ 8.718/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 78 m² em Bessa, pedido R$ 8.718/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1231,77 +1230,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 12
-  },
-  {
-    "id": "chv-43858236",
-    "title": "Cobertura com vista mar em Tambaú com 03 quartos sendo 01 suíte",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Avenida Olinda, ",
-    "area": 229,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 858000,
-    "condo": 2061,
-    "iptu": 4290,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.11271,
-    "lng": -34.82556,
-    "thesis": "Portal · 229 m² em Tambaú, pedido R$ 3.747/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 16
-  },
-  {
-    "id": "chv-21436183",
-    "title": "Apartamento Cobertura Duplex em Bancários, João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "bancarios",
-    "street": "Rua Bancário Antônio Severino Da Silva, 167",
-    "area": 57,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 700000,
-    "condo": 513,
-    "iptu": 3500,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.143713,
-    "lng": -34.8391305,
-    "thesis": "Portal · 57 m² em Bancários, pedido R$ 12.281/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
   },
   {
     "id": "chv-40101241",
@@ -1329,7 +1257,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10444,
     "lng": -34.82966,
-    "thesis": "Portal · 247 m² em Manaíra, pedido R$ 6.842/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 247 m² em Manaíra, pedido R$ 6.842/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1365,7 +1293,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09565,
     "lng": -34.83359,
-    "thesis": "Portal · 151 m² em Jardim Oceania, pedido R$ 6.291/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 151 m² em Jardim Oceania, pedido R$ 6.291/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1401,7 +1329,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09565,
     "lng": -34.83359,
-    "thesis": "Portal · 116 m² em Jardim Oceania, pedido R$ 15.948/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 116 m² em Jardim Oceania, pedido R$ 15.948/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1436,7 +1364,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.135759999999999,
     "lng": -34.83774,
-    "thesis": "Portal · 400 m² em Altiplano, pedido R$ 11.250/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 400 m² em Altiplano, pedido R$ 11.250/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1472,7 +1400,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0681037,
     "lng": -34.8384239,
-    "thesis": "Portal · 106 m² em Bessa, pedido R$ 6.462/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 106 m² em Bessa, pedido R$ 6.462/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1509,7 +1437,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1175426,
     "lng": -34.8278946,
-    "thesis": "Portal · 120 m² em Tambaú, pedido R$ 8.750/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Tambaú, pedido R$ 8.750/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1517,41 +1445,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
-  },
-  {
-    "id": "chv-16202604",
-    "title": "Cobertura Para Vender com 05 quartos 05 suítes no bairro Tambaú em João Pessoa",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Tambaú, João Pessoa",
-    "area": 311,
-    "rooms": 5,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 3000000,
-    "condo": 2799,
-    "iptu": 15000,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.11454,
-    "lng": -34.82278,
-    "thesis": "Portal · 311 m² em Tambaú, pedido R$ 9.646/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
   },
   {
     "id": "chv-35795109",
@@ -1579,7 +1472,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1177600000000005,
     "lng": -34.83572,
-    "thesis": "Portal · 26 m² em Tambaú, pedido R$ 14.615/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 26 m² em Tambaú, pedido R$ 14.615/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -1615,7 +1508,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11384,
     "lng": -34.82997,
-    "thesis": "Portal · 49 m² em Tambaú, pedido R$ 14.061/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 49 m² em Tambaú, pedido R$ 14.061/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1650,7 +1543,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11308,
     "lng": -34.82408,
-    "thesis": "Portal · 41 m² em Tambaú, pedido R$ 24.781/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 41 m² em Tambaú, pedido R$ 24.781/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -1659,41 +1552,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 4
-  },
-  {
-    "id": "chv-45037738",
-    "title": "Apartamento com 3 quartos à venda na Rua Sidney Clemente Dore, 220, Tambaú, João Pessoa",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Rua Sidney Clemente Dore, 220",
-    "area": 80,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 700000,
-    "condo": 720,
-    "iptu": 3500,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.11504,
-    "lng": -34.83006,
-    "thesis": "Portal · 80 m² em Tambaú, pedido R$ 8.750/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 18
   },
   {
     "id": "chv-41144761",
@@ -1721,7 +1579,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11452,
     "lng": -34.8285,
-    "thesis": "Portal · 93 m² em Tambaú, pedido R$ 18.065/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 93 m² em Tambaú, pedido R$ 18.065/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1729,6 +1587,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
+  },
+  {
+    "id": "chv-45037738",
+    "title": "Apartamento com 3 quartos à venda na Rua Sidney Clemente Dore, 220, Tambaú, João Pessoa",
+    "type": "apto",
+    "bairroId": "tambau",
+    "street": "Rua Sidney Clemente Dore, 220",
+    "area": 80,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 700000,
+    "condo": 720,
+    "iptu": 3500,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.11504,
+    "lng": -34.83006,
+    "thesis": "Portal · 80 m² em Tambaú, pedido R$ 8.750/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 18
   },
   {
     "id": "chv-37163051",
@@ -1756,7 +1649,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1135600000000005,
     "lng": -34.82432,
-    "thesis": "Portal · 145 m² em Tambaú, pedido R$ 12.276/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 145 m² em Tambaú, pedido R$ 12.276/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1791,7 +1684,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.109360000000001,
     "lng": -34.82852,
-    "thesis": "Portal · 157 m² em Tambaú, pedido R$ 10.191/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 157 m² em Tambaú, pedido R$ 10.191/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1826,7 +1719,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1138,
     "lng": -34.81916,
-    "thesis": "Portal · 315 m² em Tambaú, pedido R$ 7.937/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 315 m² em Tambaú, pedido R$ 7.937/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1862,7 +1755,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.109240000000001,
     "lng": -34.82828,
-    "thesis": "Portal · 29 m² em Tambaú, pedido R$ 16.552/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 29 m² em Tambaú, pedido R$ 16.552/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -1898,7 +1791,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11403,
     "lng": -34.82686,
-    "thesis": "Portal · 76 m² em Tambaú, pedido R$ 12.237/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 76 m² em Tambaú, pedido R$ 12.237/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1934,7 +1827,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11116,
     "lng": -34.82525,
-    "thesis": "Portal · 170 m² em Tambaú, pedido R$ 7.353/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 170 m² em Tambaú, pedido R$ 7.353/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -1943,6 +1836,116 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
+  },
+  {
+    "id": "chv-46538275",
+    "title": "Apartamento com 2 quartos à venda na Rua Severino Massa Spinelli, Tambaú, João Pessoa",
+    "type": "apto",
+    "bairroId": "tambau",
+    "street": "Rua Severino Massa Spinelli, ",
+    "area": 110,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 689000,
+    "condo": 990,
+    "iptu": 3445,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.11551,
+    "lng": -34.82945,
+    "thesis": "Portal · 110 m² em Tambaú, pedido R$ 6.264/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
+  },
+  {
+    "id": "chv-45972032",
+    "title": "Apartamento com 2 quartos à venda na Rua Sidney Clemente Dore, Tambaú, João Pessoa",
+    "type": "apto",
+    "bairroId": "tambau",
+    "street": "Rua Sidney Clemente Dore, ",
+    "area": 90,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 490000,
+    "condo": 810,
+    "iptu": 2450,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.11456,
+    "lng": -34.83012,
+    "thesis": "Portal · 90 m² em Tambaú, pedido R$ 5.444/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
+  },
+  {
+    "id": "chv-45869022",
+    "title": "Apartamento 190m², 4 quartos (3 suítes) para venda em Tambaú — um dos bairros mais complet",
+    "type": "apto",
+    "bairroId": "tambau",
+    "street": "Rua Monteiro Lobato, 690",
+    "area": 190,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1230000,
+    "condo": 1710,
+    "iptu": 6150,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.11789,
+    "lng": -34.82821,
+    "thesis": "Portal · 190 m² em Tambaú, pedido R$ 6.474/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
   },
   {
     "id": "chv-37575440",
@@ -1970,7 +1973,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11301,
     "lng": -34.82914,
-    "thesis": "Portal · 65 m² em Tambaú, pedido R$ 11.538/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 65 m² em Tambaú, pedido R$ 11.538/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -1978,77 +1981,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
-  },
-  {
-    "id": "chv-37521839",
-    "title": "Andar alto com vista mar em Tambau- Empreendimento novo- 145m2- 1 por andar! Oportunidade.",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Rua Silvino Lopes, 379",
-    "area": 145,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1590000,
-    "condo": 1305,
-    "iptu": 7950,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11453,
-    "lng": -34.8285,
-    "thesis": "Portal · 145 m² em Tambaú, pedido R$ 10.966/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 19
-  },
-  {
-    "id": "chv-42945051",
-    "title": "Apartamento à venda no bairro de Tambaú, em João Pessoa, com 84 m², 3 quartos (2 suítes), ",
-    "type": "apto",
-    "bairroId": "tambau",
-    "street": "Avenida Severino Massa Spinelli, 123",
-    "area": 82,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 660000,
-    "condo": 738,
-    "iptu": 3300,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.11399,
-    "lng": -34.829,
-    "thesis": "Portal · 82 m² em Tambaú, pedido R$ 8.049/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
   },
   {
     "id": "chv-43022551",
@@ -2077,7 +2009,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1235800000000005,
     "lng": -34.83212,
-    "thesis": "Portal · 50 m² em Cabo Branco, pedido R$ 10.400/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Cabo Branco, pedido R$ 10.400/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2085,6 +2017,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-45249079",
+    "title": "Apartamento à Venda em Cabo Branco com 2 Quartos com Suítes e Lazer Completo",
+    "type": "apto",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 48,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 574489,
+    "condo": 432,
+    "iptu": 2872,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1214200000000005,
+    "lng": -34.826600000000006,
+    "thesis": "Portal · 48 m² em Cabo Branco, pedido R$ 11.969/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 17
   },
   {
     "id": "chv-37308851",
@@ -2112,7 +2079,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12202,
     "lng": -34.826480000000004,
-    "thesis": "Portal · 28 m² em Cabo Branco, pedido R$ 16.821/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 28 m² em Cabo Branco, pedido R$ 16.821/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -2149,7 +2116,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.117940000000001,
     "lng": -34.834160000000004,
-    "thesis": "Portal · 73 m² em Cabo Branco, pedido R$ 11.644/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 73 m² em Cabo Branco, pedido R$ 11.644/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2184,7 +2151,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11554,
     "lng": -34.829,
-    "thesis": "Portal · 108 m² em Cabo Branco, pedido R$ 19.986/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 108 m² em Cabo Branco, pedido R$ 19.986/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2219,7 +2186,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.117940000000001,
     "lng": -34.817840000000004,
-    "thesis": "Portal · 137 m² em Cabo Branco, pedido R$ 6.218/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 137 m² em Cabo Branco, pedido R$ 6.218/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -2228,6 +2195,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-45248586",
+    "title": "Apartamento garden | 2 dorm. | 146 m² | r$ 1.050.000 - cabo branco - joão pessoa/pb",
+    "type": "apto",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 85,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1040000,
+    "condo": 765,
+    "iptu": 5200,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.119260000000001,
+    "lng": -34.82168,
+    "thesis": "Portal · 85 m² em Cabo Branco, pedido R$ 12.235/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
   },
   {
     "id": "chv-36227362",
@@ -2255,7 +2257,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11866,
     "lng": -34.827200000000005,
-    "thesis": "Portal · 72 m² em Cabo Branco, pedido R$ 16.200/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 72 m² em Cabo Branco, pedido R$ 16.200/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2263,6 +2265,76 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 21
+  },
+  {
+    "id": "chv-40821043",
+    "title": "Apartamento à Venda em Cabo Branco com 3 Suítes e Lazer Completo Joao Pessoa",
+    "type": "apto",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 73,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 770678,
+    "condo": 657,
+    "iptu": 3853,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.1235800000000005,
+    "lng": -34.82672,
+    "thesis": "Portal · 73 m² em Cabo Branco, pedido R$ 10.557/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
+  },
+  {
+    "id": "chv-37476458",
+    "title": "Apartamento Garden | 2 dormitórios | 109 m² | R$ 870.000 - Cabo Branco - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 57,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 869000,
+    "condo": 513,
+    "iptu": 4345,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1151800000000005,
+    "lng": -34.82144,
+    "thesis": "Portal · 57 m² em Cabo Branco, pedido R$ 15.246/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 17
   },
   {
     "id": "chv-45512486",
@@ -2290,7 +2362,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1162600000000005,
     "lng": -34.817600000000006,
-    "thesis": "Portal · 92 m² em Cabo Branco, pedido R$ 12.935/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 92 m² em Cabo Branco, pedido R$ 12.935/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2300,19 +2372,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 3
   },
   {
-    "id": "chv-37521841",
-    "title": "Apartamento para Venda em João Pessoa, Cabo Branco, 2 dormitórios, 1 suíte, 2 banheiros, 1",
+    "id": "chv-44774611",
+    "title": "Excelente cobertura duplex de alto padrao no cabo branco com area privativa e hidro",
     "type": "apto",
     "bairroId": "cabo-branco",
-    "street": "Avenida Buarque, 317",
-    "area": 50,
-    "rooms": 2,
+    "street": "Avenida Cabo Branco, ",
+    "area": 122,
+    "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 700000,
-    "condo": 450,
-    "iptu": 3500,
+    "ask": 1080000,
+    "condo": 1098,
+    "iptu": 5400,
     "seaMeters": 80,
     "condition": 0.88,
     "daysListed": 28,
@@ -2321,33 +2393,34 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "airbnb"
+      "preco"
     ],
-    "lat": -7.12581,
-    "lng": -34.8268,
-    "thesis": "Portal · 50 m² em Cabo Branco, pedido R$ 14.000/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.13883,
+    "lng": -34.81762,
+    "thesis": "Portal · 122 m² em Cabo Branco, pedido R$ 8.852/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 21
+    "facade": 12
   },
   {
-    "id": "chv-37148313",
-    "title": "Apartamento para Venda em João Pessoa, Cabo Branco, 2 dormitórios, 2 suítes, 4 banheiros, ",
+    "id": "chv-37476561",
+    "title": "Apartamento de 83,93 m² em Cabo Branco com 3 suítes, lazer completo e perto da praia",
     "type": "apto",
     "bairroId": "cabo-branco",
-    "street": "Avenida Cabo Branco, 2495",
-    "area": 152,
-    "rooms": 2,
-    "suites": 1,
+    "street": "Cabo Branco, João Pessoa",
+    "area": 83,
+    "rooms": 3,
+    "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 2100000,
-    "condo": 1368,
-    "iptu": 10500,
+    "ask": 803187,
+    "condo": 747,
+    "iptu": 4016,
     "seaMeters": 80,
     "condition": 0.88,
     "daysListed": 28,
@@ -2356,18 +2429,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "airbnb"
+      "preco"
     ],
-    "lat": -7.14615,
-    "lng": -34.80836,
-    "thesis": "Portal · 152 m² em Cabo Branco, pedido R$ 13.816/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.11578,
+    "lng": -34.82096000000001,
+    "thesis": "Portal · 83 m² em Cabo Branco, pedido R$ 9.677/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 14
+    "facade": 20
   },
   {
     "id": "chv-45391053",
@@ -2395,7 +2469,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10723,
     "lng": -34.8362,
-    "thesis": "Portal · 55 m² em Manaíra, pedido R$ 9.089/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Manaíra, pedido R$ 9.089/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2430,7 +2504,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09772,
     "lng": -34.83828,
-    "thesis": "Portal · 148 m² em Manaíra, pedido R$ 8.716/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 148 m² em Manaíra, pedido R$ 8.716/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2465,7 +2539,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11176,
     "lng": -34.82994,
-    "thesis": "Portal · 73 m² em Manaíra, pedido R$ 8.014/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 73 m² em Manaíra, pedido R$ 8.014/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2501,7 +2575,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1044,
     "lng": -34.82968,
-    "thesis": "Portal · 70 m² em Manaíra, pedido R$ 6.429/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Manaíra, pedido R$ 6.429/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -2537,7 +2611,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10443,
     "lng": -34.83143,
-    "thesis": "Portal · 185 m² em Manaíra, pedido R$ 6.865/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 185 m² em Manaíra, pedido R$ 6.865/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -2573,7 +2647,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09616,
     "lng": -34.83864,
-    "thesis": "Portal · 216 m² em Manaíra, pedido R$ 8.565/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 216 m² em Manaíra, pedido R$ 8.565/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2581,41 +2655,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
-  },
-  {
-    "id": "chv-41667375",
-    "title": "Apartamento com 2 quartos à venda na Avenida Manoel Morais, 200, Manaíra, João Pessoa",
-    "type": "apto",
-    "bairroId": "manaira",
-    "street": "Avenida Manoel Morais, 200",
-    "area": 58,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 625000,
-    "condo": 522,
-    "iptu": 3125,
-    "seaMeters": 180,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.10711,
-    "lng": -34.83119,
-    "thesis": "Portal · 58 m² em Manaíra, pedido R$ 10.776/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
   },
   {
     "id": "chv-45595069",
@@ -2643,7 +2682,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10147,
     "lng": -34.83857,
-    "thesis": "Portal · 90 m² em Manaíra, pedido R$ 9.444/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 90 m² em Manaíra, pedido R$ 9.444/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2678,7 +2717,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09796,
     "lng": -34.84068,
-    "thesis": "Portal · 28 m² em Manaíra, pedido R$ 10.714/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 28 m² em Manaíra, pedido R$ 10.714/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -2714,7 +2753,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09968,
     "lng": -34.84096,
-    "thesis": "Portal · 27 m² em Manaíra, pedido R$ 12.530/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 27 m² em Manaíra, pedido R$ 12.530/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -2723,77 +2762,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 19
-  },
-  {
-    "id": "chv-45125234",
-    "title": "Apartamento 83m² para venda ou locação na melhor localização de Manaíra, bela vista da var",
-    "type": "apto",
-    "bairroId": "manaira",
-    "street": "Manaíra, João Pessoa",
-    "area": 83,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 368999,
-    "condo": 747,
-    "iptu": 1845,
-    "seaMeters": 180,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.10036,
-    "lng": -34.83072,
-    "thesis": "Portal · 83 m² em Manaíra, pedido R$ 4.446/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 14
-  },
-  {
-    "id": "chv-45249082",
-    "title": "Apartamento com 3 dormitórios à venda, 80 m² por R$ 875.961,59 - Manaíra - João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "manaira",
-    "street": "Manaíra, João Pessoa",
-    "area": 80,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 875961,
-    "condo": 720,
-    "iptu": 4380,
-    "seaMeters": 180,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.0994,
-    "lng": -34.8342,
-    "thesis": "Portal · 80 m² em Manaíra, pedido R$ 10.950/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 20
   },
   {
     "id": "chv-33646044",
@@ -2821,7 +2789,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10444,
     "lng": -34.82966,
-    "thesis": "Portal · 123 m² em Manaíra, pedido R$ 4.837/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 123 m² em Manaíra, pedido R$ 4.837/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -2830,6 +2798,113 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
+  },
+  {
+    "id": "chv-45125234",
+    "title": "Apartamento 83m² para venda ou locação na melhor localização de Manaíra, bela vista da var",
+    "type": "apto",
+    "bairroId": "manaira",
+    "street": "Manaíra, João Pessoa",
+    "area": 83,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 368999,
+    "condo": 747,
+    "iptu": 1845,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.10036,
+    "lng": -34.83072,
+    "thesis": "Portal · 83 m² em Manaíra, pedido R$ 4.446/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
+  },
+  {
+    "id": "chv-39248808",
+    "title": "Apartamento com 2 quartos à venda na Avenida Sapé, 700, Manaíra, João Pessoa",
+    "type": "apto",
+    "bairroId": "manaira",
+    "street": "Avenida Sapé, 700",
+    "area": 70,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 560000,
+    "condo": 630,
+    "iptu": 2800,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.10856,
+    "lng": -34.8342,
+    "thesis": "Portal · 70 m² em Manaíra, pedido R$ 8.000/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
+  },
+  {
+    "id": "chv-45249082",
+    "title": "Apartamento com 3 dormitórios à venda, 80 m² por R$ 875.961,59 - Manaíra - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "manaira",
+    "street": "Manaíra, João Pessoa",
+    "area": 80,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 875961,
+    "condo": 720,
+    "iptu": 4380,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.0994,
+    "lng": -34.8342,
+    "thesis": "Portal · 80 m² em Manaíra, pedido R$ 10.950/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
   },
   {
     "id": "chv-43107221",
@@ -2857,7 +2932,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10108,
     "lng": -34.84248,
-    "thesis": "Portal · 126 m² em Manaíra, pedido R$ 11.111/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 126 m² em Manaíra, pedido R$ 11.111/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2865,6 +2940,77 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
+  },
+  {
+    "id": "chv-28704702",
+    "title": "Apartamento com 2 dormitórios à venda, 58 m² por R$ 535.000,00 - Bessa - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "bessa",
+    "street": "Bessa, João Pessoa",
+    "area": 58,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 535000,
+    "condo": 522,
+    "iptu": 2675,
+    "seaMeters": 120,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.06622,
+    "lng": -34.84388,
+    "thesis": "Portal · 58 m² em Bessa, pedido R$ 9.224/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
+  },
+  {
+    "id": "chv-45322240",
+    "title": "Apartamento com 3 quartos à venda no Bessa, João Pessoa",
+    "type": "apto",
+    "bairroId": "bessa",
+    "street": "Bessa, João Pessoa",
+    "area": 116,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 550000,
+    "condo": 1044,
+    "iptu": 2750,
+    "seaMeters": 120,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.07358,
+    "lng": -34.82984,
+    "thesis": "Portal · 116 m² em Bessa, pedido R$ 4.741/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
   },
   {
     "id": "chv-41195833",
@@ -2892,7 +3038,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.07226,
     "lng": -34.83858,
-    "thesis": "Portal · 85 m² em Bessa, pedido R$ 7.647/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 85 m² em Bessa, pedido R$ 7.647/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2900,43 +3046,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-44313257",
-    "title": "Apartamento com 2 quartos à venda no Bessa, João Pessoa",
-    "type": "apto",
-    "bairroId": "bessa",
-    "street": "Bessa, João Pessoa",
-    "area": 55,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 300000,
-    "condo": 495,
-    "iptu": 1500,
-    "seaMeters": 120,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.07274,
-    "lng": -34.83092,
-    "thesis": "Portal · 55 m² em Bessa, pedido R$ 5.455/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 16
   },
   {
     "id": "chv-36375819",
@@ -2964,7 +3073,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06734,
     "lng": -34.846999999999994,
-    "thesis": "Portal · 158 m² em Bessa, pedido R$ 8.228/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 158 m² em Bessa, pedido R$ 8.228/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -2999,9 +3108,45 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06794,
     "lng": -34.837399999999995,
-    "thesis": "Portal · 54 m² em Bessa, pedido R$ 10.148/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Bessa, pedido R$ 10.148/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-46406336",
+    "title": "Apartamento com 3 dormitórios à venda, 72 m² por R$ 370.000,00 - Bessa - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "bessa",
+    "street": "Bessa, João Pessoa",
+    "area": 72,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 370000,
+    "condo": 648,
+    "iptu": 1850,
+    "seaMeters": 120,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.08075,
+    "lng": -34.83135,
+    "thesis": "Portal · 72 m² em Bessa, pedido R$ 5.139/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
@@ -3034,7 +3179,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06315,
     "lng": -34.84649,
-    "thesis": "Portal · 78 m² em Bessa, pedido R$ 6.372/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 78 m² em Bessa, pedido R$ 6.372/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -3070,7 +3215,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.073099999999999,
     "lng": -34.83392,
-    "thesis": "Portal · 37 m² em Bessa, pedido R$ 12.838/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 37 m² em Bessa, pedido R$ 12.838/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -3106,7 +3251,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0695,
     "lng": -34.829719999999995,
-    "thesis": "Portal · 141 m² em Bessa, pedido R$ 6.879/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 141 m² em Bessa, pedido R$ 6.879/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -3143,7 +3288,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06678,
     "lng": -34.84373,
-    "thesis": "Portal · 70 m² em Bessa, pedido R$ 7.786/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Bessa, pedido R$ 7.786/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3178,7 +3323,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06389,
     "lng": -34.84093,
-    "thesis": "Portal · 115 m² em Bessa, pedido R$ 9.130/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 115 m² em Bessa, pedido R$ 9.130/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3213,7 +3358,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.07626,
     "lng": -34.83776,
-    "thesis": "Portal · 57 m² em Bessa, pedido R$ 9.281/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 57 m² em Bessa, pedido R$ 9.281/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3221,76 +3366,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
-  },
-  {
-    "id": "chv-45256445",
-    "title": "Apartamento 4 Quartos para Venda em João Pessoa, Bessa, 4 dormitórios, 2 suítes, 3 banheir",
-    "type": "apto",
-    "bairroId": "bessa",
-    "street": "Rua Ambrosina Soares Dos Santos, 38",
-    "area": 136,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1350000,
-    "condo": 1224,
-    "iptu": 6750,
-    "seaMeters": 120,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.06803,
-    "lng": -34.83899,
-    "thesis": "Portal · 136 m² em Bessa, pedido R$ 9.926/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 4
-  },
-  {
-    "id": "chv-28704702",
-    "title": "Apartamento com 2 dormitórios à venda, 58 m² por R$ 535.000,00 - Bessa - João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "bessa",
-    "street": "Bessa, João Pessoa",
-    "area": 58,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 535000,
-    "condo": 522,
-    "iptu": 2675,
-    "seaMeters": 120,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.06622,
-    "lng": -34.84388,
-    "thesis": "Portal · 58 m² em Bessa, pedido R$ 9.224/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 3
   },
   {
     "id": "chv-40570397",
@@ -3318,7 +3393,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06054,
     "lng": -34.84252,
-    "thesis": "Portal · 58 m² em Bessa, pedido R$ 11.897/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Bessa, pedido R$ 11.897/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3353,7 +3428,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08687,
     "lng": -34.8356,
-    "thesis": "Portal · 42 m² em Jardim Oceania, pedido R$ 10.848/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 42 m² em Jardim Oceania, pedido R$ 10.848/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -3362,6 +3437,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
+  },
+  {
+    "id": "chv-41036538",
+    "title": "Apartamento com 2 dormitórios à venda, 59 m² por R$ 630.000,00 - Jardim Oceania - João Pes",
+    "type": "apto",
+    "bairroId": "jardim-oceania",
+    "street": "Jardim Oceania, João Pessoa",
+    "area": 59,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 630000,
+    "condo": 531,
+    "iptu": 3150,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.09565,
+    "lng": -34.83359,
+    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 10.678/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 18
   },
   {
     "id": "chv-40596933",
@@ -3389,7 +3499,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08858,
     "lng": -34.83439,
-    "thesis": "Portal · 61 m² em Jardim Oceania, pedido R$ 10.656/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 61 m² em Jardim Oceania, pedido R$ 10.656/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3424,7 +3534,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0838,
     "lng": -34.83693,
-    "thesis": "Portal · 60 m² em Jardim Oceania, pedido R$ 10.697/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Jardim Oceania, pedido R$ 10.697/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3432,42 +3542,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
-  },
-  {
-    "id": "chv-35444786",
-    "title": "Apartamento com 1 dormitório à venda, 63 m² por R$ 1.125.967,39 - Jardim Oceania - João Pe",
-    "type": "apto",
-    "bairroId": "jardim-oceania",
-    "street": "Jardim Oceania, João Pessoa",
-    "area": 63,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1125967,
-    "condo": 567,
-    "iptu": 5630,
-    "seaMeters": 220,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.08161,
-    "lng": -34.83475,
-    "thesis": "Portal · 63 m² em Jardim Oceania, pedido R$ 17.872/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 3
   },
   {
     "id": "chv-45057562",
@@ -3495,7 +3569,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0872,
     "lng": -34.82884,
-    "thesis": "Portal · 65 m² em Jardim Oceania, pedido R$ 12.462/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 65 m² em Jardim Oceania, pedido R$ 12.462/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3503,6 +3577,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 21
+  },
+  {
+    "id": "chv-43171118",
+    "title": "Apartamento com 3 dormitórios à venda, 89 m² por R$ 1.100.000,00 - Jardim Oceania - João P",
+    "type": "apto",
+    "bairroId": "jardim-oceania",
+    "street": "Jardim Oceania, João Pessoa",
+    "area": 89,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1100000,
+    "condo": 801,
+    "iptu": 5500,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.09565,
+    "lng": -34.83359,
+    "thesis": "Portal · 89 m² em Jardim Oceania, pedido R$ 12.360/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
   },
   {
     "id": "chv-39087746",
@@ -3530,7 +3639,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09176,
     "lng": -34.8424,
-    "thesis": "Portal · 63 m² em Jardim Oceania, pedido R$ 16.667/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 63 m² em Jardim Oceania, pedido R$ 16.667/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3540,19 +3649,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 5
   },
   {
-    "id": "chv-43834366",
-    "title": "Apartamento com 2 dormitórios à venda, 61 m² por R$ 695.000,00 - Jardim Oceania - João Pes",
+    "id": "chv-37476459",
+    "title": "Apartamento à Venda no Jardim Oceania | 65,27 m² | 1 Vagas | 2 Suítes",
     "type": "apto",
     "bairroId": "jardim-oceania",
     "street": "Jardim Oceania, João Pessoa",
-    "area": 61,
-    "rooms": 2,
+    "area": 65,
+    "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 695000,
-    "condo": 549,
-    "iptu": 3475,
+    "ask": 733104,
+    "condo": 585,
+    "iptu": 3666,
     "seaMeters": 220,
     "condition": 0.88,
     "daysListed": 28,
@@ -3563,16 +3672,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.09565,
-    "lng": -34.83359,
-    "thesis": "Portal · 61 m² em Jardim Oceania, pedido R$ 11.393/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.08396,
+    "lng": -34.83184,
+    "thesis": "Portal · 65 m² em Jardim Oceania, pedido R$ 11.279/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 4
+    "facade": 18
   },
   {
     "id": "chv-42571546",
@@ -3600,7 +3709,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0775,
     "lng": -34.83367,
-    "thesis": "Portal · 84 m² em Jardim Oceania, pedido R$ 12.742/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 84 m² em Jardim Oceania, pedido R$ 12.742/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3635,7 +3744,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09032,
     "lng": -34.83664,
-    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 11.017/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 11.017/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -3671,7 +3780,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08075,
     "lng": -34.83488,
-    "thesis": "Portal · 82 m² em Jardim Oceania, pedido R$ 14.634/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 82 m² em Jardim Oceania, pedido R$ 14.634/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3679,6 +3788,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 7
+  },
+  {
+    "id": "chv-46029855",
+    "title": "Apartamento com 4 quartos à venda na Rua Themístocles da Costa Brito, 315, Jardim Oceania,",
+    "type": "apto",
+    "bairroId": "jardim-oceania",
+    "street": "Rua Themístocles Da Costa Brito, 315",
+    "area": 98,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1300000,
+    "condo": 882,
+    "iptu": 6500,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.09236,
+    "lng": -34.84132,
+    "thesis": "Portal · 98 m² em Jardim Oceania, pedido R$ 13.265/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-44525383",
@@ -3706,7 +3850,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08402,
     "lng": -34.83488,
-    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 11.525/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 11.525/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3741,7 +3885,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09116,
     "lng": -34.84612,
-    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 10.396/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Jardim Oceania, pedido R$ 10.396/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3776,7 +3920,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12688,
     "lng": -34.838699999999996,
-    "thesis": "Portal · 67 m² em Altiplano, pedido R$ 7.313/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 67 m² em Altiplano, pedido R$ 7.313/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -3785,6 +3929,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
+  },
+  {
+    "id": "chv-37476563",
+    "title": "Apartamento de 1 suíte no Altiplano Cabo Branco Nobre com 2 vagas, porcelanato, no litoral",
+    "type": "apto",
+    "bairroId": "altiplano",
+    "street": "Altiplano, João Pessoa",
+    "area": 59,
+    "rooms": 1,
+    "suites": 1,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1229610,
+    "condo": 531,
+    "iptu": 6148,
+    "seaMeters": 900,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.12724,
+    "lng": -34.83666,
+    "thesis": "Portal · 59 m² em Altiplano, pedido R$ 20.841/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 1
   },
   {
     "id": "chv-27006308",
@@ -3812,7 +3992,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14032,
     "lng": -34.81703,
-    "thesis": "Portal · 64 m² em Altiplano, pedido R$ 10.806/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 64 m² em Altiplano, pedido R$ 10.806/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -3820,43 +4000,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
-  },
-  {
-    "id": "chv-45431690",
-    "title": "LANÇAMENTO no Altiplano Cabo Branco - João Pessoa",
-    "type": "apto",
-    "bairroId": "altiplano",
-    "street": "Altiplano, João Pessoa",
-    "area": 55,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 408614,
-    "condo": 495,
-    "iptu": 2043,
-    "seaMeters": 900,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.1283199999999995,
-    "lng": -34.8405,
-    "thesis": "Portal · 55 m² em Altiplano, pedido R$ 7.429/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 7
   },
   {
     "id": "chv-33876006",
@@ -3885,7 +4028,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.135879999999999,
     "lng": -34.8489,
-    "thesis": "Portal · 54 m² em Altiplano, pedido R$ 7.037/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Altiplano, pedido R$ 7.037/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -3922,7 +4065,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1354,
     "lng": -34.84494,
-    "thesis": "Portal · 132 m² em Altiplano, pedido R$ 5.379/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 132 m² em Altiplano, pedido R$ 5.379/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -3959,7 +4102,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13842,
     "lng": -34.83228,
-    "thesis": "Portal · 53 m² em Altiplano, pedido R$ 8.019/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 53 m² em Altiplano, pedido R$ 8.019/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -3995,7 +4138,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1325199999999995,
     "lng": -34.83378,
-    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 10.909/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 10.909/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4030,7 +4173,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1329,
     "lng": -34.824,
-    "thesis": "Portal · 70 m² em Altiplano, pedido R$ 18.000/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Altiplano, pedido R$ 18.000/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4065,7 +4208,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1276,
     "lng": -34.84254,
-    "thesis": "Portal · 80 m² em Altiplano, pedido R$ 8.500/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Altiplano, pedido R$ 8.500/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -4101,7 +4244,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13614,
     "lng": -34.8234,
-    "thesis": "Portal · 80 m² em Altiplano, pedido R$ 10.750/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Altiplano, pedido R$ 10.750/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4136,7 +4279,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08603,
     "lng": -34.84097,
-    "thesis": "Portal · 59 m² em Aeroclube, pedido R$ 10.093/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Aeroclube, pedido R$ 10.093/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4171,7 +4314,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.059159999999999,
     "lng": -34.84106,
-    "thesis": "Portal · 139 m² em Aeroclube, pedido R$ 6.475/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 139 m² em Aeroclube, pedido R$ 6.475/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -4207,7 +4350,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08236,
     "lng": -34.84022,
-    "thesis": "Portal · 135 m² em Aeroclube, pedido R$ 11.333/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Aeroclube, pedido R$ 11.333/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4242,7 +4385,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0962534,
     "lng": -34.8455369,
-    "thesis": "Portal · 171 m² em Aeroclube, pedido R$ 5.263/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 171 m² em Aeroclube, pedido R$ 5.263/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -4251,6 +4394,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-44848384",
+    "title": "Apartamento com 1 quarto à venda na Rua Raimundo S. de Carvalho, Aeroclube, João Pessoa",
+    "type": "kitnet",
+    "bairroId": "aeroclube",
+    "street": "Rua Raimundo S. De Carvalho, ",
+    "area": 35,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 390000,
+    "condo": 315,
+    "iptu": 1950,
+    "seaMeters": 1400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.0622799999999994,
+    "lng": -34.84178,
+    "thesis": "Portal · 35 m² em Aeroclube, pedido R$ 11.143/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 1
   },
   {
     "id": "chv-42490204",
@@ -4278,7 +4457,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0548399999999996,
     "lng": -34.85246,
-    "thesis": "Portal · 136 m² em Aeroclube, pedido R$ 11.397/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 136 m² em Aeroclube, pedido R$ 11.397/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4313,7 +4492,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06204,
     "lng": -34.845980000000004,
-    "thesis": "Portal · 75 m² em Aeroclube, pedido R$ 9.733/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 75 m² em Aeroclube, pedido R$ 9.733/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4348,7 +4527,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.060239999999999,
     "lng": -34.85174,
-    "thesis": "Portal · 136 m² em Aeroclube, pedido R$ 11.029/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 136 m² em Aeroclube, pedido R$ 11.029/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4356,6 +4535,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
+  },
+  {
+    "id": "chv-46657014",
+    "title": "Apartamento 2 quartos no Bessa, Elevador, lazer na cobertura",
+    "type": "apto",
+    "bairroId": "aeroclube",
+    "street": "Aeroclube, João Pessoa",
+    "area": 49,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 462000,
+    "condo": 441,
+    "iptu": 2310,
+    "seaMeters": 1400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.05772,
+    "lng": -34.85246,
+    "thesis": "Portal · 49 m² em Aeroclube, pedido R$ 9.429/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
   },
   {
     "id": "chv-45869825",
@@ -4384,7 +4598,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.05796,
     "lng": -34.84382,
-    "thesis": "Portal · 46 m² em Aeroclube, pedido R$ 7.826/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 46 m² em Aeroclube, pedido R$ 7.826/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -4420,7 +4634,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0549599999999995,
     "lng": -34.841660000000005,
-    "thesis": "Portal · 90 m² em Aeroclube, pedido R$ 8.667/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 90 m² em Aeroclube, pedido R$ 8.667/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4455,7 +4669,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09551,
     "lng": -34.84255,
-    "thesis": "Portal · 89 m² em Aeroclube, pedido R$ 12.859/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 89 m² em Aeroclube, pedido R$ 12.859/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4463,42 +4677,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
-  },
-  {
-    "id": "chv-44848384",
-    "title": "Apartamento com 1 quarto à venda na Rua Raimundo S. de Carvalho, Aeroclube, João Pessoa",
-    "type": "kitnet",
-    "bairroId": "aeroclube",
-    "street": "Rua Raimundo S. De Carvalho, ",
-    "area": 35,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 390000,
-    "condo": 315,
-    "iptu": 1950,
-    "seaMeters": 1400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.0622799999999994,
-    "lng": -34.84178,
-    "thesis": "Portal · 35 m² em Aeroclube, pedido R$ 11.143/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 1
   },
   {
     "id": "chv-37224490",
@@ -4526,7 +4704,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08673,
     "lng": -34.84344,
-    "thesis": "Portal · 123 m² em Aeroclube, pedido R$ 4.715/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 123 m² em Aeroclube, pedido R$ 4.715/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -4537,19 +4715,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 7
   },
   {
-    "id": "chv-38990705",
-    "title": "Apartamento - 3 dormitórios - 2 Suítes - localizado em João Pessoa / Aeroclube",
+    "id": "chv-45478432",
+    "title": "Apartamento duplex a venda, 3 quartos próximo ao Parque Parahyba 4 no Aeroclube",
     "type": "apto",
     "bairroId": "aeroclube",
-    "street": "Aeroclube, João Pessoa",
-    "area": 84,
+    "street": "Rua Médica Maria De Lourdes Barbosa Saraiva, 95",
+    "area": 111,
     "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 1157150,
-    "condo": 756,
-    "iptu": 5786,
+    "ask": 575000,
+    "condo": 999,
+    "iptu": 2875,
     "seaMeters": 1400,
     "condition": 0.88,
     "daysListed": 28,
@@ -4558,53 +4736,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "airbnb"
+      "preco"
     ],
-    "lat": -7.06252,
-    "lng": -34.84574,
-    "thesis": "Portal · 84 m² em Aeroclube, pedido R$ 13.776/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.09446,
+    "lng": -34.84486,
+    "thesis": "Portal · 111 m² em Aeroclube, pedido R$ 5.180/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 6
-  },
-  {
-    "id": "chv-43151888",
-    "title": "Edifício armorial apartamento com 02 e 03 qtos no altiplano cabo branco",
-    "type": "apto",
-    "bairroId": "brisamar",
-    "street": "Rodovia Br-230, 350",
-    "area": 64,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 691560,
-    "condo": 576,
-    "iptu": 3458,
-    "seaMeters": 1100,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11357,
-    "lng": -34.83719,
-    "thesis": "Portal · 64 m² em Brisamar, pedido R$ 10.806/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
+    "facade": 12
   },
   {
     "id": "chv-46026112",
@@ -4632,7 +4776,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1151,
     "lng": -34.86108,
-    "thesis": "Portal · 42 m² em Brisamar, pedido R$ 10.238/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 42 m² em Brisamar, pedido R$ 10.238/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -4668,7 +4812,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09424,
     "lng": -34.84524,
-    "thesis": "Portal · 150 m² em Brisamar, pedido R$ 10.000/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 150 m² em Brisamar, pedido R$ 10.000/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4703,7 +4847,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09052,
     "lng": -34.8444,
-    "thesis": "Portal · 120 m² em Brisamar, pedido R$ 9.000/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Brisamar, pedido R$ 9.000/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4711,6 +4855,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-44925587",
+    "title": "Apartamento com 3 quartos à venda na Rua José Brasilino Leite, 61, Brisamar, João Pessoa",
+    "type": "apto",
+    "bairroId": "brisamar",
+    "street": "Rua José Brasilino Leite, 61",
+    "area": 148,
+    "rooms": 3,
+    "suites": 1,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1420999,
+    "condo": 1332,
+    "iptu": 7105,
+    "seaMeters": 1100,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.10758,
+    "lng": -34.84202,
+    "thesis": "Portal · 148 m² em Brisamar, pedido R$ 9.601/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 4
   },
   {
     "id": "chv-43965992",
@@ -4738,7 +4917,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11633,
     "lng": -34.8375,
-    "thesis": "Portal · 250 m² em Brisamar, pedido R$ 6.000/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 250 m² em Brisamar, pedido R$ 6.000/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -4774,7 +4953,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11364,
     "lng": -34.84015,
-    "thesis": "Portal · 72 m² em Brisamar, pedido R$ 7.639/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 72 m² em Brisamar, pedido R$ 7.639/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4782,6 +4961,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
+  },
+  {
+    "id": "chv-43572720",
+    "title": "Apartamento à venda com 135m² com 3 quartos, sendo 2 suites e vista mar no bairro Brisamar",
+    "type": "apto",
+    "bairroId": "brisamar",
+    "street": "Brisamar, João Pessoa",
+    "area": 135,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 630000,
+    "condo": 1215,
+    "iptu": 3150,
+    "seaMeters": 1100,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.09652,
+    "lng": -34.85364,
+    "thesis": "Portal · 135 m² em Brisamar, pedido R$ 4.667/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 21
   },
   {
     "id": "chv-23482487",
@@ -4809,7 +5024,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09748,
     "lng": -34.8582,
-    "thesis": "Portal · 60 m² em Brisamar, pedido R$ 11.083/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Brisamar, pedido R$ 11.083/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4819,8 +5034,8 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 4
   },
   {
-    "id": "chv-45021020",
-    "title": "Apartamento com 3 quartos à venda no Brisamar, João Pessoa",
+    "id": "chv-42203938",
+    "title": "Apartamento para Venda em João Pessoa, Brisamar, 3 dormitórios, 1 suíte, 2 banheiros, 2 va",
     "type": "apto",
     "bairroId": "brisamar",
     "street": "Brisamar, João Pessoa",
@@ -4829,9 +5044,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 800000,
+    "ask": 760000,
     "condo": 810,
-    "iptu": 4000,
+    "iptu": 3800,
     "seaMeters": 1100,
     "condition": 0.88,
     "daysListed": 28,
@@ -4842,16 +5057,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "preco"
     ],
-    "lat": -7.09268,
-    "lng": -34.84668,
-    "thesis": "Portal · 90 m² em Brisamar, pedido R$ 8.889/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.0964,
+    "lng": -34.84368,
+    "thesis": "Portal · 90 m² em Brisamar, pedido R$ 8.444/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 21
+    "facade": 18
   },
   {
     "id": "chv-43208711",
@@ -4879,7 +5094,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11471,
     "lng": -34.8405,
-    "thesis": "Portal · 183 m² em Brisamar, pedido R$ 9.563/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 183 m² em Brisamar, pedido R$ 9.563/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -4889,47 +5104,11 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 12
   },
   {
-    "id": "chv-43541559",
-    "title": "Apartamento alto padrão a venda no bairro jardim luna em joão pessoa / pb",
+    "id": "chv-46028198",
+    "title": "Apartamento andar alto no bairro do brisamar 98m 2 vaga de garagem",
     "type": "apto",
     "bairroId": "brisamar",
-    "street": "Brisamar, João Pessoa",
-    "area": 150,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 750000,
-    "condo": 1350,
-    "iptu": 3750,
-    "seaMeters": 1100,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.09772,
-    "lng": -34.859159999999996,
-    "thesis": "Portal · 150 m² em Brisamar, pedido R$ 5.000/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 18
-  },
-  {
-    "id": "chv-46094670",
-    "title": "Apartamento com 3 quartos à venda no Brisamar, João Pessoa",
-    "type": "apto",
-    "bairroId": "brisamar",
-    "street": "Brisamar, João Pessoa",
+    "street": "Rua Juracy De Carvalho Luna, ",
     "area": 98,
     "rooms": 3,
     "suites": 0,
@@ -4948,32 +5127,32 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "preco"
     ],
-    "lat": -7.09196,
-    "lng": -34.859159999999996,
-    "thesis": "Portal · 98 m² em Brisamar, pedido R$ 7.653/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.11595,
+    "lng": -34.83815,
+    "thesis": "Portal · 98 m² em Brisamar, pedido R$ 7.653/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 8
+    "facade": 15
   },
   {
-    "id": "chv-43094829",
-    "title": "Apartamento com 3 quartos à venda no Brisamar, João Pessoa",
+    "id": "chv-42520277",
+    "title": "Apartamento com 2 dormitórios à venda, 60 m² por R$ 335.000 - Torre - João Pessoa/PB",
     "type": "apto",
-    "bairroId": "brisamar",
-    "street": "Brisamar, João Pessoa",
-    "area": 133,
-    "rooms": 3,
+    "bairroId": "torre",
+    "street": "Torre, João Pessoa",
+    "area": 60,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 1750000,
-    "condo": 1197,
-    "iptu": 8750,
-    "seaMeters": 1100,
+    "ask": 335000,
+    "condo": 540,
+    "iptu": 1675,
+    "seaMeters": 2800,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -4983,16 +5162,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.09544,
-    "lng": -34.855199999999996,
-    "thesis": "Portal · 133 m² em Brisamar, pedido R$ 13.158/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.11971,
+    "lng": -34.85065,
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 5.583/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 9
+    "facade": 15
   },
   {
     "id": "chv-37408081",
@@ -5020,7 +5199,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12112,
     "lng": -34.85979,
-    "thesis": "Portal · 59 m² em Torre, pedido R$ 8.458/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Torre, pedido R$ 8.458/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5056,7 +5235,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.118919999999999,
     "lng": -34.862759999999994,
-    "thesis": "Portal · 60 m² em Torre, pedido R$ 5.000/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 5.000/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5091,7 +5270,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13342,
     "lng": -34.85921,
-    "thesis": "Portal · 60 m² em Torre, pedido R$ 5.833/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 5.833/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5099,6 +5278,76 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-45799392",
+    "title": "Apartamento com 2 quartos à venda na Avenida Júlia Freire, 651, Torre, João Pessoa",
+    "type": "apto",
+    "bairroId": "torre",
+    "street": "Avenida Júlia Freire, 651",
+    "area": 60,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 476001,
+    "condo": 540,
+    "iptu": 2380,
+    "seaMeters": 2800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.12112,
+    "lng": -34.85979,
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 7.933/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
+  },
+  {
+    "id": "chv-44544334",
+    "title": "VENDA: Ótimo Aptº em Condomínio Clube! Com 59 m², 2 Quartos, sendo 1 Suíte, Linda Vista do",
+    "type": "apto",
+    "bairroId": "torre",
+    "street": "Torre, João Pessoa",
+    "area": 59,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 349780,
+    "condo": 531,
+    "iptu": 1749,
+    "seaMeters": 2800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11592,
+    "lng": -34.86468,
+    "thesis": "Portal · 59 m² em Torre, pedido R$ 5.928/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-34090192",
@@ -5126,7 +5375,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12112,
     "lng": -34.85979,
-    "thesis": "Portal · 61 m² em Torre, pedido R$ 7.738/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 61 m² em Torre, pedido R$ 7.738/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5136,55 +5385,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 9
   },
   {
-    "id": "chv-42806916",
-    "title": "Apartamento a venda no bairro de tambauzinho em joão pessoa / pb",
-    "type": "apto",
-    "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 62,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 310000,
-    "condo": 558,
-    "iptu": 1550,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.121079999999999,
-    "lng": -34.874159999999996,
-    "thesis": "Portal · 62 m² em Torre, pedido R$ 5.000/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 17
-  },
-  {
-    "id": "chv-42808366",
-    "title": "Apartamento com 3 quartos à venda na Avenida Júlia Freire, --, Torre, João Pessoa, 70 m2 p",
+    "id": "chv-42808365",
+    "title": "Apartamento com 2 quartos à venda na Avenida Júlia Freire, --, Torre, João Pessoa, 60 m2 p",
     "type": "apto",
     "bairroId": "torre",
     "street": "Avenida Júlia Freire, --",
-    "area": 70,
-    "rooms": 3,
-    "suites": 0,
+    "area": 60,
+    "rooms": 2,
+    "suites": 1,
     "parking": 1,
     "year": 2012,
-    "ask": 543356,
-    "condo": 630,
-    "iptu": 2717,
+    "ask": 478897,
+    "condo": 540,
+    "iptu": 2394,
     "seaMeters": 2800,
     "condition": 0.88,
     "daysListed": 28,
@@ -5197,14 +5410,49 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12114,
     "lng": -34.86061,
-    "thesis": "Portal · 70 m² em Torre, pedido R$ 7.762/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 7.982/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 4
+    "facade": 3
+  },
+  {
+    "id": "chv-44729518",
+    "title": "Apartamento com 3 quartos à venda na Rua Etelvina Macedo de Mendonça, Torre, João Pessoa",
+    "type": "apto",
+    "bairroId": "torre",
+    "street": "Rua Etelvina Macedo De Mendonça, ",
+    "area": 79,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 400000,
+    "condo": 711,
+    "iptu": 2000,
+    "seaMeters": 2800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.13145,
+    "lng": -34.85964,
+    "thesis": "Portal · 79 m² em Torre, pedido R$ 5.063/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
   },
   {
     "id": "chv-37977280",
@@ -5232,7 +5480,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12224,
     "lng": -34.86306,
-    "thesis": "Portal · 48 m² em Torre, pedido R$ 7.500/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 48 m² em Torre, pedido R$ 7.500/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5267,7 +5515,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12484,
     "lng": -34.85798,
-    "thesis": "Portal · 90 m² em Torre, pedido R$ 3.556/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 90 m² em Torre, pedido R$ 3.556/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -5303,7 +5551,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.119879999999999,
     "lng": -34.86864,
-    "thesis": "Portal · 79 m² em Torre, pedido R$ 5.696/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 79 m² em Torre, pedido R$ 5.696/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5313,19 +5561,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 15
   },
   {
-    "id": "chv-42808365",
-    "title": "Apartamento com 2 quartos à venda na Avenida Júlia Freire, --, Torre, João Pessoa, 60 m2 p",
+    "id": "chv-46256902",
+    "title": "Apartamento à venda 2 Quartos 1 Suite 1 Vaga 60.89M² Torre João Pessoa - PB | Mood Epitáci",
     "type": "apto",
     "bairroId": "torre",
-    "street": "Avenida Júlia Freire, --",
+    "street": "Torre, João Pessoa",
     "area": 60,
     "rooms": 2,
-    "suites": 1,
+    "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 472304,
+    "ask": 476001,
     "condo": 540,
-    "iptu": 2362,
+    "iptu": 2380,
     "seaMeters": 2800,
     "condition": 0.88,
     "daysListed": 28,
@@ -5336,9 +5584,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.12114,
-    "lng": -34.86061,
-    "thesis": "Portal · 60 m² em Torre, pedido R$ 7.872/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.11748,
+    "lng": -34.86732,
+    "thesis": "Portal · 60 m² em Torre, pedido R$ 7.933/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5346,146 +5594,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
-  },
-  {
-    "id": "chv-37977278",
-    "title": "Apartamento com 2 quartos à venda na Avenida Juarez Távora, 830, Torre, João Pessoa",
-    "type": "apto",
-    "bairroId": "torre",
-    "street": "Avenida Juarez Távora, 830",
-    "area": 50,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 310000,
-    "condo": 450,
-    "iptu": 1550,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.12224,
-    "lng": -34.86306,
-    "thesis": "Portal · 50 m² em Torre, pedido R$ 6.200/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 16
-  },
-  {
-    "id": "chv-42867592",
-    "title": "Apartamento com 3 quartos à venda no Torre, João Pessoa",
-    "type": "apto",
-    "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 69,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 420000,
-    "condo": 621,
-    "iptu": 2100,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.12024,
-    "lng": -34.87428,
-    "thesis": "Portal · 69 m² em Torre, pedido R$ 6.087/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
-  },
-  {
-    "id": "chv-37977279",
-    "title": "Apartamento com 2 quartos à venda na Avenida Juarez Távora, 830, Torre, João Pessoa",
-    "type": "apto",
-    "bairroId": "torre",
-    "street": "Avenida Juarez Távora, 830",
-    "area": 53,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 320000,
-    "condo": 477,
-    "iptu": 1600,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.12224,
-    "lng": -34.86306,
-    "thesis": "Portal · 53 m² em Torre, pedido R$ 6.038/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 17
-  },
-  {
-    "id": "chv-36537974",
-    "title": "Apartamento com 2 quartos à venda no Torre, João Pessoa",
-    "type": "apto",
-    "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 50,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 290000,
-    "condo": 450,
-    "iptu": 1450,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11628,
-    "lng": -34.867079999999994,
-    "thesis": "Portal · 50 m² em Torre, pedido R$ 5.800/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
   },
   {
     "id": "chv-46308000",
@@ -5513,7 +5621,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1544,
     "lng": -34.86316,
-    "thesis": "Portal · 54 m² em Bancários, pedido R$ 6.204/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Bancários, pedido R$ 6.204/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5548,7 +5656,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1495999999999995,
     "lng": -34.855,
-    "thesis": "Portal · 105 m² em Bancários, pedido R$ 5.047/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 105 m² em Bancários, pedido R$ 5.047/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -5557,76 +5665,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
-  },
-  {
-    "id": "chv-41149240",
-    "title": "Apartamentos nos Bancários Próximos ao Shopping Sul e UNIESP",
-    "type": "apto",
-    "bairroId": "bancarios",
-    "street": "Rua Doutor Ernani Borba, 50",
-    "area": 52,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 334000,
-    "condo": 468,
-    "iptu": 1670,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1461,
-    "lng": -34.8348,
-    "thesis": "Portal · 52 m² em Bancários, pedido R$ 6.423/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 20
-  },
-  {
-    "id": "chv-18339511",
-    "title": "Seu novo apartamento em João Pessoa em localização privilegiada e lazer completo!",
-    "type": "apto",
-    "bairroId": "bancarios",
-    "street": "Bancários, João Pessoa",
-    "area": 51,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 334000,
-    "condo": 459,
-    "iptu": 1670,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1532,
-    "lng": -34.858599999999996,
-    "thesis": "Portal · 51 m² em Bancários, pedido R$ 6.549/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
   },
   {
     "id": "chv-41195779",
@@ -5654,7 +5692,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14607,
     "lng": -34.83881,
-    "thesis": "Portal · 55 m² em Bancários, pedido R$ 6.345/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Bancários, pedido R$ 6.345/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5662,6 +5700,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-18339511",
+    "title": "Seu novo apartamento em João Pessoa em localização privilegiada e lazer completo!",
+    "type": "apto",
+    "bairroId": "bancarios",
+    "street": "Bancários, João Pessoa",
+    "area": 51,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 334000,
+    "condo": 459,
+    "iptu": 1670,
+    "seaMeters": 5200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1532,
+    "lng": -34.858599999999996,
+    "thesis": "Portal · 51 m² em Bancários, pedido R$ 6.549/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
   },
   {
     "id": "chv-44877849",
@@ -5689,7 +5762,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1508,
     "lng": -34.85512,
-    "thesis": "Portal · 91 m² em Bancários, pedido R$ 6.812/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 91 m² em Bancários, pedido R$ 6.812/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5724,7 +5797,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1516399999999996,
     "lng": -34.86064,
-    "thesis": "Portal · 66 m² em Bancários, pedido R$ 5.909/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 66 m² em Bancários, pedido R$ 5.909/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5732,6 +5805,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
+  },
+  {
+    "id": "chv-46694274",
+    "title": "Lindo apartamento todo projetado para venda com 3 quartos nos bancários",
+    "type": "apto",
+    "bairroId": "bancarios",
+    "street": "Rua Empresário João Rodrigues Alves, ",
+    "area": 68,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 599900,
+    "condo": 612,
+    "iptu": 3000,
+    "seaMeters": 5200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.14605,
+    "lng": -34.85033,
+    "thesis": "Portal · 68 m² em Bancários, pedido R$ 8.822/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
   },
   {
     "id": "chv-32700579",
@@ -5760,7 +5868,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14912,
     "lng": -34.857639999999996,
-    "thesis": "Portal · 54 m² em Bancários, pedido R$ 5.556/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Bancários, pedido R$ 5.556/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5768,6 +5876,77 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-42457106",
+    "title": "Apartamento para Venda em João Pessoa / PB no bairro Jardim São Paulo",
+    "type": "apto",
+    "bairroId": "bancarios",
+    "street": "Rua Pedro Alves De Andrade, ",
+    "area": 73,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 315000,
+    "condo": 657,
+    "iptu": 1575,
+    "seaMeters": 5200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.14632,
+    "lng": -34.83613,
+    "thesis": "Portal · 73 m² em Bancários, pedido R$ 4.315/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 7
+  },
+  {
+    "id": "chv-45447267",
+    "title": "Apartamento com 2 quartos à venda na Rua João Batista Carvalho Moura, 122, Bancários, João",
+    "type": "apto",
+    "bairroId": "bancarios",
+    "street": "Rua João Batista Carvalho Moura, 122",
+    "area": 59,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 459000,
+    "condo": 531,
+    "iptu": 2295,
+    "seaMeters": 5200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15187,
+    "lng": -34.84015,
+    "thesis": "Portal · 59 m² em Bancários, pedido R$ 7.780/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 5
   },
   {
     "id": "chv-39829028",
@@ -5796,7 +5975,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14627,
     "lng": -34.83437,
-    "thesis": "Portal · 66 m² em Bancários, pedido R$ 5.606/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 66 m² em Bancários, pedido R$ 5.606/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5804,76 +5983,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
-  },
-  {
-    "id": "chv-42921675",
-    "title": "Apartamento com 2 quartos à venda no Bancários, João Pessoa",
-    "type": "apto",
-    "bairroId": "bancarios",
-    "street": "Bancários, João Pessoa",
-    "area": 82,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 649000,
-    "condo": 738,
-    "iptu": 3245,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1506799999999995,
-    "lng": -34.85668,
-    "thesis": "Portal · 82 m² em Bancários, pedido R$ 7.915/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
-  },
-  {
-    "id": "chv-45447267",
-    "title": "Apartamento com 2 quartos à venda na Rua João Batista Carvalho Moura, 122, Bancários, João",
-    "type": "apto",
-    "bairroId": "bancarios",
-    "street": "Rua João Batista Carvalho Moura, 122",
-    "area": 59,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 459000,
-    "condo": 531,
-    "iptu": 2295,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.15187,
-    "lng": -34.84015,
-    "thesis": "Portal · 59 m² em Bancários, pedido R$ 7.780/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
   },
   {
     "id": "chv-38751184",
@@ -5901,7 +6010,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14637,
     "lng": -34.8449,
-    "thesis": "Portal · 70 m² em Bancários, pedido R$ 7.843/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Bancários, pedido R$ 7.843/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -5911,55 +6020,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 1
   },
   {
-    "id": "chv-40421150",
-    "title": "Apartamento a venda no bairro dos bancarios em joão pessoa / pb",
+    "id": "chv-44629600",
+    "title": "Cobertura duplex com elevador e piscina privativa nos bancários - proximo as 3 ruas",
     "type": "apto",
     "bairroId": "bancarios",
-    "street": "Bancários, João Pessoa",
-    "area": 78,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 380000,
-    "condo": 702,
-    "iptu": 1900,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.15104,
-    "lng": -34.86184,
-    "thesis": "Portal · 78 m² em Bancários, pedido R$ 4.872/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
-  },
-  {
-    "id": "chv-41149241",
-    "title": "Apartamentos nos Bancários com Lazer Completo e Financiamento Caixa até 90%",
-    "type": "apto",
-    "bairroId": "bancarios",
-    "street": "Rua Iolanda Eloy De Medeiros, 111",
-    "area": 56,
+    "street": "Rua Bancário Waldemar De Mesquita Accioly, 500",
+    "area": 83,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 337000,
-    "condo": 504,
-    "iptu": 1685,
+    "ask": 560000,
+    "condo": 747,
+    "iptu": 2800,
     "seaMeters": 5200,
     "condition": 0.88,
     "daysListed": 28,
@@ -5970,51 +6043,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.15431,
-    "lng": -34.85076,
-    "thesis": "Portal · 56 m² em Bancários, pedido R$ 6.018/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.14523,
+    "lng": -34.84068,
+    "thesis": "Portal · 83 m² em Bancários, pedido R$ 6.747/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 21
-  },
-  {
-    "id": "chv-33969271",
-    "title": "Apartamento com 4 suítes andar alto Clube Vivant, Bairro dos Estados à venda, 136 m² por R",
-    "type": "apto",
-    "bairroId": "estados",
-    "street": "Estados, João Pessoa",
-    "area": 136,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1400000,
-    "condo": 1224,
-    "iptu": 7000,
-    "seaMeters": 2200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11874,
-    "lng": -34.86287,
-    "thesis": "Portal · 136 m² em Estados, pedido R$ 10.294/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
+    "facade": 1
   },
   {
     "id": "chv-39609065",
@@ -6042,7 +6080,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1115366,
     "lng": -34.8563543,
-    "thesis": "Portal · 74 m² em Estados, pedido R$ 6.176/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 74 m² em Estados, pedido R$ 6.176/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6077,7 +6115,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11506,
     "lng": -34.85465,
-    "thesis": "Portal · 70 m² em Estados, pedido R$ 9.986/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Estados, pedido R$ 9.986/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6088,7 +6126,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
   },
   {
     "id": "chv-45967791",
-    "title": "Apartamento com 2 quartos à venda no Estados, João Pessoa",
+    "title": "Apartamento Lazer Clube no B. Dos Estados 535.000,00 codigo: 362661",
     "type": "apto",
     "bairroId": "estados",
     "street": "Estados, João Pessoa",
@@ -6097,9 +6135,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 550000,
+    "ask": 535000,
     "condo": 540,
-    "iptu": 2750,
+    "iptu": 2675,
     "seaMeters": 2200,
     "condition": 0.88,
     "daysListed": 28,
@@ -6112,7 +6150,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11612,
     "lng": -34.857240000000004,
-    "thesis": "Portal · 60 m² em Estados, pedido R$ 9.167/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Estados, pedido R$ 8.917/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6147,7 +6185,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1157,
     "lng": -34.8591,
-    "thesis": "Portal · 299 m² em Estados, pedido R$ 2.542/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 299 m² em Estados, pedido R$ 2.542/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -6183,7 +6221,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11292,
     "lng": -34.85168,
-    "thesis": "Portal · 124 m² em Estados, pedido R$ 9.677/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 124 m² em Estados, pedido R$ 9.677/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6218,7 +6256,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.117319999999999,
     "lng": -34.86204,
-    "thesis": "Portal · 52 m² em Estados, pedido R$ 7.212/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 52 m² em Estados, pedido R$ 7.212/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6226,6 +6264,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 2
+  },
+  {
+    "id": "chv-33969271",
+    "title": "Apartamento com 4 suítes andar alto Clube Vivant, Bairro dos Estados à venda, 136 m² por R",
+    "type": "apto",
+    "bairroId": "estados",
+    "street": "Estados, João Pessoa",
+    "area": 136,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1400000,
+    "condo": 1224,
+    "iptu": 7000,
+    "seaMeters": 2200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11874,
+    "lng": -34.86287,
+    "thesis": "Portal · 136 m² em Estados, pedido R$ 10.294/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
   },
   {
     "id": "chv-44877832",
@@ -6254,7 +6327,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1148,
     "lng": -34.85652,
-    "thesis": "Portal · 94 m² em Estados, pedido R$ 4.628/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 94 m² em Estados, pedido R$ 4.628/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -6290,7 +6363,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1171999999999995,
     "lng": -34.86204,
-    "thesis": "Portal · 61 m² em Estados, pedido R$ 7.377/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 61 m² em Estados, pedido R$ 7.377/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6298,41 +6371,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
-  },
-  {
-    "id": "chv-41172362",
-    "title": "Cobertura Duplex área externa privativa pé direito duplo e energia solar",
-    "type": "apto",
-    "bairroId": "estados",
-    "street": "Rua Maestro Osvaldo Evaristo Costa, 346",
-    "area": 130,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 750000,
-    "condo": 1170,
-    "iptu": 3750,
-    "seaMeters": 2200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.10741,
-    "lng": -34.85504,
-    "thesis": "Portal · 130 m² em Estados, pedido R$ 5.769/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
   },
   {
     "id": "chv-43922514",
@@ -6360,7 +6398,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11557,
     "lng": -34.8553,
-    "thesis": "Portal · 74 m² em Estados, pedido R$ 8.784/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 74 m² em Estados, pedido R$ 8.784/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6370,19 +6408,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 15
   },
   {
-    "id": "chv-44629623",
-    "title": "Apartamento excelente no bairro dos estados - com área de lazer completa",
+    "id": "chv-41172362",
+    "title": "Cobertura Duplex área externa privativa pé direito duplo e energia solar",
     "type": "apto",
     "bairroId": "estados",
-    "street": "Avenida Espírito Santo, 833",
-    "area": 80,
+    "street": "Rua Maestro Osvaldo Evaristo Costa, 346",
+    "area": 130,
     "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 550000,
-    "condo": 720,
-    "iptu": 2750,
+    "ask": 750000,
+    "condo": 1170,
+    "iptu": 3750,
     "seaMeters": 2200,
     "condition": 0.88,
     "daysListed": 28,
@@ -6391,53 +6429,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "airbnb"
+      "preco"
     ],
-    "lat": -7.1134,
-    "lng": -34.85159,
-    "thesis": "Portal · 80 m² em Estados, pedido R$ 6.875/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.10741,
+    "lng": -34.85504,
+    "thesis": "Portal · 130 m² em Estados, pedido R$ 5.769/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 3
-  },
-  {
-    "id": "chv-46345772",
-    "title": "Apartamento com 3 dormitórios à venda, 124 m² por R$ 1.200.000,00 - Bairro dos Estados - J",
-    "type": "apto",
-    "bairroId": "estados",
-    "street": "Estados, João Pessoa",
-    "area": 124,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1200000,
-    "condo": 1116,
-    "iptu": 6000,
-    "seaMeters": 2200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11874,
-    "lng": -34.86287,
-    "thesis": "Portal · 124 m² em Estados, pedido R$ 9.677/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
+    "facade": 21
   },
   {
     "id": "chv-24857035",
@@ -6465,7 +6468,77 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11862,
     "lng": -34.85359,
-    "thesis": "Portal · 132 m² em Estados, pedido R$ 8.333/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 132 m² em Estados, pedido R$ 8.333/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
+  },
+  {
+    "id": "chv-42518277",
+    "title": "Apartamento com 3 quartos à venda na Avenida Guanabara, --, Estados, João Pessoa",
+    "type": "apto",
+    "bairroId": "estados",
+    "street": "Avenida Guanabara, --",
+    "area": 70,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 699000,
+    "condo": 630,
+    "iptu": 3495,
+    "seaMeters": 2200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11506,
+    "lng": -34.85465,
+    "thesis": "Portal · 70 m² em Estados, pedido R$ 9.986/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
+  },
+  {
+    "id": "chv-46381035",
+    "title": "Evidence Class Club - Apartamento Alto Padrão/ apartamento em João Pessoa/ apartamento nos",
+    "type": "apto",
+    "bairroId": "estados",
+    "street": "Rua Professora Eudésia Vieira, ",
+    "area": 147,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 1700000,
+    "condo": 1323,
+    "iptu": 8500,
+    "seaMeters": 2200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11301,
+    "lng": -34.85142,
+    "thesis": "Portal · 147 m² em Estados, pedido R$ 11.565/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6500,7 +6573,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12258,
     "lng": -34.85427,
-    "thesis": "Portal · 100 m² em Expedicionários, pedido R$ 6.200/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 100 m² em Expedicionários, pedido R$ 6.200/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6508,42 +6581,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
-  },
-  {
-    "id": "chv-46461490",
-    "title": "Apartamento 135m² 3 quartos sendo 2 suítes nos Expedicionários à Venda",
-    "type": "apto",
-    "bairroId": "expedicionarios",
-    "street": "Expedicionários, João Pessoa",
-    "area": 135,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 600000,
-    "condo": 1215,
-    "iptu": 3000,
-    "seaMeters": 3200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.1314400000000004,
-    "lng": -34.8774,
-    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.444/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 7
   },
   {
     "id": "chv-42990225",
@@ -6571,7 +6608,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1258,
     "lng": -34.8798,
-    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -6580,6 +6617,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 5
+  },
+  {
+    "id": "chv-45062322",
+    "title": "Apartamento espaçoso no bairro do expedicionario em Joao Pessoa",
+    "type": "apto",
+    "bairroId": "expedicionarios",
+    "street": "Avenida Júlia Freire, ",
+    "area": 110,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 590000,
+    "condo": 990,
+    "iptu": 2950,
+    "seaMeters": 3200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.1211,
+    "lng": -34.86122,
+    "thesis": "Portal · 110 m² em Expedicionários, pedido R$ 5.364/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
   },
   {
     "id": "chv-38039339",
@@ -6607,7 +6679,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12117,
     "lng": -34.85337,
-    "thesis": "Portal · 103 m² em Expedicionários, pedido R$ 7.282/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 103 m² em Expedicionários, pedido R$ 7.282/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6642,7 +6714,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1276,
     "lng": -34.88244,
-    "thesis": "Portal · 58 m² em Expedicionários, pedido R$ 7.759/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Expedicionários, pedido R$ 7.759/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6650,76 +6722,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
-  },
-  {
-    "id": "chv-45062322",
-    "title": "Apartamento espaçoso no bairro do expedicionario em Joao Pessoa",
-    "type": "apto",
-    "bairroId": "expedicionarios",
-    "street": "Avenida Júlia Freire, ",
-    "area": 110,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 590000,
-    "condo": 990,
-    "iptu": 2950,
-    "seaMeters": 3200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.1211,
-    "lng": -34.86122,
-    "thesis": "Portal · 110 m² em Expedicionários, pedido R$ 5.364/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
-  },
-  {
-    "id": "chv-43392585",
-    "title": "Apartamento amplo, confortável e muito bem localizado para venda | Expedicionários",
-    "type": "apto",
-    "bairroId": "expedicionarios",
-    "street": "Rua Silvio Almeida, ",
-    "area": 110,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 680000,
-    "condo": 990,
-    "iptu": 3400,
-    "seaMeters": 3200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.12256,
-    "lng": -34.85332,
-    "thesis": "Portal · 110 m² em Expedicionários, pedido R$ 6.182/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
   },
   {
     "id": "chv-45258131",
@@ -6747,7 +6749,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12117,
     "lng": -34.85337,
-    "thesis": "Portal · 70 m² em Expedicionários, pedido R$ 7.467/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Expedicionários, pedido R$ 7.467/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6782,7 +6784,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12952,
     "lng": -34.867560000000005,
-    "thesis": "Portal · 60 m² em Expedicionários, pedido R$ 7.572/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Expedicionários, pedido R$ 7.572/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6817,7 +6819,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12082,
     "lng": -34.85148,
-    "thesis": "Portal · 105 m² em Expedicionários, pedido R$ 7.038/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 105 m² em Expedicionários, pedido R$ 7.038/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -6852,7 +6854,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.133,
     "lng": -34.87236,
-    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -6888,7 +6890,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12326,
     "lng": -34.85332,
-    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -6924,7 +6926,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12326,
     "lng": -34.85332,
-    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.667/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -6933,41 +6935,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 2
-  },
-  {
-    "id": "chv-37358294",
-    "title": "Apartamento com 2 quartos à venda na Rua Marechal Esperidião Rosas, 110, Expedicionários, ",
-    "type": "apto",
-    "bairroId": "expedicionarios",
-    "street": "Rua Marechal Esperidião Rosas, 110",
-    "area": 60,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 420000,
-    "condo": 540,
-    "iptu": 2100,
-    "seaMeters": 3200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.12071,
-    "lng": -34.85339,
-    "thesis": "Portal · 60 m² em Expedicionários, pedido R$ 7.000/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
   },
   {
     "id": "chv-44141390",
@@ -6995,7 +6962,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1324,
     "lng": -34.8708,
-    "thesis": "Portal · 50 m² em Expedicionários, pedido R$ 7.200/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Expedicionários, pedido R$ 7.200/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7003,6 +6970,76 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 7
+  },
+  {
+    "id": "chv-44015969",
+    "title": "Apartamento com 2 quartos à venda no Expedicionários, João Pessoa",
+    "type": "apto",
+    "bairroId": "expedicionarios",
+    "street": "Expedicionários, João Pessoa",
+    "area": 50,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 380000,
+    "condo": 450,
+    "iptu": 1900,
+    "seaMeters": 3200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.13288,
+    "lng": -34.86396,
+    "thesis": "Portal · 50 m² em Expedicionários, pedido R$ 7.600/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 7
+  },
+  {
+    "id": "chv-42369532",
+    "title": "Apartamento com 2 Quartos ,.2 Vagas de Garagem para venda no Expedicionários- OPORTUNIDADE",
+    "type": "apto",
+    "bairroId": "expedicionarios",
+    "street": "Expedicionários, João Pessoa",
+    "area": 62,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 500000,
+    "condo": 558,
+    "iptu": 2500,
+    "seaMeters": 3200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.12952,
+    "lng": -34.881840000000004,
+    "thesis": "Portal · 62 m² em Expedicionários, pedido R$ 8.065/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
   },
   {
     "id": "chv-43730163",
@@ -7030,7 +7067,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12154,
     "lng": -34.88704,
-    "thesis": "Portal · 114 m² em Centro, pedido R$ 4.649/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 114 m² em Centro, pedido R$ 4.649/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7065,7 +7102,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1207,
     "lng": -34.87321,
-    "thesis": "Portal · 50 m² em Centro, pedido R$ 6.000/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Centro, pedido R$ 6.000/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7100,7 +7137,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12634,
     "lng": -34.8814,
-    "thesis": "Portal · 57 m² em Centro, pedido R$ 4.937/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 57 m² em Centro, pedido R$ 4.937/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7135,7 +7172,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12612,
     "lng": -34.87894,
-    "thesis": "Portal · 70 m² em Centro, pedido R$ 5.000/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Centro, pedido R$ 5.000/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7170,7 +7207,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12612,
     "lng": -34.87894,
-    "thesis": "Portal · 93 m² em Centro, pedido R$ 4.839/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 93 m² em Centro, pedido R$ 4.839/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7205,81 +7242,10 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15972,
     "lng": -34.836639999999996,
-    "thesis": "Portal · 53 m² em Portal do Sol, pedido R$ 6.602/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 53 m² em Portal do Sol, pedido R$ 6.602/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 1
-  },
-  {
-    "id": "chv-40253412",
-    "title": "Apartamento - 1 dormitório - localizado em João Pessoa / Intermares",
-    "type": "kitnet",
-    "bairroId": "portal-do-sol",
-    "street": "Portal do Sol, João Pessoa",
-    "area": 27,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 750000,
-    "condo": 243,
-    "iptu": 3750,
-    "seaMeters": 1600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.16068,
-    "lng": -34.84372,
-    "thesis": "Portal · 27 m² em Portal do Sol, pedido R$ 27.778/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
-  },
-  {
-    "id": "chv-44571584",
-    "title": "Apartamento com 2 quartos à venda na Av Litorânia, 268, Portal do Sol, João Pessoa",
-    "type": "apto",
-    "bairroId": "portal-do-sol",
-    "street": "Av Litorânia, 268",
-    "area": 57,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 749000,
-    "condo": 513,
-    "iptu": 3745,
-    "seaMeters": 1600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.15972,
-    "lng": -34.82386,
-    "thesis": "Portal · 57 m² em Portal do Sol, pedido R$ 13.140/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
@@ -7313,7 +7279,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15277,
     "lng": -34.81802,
-    "thesis": "Portal · 59 m² em Portal do Sol, pedido R$ 4.542/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Portal do Sol, pedido R$ 4.542/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -7349,7 +7315,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15051,
     "lng": -34.81636,
-    "thesis": "Portal · 58 m² em Portal do Sol, pedido R$ 11.207/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Portal do Sol, pedido R$ 11.207/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7384,7 +7350,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1578,
     "lng": -34.8424,
-    "thesis": "Portal · 53 m² em Portal do Sol, pedido R$ 6.477/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 53 m² em Portal do Sol, pedido R$ 6.477/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7394,19 +7360,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 9
   },
   {
-    "id": "chv-43462246",
-    "title": "Apartamento com 3 quartos à venda na Rua Orlando Falcone de Oliveira, Portal do Sol, João ",
+    "id": "chv-45616279",
+    "title": "Apartamento com 2 quartos à venda na Rua Luzinete Formiga de Lucena, 2260, Portal do Sol, ",
     "type": "apto",
     "bairroId": "portal-do-sol",
-    "street": "Rua Orlando Falcone De Oliveira, ",
-    "area": 101,
-    "rooms": 3,
+    "street": "Rua Luzinete Formiga De Lucena, 2260",
+    "area": 53,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 495000,
-    "condo": 909,
-    "iptu": 2475,
+    "ask": 329900,
+    "condo": 477,
+    "iptu": 1650,
     "seaMeters": 1600,
     "condition": 0.88,
     "daysListed": 28,
@@ -7415,55 +7381,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco"
+      "airbnb"
     ],
-    "lat": -7.15099,
-    "lng": -34.81008,
-    "thesis": "Portal · 101 m² em Portal do Sol, pedido R$ 4.901/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.15086,
+    "lng": -34.81897,
+    "thesis": "Portal · 53 m² em Portal do Sol, pedido R$ 6.225/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 5
-  },
-  {
-    "id": "chv-44359356",
-    "title": "Apartamento 125m² 2 quartos sendo 2 suítes em Quadramares à Venda",
-    "type": "apto",
-    "bairroId": "portal-do-sol",
-    "street": "Portal do Sol, João Pessoa",
-    "area": 125,
-    "rooms": 2,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 352152,
-    "condo": 1125,
-    "iptu": 1761,
-    "seaMeters": 1600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.1623600000000005,
-    "lng": -34.84348,
-    "thesis": "Portal · 125 m² em Portal do Sol, pedido R$ 2.817/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 15
+    "facade": 17
   },
   {
     "id": "chv-39386976",
@@ -7491,7 +7420,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1570800000000006,
     "lng": -34.84816,
-    "thesis": "Portal · 45 m² em Portal do Sol, pedido R$ 9.333/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 45 m² em Portal do Sol, pedido R$ 9.333/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7501,19 +7430,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 14
   },
   {
-    "id": "chv-41296705",
-    "title": "Apartamento com 2 quartos à venda no Portal do Sol, João Pessoa",
+    "id": "chv-36975926",
+    "title": "Apartamento com 2 quartos à venda na Rua Conselheiro José Braz do Rego, Portal do Sol, Joã",
     "type": "apto",
     "bairroId": "portal-do-sol",
-    "street": "Portal do Sol, João Pessoa",
-    "area": 44,
+    "street": "Rua Conselheiro José Braz Do Rego, ",
+    "area": 51,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 300000,
-    "condo": 396,
-    "iptu": 1500,
+    "ask": 354629,
+    "condo": 459,
+    "iptu": 1773,
     "seaMeters": 1600,
     "condition": 0.88,
     "daysListed": 28,
@@ -7524,9 +7453,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.15528,
-    "lng": -34.83412,
-    "thesis": "Portal · 44 m² em Portal do Sol, pedido R$ 6.818/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1582,
+    "lng": -34.81902,
+    "thesis": "Portal · 51 m² em Portal do Sol, pedido R$ 6.954/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7562,7 +7491,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15871,
     "lng": -34.82191,
-    "thesis": "Portal · 44 m² em Portal do Sol, pedido R$ 5.000/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 44 m² em Portal do Sol, pedido R$ 5.000/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7597,7 +7526,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15956,
     "lng": -34.81812,
-    "thesis": "Portal · 51 m² em Portal do Sol, pedido R$ 6.777/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 51 m² em Portal do Sol, pedido R$ 6.777/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7607,19 +7536,91 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 8
   },
   {
-    "id": "chv-41984660",
+    "id": "chv-41984661",
     "title": "Apartamento com 2 quartos à venda na Rua Conselheiro José Braz do Rego, --, Portal do Sol,",
     "type": "apto",
     "bairroId": "portal-do-sol",
     "street": "Rua Conselheiro José Braz Do Rego, --",
-    "area": 51,
+    "area": 110,
     "rooms": 2,
     "suites": 1,
     "parking": 1,
     "year": 2012,
-    "ask": 345482,
-    "condo": 459,
-    "iptu": 1727,
+    "ask": 570296,
+    "condo": 990,
+    "iptu": 2851,
+    "seaMeters": 1600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.1582,
+    "lng": -34.81902,
+    "thesis": "Portal · 110 m² em Portal do Sol, pedido R$ 5.185/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
+  },
+  {
+    "id": "chv-25962671",
+    "title": "Apartamento com 2 dormitórios à venda, 60 m² por R$ 310.000,00 - Portal do Sol - João Pess",
+    "type": "apto",
+    "bairroId": "portal-do-sol",
+    "street": "Portal do Sol, João Pessoa",
+    "area": 60,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 310000,
+    "condo": 540,
+    "iptu": 1550,
+    "seaMeters": 1600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.154800000000001,
+    "lng": -34.84672,
+    "thesis": "Portal · 60 m² em Portal do Sol, pedido R$ 5.167/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
+  },
+  {
+    "id": "chv-44690265",
+    "title": "Apartamento com 2 dormitórios à venda, 45 m² por R$ 300.000,00 - Portal do Sol - João Pess",
+    "type": "apto",
+    "bairroId": "portal-do-sol",
+    "street": "Portal do Sol, João Pessoa",
+    "area": 45,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 300000,
+    "condo": 405,
+    "iptu": 1500,
     "seaMeters": 1600,
     "condition": 0.88,
     "daysListed": 28,
@@ -7630,16 +7631,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.1582,
-    "lng": -34.81902,
-    "thesis": "Portal · 51 m² em Portal do Sol, pedido R$ 6.774/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.15334,
+    "lng": -34.82212,
+    "thesis": "Portal · 45 m² em Portal do Sol, pedido R$ 6.667/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 19
+    "facade": 3
   },
   {
     "id": "chv-44877872",
@@ -7667,7 +7668,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14696,
     "lng": -34.8452,
-    "thesis": "Portal · 123 m² em Jd. Cidade Universitária, pedido R$ 6.138/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 123 m² em Jd. Cidade Universitária, pedido R$ 6.138/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7675,6 +7676,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-46152655",
+    "title": "Apartamento para Venda em João Pessoa, Jardim Cidade Universitária, 3 dormitórios, 1 suíte",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Jd. Cidade Universitária, João Pessoa",
+    "area": 123,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 630000,
+    "condo": 1107,
+    "iptu": 3150,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.14468,
+    "lng": -34.84844,
+    "thesis": "Portal · 123 m² em Jd. Cidade Universitária, pedido R$ 5.122/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-37521838",
@@ -7702,7 +7738,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15793,
     "lng": -34.84315,
-    "thesis": "Portal · 47 m² em Jd. Cidade Universitária, pedido R$ 7.213/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 47 m² em Jd. Cidade Universitária, pedido R$ 7.213/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7737,7 +7773,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15026,
     "lng": -34.83507,
-    "thesis": "Portal · 46 m² em Jd. Cidade Universitária, pedido R$ 7.152/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 46 m² em Jd. Cidade Universitária, pedido R$ 7.152/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -7746,6 +7782,113 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
+  },
+  {
+    "id": "chv-43938057",
+    "title": "Tulip residence – o endereço certo para morar ou investir em joão pessoa!",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Rua Cordélia Velloso Frade, 0",
+    "area": 65,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 390000,
+    "condo": 585,
+    "iptu": 1950,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15686,
+    "lng": -34.83655,
+    "thesis": "Portal · 65 m² em Jd. Cidade Universitária, pedido R$ 6.000/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-46120929",
+    "title": "Apartamento 2 quartos Todo planejado a 50 metros da Principal",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Rua João Batista Carvalho Moura, 122",
+    "area": 59,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 420000,
+    "condo": 531,
+    "iptu": 2100,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15187,
+    "lng": -34.84015,
+    "thesis": "Portal · 59 m² em Jd. Cidade Universitária, pedido R$ 7.119/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
+  },
+  {
+    "id": "chv-46391002",
+    "title": "Apartamento com 2 quartos à venda na Rua Bacharel Wilson Flávio Moreira Coutinho, Jardim C",
+    "type": "apto",
+    "bairroId": "jcu",
+    "street": "Rua Bacharel Wilson Flávio Moreira Coutinho, ",
+    "area": 51,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 200000,
+    "condo": 459,
+    "iptu": 1000,
+    "seaMeters": 4500,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.15803,
+    "lng": -34.83109,
+    "thesis": "Portal · 51 m² em Jd. Cidade Universitária, pedido R$ 3.922/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
   },
   {
     "id": "chv-43542823",
@@ -7773,7 +7916,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15891,
     "lng": -34.83537,
-    "thesis": "Portal · 198 m² em Jd. Cidade Universitária, pedido R$ 3.106/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 198 m² em Jd. Cidade Universitária, pedido R$ 3.106/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -7809,7 +7952,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14612,
     "lng": -34.84052,
-    "thesis": "Portal · 58 m² em Jd. Cidade Universitária, pedido R$ 7.931/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Jd. Cidade Universitária, pedido R$ 7.931/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7844,7 +7987,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14756,
     "lng": -34.83716,
-    "thesis": "Portal · 120 m² em Jd. Cidade Universitária, pedido R$ 4.833/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Jd. Cidade Universitária, pedido R$ 4.833/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7852,43 +7995,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 5
-  },
-  {
-    "id": "chv-42921771",
-    "title": "Apartamento 63m² 2 quartos no Jardim Cidade Universitária à Venda",
-    "type": "apto",
-    "bairroId": "jcu",
-    "street": "Jd. Cidade Universitária, João Pessoa",
-    "area": 63,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 290000,
-    "condo": 567,
-    "iptu": 1450,
-    "seaMeters": 4500,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.15248,
-    "lng": -34.8464,
-    "thesis": "Portal · 63 m² em Jd. Cidade Universitária, pedido R$ 4.603/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
   },
   {
     "id": "chv-40161616",
@@ -7916,7 +8022,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14576,
     "lng": -34.85048,
-    "thesis": "Portal · 68 m² em Jd. Cidade Universitária, pedido R$ 5.294/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 68 m² em Jd. Cidade Universitária, pedido R$ 5.294/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -7924,112 +8030,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
-  },
-  {
-    "id": "chv-46171843",
-    "title": "Apartamento Com área externa em Jardim Cidade Universitária - Bancários, João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "jcu",
-    "street": "Rua Guiomar De Medeiros Costa, 195",
-    "area": 60,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 481200,
-    "condo": 540,
-    "iptu": 2406,
-    "seaMeters": 4500,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.15908,
-    "lng": -34.84094,
-    "thesis": "Portal · 60 m² em Jd. Cidade Universitária, pedido R$ 8.020/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
-  },
-  {
-    "id": "chv-40350485",
-    "title": "Morar bem nos bancários em prédio novo com rooftop e lazer completo codigo: 286339",
-    "type": "apto",
-    "bairroId": "jcu",
-    "street": "Jd. Cidade Universitária, João Pessoa",
-    "area": 57,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 380000,
-    "condo": 513,
-    "iptu": 1900,
-    "seaMeters": 4500,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.14336,
-    "lng": -34.84988,
-    "thesis": "Portal · 57 m² em Jd. Cidade Universitária, pedido R$ 6.667/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
-  },
-  {
-    "id": "chv-39956410",
-    "title": "Apartamento de 80 metros a venda no bairro dos bancarios em joão pessoa - pb",
-    "type": "apto",
-    "bairroId": "jcu",
-    "street": "Jd. Cidade Universitária, João Pessoa",
-    "area": 80,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 350000,
-    "condo": 720,
-    "iptu": 1750,
-    "seaMeters": 4500,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.14816,
-    "lng": -34.84664,
-    "thesis": "Portal · 80 m² em Jd. Cidade Universitária, pedido R$ 4.375/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
   },
   {
     "id": "chv-43621707",
@@ -8058,7 +8058,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20396,
     "lng": -34.86103,
-    "thesis": "Portal · 44 m² em Gramame, pedido R$ 2.725/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 44 m² em Gramame, pedido R$ 2.725/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -8067,80 +8067,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
-  },
-  {
-    "id": "chv-27313421",
-    "title": "Apartamento com 2 quartos à venda na Rua João Maria de Araújo, 80, Gramame, João Pessoa",
-    "type": "apto",
-    "bairroId": "gramame",
-    "street": "Rua João Maria De Araújo, 80",
-    "area": 54,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 170000,
-    "condo": 486,
-    "iptu": 850,
-    "seaMeters": 8200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.20392,
-    "lng": -34.85928,
-    "thesis": "Portal · 54 m² em Gramame, pedido R$ 3.148/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 1
-  },
-  {
-    "id": "chv-30768173",
-    "title": "Apartamento com 2 quartos à venda no Gramame, João Pessoa",
-    "type": "apto",
-    "bairroId": "gramame",
-    "street": "Gramame, João Pessoa",
-    "area": 51,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 145000,
-    "condo": 459,
-    "iptu": 800,
-    "seaMeters": 8200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.21218,
-    "lng": -34.83988,
-    "thesis": "Portal · 51 m² em Gramame, pedido R$ 2.843/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
   },
   {
     "id": "chv-40071433",
@@ -8169,7 +8095,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.2035,
     "lng": -34.85953,
-    "thesis": "Portal · 50 m² em Gramame, pedido R$ 2.840/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Gramame, pedido R$ 2.840/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -8178,42 +8104,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-43157871",
-    "title": "Apartamento com 2 quartos à venda no Gramame, João Pessoa",
-    "type": "apto",
-    "bairroId": "gramame",
-    "street": "Gramame, João Pessoa",
-    "area": 48,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 164000,
-    "condo": 432,
-    "iptu": 820,
-    "seaMeters": 8200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.2158999999999995,
-    "lng": -34.8436,
-    "thesis": "Portal · 48 m² em Gramame, pedido R$ 3.417/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
   },
   {
     "id": "chv-42013241",
@@ -8242,7 +8132,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.22289,
     "lng": -34.84498,
-    "thesis": "Portal · 44 m² em Gramame, pedido R$ 2.614/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 44 m² em Gramame, pedido R$ 2.614/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -8251,6 +8141,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 21
+  },
+  {
+    "id": "chv-37801781",
+    "title": "Apartamento em João Pessoa, Bairro Novo Geisel, 2 quartos , varanda, lazer",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Rua Maria Emília Da Silva Torres, 195",
+    "area": 43,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 180000,
+    "condo": 387,
+    "iptu": 900,
+    "seaMeters": 8200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.19835,
+    "lng": -34.84346,
+    "thesis": "Portal · 43 m² em Gramame, pedido R$ 4.186/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
   },
   {
     "id": "chv-45943993",
@@ -8279,7 +8204,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.22174,
     "lng": -34.8472,
-    "thesis": "Portal · 53 m² em Gramame, pedido R$ 3.208/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 53 m² em Gramame, pedido R$ 3.208/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8287,6 +8212,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-46196860",
+    "title": "Apartamento com 2 quartos à venda na Avenida Lorival Bezerra dos Santos, Gramame, João Pes",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Avenida Lorival Bezerra Dos Santos, ",
+    "area": 47,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 186000,
+    "condo": 423,
+    "iptu": 930,
+    "seaMeters": 8200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.19776,
+    "lng": -34.87439,
+    "thesis": "Portal · 47 m² em Gramame, pedido R$ 3.957/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
   },
   {
     "id": "chv-43349028",
@@ -8314,7 +8274,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.21242,
     "lng": -34.84384,
-    "thesis": "Portal · 45 m² em Gramame, pedido R$ 4.022/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 45 m² em Gramame, pedido R$ 4.022/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8324,19 +8284,92 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 8
   },
   {
-    "id": "chv-38991004",
-    "title": "Apartamentos novos a venda a partir de 167 mil no bairro do gramame em joão pessoa - pb.",
+    "id": "chv-42043944",
+    "title": "Apartamento com 2 quartos à venda na Rua Rita Pinheiro Vilar, 02, Gramame, João Pessoa",
     "type": "apto",
     "bairroId": "gramame",
-    "street": "Gramame, João Pessoa",
-    "area": 44,
+    "street": "Rua Rita Pinheiro Vilar, 02",
+    "area": 55,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 167000,
-    "condo": 396,
-    "iptu": 835,
+    "ask": 150000,
+    "condo": 495,
+    "iptu": 800,
+    "seaMeters": 8200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.20129,
+    "lng": -34.86522,
+    "thesis": "Portal · 55 m² em Gramame, pedido R$ 2.727/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
+  },
+  {
+    "id": "chv-43392326",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 163.999,00 - Gramame - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Gramame, João Pessoa",
+    "area": 50,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 163999,
+    "condo": 450,
+    "iptu": 820,
+    "seaMeters": 8200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.20396,
+    "lng": -34.86103,
+    "thesis": "Portal · 50 m² em Gramame, pedido R$ 3.280/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 6
+  },
+  {
+    "id": "chv-46267843",
+    "title": "VENDA: Apt.º 57,3 m² área total, 2 Quartos, sendo 1 Suíte Reversível, em Gramame!",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Rua Doutor Augusto De Almeida Filho, 120",
+    "area": 40,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 155000,
+    "condo": 360,
+    "iptu": 800,
     "seaMeters": 8200,
     "condition": 0.88,
     "daysListed": 28,
@@ -8347,16 +8380,86 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.2180599999999995,
-    "lng": -34.83544,
-    "thesis": "Portal · 44 m² em Gramame, pedido R$ 3.795/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.19458,
+    "lng": -34.88824,
+    "thesis": "Portal · 40 m² em Gramame, pedido R$ 3.875/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 5
+    "facade": 2
+  },
+  {
+    "id": "chv-30647137",
+    "title": "Agatha Residence - APARTAMENTO PADRAO/ APARTAMENTO NO AGATHA RESIDENCE/ APARTAMENTO NO GRA",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Rua Doutor Valdevino Gregório De Andrade, ",
+    "area": 43,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 240000,
+    "condo": 387,
+    "iptu": 1200,
+    "seaMeters": 8200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.20728,
+    "lng": -34.84863,
+    "thesis": "Portal · 43 m² em Gramame, pedido R$ 5.581/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 17
+  },
+  {
+    "id": "chv-44833189",
+    "title": "Apartamento com 2 quartos à venda na Rua Ivan de Oliveira Brito, SN, Gramame, João Pessoa",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Rua Ivan De Oliveira Brito, SN",
+    "area": 46,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 256000,
+    "condo": 414,
+    "iptu": 1280,
+    "seaMeters": 8200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1975,
+    "lng": -34.87433,
+    "thesis": "Portal · 46 m² em Gramame, pedido R$ 5.565/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 6
   },
   {
     "id": "chv-45083787",
@@ -8384,7 +8487,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16778,
     "lng": -34.83494,
-    "thesis": "Portal · 47 m² em Mangabeira, pedido R$ 5.532/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 47 m² em Mangabeira, pedido R$ 5.532/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8420,7 +8523,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17004,
     "lng": -34.855039999999995,
-    "thesis": "Portal · 104 m² em Mangabeira, pedido R$ 3.852/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 104 m² em Mangabeira, pedido R$ 3.852/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -8457,7 +8560,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17689,
     "lng": -34.83357,
-    "thesis": "Portal · 46 m² em Mangabeira, pedido R$ 3.261/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 46 m² em Mangabeira, pedido R$ 3.261/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -8494,7 +8597,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.170640000000001,
     "lng": -34.8626,
-    "thesis": "Portal · 52 m² em Mangabeira, pedido R$ 4.135/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 52 m² em Mangabeira, pedido R$ 4.135/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8529,7 +8632,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17016,
     "lng": -34.848079999999996,
-    "thesis": "Portal · 56 m² em Mangabeira, pedido R$ 3.857/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Mangabeira, pedido R$ 3.857/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -8538,41 +8641,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 15
-  },
-  {
-    "id": "chv-42921785",
-    "title": "Apartamento com 2 quartos à venda no Mangabeira, João Pessoa",
-    "type": "apto",
-    "bairroId": "mangabeira",
-    "street": "Mangabeira, João Pessoa",
-    "area": 20,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 230000,
-    "condo": 180,
-    "iptu": 1150,
-    "seaMeters": 7000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.17244,
-    "lng": -34.8566,
-    "thesis": "Portal · 20 m² em Mangabeira, pedido R$ 11.500/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
   },
   {
     "id": "chv-40439090",
@@ -8600,7 +8668,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17544,
     "lng": -34.8632,
-    "thesis": "Portal · 44 m² em Mangabeira, pedido R$ 5.432/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 44 m² em Mangabeira, pedido R$ 5.432/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8635,7 +8703,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18493,
     "lng": -34.83909,
-    "thesis": "Portal · 54 m² em Mangabeira, pedido R$ 5.000/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Mangabeira, pedido R$ 5.000/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8670,7 +8738,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16979,
     "lng": -34.82845,
-    "thesis": "Portal · 46 m² em Mangabeira, pedido R$ 5.064/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 46 m² em Mangabeira, pedido R$ 5.064/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8680,19 +8748,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 20
   },
   {
-    "id": "chv-43208594",
-    "title": "Apartamento com 2 quartos à venda no Mangabeira, João Pessoa",
+    "id": "chv-36976020",
+    "title": "Apartamento com 2 quartos à venda na Rua Paineira do Campo, Mangabeira, João Pessoa",
     "type": "apto",
     "bairroId": "mangabeira",
-    "street": "Mangabeira, João Pessoa",
-    "area": 57,
+    "street": "Rua Paineira Do Campo, ",
+    "area": 47,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 190000,
-    "condo": 513,
-    "iptu": 950,
+    "ask": 212000,
+    "condo": 423,
+    "iptu": 1060,
     "seaMeters": 7000,
     "condition": 0.88,
     "daysListed": 28,
@@ -8704,52 +8772,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "airbnb"
     ],
-    "lat": -7.16896,
-    "lng": -34.85684,
-    "thesis": "Portal · 57 m² em Mangabeira, pedido R$ 3.333/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
-  },
-  {
-    "id": "chv-42721399",
-    "title": "Apartamento térreo com 3 quartos a venda no bairro do castelo branco em joão / pb",
-    "type": "apto",
-    "bairroId": "mangabeira",
-    "street": "Mangabeira, João Pessoa",
-    "area": 70,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 300000,
-    "condo": 630,
-    "iptu": 1500,
-    "seaMeters": 7000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.170640000000001,
-    "lng": -34.85684,
-    "thesis": "Portal · 70 m² em Mangabeira, pedido R$ 4.286/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.18016,
+    "lng": -34.82463,
+    "thesis": "Portal · 47 m² em Mangabeira, pedido R$ 4.511/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 16
+    "facade": 21
   },
   {
     "id": "chv-45477794",
@@ -8778,7 +8810,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16398,
     "lng": -34.84329,
-    "thesis": "Portal · 52 m² em Mangabeira, pedido R$ 4.135/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 52 m² em Mangabeira, pedido R$ 4.135/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8813,7 +8845,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18228,
     "lng": -34.84538,
-    "thesis": "Portal · 40 m² em Mangabeira, pedido R$ 5.625/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 40 m² em Mangabeira, pedido R$ 5.625/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8823,55 +8855,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 10
   },
   {
-    "id": "chv-41037053",
-    "title": "Lançamento de apartamentos para venda a partir r$ 199.990,00",
+    "id": "chv-42825242",
+    "title": "Apartamento com 2 quartos à venda na Rua Doutor Francisco de Assis Veloso, 15, Mangabeira,",
     "type": "apto",
-    "bairroId": "cruz-das-armas",
-    "street": "Rua Coronel Estevão Dávila Lins, ",
-    "area": 48,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 199990,
-    "condo": 432,
-    "iptu": 1000,
-    "seaMeters": 5600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.14019,
-    "lng": -34.88405,
-    "thesis": "Portal · 48 m² em Cruz das Armas, pedido R$ 4.166/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
-  },
-  {
-    "id": "chv-45867122",
-    "title": "Apartamento com 2 quartos à venda na Rua Antônio Gomes, 197, Cruz das Armas, João Pessoa",
-    "type": "apto",
-    "bairroId": "cruz-das-armas",
-    "street": "Rua Antônio Gomes, 197",
-    "area": 45,
+    "bairroId": "mangabeira",
+    "street": "Rua Doutor Francisco De Assis Veloso, 15",
+    "area": 53,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 190000,
-    "condo": 405,
-    "iptu": 950,
-    "seaMeters": 5600,
+    "ask": 269000,
+    "condo": 477,
+    "iptu": 1345,
+    "seaMeters": 7000,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -8881,81 +8878,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.13512,
-    "lng": -34.887,
-    "thesis": "Portal · 45 m² em Cruz das Armas, pedido R$ 4.222/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
-  },
-  {
-    "id": "chv-45867232",
-    "title": "Apartamento 2 Quartos no Residencial Negreiros - Cruz das Armas",
-    "type": "apto",
-    "bairroId": "cruz-das-armas",
-    "street": "Rua Coronel Estevão Dávila Lins, S/N",
-    "area": 60,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 229990,
-    "condo": 540,
-    "iptu": 1150,
-    "seaMeters": 5600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.14019,
-    "lng": -34.88405,
-    "thesis": "Portal · 60 m² em Cruz das Armas, pedido R$ 3.833/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
-  },
-  {
-    "id": "chv-45867121",
-    "title": "Apartamento com 2 quartos à venda na Rua Antônio Gomes, Cruz das Armas, João Pessoa",
-    "type": "apto",
-    "bairroId": "cruz-das-armas",
-    "street": "Rua Antônio Gomes, ",
-    "area": 50,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 180000,
-    "condo": 450,
-    "iptu": 900,
-    "seaMeters": 5600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.13446,
-    "lng": -34.88754,
-    "thesis": "Portal · 50 m² em Cruz das Armas, pedido R$ 3.600/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.16979,
+    "lng": -34.82845,
+    "thesis": "Portal · 53 m² em Mangabeira, pedido R$ 5.075/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -8963,6 +8888,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
+  },
+  {
+    "id": "chv-43208595",
+    "title": "Apartamento 2Q em Mangabeira, perto de praça em construção.",
+    "type": "apto",
+    "bairroId": "mangabeira",
+    "street": "Mangabeira, João Pessoa",
+    "area": 48,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 210000,
+    "condo": 432,
+    "iptu": 1050,
+    "seaMeters": 7000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.16884,
+    "lng": -34.85684,
+    "thesis": "Portal · 48 m² em Mangabeira, pedido R$ 4.375/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
   },
   {
     "id": "chv-32840552",
@@ -8990,7 +8951,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14469,
     "lng": -34.88383,
-    "thesis": "Portal · 48 m² em Cruz das Armas, pedido R$ 4.166/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 48 m² em Cruz das Armas, pedido R$ 4.166/m² contra 4.100 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9025,7 +8986,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16078,
     "lng": -34.87863,
-    "thesis": "Portal · 67 m² em Cristo Redentor, pedido R$ 5.522/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 67 m² em Cristo Redentor, pedido R$ 5.522/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9060,7 +9021,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14536,
     "lng": -34.84783,
-    "thesis": "Portal · 110 m² em Miramar, pedido R$ 19.091/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 110 m² em Miramar, pedido R$ 19.091/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9070,20 +9031,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 7
   },
   {
-    "id": "chv-23758169",
-    "title": "Apartamento à venda no bairro Ernesto Geisel - João Pessoa/PB",
+    "id": "chv-41582505",
+    "title": "Apartamento à venda, com 2 dormitórios, com 52m², em Tambauzinho, João Pessoa-PB.",
     "type": "apto",
-    "bairroId": "geisel",
-    "street": "Ernesto Geisel, João Pessoa",
-    "area": 42,
-    "rooms": 1,
-    "suites": 1,
+    "bairroId": "tambau",
+    "street": "Rua Doutor Arnaldo Escorel, 47",
+    "area": 52,
+    "rooms": 2,
+    "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 140000,
-    "condo": 378,
-    "iptu": 800,
-    "seaMeters": 6200,
+    "ask": 350000,
+    "condo": 468,
+    "iptu": 1750,
+    "seaMeters": 60,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -9094,18 +9055,52 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "airbnb"
     ],
-    "lat": -7.15844,
-    "lng": -34.8728,
-    "thesis": "Portal · 42 m² em Ernesto Geisel, pedido R$ 3.333/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.12169,
+    "lng": -34.85012,
+    "thesis": "Portal · 52 m² em Tambaú, pedido R$ 6.731/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 7
+    "facade": 6
+  },
+  {
+    "id": "chv-43208615",
+    "title": "Apartamento com 2 quartos à venda na Rua Horácio Trajano de Oliveira, 100, Cristo Redentor",
+    "type": "apto",
+    "bairroId": "cristo",
+    "street": "Rua Horácio Trajano De Oliveira, 100",
+    "area": 50,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 280000,
+    "condo": 450,
+    "iptu": 1400,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.14818,
+    "lng": -34.88252,
+    "thesis": "Portal · 50 m² em Cristo Redentor, pedido R$ 5.600/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
   },
   {
     "id": "chv-30683400",
@@ -9134,7 +9129,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16624,
     "lng": -34.86152,
-    "thesis": "Portal · 54 m² em Ernesto Geisel, pedido R$ 4.167/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Ernesto Geisel, pedido R$ 4.167/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9142,6 +9137,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
+  },
+  {
+    "id": "chv-40201297",
+    "title": "Apartamento padrão à Venda, Ernesto Geisel, João Pessoa, PB",
+    "type": "apto",
+    "bairroId": "geisel",
+    "street": "Rua Joaquim Pereira Do Nascimento, ",
+    "area": 41,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 214000,
+    "condo": 369,
+    "iptu": 1070,
+    "seaMeters": 6200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.17456,
+    "lng": -34.86413,
+    "thesis": "Portal · 41 m² em Ernesto Geisel, pedido R$ 5.220/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-37801784",
@@ -9170,7 +9200,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.19647,
     "lng": -34.87037,
-    "thesis": "Portal · 49 m² em Ernesto Geisel, pedido R$ 3.673/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 49 m² em Ernesto Geisel, pedido R$ 3.673/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -9181,19 +9211,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 1
   },
   {
-    "id": "chv-40840483",
+    "id": "chv-38527517",
     "title": "Apartamento com 2 quartos à venda no Ernesto Geisel, João Pessoa",
     "type": "apto",
     "bairroId": "geisel",
     "street": "Ernesto Geisel, João Pessoa",
-    "area": 51,
+    "area": 40,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 150000,
-    "condo": 459,
-    "iptu": 800,
+    "ask": 190000,
+    "condo": 360,
+    "iptu": 950,
     "seaMeters": 6200,
     "condition": 0.88,
     "daysListed": 28,
@@ -9202,20 +9232,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "airbnb"
     ],
-    "lat": -7.15772,
-    "lng": -34.87496,
-    "thesis": "Portal · 51 m² em Ernesto Geisel, pedido R$ 2.941/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.16648,
+    "lng": -34.86152,
+    "thesis": "Portal · 40 m² em Ernesto Geisel, pedido R$ 4.750/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 21
+    "facade": 18
   },
   {
     "id": "chv-42029544",
@@ -9243,7 +9271,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17392,
     "lng": -34.86652,
-    "thesis": "Portal · 40 m² em Ernesto Geisel, pedido R$ 5.623/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 40 m² em Ernesto Geisel, pedido R$ 5.623/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9251,42 +9279,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
-  },
-  {
-    "id": "chv-45808829",
-    "title": "Apartamento com 2 quartos à venda no Ernesto Geisel, João Pessoa",
-    "type": "apto",
-    "bairroId": "geisel",
-    "street": "Ernesto Geisel, João Pessoa",
-    "area": 54,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 220000,
-    "condo": 486,
-    "iptu": 1100,
-    "seaMeters": 6200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.1638399999999995,
-    "lng": -34.86332,
-    "thesis": "Portal · 54 m² em Ernesto Geisel, pedido R$ 4.074/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
   },
   {
     "id": "chv-30648253",
@@ -9314,7 +9306,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17292,
     "lng": -34.86334,
-    "thesis": "Portal · 55 m² em Ernesto Geisel, pedido R$ 4.455/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Ernesto Geisel, pedido R$ 4.455/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9349,7 +9341,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17392,
     "lng": -34.86652,
-    "thesis": "Portal · 41 m² em Ernesto Geisel, pedido R$ 5.120/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 41 m² em Ernesto Geisel, pedido R$ 5.120/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9357,43 +9349,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
-  },
-  {
-    "id": "chv-40436773",
-    "title": "Apartamento à venda no bairro Ernesto Geisel - João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "geisel",
-    "street": "Ernesto Geisel, João Pessoa",
-    "area": 54,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 170000,
-    "condo": 486,
-    "iptu": 850,
-    "seaMeters": 6200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.1669599999999996,
-    "lng": -34.87352,
-    "thesis": "Portal · 54 m² em Ernesto Geisel, pedido R$ 3.148/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
   },
   {
     "id": "chv-30647055",
@@ -9422,7 +9377,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18638,
     "lng": -34.87279,
-    "thesis": "Portal · 49 m² em Ernesto Geisel, pedido R$ 3.469/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 49 m² em Ernesto Geisel, pedido R$ 3.469/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -9458,7 +9413,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17392,
     "lng": -34.86652,
-    "thesis": "Portal · 40 m² em Ernesto Geisel, pedido R$ 5.248/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 40 m² em Ernesto Geisel, pedido R$ 5.248/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9466,41 +9421,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 19
-  },
-  {
-    "id": "chv-45867251",
-    "title": "Apartamento com 3 quartos à venda na Rua Ana Amélia Silva Pontes, S/N, Ernesto Geisel, Joã",
-    "type": "apto",
-    "bairroId": "geisel",
-    "street": "Rua Ana Amélia Silva Pontes, S/N",
-    "area": 70,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 280000,
-    "condo": 630,
-    "iptu": 1400,
-    "seaMeters": 6200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.18184,
-    "lng": -34.86694,
-    "thesis": "Portal · 70 m² em Ernesto Geisel, pedido R$ 4.000/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
   },
   {
     "id": "chv-46416781",
@@ -9528,7 +9448,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17467,
     "lng": -34.87035,
-    "thesis": "Portal · 48 m² em Ernesto Geisel, pedido R$ 8.333/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 48 m² em Ernesto Geisel, pedido R$ 8.333/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9538,19 +9458,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 19
   },
   {
-    "id": "chv-45867252",
-    "title": "Apartamento com 2 quartos à venda na Rua Ana Amélia Silva Pontes, S/N, Ernesto Geisel, Joã",
+    "id": "chv-29948551",
+    "title": "Apartamento com 2 dormitórios à venda, 50 m² por R$ 175.000 - Novo Geisel - João Pessoa/PB",
     "type": "apto",
     "bairroId": "geisel",
-    "street": "Rua Ana Amélia Silva Pontes, S/N",
-    "area": 61,
+    "street": "Ernesto Geisel, João Pessoa",
+    "area": 50,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 250000,
-    "condo": 549,
-    "iptu": 1250,
+    "ask": 175000,
+    "condo": 450,
+    "iptu": 875,
     "seaMeters": 6200,
     "condition": 0.88,
     "daysListed": 28,
@@ -9562,16 +9482,53 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "airbnb"
     ],
-    "lat": -7.18184,
-    "lng": -34.86694,
-    "thesis": "Portal · 61 m² em Ernesto Geisel, pedido R$ 4.098/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.17896,
+    "lng": -34.87252,
+    "thesis": "Portal · 50 m² em Ernesto Geisel, pedido R$ 3.500/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 10
+  },
+  {
+    "id": "chv-41254537",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 210.000,00 - Ernesto Geisel - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "geisel",
+    "street": "Ernesto Geisel, João Pessoa",
+    "area": 48,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 210000,
+    "condo": 432,
+    "iptu": 1050,
+    "seaMeters": 6200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17896,
+    "lng": -34.87252,
+    "thesis": "Portal · 48 m² em Ernesto Geisel, pedido R$ 4.375/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 11
+    "facade": 17
   },
   {
     "id": "chv-38196172",
@@ -9599,7 +9556,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13439,
     "lng": -34.84999,
-    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -9608,42 +9565,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
-  },
-  {
-    "id": "chv-42921767",
-    "title": "Apartamento 70m² 3 quartos sendo 1 suíte no Castelo Branco à Venda",
-    "type": "apto",
-    "bairroId": "castelo-branco",
-    "street": "Castelo Branco, João Pessoa",
-    "area": 70,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 300000,
-    "condo": 630,
-    "iptu": 1500,
-    "seaMeters": 4800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.13312,
-    "lng": -34.8504,
-    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
   },
   {
     "id": "chv-42867654",
@@ -9671,7 +9592,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1345600000000005,
     "lng": -34.8582,
-    "thesis": "Portal · 42 m² em Castelo Branco, pedido R$ 6.071/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 42 m² em Castelo Branco, pedido R$ 6.071/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9681,83 +9602,11 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 13
   },
   {
-    "id": "chv-37358429",
-    "title": "Apartamento com 2 quartos à venda na Rua Aírton Martins da Silva, 133, Castelo Branco, Joã",
+    "id": "chv-11912990",
+    "title": "Apartamento com 3 dormitórios à venda, 70 m² por R$ 300.000,00 - Castelo Branco - João Pes",
     "type": "apto",
     "bairroId": "castelo-branco",
-    "street": "Rua Aírton Martins Da Silva, 133",
-    "area": 45,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 215000,
-    "condo": 405,
-    "iptu": 1075,
-    "seaMeters": 4800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.13139,
-    "lng": -34.84288,
-    "thesis": "Portal · 45 m² em Castelo Branco, pedido R$ 4.778/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
-  },
-  {
-    "id": "chv-37358454",
-    "title": "Apartamento com 2 quartos à venda na Rua Onaldo da Silva Coutinho, Castelo Branco, João Pe",
-    "type": "apto",
-    "bairroId": "castelo-branco",
-    "street": "Rua Onaldo Da Silva Coutinho, ",
-    "area": 40,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 200000,
-    "condo": 360,
-    "iptu": 1000,
-    "seaMeters": 4800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.13439,
-    "lng": -34.84999,
-    "thesis": "Portal · 40 m² em Castelo Branco, pedido R$ 5.000/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
-  },
-  {
-    "id": "chv-37358455",
-    "title": "Apartamento com 3 quartos à venda na Rua Onaldo da Silva Coutinho, 1, Castelo Branco, João",
-    "type": "apto",
-    "bairroId": "castelo-branco",
-    "street": "Rua Onaldo Da Silva Coutinho, 1",
+    "street": "Castelo Branco, João Pessoa",
     "area": 70,
     "rooms": 3,
     "suites": 0,
@@ -9776,9 +9625,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "preco"
     ],
-    "lat": -7.13204,
-    "lng": -34.84872,
-    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.13525,
+    "lng": -34.85206,
+    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -9786,7 +9635,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 14
+    "facade": 7
   },
   {
     "id": "chv-41619735",
@@ -9814,7 +9663,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13525,
     "lng": -34.85206,
-    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -9823,41 +9672,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 15
-  },
-  {
-    "id": "chv-11912990",
-    "title": "Apartamento à venda, 55 m² por R$ 300.000,00 - Castelo Branco - João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "castelo-branco",
-    "street": "Castelo Branco, João Pessoa",
-    "area": 55,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 300000,
-    "condo": 495,
-    "iptu": 1500,
-    "seaMeters": 4800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.13525,
-    "lng": -34.85206,
-    "thesis": "Portal · 55 m² em Castelo Branco, pedido R$ 5.455/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 7
   },
   {
     "id": "chv-45552804",
@@ -9885,7 +9699,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13165,
     "lng": -34.8406,
-    "thesis": "Portal · 56 m² em Castelo Branco, pedido R$ 7.677/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Castelo Branco, pedido R$ 7.677/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -9893,78 +9707,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 5
-  },
-  {
-    "id": "chv-46192129",
-    "title": "Apartamento com 2 quartos à venda na Rua Euclides da Cunha, 33, Castelo Branco, João Pesso",
-    "type": "apto",
-    "bairroId": "castelo-branco",
-    "street": "Rua Euclides Da Cunha, 33",
-    "area": 56,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 265000,
-    "condo": 504,
-    "iptu": 1325,
-    "seaMeters": 4800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.13117,
-    "lng": -34.84895,
-    "thesis": "Portal · 56 m² em Castelo Branco, pedido R$ 4.732/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
-  },
-  {
-    "id": "chv-44530714",
-    "title": "Apartamento com 4 quartos à venda na Rua Walfredo Melo, 2, Castelo Branco, João Pessoa",
-    "type": "apto",
-    "bairroId": "castelo-branco",
-    "street": "Rua Walfredo Melo, 2",
-    "area": 70,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 300000,
-    "condo": 630,
-    "iptu": 1500,
-    "seaMeters": 4800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.13457,
-    "lng": -34.85414,
-    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 15
   },
   {
     "id": "chv-45712406",
@@ -9992,7 +9734,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13525,
     "lng": -34.85206,
-    "thesis": "Portal · 56 m² em Castelo Branco, pedido R$ 7.677/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Castelo Branco, pedido R$ 7.677/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10027,7 +9769,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13165,
     "lng": -34.8406,
-    "thesis": "Portal · 40 m² em Castelo Branco, pedido R$ 11.250/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 40 m² em Castelo Branco, pedido R$ 11.250/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -10038,19 +9780,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 16
   },
   {
-    "id": "chv-45867229",
-    "title": "Apartamento 3 Quartos no Residencial Castelo Branco - Castelo Branco",
+    "id": "chv-46674488",
+    "title": "Apartamento térreo 43m2 + quintal privativo 25m2, 2 quartos",
     "type": "apto",
     "bairroId": "castelo-branco",
-    "street": "Rua Onaldo Da Silva Coutinho, S/N",
-    "area": 70,
-    "rooms": 3,
+    "street": "Castelo Branco, João Pessoa",
+    "area": 68,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 300000,
-    "condo": 630,
-    "iptu": 1500,
+    "ask": 280000,
+    "condo": 612,
+    "iptu": 1400,
     "seaMeters": 4800,
     "condition": 0.88,
     "daysListed": 28,
@@ -10059,11 +9801,12 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco"
+      "preco",
+      "airbnb"
     ],
-    "lat": -7.13439,
-    "lng": -34.84999,
-    "thesis": "Portal · 70 m² em Castelo Branco, pedido R$ 4.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.13588,
+    "lng": -34.85472,
+    "thesis": "Portal · 68 m² em Castelo Branco, pedido R$ 4.118/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10071,7 +9814,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 9
+    "facade": 5
   },
   {
     "id": "chv-40371360",
@@ -10099,7 +9842,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13525,
     "lng": -34.85206,
-    "thesis": "Portal · 42 m² em Castelo Branco, pedido R$ 5.952/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 42 m² em Castelo Branco, pedido R$ 5.952/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10135,7 +9878,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16834,
     "lng": -34.87067,
-    "thesis": "Portal · 55 m² em Cristo Redentor, pedido R$ 4.000/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Cristo Redentor, pedido R$ 4.000/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10171,7 +9914,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16818,
     "lng": -34.87084,
-    "thesis": "Portal · 60 m² em Cristo Redentor, pedido R$ 3.833/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Cristo Redentor, pedido R$ 3.833/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10206,7 +9949,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15789,
     "lng": -34.88243,
-    "thesis": "Portal · 43 m² em Cristo Redentor, pedido R$ 4.395/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 43 m² em Cristo Redentor, pedido R$ 4.395/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10241,7 +9984,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14744,
     "lng": -34.88141,
-    "thesis": "Portal · 50 m² em Cristo Redentor, pedido R$ 4.400/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Cristo Redentor, pedido R$ 4.400/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10249,6 +9992,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
+  },
+  {
+    "id": "chv-45477806",
+    "title": "Apartamento com 2 quartos à venda na Rua Pedro Ivo de Paiva, Cristo Redentor, João Pessoa",
+    "type": "apto",
+    "bairroId": "cristo",
+    "street": "Rua Pedro Ivo De Paiva, ",
+    "area": 48,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 270000,
+    "condo": 432,
+    "iptu": 1350,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.16654,
+    "lng": -34.87066,
+    "thesis": "Portal · 48 m² em Cristo Redentor, pedido R$ 5.625/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 7
   },
   {
     "id": "chv-46153327",
@@ -10277,7 +10055,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14092,
     "lng": -34.883,
-    "thesis": "Portal · 65 m² em Cristo Redentor, pedido R$ 3.385/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 65 m² em Cristo Redentor, pedido R$ 3.385/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10286,76 +10064,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 7
-  },
-  {
-    "id": "chv-42921739",
-    "title": "Apartamento 54m² 2 quartos sendo 1 suíte no Cristo Redentor à Venda",
-    "type": "apto",
-    "bairroId": "cristo",
-    "street": "Cristo Redentor, João Pessoa",
-    "area": 54,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 380000,
-    "condo": 486,
-    "iptu": 1900,
-    "seaMeters": 6400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.14596,
-    "lng": -34.87712,
-    "thesis": "Portal · 54 m² em Cristo Redentor, pedido R$ 7.037/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 19
-  },
-  {
-    "id": "chv-46307382",
-    "title": "Oportunidade - apartamento a venda no bairro do cristo em joão pessoa / pb",
-    "type": "apto",
-    "bairroId": "cristo",
-    "street": "Cristo Redentor, João Pessoa",
-    "area": 45,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 220000,
-    "condo": 405,
-    "iptu": 1100,
-    "seaMeters": 6400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1502799999999995,
-    "lng": -34.88,
-    "thesis": "Portal · 45 m² em Cristo Redentor, pedido R$ 4.889/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 20
   },
   {
     "id": "chv-46308801",
@@ -10384,7 +10092,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16181,
     "lng": -34.87172,
-    "thesis": "Portal · 54 m² em Cristo Redentor, pedido R$ 3.704/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Cristo Redentor, pedido R$ 3.704/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10392,6 +10100,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 2
+  },
+  {
+    "id": "chv-36975924",
+    "title": "Apartamento padrão à Venda, Cristo Redentor, João Pessoa, PB",
+    "type": "apto",
+    "bairroId": "cristo",
+    "street": "Rua Elias Cavalcanti De Albuquerque, ",
+    "area": 45,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 230000,
+    "condo": 405,
+    "iptu": 1150,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15718,
+    "lng": -34.8776,
+    "thesis": "Portal · 45 m² em Cristo Redentor, pedido R$ 5.111/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 4
   },
   {
     "id": "chv-36859009",
@@ -10419,7 +10162,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16791,
     "lng": -34.88284,
-    "thesis": "Portal · 44 m² em Cristo Redentor, pedido R$ 5.045/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 44 m² em Cristo Redentor, pedido R$ 5.045/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10454,7 +10197,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14744,
     "lng": -34.88141,
-    "thesis": "Portal · 79 m² em Cristo Redentor, pedido R$ 5.316/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 79 m² em Cristo Redentor, pedido R$ 5.316/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10489,7 +10232,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14958,
     "lng": -34.87913,
-    "thesis": "Portal · 64 m² em Cristo Redentor, pedido R$ 5.188/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 64 m² em Cristo Redentor, pedido R$ 5.188/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10499,19 +10242,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 9
   },
   {
-    "id": "chv-45867238",
-    "title": "Apartamento 2 Quartos no Residencial Rosana Miranda - Cristo Redentor",
+    "id": "chv-36975943",
+    "title": "Apartamento padrão à Venda, Cristo Redentor, João Pessoa, PB",
     "type": "apto",
     "bairroId": "cristo",
-    "street": "Rua Arnaldo Costa, S/N",
-    "area": 61,
+    "street": "Rua Felinto De Arruda Escolástico, ",
+    "area": 44,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 337000,
-    "condo": 549,
-    "iptu": 1685,
+    "ask": 222000,
+    "condo": 396,
+    "iptu": 1110,
     "seaMeters": 6400,
     "condition": 0.88,
     "daysListed": 28,
@@ -10522,16 +10265,51 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.15685,
-    "lng": -34.87106,
-    "thesis": "Portal · 61 m² em Cristo Redentor, pedido R$ 5.525/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.15766,
+    "lng": -34.87973,
+    "thesis": "Portal · 44 m² em Cristo Redentor, pedido R$ 5.045/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 18
+    "facade": 2
+  },
+  {
+    "id": "chv-21261326",
+    "title": "Cobertura com 3 quartos à venda na Rua Orlando Pereira de Brito, 771, Cristo Redentor, Joã",
+    "type": "apto",
+    "bairroId": "cristo",
+    "street": "Rua Orlando Pereira De Brito, 771",
+    "area": 64,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 387000,
+    "condo": 576,
+    "iptu": 1935,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.15214,
+    "lng": -34.8776,
+    "thesis": "Portal · 64 m² em Cristo Redentor, pedido R$ 6.047/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 6
   },
   {
     "id": "chv-41827619",
@@ -10560,7 +10338,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15565,
     "lng": -34.89377,
-    "thesis": "Portal · 51 m² em Oitizeiro, pedido R$ 2.157/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 51 m² em Oitizeiro, pedido R$ 2.157/m² contra 3.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez.",
@@ -10598,7 +10376,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15565,
     "lng": -34.89377,
-    "thesis": "Portal · 43 m² em Oitizeiro, pedido R$ 2.791/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 43 m² em Oitizeiro, pedido R$ 2.791/m² contra 3.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10635,7 +10413,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15565,
     "lng": -34.89377,
-    "thesis": "Portal · 43 m² em Oitizeiro, pedido R$ 2.791/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 43 m² em Oitizeiro, pedido R$ 2.791/m² contra 3.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10646,20 +10424,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 14
   },
   {
-    "id": "chv-44235272",
-    "title": "Imóvel bem posicionado — Apartamento no Oitizeiro, Joao Pessoa - PB, Apto 304, 2 quartos, ",
+    "id": "chv-40886034",
+    "title": "Apartamento em João Pessoa, 2 quartos, varanda gourmet, lazer",
     "type": "apto",
-    "bairroId": "oitizeiro",
-    "street": "Rua Sílvia Bezerra Guedes, ",
-    "area": 43,
+    "bairroId": "bessa",
+    "street": "Campos Sales, 760",
+    "area": 62,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 80631,
-    "condo": 387,
-    "iptu": 800,
-    "seaMeters": 7800,
+    "ask": 790000,
+    "condo": 558,
+    "iptu": 3950,
+    "seaMeters": 120,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -10667,36 +10445,34 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "airbnb"
     ],
-    "lat": -7.15988,
-    "lng": -34.89837,
-    "thesis": "Portal · 43 m² em Oitizeiro, pedido R$ 1.875/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.0665,
+    "lng": -34.84627999999999,
+    "thesis": "Portal · 62 m² em Bessa, pedido R$ 12.742/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 10
+    "facade": 14
   },
   {
-    "id": "chv-45256458",
-    "title": "Apartamento para Venda em João Pessoa, Oitizeiro, 2 dormitórios, 1 suíte, 2 banheiros, 1 v",
+    "id": "chv-45370648",
+    "title": "Apartamento com 2 quartos à venda na Rua Cantora Maria da Glória Gouveia de Vasconcelos, 3",
     "type": "apto",
-    "bairroId": "oitizeiro",
-    "street": "Rua General Pedro Gonçalves De Medeiros, 183",
-    "area": 49,
+    "bairroId": "jardim-oceania",
+    "street": "Rua Cantora Maria Da Glória Gouveia De Vasconcelos, 320",
+    "area": 57,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 125000,
-    "condo": 441,
-    "iptu": 800,
-    "seaMeters": 7800,
+    "ask": 599000,
+    "condo": 513,
+    "iptu": 2995,
+    "seaMeters": 220,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -10704,36 +10480,34 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "airbnb"
     ],
-    "lat": -7.15123,
-    "lng": -34.90347,
-    "thesis": "Portal · 49 m² em Oitizeiro, pedido R$ 2.551/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.09068,
+    "lng": -34.83556,
+    "thesis": "Portal · 57 m² em Jardim Oceania, pedido R$ 10.509/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 17
+    "facade": 7
   },
   {
-    "id": "chv-43445483",
-    "title": "Imóvel bem posicionado — Apartamento no Oitizeiro, Joao Pessoa - PB, Apto 304, 2 quartos, ",
+    "id": "chv-23573118",
+    "title": "Apartamento à venda no bairro Jardim Oceania - João Pessoa/PB",
     "type": "apto",
-    "bairroId": "oitizeiro",
-    "street": "Rua Sílvia Bezerra Guedes, N. 651 APT",
-    "area": 43,
-    "rooms": 2,
+    "bairroId": "jardim-oceania",
+    "street": "Rua Themístocles Da Costa Brito, 315",
+    "area": 98,
+    "rooms": 4,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 80631,
-    "condo": 387,
-    "iptu": 800,
-    "seaMeters": 7800,
+    "ask": 1398000,
+    "condo": 882,
+    "iptu": 6990,
+    "seaMeters": 220,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -10741,20 +10515,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "airbnb"
     ],
-    "lat": -7.16152,
-    "lng": -34.89715,
-    "thesis": "Portal · 43 m² em Oitizeiro, pedido R$ 1.875/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.08384,
+    "lng": -34.83976,
+    "thesis": "Portal · 98 m² em Jardim Oceania, pedido R$ 14.265/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 21
+    "facade": 19
   },
   {
     "id": "chv-30647346",
@@ -10783,7 +10555,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18285,
     "lng": -34.89251,
-    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.273/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.273/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10792,6 +10564,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 5
+  },
+  {
+    "id": "chv-43446585",
+    "title": "APARTAMENTO À VENDA | BAIRRO DOS FUNCIONÁRIOS | João Pessoa/PB | 59m² | Nascente Sul | R$ ",
+    "type": "apto",
+    "bairroId": "funcionarios",
+    "street": "Rua Luiz Carlos Alves, 0",
+    "area": 59,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 145000,
+    "condo": 531,
+    "iptu": 800,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.19468,
+    "lng": -34.857960000000006,
+    "thesis": "Portal · 59 m² em Funcionários, pedido R$ 2.458/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
   },
   {
     "id": "chv-30648002",
@@ -10819,7 +10628,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18151,
     "lng": -34.87962,
-    "thesis": "Portal · 64 m² em Funcionários, pedido R$ 4.375/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 64 m² em Funcionários, pedido R$ 4.375/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10830,7 +10639,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
   },
   {
     "id": "chv-45181402",
-    "title": "Apartamento com 2 dormitórios à venda por R$ 160.000,00 - Funcionários - João Pessoa/PB",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 154.900,00 - Funcionários - João Pessoa/PB",
     "type": "apto",
     "bairroId": "funcionarios",
     "street": "Funcionários, João Pessoa",
@@ -10839,7 +10648,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 160000,
+    "ask": 154900,
     "condo": 450,
     "iptu": 800,
     "seaMeters": 7600,
@@ -10855,7 +10664,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 50 m² em Funcionários, pedido R$ 3.200/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Funcionários, pedido R$ 3.098/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10892,7 +10701,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 59 m² em Funcionários, pedido R$ 3.051/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Funcionários, pedido R$ 3.051/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -10928,7 +10737,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 44 m² em Funcionários, pedido R$ 4.068/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 44 m² em Funcionários, pedido R$ 4.068/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -10964,7 +10773,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 46 m² em Funcionários, pedido R$ 2.935/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 46 m² em Funcionários, pedido R$ 2.935/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -11001,7 +10810,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 50 m² em Funcionários, pedido R$ 3.460/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Funcionários, pedido R$ 3.460/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11009,41 +10818,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
-  },
-  {
-    "id": "chv-45867218",
-    "title": "Apartamento com 2 quartos à venda na Rua Desembargador João Santa Cruz de Oliveira, S/N, F",
-    "type": "apto",
-    "bairroId": "funcionarios",
-    "street": "Rua Desembargador João Santa Cruz De Oliveira, S/N",
-    "area": 53,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 220000,
-    "condo": 477,
-    "iptu": 1100,
-    "seaMeters": 7600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1789,
-    "lng": -34.88768,
-    "thesis": "Portal · 53 m² em Funcionários, pedido R$ 4.151/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 19
   },
   {
     "id": "chv-30698360",
@@ -11071,7 +10845,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 43 m² em Funcionários, pedido R$ 3.767/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 43 m² em Funcionários, pedido R$ 3.767/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11107,7 +10881,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 48 m² em Funcionários, pedido R$ 3.125/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 48 m² em Funcionários, pedido R$ 3.125/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -11116,80 +10890,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
-  },
-  {
-    "id": "chv-43446585",
-    "title": "APARTAMENTO À VENDA | BAIRRO DOS FUNCIONÁRIOS | João Pessoa/PB | 59m² | Nascente Sul | R$ ",
-    "type": "apto",
-    "bairroId": "funcionarios",
-    "street": "Rua Luiz Carlos Alves, 0",
-    "area": 59,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 145000,
-    "condo": 531,
-    "iptu": 800,
-    "seaMeters": 7600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.19468,
-    "lng": -34.857960000000006,
-    "thesis": "Portal · 59 m² em Funcionários, pedido R$ 2.458/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
-  },
-  {
-    "id": "chv-39976434",
-    "title": "Apartamento Térreo à Venda – Bairro Funcionários – João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "funcionarios",
-    "street": "Rua Cantor Nelson Gonçalves, 75",
-    "area": 52,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 150000,
-    "condo": 468,
-    "iptu": 800,
-    "seaMeters": 7600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.18044,
-    "lng": -34.88377,
-    "thesis": "Portal · 52 m² em Funcionários, pedido R$ 2.885/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 14
   },
   {
     "id": "chv-34529993",
@@ -11218,7 +10918,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 47 m² em Funcionários, pedido R$ 3.447/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 47 m² em Funcionários, pedido R$ 3.447/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11226,6 +10926,79 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-43082962",
+    "title": "Apartamento com 2 dormitórios à venda, 59 m² por R$ 149.000,00 - Funcionários - João Pesso",
+    "type": "apto",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 59,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 149000,
+    "condo": 531,
+    "iptu": 800,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17919,
+    "lng": -34.88619,
+    "thesis": "Portal · 59 m² em Funcionários, pedido R$ 2.525/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 21
+  },
+  {
+    "id": "chv-31205102",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 180.000,00 - Funcionários IV - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 50,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 180000,
+    "condo": 450,
+    "iptu": 900,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17919,
+    "lng": -34.88619,
+    "thesis": "Portal · 50 m² em Funcionários, pedido R$ 3.600/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
   },
   {
     "id": "chv-39623999",
@@ -11253,7 +11026,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12362,
     "lng": -34.8324,
-    "thesis": "Portal · 130 m² em Miramar, pedido R$ 8.077/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 130 m² em Miramar, pedido R$ 8.077/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11288,7 +11061,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12142,
     "lng": -34.83288,
-    "thesis": "Portal · 60 m² em Miramar, pedido R$ 13.333/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Miramar, pedido R$ 13.333/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11323,7 +11096,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11656,
     "lng": -34.854560000000006,
-    "thesis": "Portal · 28 m² em Miramar, pedido R$ 11.429/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 28 m² em Miramar, pedido R$ 11.429/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -11332,41 +11105,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
-  },
-  {
-    "id": "chv-29836360",
-    "title": "Vendo Espetacular Apartamento NOVO no Miramar. 26 andar - 207 m², 01 por andar.",
-    "type": "apto",
-    "bairroId": "miramar",
-    "street": "Miramar, João Pessoa",
-    "area": 207,
-    "rooms": 4,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 2700000,
-    "condo": 1863,
-    "iptu": 13500,
-    "seaMeters": 1800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1220799999999995,
-    "lng": -34.867520000000006,
-    "thesis": "Portal · 207 m² em Miramar, pedido R$ 13.043/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 19
   },
   {
     "id": "chv-45389264",
@@ -11394,7 +11132,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11968,
     "lng": -34.85708,
-    "thesis": "Portal · 180 m² em Miramar, pedido R$ 9.161/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 180 m² em Miramar, pedido R$ 9.161/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11429,7 +11167,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1222,
     "lng": -34.83566,
-    "thesis": "Portal · 121 m² em Miramar, pedido R$ 9.504/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 121 m² em Miramar, pedido R$ 9.504/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11464,7 +11202,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12205,
     "lng": -34.83185,
-    "thesis": "Portal · 120 m² em Miramar, pedido R$ 5.325/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Miramar, pedido R$ 5.325/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -11500,7 +11238,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1162,
     "lng": -34.83687,
-    "thesis": "Portal · 180 m² em Miramar, pedido R$ 3.667/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 180 m² em Miramar, pedido R$ 3.667/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -11509,6 +11247,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
+  },
+  {
+    "id": "chv-29836360",
+    "title": "Vendo Espetacular Apartamento NOVO no Miramar. 26 andar - 207 m², 01 por andar.",
+    "type": "apto",
+    "bairroId": "miramar",
+    "street": "Miramar, João Pessoa",
+    "area": 207,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 2012,
+    "ask": 2700000,
+    "condo": 1863,
+    "iptu": 13500,
+    "seaMeters": 1800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1220799999999995,
+    "lng": -34.867520000000006,
+    "thesis": "Portal · 207 m² em Miramar, pedido R$ 13.043/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
   },
   {
     "id": "chv-39255262",
@@ -11536,7 +11309,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12235,
     "lng": -34.83304,
-    "thesis": "Portal · 150 m² em Miramar, pedido R$ 7.980/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 150 m² em Miramar, pedido R$ 7.980/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11546,19 +11319,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 21
   },
   {
-    "id": "chv-42986108",
-    "title": "Apartamento com 3 quartos à venda no Miramar, João Pessoa",
+    "id": "chv-45607022",
+    "title": "Apartamento para Venda em João Pessoa, Miramar, 2 dormitórios, 1 suíte, 2 banheiros, 2 vag",
     "type": "apto",
     "bairroId": "miramar",
     "street": "Miramar, João Pessoa",
-    "area": 117,
-    "rooms": 3,
+    "area": 53,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 1057380,
-    "condo": 1053,
-    "iptu": 5287,
+    "ask": 560000,
+    "condo": 477,
+    "iptu": 2800,
     "seaMeters": 1800,
     "condition": 0.88,
     "daysListed": 28,
@@ -11569,114 +11342,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.118119999999999,
-    "lng": -34.8644,
-    "thesis": "Portal · 117 m² em Miramar, pedido R$ 9.037/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 9
-  },
-  {
-    "id": "chv-30190317",
-    "title": "Apartamento com 3 quartos à venda no Miramar, João Pessoa",
-    "type": "apto",
-    "bairroId": "miramar",
-    "street": "Miramar, João Pessoa",
-    "area": 130,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1190000,
-    "condo": 1170,
-    "iptu": 5950,
-    "seaMeters": 1800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1198,
-    "lng": -34.865840000000006,
-    "thesis": "Portal · 130 m² em Miramar, pedido R$ 9.154/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 18
-  },
-  {
-    "id": "chv-35513441",
-    "title": "Apartamento com 4 quartos à venda na Avenida Ministro José Américo de Almeida, 101, Mirama",
-    "type": "apto",
-    "bairroId": "miramar",
-    "street": "Avenida Ministro José Américo De Almeida, 101",
-    "area": 152,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1200000,
-    "condo": 1368,
-    "iptu": 6000,
-    "seaMeters": 1800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.1259,
-    "lng": -34.83965,
-    "thesis": "Portal · 152 m² em Miramar, pedido R$ 7.895/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
-  },
-  {
-    "id": "chv-44376064",
-    "title": "Apartamento 117m² 3 quartos sendo 2 suítes no Miramar à Venda",
-    "type": "apto",
-    "bairroId": "miramar",
-    "street": "Miramar, João Pessoa",
-    "area": 117,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 2012,
-    "ask": 1145000,
-    "condo": 1053,
-    "iptu": 5725,
-    "seaMeters": 1800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.124359999999999,
-    "lng": -34.85936,
-    "thesis": "Portal · 117 m² em Miramar, pedido R$ 9.786/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.12148,
+    "lng": -34.858520000000006,
+    "thesis": "Portal · 53 m² em Miramar, pedido R$ 10.566/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11686,19 +11354,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 2
   },
   {
-    "id": "chv-45111873",
-    "title": "Andar alto no Miramar! Sua oportunidade de morar com conforto e segurança no melhor de Joã",
+    "id": "chv-45477828",
+    "title": "Apartamento com 2 quartos à venda na Rua das Acácias, Miramar, João Pessoa",
     "type": "apto",
     "bairroId": "miramar",
-    "street": "Rua Carlos Barros, ",
-    "area": 71,
-    "rooms": 3,
+    "street": "Rua Das Acácias, ",
+    "area": 59,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 680000,
-    "condo": 639,
-    "iptu": 3400,
+    "ask": 636530,
+    "condo": 531,
+    "iptu": 3183,
     "seaMeters": 1800,
     "condition": 0.88,
     "daysListed": 28,
@@ -11709,16 +11377,123 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "airbnb"
     ],
-    "lat": -7.12253,
-    "lng": -34.83737,
-    "thesis": "Portal · 71 m² em Miramar, pedido R$ 9.577/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.12134,
+    "lng": -34.83277,
+    "thesis": "Portal · 59 m² em Miramar, pedido R$ 10.789/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 11
+    "facade": 8
+  },
+  {
+    "id": "chv-22331280",
+    "title": "Apartamento com 4 quartos à venda na Rua Giacomo Porto, 1, Miramar, João Pessoa",
+    "type": "apto",
+    "bairroId": "miramar",
+    "street": "Rua Giacomo Porto, 1",
+    "area": 176,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 990000,
+    "condo": 1584,
+    "iptu": 4950,
+    "seaMeters": 1800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco"
+    ],
+    "lat": -7.11637,
+    "lng": -34.83633,
+    "thesis": "Portal · 176 m² em Miramar, pedido R$ 5.625/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 18
+  },
+  {
+    "id": "chv-45855755",
+    "title": "Apartamento de 174 m² - Alto Padrão | 27º Andar | 4 Suítes | Vista Panorâmica",
+    "type": "apto",
+    "bairroId": "miramar",
+    "street": "Rua Da Aurora, 235",
+    "area": 174,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 2012,
+    "ask": 3250000,
+    "condo": 1566,
+    "iptu": 16250,
+    "seaMeters": 1800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.12163,
+    "lng": -34.83194,
+    "thesis": "Portal · 174 m² em Miramar, pedido R$ 18.678/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
+  },
+  {
+    "id": "chv-45799505",
+    "title": "Apartamento com 1 quarto à venda na Avenida Senador Ruy Carneiro, 416, Miramar, João Pesso",
+    "type": "kitnet",
+    "bairroId": "miramar",
+    "street": "Avenida Senador Ruy Carneiro, 416",
+    "area": 21,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 321594,
+    "condo": 189,
+    "iptu": 1608,
+    "seaMeters": 1800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11797,
+    "lng": -34.83946,
+    "thesis": "Portal · 21 m² em Miramar, pedido R$ 15.314/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 6
   },
   {
     "id": "chv-41144763",
@@ -11731,9 +11506,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "suites": 0,
     "parking": 1,
     "year": 2012,
-    "ask": 351353,
+    "ask": 356000,
     "condo": 630,
-    "iptu": 1757,
+    "iptu": 1780,
     "seaMeters": 5000,
     "condition": 0.88,
     "daysListed": 28,
@@ -11746,7 +11521,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1434,
     "lng": -34.86092,
-    "thesis": "Portal · 70 m² em Treze de Maio, pedido R$ 5.019/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 70 m² em Treze de Maio, pedido R$ 5.086/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11781,7 +11556,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14352,
     "lng": -34.858760000000004,
-    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 9.267/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 9.267/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11789,41 +11564,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
-  },
-  {
-    "id": "chv-38990967",
-    "title": "Apartamento com 2 quartos à venda no Treze de Maio, João Pessoa",
-    "type": "apto",
-    "bairroId": "treze-de-maio",
-    "street": "Treze de Maio, João Pessoa",
-    "area": 54,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 340000,
-    "condo": 486,
-    "iptu": 1700,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.13896,
-    "lng": -34.855760000000004,
-    "thesis": "Portal · 54 m² em Treze de Maio, pedido R$ 6.296/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
   },
   {
     "id": "chv-33776382",
@@ -11851,7 +11591,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11306,
     "lng": -34.86436,
-    "thesis": "Portal · 54 m² em Treze de Maio, pedido R$ 8.333/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Treze de Maio, pedido R$ 8.333/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11859,6 +11599,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
+  },
+  {
+    "id": "chv-36975942",
+    "title": "Apartamento com 2 quartos à venda na Rua Prefeito José de Carvalho, Treze de Maio, João Pe",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Rua Prefeito José De Carvalho, ",
+    "area": 45,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 342300,
+    "condo": 405,
+    "iptu": 1712,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.10946,
+    "lng": -34.86804,
+    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 7.607/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 1
   },
   {
     "id": "chv-42562652",
@@ -11886,7 +11661,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10974,
     "lng": -34.85375,
-    "thesis": "Portal · 90 m² em Treze de Maio, pedido R$ 3.917/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 90 m² em Treze de Maio, pedido R$ 3.917/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -11895,42 +11670,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
-  },
-  {
-    "id": "chv-38525374",
-    "title": "Apartamento com 3 quartos à venda na Rua Francisco Moura, 820, Treze de Maio, João Pessoa",
-    "type": "apto",
-    "bairroId": "treze-de-maio",
-    "street": "Rua Francisco Moura, 820",
-    "area": 78,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 280000,
-    "condo": 702,
-    "iptu": 1400,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco"
-    ],
-    "lat": -7.10801,
-    "lng": -34.86627,
-    "thesis": "Portal · 78 m² em Treze de Maio, pedido R$ 3.590/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
   },
   {
     "id": "chv-41984647",
@@ -11958,7 +11697,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11017,
     "lng": -34.86766,
-    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 8.832/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 8.832/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -11966,43 +11705,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
-  },
-  {
-    "id": "chv-40840482",
-    "title": "Apartamento com 2 quartos à venda no Treze de Maio, João Pessoa",
-    "type": "apto",
-    "bairroId": "treze-de-maio",
-    "street": "Treze de Maio, João Pessoa",
-    "area": 60,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 250000,
-    "condo": 540,
-    "iptu": 1250,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.13764,
-    "lng": -34.86836,
-    "thesis": "Portal · 60 m² em Treze de Maio, pedido R$ 4.167/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 20
   },
   {
     "id": "chv-32687681",
@@ -12030,7 +11732,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.86596,
-    "thesis": "Portal · 50 m² em Treze de Maio, pedido R$ 8.300/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Treze de Maio, pedido R$ 8.300/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12065,7 +11767,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14124,
     "lng": -34.85588,
-    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 8.832/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 8.832/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12100,7 +11802,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.143759999999999,
     "lng": -34.86788,
-    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 7.607/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 7.607/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12108,41 +11810,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
-  },
-  {
-    "id": "chv-42021568",
-    "title": "Lançamento imperdível no bairro 13 de maio | apartamentos para venda a partir r$ 342.300,0",
-    "type": "apto",
-    "bairroId": "treze-de-maio",
-    "street": "Rua Prefeito José De Carvalho, 99",
-    "area": 45,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 342300,
-    "condo": 405,
-    "iptu": 1712,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.10941,
-    "lng": -34.86802,
-    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 7.607/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 6
   },
   {
     "id": "chv-46391870",
@@ -12171,10 +11838,150 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10389,
     "lng": -34.86428,
-    "thesis": "Portal · 54 m² em Treze de Maio, pedido R$ 4.259/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 54 m² em Treze de Maio, pedido R$ 4.259/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 8
+  },
+  {
+    "id": "chv-36212634",
+    "title": "Apartamento com 3 dormitórios à venda, 53 m² por R$ 549.000,00 - Treze de Maio - João Pess",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Treze de Maio, João Pessoa",
+    "area": 53,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 549000,
+    "condo": 477,
+    "iptu": 2745,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11981,
+    "lng": -34.89233,
+    "thesis": "Portal · 53 m² em Treze de Maio, pedido R$ 10.358/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
+  },
+  {
+    "id": "chv-44715939",
+    "title": "Excelente Lançamento no Treze de Maio com 2 Quartos sendo 1 Suíte com Elevador e Lazer Com",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Rua Prefeito José De Carvalho, 200",
+    "area": 50,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 397448,
+    "condo": 450,
+    "iptu": 1987,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.10947,
+    "lng": -34.86812,
+    "thesis": "Portal · 50 m² em Treze de Maio, pedido R$ 7.949/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
+  },
+  {
+    "id": "chv-35375415",
+    "title": "Apartamento com 2 quartos à venda no Treze de Maio, João Pessoa",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Treze de Maio, João Pessoa",
+    "area": 47,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 286000,
+    "condo": 423,
+    "iptu": 1430,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.14112,
+    "lng": -34.85996,
+    "thesis": "Portal · 47 m² em Treze de Maio, pedido R$ 6.085/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-45987807",
+    "title": "Cobertura de 105 m², com 3 quartos, sendo 1 suíte, e ambientes com móveis projetados.",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Treze de Maio, João Pessoa",
+    "area": 105,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 550000,
+    "condo": 945,
+    "iptu": 2750,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.13932,
+    "lng": -34.85288,
+    "thesis": "Portal · 105 m² em Treze de Maio, pedido R$ 5.238/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
@@ -12207,7 +12014,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 55 m² em Alto do Mateus, pedido R$ 3.636/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Alto do Mateus, pedido R$ 3.636/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12243,7 +12050,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14264,
     "lng": -34.90721,
-    "thesis": "Portal · 56 m² em Alto do Mateus, pedido R$ 2.589/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Alto do Mateus, pedido R$ 2.589/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -12280,7 +12087,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 55 m² em Alto do Mateus, pedido R$ 3.455/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Alto do Mateus, pedido R$ 3.455/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12316,7 +12123,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14063,
     "lng": -34.90866,
-    "thesis": "Portal · 60 m² em Alto do Mateus, pedido R$ 3.000/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Alto do Mateus, pedido R$ 3.000/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -12352,7 +12159,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 50 m² em Alto do Mateus, pedido R$ 4.400/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Alto do Mateus, pedido R$ 4.400/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12387,7 +12194,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 48 m² em Alto do Mateus, pedido R$ 3.750/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 48 m² em Alto do Mateus, pedido R$ 3.750/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12395,42 +12202,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
-  },
-  {
-    "id": "chv-39780199",
-    "title": "Apartamento com 2 quartos à venda na Rua Químico José João de Miranda Freire, Alto do Mate",
-    "type": "apto",
-    "bairroId": "alto-do-mateus",
-    "street": "Rua Químico José João De Miranda Freire, ",
-    "area": 56,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 180000,
-    "condo": 504,
-    "iptu": 900,
-    "seaMeters": 6000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.13903,
-    "lng": -34.9106,
-    "thesis": "Portal · 56 m² em Alto do Mateus, pedido R$ 3.214/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 16
   },
   {
     "id": "chv-37675136",
@@ -12458,7 +12229,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 50 m² em Alto do Mateus, pedido R$ 3.600/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Alto do Mateus, pedido R$ 3.600/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12466,43 +12237,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
-  },
-  {
-    "id": "chv-38669851",
-    "title": "Apartamento à venda no bairro Alto do Mateus - João Pessoa/PB",
-    "type": "apto",
-    "bairroId": "alto-do-mateus",
-    "street": "Alto do Mateus, João Pessoa",
-    "area": 56,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 145000,
-    "condo": 504,
-    "iptu": 800,
-    "seaMeters": 6000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb"
-    ],
-    "lat": -7.109999999999999,
-    "lng": -34.87288,
-    "thesis": "Portal · 56 m² em Alto do Mateus, pedido R$ 2.589/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
   },
   {
     "id": "chv-27389224",
@@ -12531,7 +12265,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 40 m² em Alto do Mateus, pedido R$ 3.250/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 40 m² em Alto do Mateus, pedido R$ 3.250/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12539,6 +12273,76 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 4
+  },
+  {
+    "id": "chv-41743883",
+    "title": "Apartamento com 2 dormitórios à venda, 45 m² por R$ 397.448,32 - Treze de Maio - João Pess",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Treze de Maio, João Pessoa",
+    "area": 45,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 397448,
+    "condo": 405,
+    "iptu": 1987,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11981,
+    "lng": -34.89233,
+    "thesis": "Portal · 45 m² em Treze de Maio, pedido R$ 8.832/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 21
+  },
+  {
+    "id": "chv-24867217",
+    "title": "Apartamento com 3 dormitórios à venda, 78 m² por R$ 499.000,00 - Treze de Maio - João Pess",
+    "type": "apto",
+    "bairroId": "treze-de-maio",
+    "street": "Treze de Maio, João Pessoa",
+    "area": 78,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 499000,
+    "condo": 702,
+    "iptu": 2495,
+    "seaMeters": 5000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11981,
+    "lng": -34.89233,
+    "thesis": "Portal · 78 m² em Treze de Maio, pedido R$ 6.397/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 18
   },
   {
     "id": "chv-45991924",
@@ -12567,7 +12371,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1846,
     "lng": -34.8706,
-    "thesis": "Portal · 50 m² em Indústrias, pedido R$ 3.000/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 50 m² em Indústrias, pedido R$ 3.000/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12602,7 +12406,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1779601,
     "lng": -34.9228082,
-    "thesis": "Portal · 55 m² em Indústrias, pedido R$ 3.455/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Indústrias, pedido R$ 3.455/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12610,6 +12414,78 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
+  },
+  {
+    "id": "chv-41853713",
+    "title": "Oportunidade única: Apartamento com 2 quartos em Bairro das Indústrias - João Pessoa - PB",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Rua Dos Diamantes, 2",
+    "area": 47,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 129000,
+    "condo": 423,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17138,
+    "lng": -34.91801,
+    "thesis": "Portal · 47 m² em Indústrias, pedido R$ 2.745/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
+  },
+  {
+    "id": "chv-43082913",
+    "title": "Apartamento com 2 dormitórios à venda, 41 m² por R$ 215.000,00 - Bairro das Indústrias - J",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 41,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 215000,
+    "condo": 369,
+    "iptu": 1075,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 41 m² em Indústrias, pedido R$ 5.244/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-42769103",
@@ -12638,7 +12514,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 42 m² em Indústrias, pedido R$ 2.381/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 42 m² em Indústrias, pedido R$ 2.381/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -12647,41 +12523,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 4
-  },
-  {
-    "id": "chv-45867195",
-    "title": "Apartamento com 2 quartos à venda na Rua da Ação, S/N, Indústrias, João Pessoa",
-    "type": "apto",
-    "bairroId": "industrias",
-    "street": "Rua Da Ação, S/N",
-    "area": 41,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 2012,
-    "ask": 195000,
-    "condo": 369,
-    "iptu": 975,
-    "seaMeters": 7400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.17603,
-    "lng": -34.91246,
-    "thesis": "Portal · 41 m² em Indústrias, pedido R$ 4.756/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
   },
   {
     "id": "chv-18257342",
@@ -12710,7 +12551,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 52 m² em Indústrias, pedido R$ 2.692/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 52 m² em Indústrias, pedido R$ 2.692/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -12719,6 +12560,332 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
+  },
+  {
+    "id": "chv-19603225",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 85.000,00 - Bairro das Indústrias - João Pess",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 62,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 85000,
+    "condo": 558,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 62 m² em Indústrias, pedido R$ 1.371/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 5
+  },
+  {
+    "id": "chv-8676954",
+    "title": "Apartamento com 2 dormitórios à venda, 51 m² por R$ 90.000 - Bairro das Indústrias - João ",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 51,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 90000,
+    "condo": 459,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 51 m² em Indústrias, pedido R$ 1.765/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
+  },
+  {
+    "id": "chv-36871158",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 166.000 - Bairro das Indústrias - João Pessoa",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 46,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 166000,
+    "condo": 414,
+    "iptu": 830,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 46 m² em Indústrias, pedido R$ 3.609/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 17
+  },
+  {
+    "id": "chv-23325053",
+    "title": "Apartamento à venda por R$ 133.000,00 - Bairro das Indústrias - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 50,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 133000,
+    "condo": 450,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 50 m² em Indústrias, pedido R$ 2.660/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
+  },
+  {
+    "id": "chv-25308456",
+    "title": "Apartamento com 2 dormitórios à venda por R$ 130.000,00 - Bairro das Indústrias - João Pes",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 42,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 130000,
+    "condo": 378,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 42 m² em Indústrias, pedido R$ 3.095/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
+  },
+  {
+    "id": "chv-18813340",
+    "title": "Apartamento com 2 dormitórios à venda, 43 m² por R$ 120.000 - Indústrias - João Pessoa/PB",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Indústrias, João Pessoa",
+    "area": 43,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 120000,
+    "condo": 387,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.17766,
+    "lng": -34.91876,
+    "thesis": "Portal · 43 m² em Indústrias, pedido R$ 2.791/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
+  },
+  {
+    "id": "chv-43153884",
+    "title": "Apartamento com 2 quartos à venda na Rua dos Carteiros, 100, Indústrias, João Pessoa",
+    "type": "apto",
+    "bairroId": "industrias",
+    "street": "Rua Dos Carteiros, 100",
+    "area": 43,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 172000,
+    "condo": 387,
+    "iptu": 860,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1759,
+    "lng": -34.92054,
+    "thesis": "Portal · 43 m² em Indústrias, pedido R$ 4.000/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 1
+  },
+  {
+    "id": "chv-46696512",
+    "title": "Flat com 1 dormitório à venda, 24 m² por R$ 600.000,00 - Tambaú - João Pessoa/PB",
+    "type": "flat",
+    "bairroId": "tambau",
+    "street": "Tambaú, João Pessoa",
+    "area": 24,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 600000,
+    "condo": 216,
+    "iptu": 3000,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11392,
+    "lng": -34.82924,
+    "thesis": "Portal · 24 m² em Tambaú, pedido R$ 25.000/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
+  },
+  {
+    "id": "chv-45321983",
+    "title": "Oportunidade Imperdível em Tambaú! Flat MOBILIADO por 465 Mil.",
+    "type": "flat",
+    "bairroId": "tambau",
+    "street": "Tambaú, João Pessoa",
+    "area": 29,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 465000,
+    "condo": 261,
+    "iptu": 2325,
+    "seaMeters": 60,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.11056,
+    "lng": -34.82324,
+    "thesis": "Portal · 29 m² em Tambaú, pedido R$ 16.034/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 21
   },
   {
     "id": "chv-42808515",
@@ -12747,7 +12914,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11649,
     "lng": -34.82507,
-    "thesis": "Portal · 400 m² em Tambaú, pedido R$ 9.750/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 400 m² em Tambaú, pedido R$ 9.750/m² contra 10.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12755,42 +12922,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
-  },
-  {
-    "id": "chv-45321983",
-    "title": "Oportunidade Imperdível em Tambaú! Flat MOBILIADO por 465 Mil.",
-    "type": "flat",
-    "bairroId": "tambau",
-    "street": "Tambaú, João Pessoa",
-    "area": 29,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 465000,
-    "condo": 261,
-    "iptu": 2325,
-    "seaMeters": 60,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb"
-    ],
-    "lat": -7.11056,
-    "lng": -34.82324,
-    "thesis": "Portal · 29 m² em Tambaú, pedido R$ 16.034/m² contra 10.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Unidade compacta: teses de diária e de moradia não se misturam."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
   },
   {
     "id": "chv-45829320",
@@ -12819,7 +12950,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10658,
     "lng": -34.83896,
-    "thesis": "Portal · 220 m² em Manaíra, pedido R$ 4.091/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Manaíra, pedido R$ 4.091/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -12830,20 +12961,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 21
   },
   {
-    "id": "chv-43194328",
-    "title": "Casa com 4 quartos à venda na Rua Zilda Nunes da Silva, 100, Portal do Sol, João Pessoa",
+    "id": "chv-46552684",
+    "title": "Casa em condomínio fechado no Altiplano Nobre- Oportunidade",
     "type": "casa",
-    "bairroId": "portal-do-sol",
-    "street": "Rua Zilda Nunes Da Silva, 100",
-    "area": 246,
-    "rooms": 4,
+    "bairroId": "altiplano",
+    "street": "Avenida João Cirilo Da Silva, 1700",
+    "area": 300,
+    "rooms": 5,
     "suites": 1,
     "parking": 1,
     "year": 1998,
-    "ask": 2100000,
+    "ask": 2900000,
     "condo": 0,
-    "iptu": 10500,
-    "seaMeters": 1600,
+    "iptu": 14500,
+    "seaMeters": 900,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -12851,18 +12982,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
+      "preco",
       "rua"
     ],
-    "lat": -7.14924,
-    "lng": -34.82302,
-    "thesis": "Portal · 246 m² em Portal do Sol, pedido R$ 8.537/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1329,
+    "lng": -34.824,
+    "thesis": "Portal · 300 m² em Altiplano, pedido R$ 9.667/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 8
+    "facade": 1
   },
   {
     "id": "chv-32435664",
@@ -12890,7 +13022,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17112,
     "lng": -34.85984,
-    "thesis": "Portal · 104 m² em Mangabeira, pedido R$ 7.212/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 104 m² em Mangabeira, pedido R$ 7.212/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -12898,78 +13030,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 2
-  },
-  {
-    "id": "chv-43945525",
-    "title": "CABEDELO, PB Apto triplex a 800m da praia de Intermarés - João Pessoa.",
-    "type": "casa",
-    "bairroId": "centro",
-    "street": "Rodovia Br 230 Km 9, 01",
-    "area": 165,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 820000,
-    "condo": 0,
-    "iptu": 4100,
-    "seaMeters": 2400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.08246,
-    "lng": -34.84916,
-    "thesis": "Portal · 165 m² em Centro, pedido R$ 4.970/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
-  },
-  {
-    "id": "chv-40483667",
-    "title": "Casa com localização privilegiada à venda – excelente para moradia ou investimento",
-    "type": "casa",
-    "bairroId": "cabo-branco",
-    "street": "Rua Paulino Pinto, 359",
-    "area": 340,
-    "rooms": 5,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 2699000,
-    "condo": 0,
-    "iptu": 13495,
-    "seaMeters": 80,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.11726,
-    "lng": -34.83026,
-    "thesis": "Portal · 340 m² em Cabo Branco, pedido R$ 7.938/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
   },
   {
     "id": "chv-44749932",
@@ -12997,7 +13057,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12094,
     "lng": -34.82445,
-    "thesis": "Portal · 256 m² em Cabo Branco, pedido R$ 12.109/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 256 m² em Cabo Branco, pedido R$ 12.109/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -13005,6 +13065,152 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 12
+  },
+  {
+    "id": "chv-30721618",
+    "title": "oportunidade de casa no Cabo Branco, pouco minutos da praia.",
+    "type": "casa",
+    "bairroId": "cabo-branco",
+    "street": "Rua Paulino Pinto, ",
+    "area": 310,
+    "rooms": 6,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 2699000,
+    "condo": 0,
+    "iptu": 13495,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.12221,
+    "lng": -34.82908,
+    "thesis": "Portal · 310 m² em Cabo Branco, pedido R$ 8.706/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
+  },
+  {
+    "id": "chv-45322080",
+    "title": "Flat com 1 dormitório à venda, 28 m² por R$ 445.000,00 - Cabo Branco - João Pessoa/PB",
+    "type": "flat",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 28,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 445000,
+    "condo": 252,
+    "iptu": 2225,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1195,
+    "lng": -34.8188,
+    "thesis": "Portal · 28 m² em Cabo Branco, pedido R$ 15.893/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 18
+  },
+  {
+    "id": "chv-45322081",
+    "title": "Flat com 1 dormitório à venda, 42 m² por R$ 780.000,00 - Cabo Branco - João Pessoa| PB",
+    "type": "flat",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 42,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 780000,
+    "condo": 378,
+    "iptu": 3900,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1193800000000005,
+    "lng": -34.8188,
+    "thesis": "Portal · 42 m² em Cabo Branco, pedido R$ 18.571/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
+  },
+  {
+    "id": "chv-46696508",
+    "title": "Flat com 1 dormitório à venda, 42 m² por R$ 480.000,00 - Cabo Branco - João Pessoa/PB",
+    "type": "flat",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 42,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 480000,
+    "condo": 378,
+    "iptu": 2400,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.12286,
+    "lng": -34.82744,
+    "thesis": "Portal · 42 m² em Cabo Branco, pedido R$ 11.429/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
   },
   {
     "id": "chv-45322049",
@@ -13032,7 +13238,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.115060000000001,
     "lng": -34.818920000000006,
-    "thesis": "Portal · 25 m² em Cabo Branco, pedido R$ 14.800/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 25 m² em Cabo Branco, pedido R$ 14.800/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -13041,43 +13247,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
-  },
-  {
-    "id": "chv-40962374",
-    "title": "Casa próximo a Epitácio Pessoa e a pouco minutos da praia de Tambaú - COD CA0012",
-    "type": "casa",
-    "bairroId": "cabo-branco",
-    "street": "Cabo Branco, João Pessoa",
-    "area": 340,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 2699000,
-    "condo": 0,
-    "iptu": 13495,
-    "seaMeters": 80,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.12351,
-    "lng": -34.82614,
-    "thesis": "Portal · 340 m² em Cabo Branco, pedido R$ 7.938/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
   },
   {
     "id": "chv-46155914",
@@ -13106,7 +13275,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.118180000000001,
     "lng": -34.834160000000004,
-    "thesis": "Portal · 310 m² em Cabo Branco, pedido R$ 9.677/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 310 m² em Cabo Branco, pedido R$ 9.677/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13142,7 +13311,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12106,
     "lng": -34.8188,
-    "thesis": "Portal · 33 m² em Cabo Branco, pedido R$ 16.636/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 33 m² em Cabo Branco, pedido R$ 16.636/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -13151,43 +13320,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 15
-  },
-  {
-    "id": "chv-37358206",
-    "title": "Casa com 6 quartos à venda na Rua Paulino Pinto, Cabo Branco, João Pessoa",
-    "type": "casa",
-    "bairroId": "cabo-branco",
-    "street": "Rua Paulino Pinto, ",
-    "area": 310,
-    "rooms": 6,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 3000000,
-    "condo": 0,
-    "iptu": 15000,
-    "seaMeters": 80,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.12221,
-    "lng": -34.82908,
-    "thesis": "Portal · 310 m² em Cabo Branco, pedido R$ 9.677/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 7
   },
   {
     "id": "chv-45322013",
@@ -13215,7 +13347,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.118060000000001,
     "lng": -34.818920000000006,
-    "thesis": "Portal · 18 m² em Cabo Branco, pedido R$ 21.944/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 18 m² em Cabo Branco, pedido R$ 21.944/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -13224,79 +13356,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
-  },
-  {
-    "id": "chv-45322078",
-    "title": "Casa com 1 quarto à venda no Cabo Branco, João Pessoa",
-    "type": "casa",
-    "bairroId": "cabo-branco",
-    "street": "Cabo Branco, João Pessoa",
-    "area": 20,
-    "rooms": 1,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 478687,
-    "condo": 0,
-    "iptu": 2393,
-    "seaMeters": 80,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.1225000000000005,
-    "lng": -34.8188,
-    "thesis": "Portal · 20 m² em Cabo Branco, pedido R$ 23.934/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 16
-  },
-  {
-    "id": "chv-37358366",
-    "title": "Casa com 5 dormitórios à venda, 340 m² por R$ 2.699.000,00 - Cabo Branco - João Pessoa/PB",
-    "type": "casa",
-    "bairroId": "cabo-branco",
-    "street": "Rua Paulino Pinto, ",
-    "area": 340,
-    "rooms": 5,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 2699000,
-    "condo": 0,
-    "iptu": 13495,
-    "seaMeters": 80,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.12221,
-    "lng": -34.82908,
-    "thesis": "Portal · 340 m² em Cabo Branco, pedido R$ 7.938/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 4
   },
   {
     "id": "chv-45322072",
@@ -13324,7 +13383,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.123220000000001,
     "lng": -34.8188,
-    "thesis": "Portal · 32 m² em Cabo Branco, pedido R$ 19.063/m² contra 12.541 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 32 m² em Cabo Branco, pedido R$ 19.063/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -13333,6 +13392,115 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-45321974",
+    "title": "Flat com 1 dormitório à venda, 30 m² por R$ 610.000,00 - Cabo Branco - João Pessoa/PB",
+    "type": "flat",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 30,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 610000,
+    "condo": 270,
+    "iptu": 3050,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.120100000000001,
+    "lng": -34.82144,
+    "thesis": "Portal · 30 m² em Cabo Branco, pedido R$ 20.333/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
+  },
+  {
+    "id": "chv-45321997",
+    "title": "Flat com 1 dormitório à venda, 34 m² por R$ 580.000,00 - Cabo Branco - João Pessoa/PB",
+    "type": "flat",
+    "bairroId": "cabo-branco",
+    "street": "Cabo Branco, João Pessoa",
+    "area": 34,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 580000,
+    "condo": 306,
+    "iptu": 2900,
+    "seaMeters": 80,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.1214200000000005,
+    "lng": -34.82144,
+    "thesis": "Portal · 34 m² em Cabo Branco, pedido R$ 17.059/m² contra 12.541 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
+  },
+  {
+    "id": "chv-41113385",
+    "title": "Cobertura no ed. Porto dover em manaíra joão pessoa/pb cód.3454",
+    "type": "casa",
+    "bairroId": "manaira",
+    "street": "Avenida Ingá, 553",
+    "area": 300,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1500000,
+    "condo": 0,
+    "iptu": 7500,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.10755,
+    "lng": -34.83331,
+    "thesis": "Portal · 300 m² em Manaíra, pedido R$ 5.000/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
   },
   {
     "id": "chv-45095151",
@@ -13361,7 +13529,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1018,
     "lng": -34.827,
-    "thesis": "Portal · 201 m² em Manaíra, pedido R$ 6.965/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 201 m² em Manaíra, pedido R$ 6.965/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13370,6 +13538,44 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-44822426",
+    "title": "Casa com 2 quartos à venda na Rua Gláucia Maria dos Santos Gouveia, --, Manaíra, João Pess",
+    "type": "casa",
+    "bairroId": "manaira",
+    "street": "Rua Gláucia Maria Dos Santos Gouveia, --",
+    "area": 208,
+    "rooms": 2,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 950000,
+    "condo": 0,
+    "iptu": 4750,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.10612,
+    "lng": -34.84002,
+    "thesis": "Portal · 208 m² em Manaíra, pedido R$ 4.567/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 6
   },
   {
     "id": "chv-46308807",
@@ -13398,7 +13604,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10658,
     "lng": -34.83896,
-    "thesis": "Portal · 373 m² em Manaíra, pedido R$ 3.217/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 373 m² em Manaíra, pedido R$ 3.217/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13435,7 +13641,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09832,
     "lng": -34.83252,
-    "thesis": "Portal · 191 m² em Manaíra, pedido R$ 4.712/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 191 m² em Manaíra, pedido R$ 4.712/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13444,43 +13650,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 12
-  },
-  {
-    "id": "chv-42995503",
-    "title": "Casa com 3 quartos à venda na Avenida Maria Rosa, --, Manaíra, João Pessoa",
-    "type": "casa",
-    "bairroId": "manaira",
-    "street": "Avenida Maria Rosa, --",
-    "area": 179,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1100000,
-    "condo": 0,
-    "iptu": 5500,
-    "seaMeters": 180,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.10302,
-    "lng": -34.83955,
-    "thesis": "Portal · 179 m² em Manaíra, pedido R$ 6.145/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 4
   },
   {
     "id": "chv-45358934",
@@ -13509,7 +13678,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1024,
     "lng": -34.82916,
-    "thesis": "Portal · 191 m² em Manaíra, pedido R$ 4.712/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 191 m² em Manaíra, pedido R$ 4.712/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13518,6 +13687,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
+  },
+  {
+    "id": "chv-43542822",
+    "title": "Casa com 5 quartos à venda na Rua Gláucia Maria dos Santos Gouveia, --, Manaíra, João Pess",
+    "type": "casa",
+    "bairroId": "manaira",
+    "street": "Rua Gláucia Maria Dos Santos Gouveia, --",
+    "area": 191,
+    "rooms": 5,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 950000,
+    "condo": 0,
+    "iptu": 4750,
+    "seaMeters": 180,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.10612,
+    "lng": -34.84002,
+    "thesis": "Portal · 191 m² em Manaíra, pedido R$ 4.974/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
   },
   {
     "id": "chv-30647513",
@@ -13546,7 +13752,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10438,
     "lng": -34.8297,
-    "thesis": "Portal · 314 m² em Manaíra, pedido R$ 7.643/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 314 m² em Manaíra, pedido R$ 7.643/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -13581,7 +13787,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10528,
     "lng": -34.8408,
-    "thesis": "Portal · 130 m² em Manaíra, pedido R$ 9.231/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 130 m² em Manaíra, pedido R$ 9.231/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -13589,43 +13795,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 12
-  },
-  {
-    "id": "chv-43542822",
-    "title": "Casa com 5 quartos à venda na Rua Gláucia Maria dos Santos Gouveia, --, Manaíra, João Pess",
-    "type": "casa",
-    "bairroId": "manaira",
-    "street": "Rua Gláucia Maria Dos Santos Gouveia, --",
-    "area": 191,
-    "rooms": 5,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 950000,
-    "condo": 0,
-    "iptu": 4750,
-    "seaMeters": 180,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.10612,
-    "lng": -34.84002,
-    "thesis": "Portal · 191 m² em Manaíra, pedido R$ 4.974/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
   },
   {
     "id": "chv-33304911",
@@ -13654,7 +13823,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10252,
     "lng": -34.83996,
-    "thesis": "Portal · 208 m² em Manaíra, pedido R$ 4.087/m² contra 8.924 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 208 m² em Manaíra, pedido R$ 4.087/m² contra 8.924 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13691,7 +13860,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06665,
     "lng": -34.84109,
-    "thesis": "Portal · 240 m² em Bessa, pedido R$ 7.404/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 240 m² em Bessa, pedido R$ 7.404/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -13699,6 +13868,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 4
+  },
+  {
+    "id": "chv-46370752",
+    "title": "PRAIA DO BESSA . Casa com 4 quartos sendo todos suítes, 3 salas, garagens para 4 carros e ",
+    "type": "casa",
+    "bairroId": "bessa",
+    "street": "Avenida Presidente Afonso Pena, ",
+    "area": 350,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1990000,
+    "condo": 0,
+    "iptu": 9950,
+    "seaMeters": 120,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.06608,
+    "lng": -34.8404,
+    "thesis": "Portal · 350 m² em Bessa, pedido R$ 5.686/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 11
   },
   {
     "id": "chv-43117709",
@@ -13727,7 +13933,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.07188,
     "lng": -34.84307,
-    "thesis": "Portal · 144 m² em Bessa, pedido R$ 5.278/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 144 m² em Bessa, pedido R$ 5.278/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13764,7 +13970,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06794,
     "lng": -34.83284,
-    "thesis": "Portal · 173 m² em Bessa, pedido R$ 6.647/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 173 m² em Bessa, pedido R$ 6.647/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13773,6 +13979,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
+  },
+  {
+    "id": "chv-43831874",
+    "title": "Casa com 3 quartos à venda na Avenida Marechal Hermes da Fonseca, --, Bessa, João Pessoa",
+    "type": "casa",
+    "bairroId": "bessa",
+    "street": "Avenida Marechal Hermes Da Fonseca, --",
+    "area": 360,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1300000,
+    "condo": 0,
+    "iptu": 6500,
+    "seaMeters": 120,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.06867,
+    "lng": -34.84627,
+    "thesis": "Portal · 360 m² em Bessa, pedido R$ 3.611/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
   },
   {
     "id": "chv-41074898",
@@ -13801,7 +14044,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06044,
     "lng": -34.84759,
-    "thesis": "Portal · 259 m² em Bessa, pedido R$ 4.247/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 259 m² em Bessa, pedido R$ 4.247/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13838,7 +14081,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.06542,
     "lng": -34.83092,
-    "thesis": "Portal · 22 m² em Bessa, pedido R$ 17.045/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 22 m² em Bessa, pedido R$ 17.045/m² contra 8.533 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -13848,20 +14091,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 5
   },
   {
-    "id": "chv-45508181",
-    "title": "**casa nova, totalmente reformada e a 600 metros da orla do bessa**",
+    "id": "chv-42518283",
+    "title": "Casa com 5 quartos à venda na Rua Norberto de Castro Nogueira, --, Jardim Oceania, João Pe",
     "type": "casa",
-    "bairroId": "bessa",
-    "street": "Rua Maria Das Graças Ribeiro De Alencar, ",
-    "area": 180,
-    "rooms": 3,
-    "suites": 0,
+    "bairroId": "jardim-oceania",
+    "street": "Rua Norberto De Castro Nogueira, --",
+    "area": 350,
+    "rooms": 5,
+    "suites": 1,
     "parking": 1,
     "year": 1998,
-    "ask": 950000,
+    "ask": 3200000,
     "condo": 0,
-    "iptu": 4750,
-    "seaMeters": 120,
+    "iptu": 16000,
+    "seaMeters": 220,
     "condition": 0.88,
     "daysListed": 28,
     "portalCount": 1,
@@ -13872,54 +14115,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "rua"
     ],
-    "lat": -7.06069,
-    "lng": -34.84572,
-    "thesis": "Portal · 180 m² em Bessa, pedido R$ 5.278/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.08137,
+    "lng": -34.83371,
+    "thesis": "Portal · 350 m² em Jardim Oceania, pedido R$ 9.143/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 19
-  },
-  {
-    "id": "chv-43965079",
-    "title": "Casa com 3 quartos à venda no Bessa, João Pessoa",
-    "type": "casa",
-    "bairroId": "bessa",
-    "street": "Bessa, João Pessoa",
-    "area": 210,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 900000,
-    "condo": 0,
-    "iptu": 4500,
-    "seaMeters": 120,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.071059999999999,
-    "lng": -34.846039999999995,
-    "thesis": "Portal · 210 m² em Bessa, pedido R$ 4.286/m² contra 8.533 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 17
+    "facade": 21
   },
   {
     "id": "chv-36376106",
@@ -13948,7 +14153,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09128,
     "lng": -34.8418,
-    "thesis": "Portal · 350 m² em Jardim Oceania, pedido R$ 9.143/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 350 m² em Jardim Oceania, pedido R$ 9.143/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -13984,7 +14189,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08696,
     "lng": -34.84636,
-    "thesis": "Portal · 363 m² em Jardim Oceania, pedido R$ 5.510/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 363 m² em Jardim Oceania, pedido R$ 5.510/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -13993,6 +14198,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
+  },
+  {
+    "id": "chv-37476450",
+    "title": "Casa com 4 quartos à venda no Jardim Oceania, João Pessoa",
+    "type": "casa",
+    "bairroId": "jardim-oceania",
+    "street": "Jardim Oceania, João Pessoa",
+    "area": 160,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1600000,
+    "condo": 0,
+    "iptu": 8000,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.08504,
+    "lng": -34.83184,
+    "thesis": "Portal · 160 m² em Jardim Oceania, pedido R$ 10.000/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
   },
   {
     "id": "chv-45322048",
@@ -14021,7 +14262,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08408,
     "lng": -34.82932,
-    "thesis": "Portal · 57 m² em Jardim Oceania, pedido R$ 10.111/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 57 m² em Jardim Oceania, pedido R$ 10.111/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -14056,7 +14297,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08888,
     "lng": -34.82932,
-    "thesis": "Portal · 25 m² em Jardim Oceania, pedido R$ 16.000/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 25 m² em Jardim Oceania, pedido R$ 16.000/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -14092,7 +14333,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09188,
     "lng": -34.8292,
-    "thesis": "Portal · 27 m² em Jardim Oceania, pedido R$ 23.333/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 27 m² em Jardim Oceania, pedido R$ 23.333/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -14128,7 +14369,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0896,
     "lng": -34.8292,
-    "thesis": "Portal · 25 m² em Jardim Oceania, pedido R$ 17.200/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 25 m² em Jardim Oceania, pedido R$ 17.200/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -14164,7 +14405,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08672,
     "lng": -34.8292,
-    "thesis": "Portal · 22 m² em Jardim Oceania, pedido R$ 25.000/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 22 m² em Jardim Oceania, pedido R$ 25.000/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -14173,6 +14414,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 19
+  },
+  {
+    "id": "chv-46696511",
+    "title": "Flat com 1 dormitório à venda, 45 m² por R$ 650.000,00 - Jardim Oceania - João Pessoa/PB",
+    "type": "flat",
+    "bairroId": "jardim-oceania",
+    "street": "Jardim Oceania, João Pessoa",
+    "area": 45,
+    "rooms": 1,
+    "suites": 0,
+    "parking": 1,
+    "year": 2012,
+    "ask": 650000,
+    "condo": 405,
+    "iptu": 3250,
+    "seaMeters": 220,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "airbnb"
+    ],
+    "lat": -7.08864,
+    "lng": -34.83784,
+    "thesis": "Portal · 45 m² em Jardim Oceania, pedido R$ 14.444/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Unidade compacta: teses de diária e de moradia não se misturam."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
   },
   {
     "id": "chv-45322069",
@@ -14200,7 +14477,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08564,
     "lng": -34.8292,
-    "thesis": "Portal · 23 m² em Jardim Oceania, pedido R$ 28.261/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 23 m² em Jardim Oceania, pedido R$ 28.261/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Unidade compacta: teses de diária e de moradia não se misturam."
@@ -14237,7 +14514,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.07829,
     "lng": -34.83429,
-    "thesis": "Portal · 107 m² em Jardim Oceania, pedido R$ 4.159/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 107 m² em Jardim Oceania, pedido R$ 4.159/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14246,42 +14523,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 16
-  },
-  {
-    "id": "chv-42518283",
-    "title": "Casa com 5 quartos à venda na Rua Norberto de Castro Nogueira, --, Jardim Oceania, João Pe",
-    "type": "casa",
-    "bairroId": "jardim-oceania",
-    "street": "Rua Norberto De Castro Nogueira, --",
-    "area": 350,
-    "rooms": 5,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 3200000,
-    "condo": 0,
-    "iptu": 16000,
-    "seaMeters": 220,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.08137,
-    "lng": -34.83371,
-    "thesis": "Portal · 350 m² em Jardim Oceania, pedido R$ 9.143/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
   },
   {
     "id": "chv-40305157",
@@ -14310,7 +14551,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12724,
     "lng": -34.84506,
-    "thesis": "Portal · 195 m² em Altiplano, pedido R$ 7.692/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 195 m² em Altiplano, pedido R$ 7.692/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14346,7 +14587,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13,
     "lng": -34.8405,
-    "thesis": "Portal · 333 m² em Altiplano, pedido R$ 12.312/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 333 m² em Altiplano, pedido R$ 12.312/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -14382,7 +14623,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13036,
     "lng": -34.82964,
-    "thesis": "Portal · 390 m² em Altiplano, pedido R$ 3.846/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 390 m² em Altiplano, pedido R$ 3.846/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14419,7 +14660,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1324,
     "lng": -34.82829,
-    "thesis": "Portal · 200 m² em Altiplano, pedido R$ 4.000/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Altiplano, pedido R$ 4.000/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14456,7 +14697,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13516,
     "lng": -34.85082,
-    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 6.818/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 6.818/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14493,7 +14734,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13781,
     "lng": -34.83244,
-    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 6.818/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 6.818/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14530,7 +14771,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.128439999999999,
     "lng": -34.850699999999996,
-    "thesis": "Portal · 400 m² em Altiplano, pedido R$ 7.000/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 400 m² em Altiplano, pedido R$ 7.000/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14566,7 +14807,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1288,
     "lng": -34.84446,
-    "thesis": "Portal · 37 m² em Altiplano, pedido R$ 31.081/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 37 m² em Altiplano, pedido R$ 31.081/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -14602,7 +14843,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1324,
     "lng": -34.82829,
-    "thesis": "Portal · 250 m² em Altiplano, pedido R$ 4.600/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 250 m² em Altiplano, pedido R$ 4.600/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14611,43 +14852,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
-  },
-  {
-    "id": "chv-41865935",
-    "title": "Casa com 4 quartos à venda na Rua Oneida Agra da Nóbrega, Altiplano Cabo Branco, João Pess",
-    "type": "casa",
-    "bairroId": "altiplano",
-    "street": "Rua Oneida Agra Da Nóbrega, ",
-    "area": 360,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1150000,
-    "condo": 0,
-    "iptu": 5750,
-    "seaMeters": 900,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.13708,
-    "lng": -34.82979,
-    "thesis": "Portal · 360 m² em Altiplano, pedido R$ 3.194/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 15
   },
   {
     "id": "chv-35068179",
@@ -14676,7 +14880,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13717,
     "lng": -34.83024,
-    "thesis": "Portal · 260 m² em Altiplano, pedido R$ 4.615/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 260 m² em Altiplano, pedido R$ 4.615/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14685,6 +14889,77 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-40732070",
+    "title": "Casa de 280m2 com 3 Suítes, Toda Projetada e Piscina Privativa",
+    "type": "casa",
+    "bairroId": "altiplano",
+    "street": "Rua Professora Nair Paiva Dos Santos, 350",
+    "area": 280,
+    "rooms": 3,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 2600000,
+    "condo": 0,
+    "iptu": 13000,
+    "seaMeters": 900,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.14132,
+    "lng": -34.82744,
+    "thesis": "Portal · 280 m² em Altiplano, pedido R$ 9.286/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 8
+  },
+  {
+    "id": "chv-46155913",
+    "title": "Casa de Luxo à Venda no Condomínio Bougainville Residence Privé",
+    "type": "casa",
+    "bairroId": "altiplano",
+    "street": "Altiplano, João Pessoa",
+    "area": 330,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 3700000,
+    "condo": 0,
+    "iptu": 18500,
+    "seaMeters": 900,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.13,
+    "lng": -34.84986,
+    "thesis": "Portal · 330 m² em Altiplano, pedido R$ 11.212/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-42369729",
@@ -14713,7 +14988,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08955,
     "lng": -34.84185,
-    "thesis": "Portal · 360 m² em Aeroclube, pedido R$ 4.167/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 360 m² em Aeroclube, pedido R$ 4.167/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14750,7 +15025,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08955,
     "lng": -34.84185,
-    "thesis": "Portal · 260 m² em Aeroclube, pedido R$ 5.769/m² contra 9.066 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 260 m² em Aeroclube, pedido R$ 5.769/m² contra 9.066 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14787,7 +15062,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.08311,
     "lng": -34.83504,
-    "thesis": "Portal · 384 m² em Jardim Oceania, pedido R$ 8.333/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 384 m² em Jardim Oceania, pedido R$ 8.333/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14824,7 +15099,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.07493,
     "lng": -34.83958,
-    "thesis": "Portal · 99 m² em Jardim Oceania, pedido R$ 3.939/m² contra 10.872 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 99 m² em Jardim Oceania, pedido R$ 3.939/m² contra 10.872 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14861,7 +15136,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09052,
     "lng": -34.842,
-    "thesis": "Portal · 200 m² em Brisamar, pedido R$ 2.750/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Brisamar, pedido R$ 2.750/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14898,7 +15173,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11132,
     "lng": -34.8401,
-    "thesis": "Portal · 240 m² em Brisamar, pedido R$ 1.875/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 240 m² em Brisamar, pedido R$ 1.875/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -14907,80 +15182,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
-  },
-  {
-    "id": "chv-45329906",
-    "title": "Casa com 4 quartos à venda na Rua Professor Francisco Oliveira Porto, 453, Brisamar, João ",
-    "type": "casa",
-    "bairroId": "brisamar",
-    "street": "Rua Professor Francisco Oliveira Porto, 453",
-    "area": 348,
-    "rooms": 4,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1600000,
-    "condo": 0,
-    "iptu": 8000,
-    "seaMeters": 1100,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.11434,
-    "lng": -34.84133,
-    "thesis": "Portal · 348 m² em Brisamar, pedido R$ 4.598/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 7
-  },
-  {
-    "id": "chv-39528801",
-    "title": "Casa com 3 quartos à venda na Rua Doutor Jeová Lins, 14, Brisamar, João Pessoa",
-    "type": "casa",
-    "bairroId": "brisamar",
-    "street": "Rua Doutor Jeová Lins, 14",
-    "area": 320,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 900000,
-    "condo": 0,
-    "iptu": 4500,
-    "seaMeters": 1100,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.1138,
-    "lng": -34.83825,
-    "thesis": "Portal · 320 m² em Brisamar, pedido R$ 2.813/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 2
   },
   {
     "id": "chv-46395146",
@@ -15009,7 +15210,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.0898,
     "lng": -34.85724,
-    "thesis": "Portal · 79 m² em Brisamar, pedido R$ 7.595/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 79 m² em Brisamar, pedido R$ 7.595/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15047,7 +15248,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11323,
     "lng": -34.84193,
-    "thesis": "Portal · 150 m² em Brisamar, pedido R$ 3.533/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 150 m² em Brisamar, pedido R$ 3.533/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15056,6 +15257,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
+  },
+  {
+    "id": "chv-45247796",
+    "title": "Casa ampla e elegante no Brisamar/Jardim Luna – Espaço, conforto e excelente localização!",
+    "type": "casa",
+    "bairroId": "brisamar",
+    "street": "Brisamar, João Pessoa",
+    "area": 348,
+    "rooms": 3,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1600000,
+    "condo": 0,
+    "iptu": 8000,
+    "seaMeters": 1100,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.08908,
+    "lng": -34.841519999999996,
+    "thesis": "Portal · 348 m² em Brisamar, pedido R$ 4.598/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
   },
   {
     "id": "chv-36433723",
@@ -15085,7 +15323,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.09448,
     "lng": -34.85136,
-    "thesis": "Portal · 240 m² em Brisamar, pedido R$ 4.167/m² contra 9.306 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 240 m² em Brisamar, pedido R$ 4.167/m² contra 9.306 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15122,7 +15360,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.117719999999999,
     "lng": -34.86024,
-    "thesis": "Portal · 187 m² em Torre, pedido R$ 3.209/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 187 m² em Torre, pedido R$ 3.209/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15131,6 +15369,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 10
+  },
+  {
+    "id": "chv-40846412",
+    "title": "Casa com 5 quartos à venda no Torre, João Pessoa",
+    "type": "casa",
+    "bairroId": "torre",
+    "street": "Torre, João Pessoa",
+    "area": 150,
+    "rooms": 5,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 330000,
+    "condo": 0,
+    "iptu": 1650,
+    "seaMeters": 2800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.121919999999999,
+    "lng": -34.86803999999999,
+    "thesis": "Portal · 150 m² em Torre, pedido R$ 2.200/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
   },
   {
     "id": "chv-36377859",
@@ -15159,7 +15434,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12971,
     "lng": -34.86539,
-    "thesis": "Portal · 385 m² em Torre, pedido R$ 1.636/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 385 m² em Torre, pedido R$ 1.636/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15197,7 +15472,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12503,
     "lng": -34.86379,
-    "thesis": "Portal · 131 m² em Torre, pedido R$ 2.672/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 131 m² em Torre, pedido R$ 2.672/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15208,54 +15483,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 3
   },
   {
-    "id": "chv-45425294",
-    "title": "Casa com 3 quartos à venda no Torre, João Pessoa",
+    "id": "chv-30211350",
+    "title": "Casa com 4 quartos à venda na Rua Pereira da Silva, 63, Torre, João Pessoa",
     "type": "casa",
     "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 20,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1000000,
-    "condo": 0,
-    "iptu": 5000,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.123119999999999,
-    "lng": -34.865159999999996,
-    "thesis": "Portal · 20 m² em Torre, pedido R$ 50.000/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
-  },
-  {
-    "id": "chv-45908901",
-    "title": "Casa com 4 quartos à venda no Torre, João Pessoa",
-    "type": "casa",
-    "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 180,
+    "street": "Rua Pereira Da Silva, 63",
+    "area": 110,
     "rooms": 4,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 1000000,
+    "ask": 410000,
     "condo": 0,
-    "iptu": 5000,
+    "iptu": 2050,
     "seaMeters": 2800,
     "condition": 0.88,
     "daysListed": 28,
@@ -15264,18 +15504,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
+      "preco",
       "rua"
     ],
-    "lat": -7.121079999999999,
-    "lng": -34.861799999999995,
-    "thesis": "Portal · 180 m² em Torre, pedido R$ 5.556/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1452063,
+    "lng": -34.9129874,
+    "thesis": "Portal · 110 m² em Torre, pedido R$ 3.727/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 2
+    "facade": 9
   },
   {
     "id": "chv-34269373",
@@ -15305,7 +15547,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11971,
     "lng": -34.85065,
-    "thesis": "Portal · 400 m² em Torre, pedido R$ 1.125/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 400 m² em Torre, pedido R$ 1.125/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15342,7 +15584,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12863,
     "lng": -34.85572,
-    "thesis": "Portal · 399 m² em Torre, pedido R$ 3.885/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 399 m² em Torre, pedido R$ 3.885/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15351,80 +15593,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
-  },
-  {
-    "id": "chv-43548670",
-    "title": "Casa à Venda na Torre | Excelente Localização Próxima à Beira Rio. CA0231",
-    "type": "casa",
-    "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 180,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 650000,
-    "condo": 0,
-    "iptu": 3250,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.11971,
-    "lng": -34.85065,
-    "thesis": "Portal · 180 m² em Torre, pedido R$ 3.611/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 8
-  },
-  {
-    "id": "chv-37358326",
-    "title": "Casa com 4 quartos à venda na Rua Caturité, 181, Torre, João Pessoa",
-    "type": "casa",
-    "bairroId": "torre",
-    "street": "Rua Caturité, 181",
-    "area": 200,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 580000,
-    "condo": 0,
-    "iptu": 2900,
-    "seaMeters": 2800,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.13024,
-    "lng": -34.86428,
-    "thesis": "Portal · 200 m² em Torre, pedido R$ 2.900/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 6
   },
   {
     "id": "chv-43451093",
@@ -15453,7 +15621,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12646,
     "lng": -34.86644,
-    "thesis": "Portal · 210 m² em Torre, pedido R$ 2.286/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 210 m² em Torre, pedido R$ 2.286/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15464,12 +15632,12 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 10
   },
   {
-    "id": "chv-45976251",
-    "title": "Casa com 3 quartos à venda no Torre, João Pessoa",
+    "id": "chv-46595345",
+    "title": "Casa com 3 quartos à venda na Avenida Aragão e Melo, 600, Torre, João Pessoa",
     "type": "casa",
     "bairroId": "torre",
-    "street": "Torre, João Pessoa",
-    "area": 115,
+    "street": "Avenida Aragão E Melo, 600",
+    "area": 80,
     "rooms": 3,
     "suites": 0,
     "parking": 1,
@@ -15485,19 +15653,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "rua"
     ],
-    "lat": -7.11971,
-    "lng": -34.85065,
-    "thesis": "Portal · 115 m² em Torre, pedido R$ 5.217/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.12407,
+    "lng": -34.86152,
+    "thesis": "Portal · 80 m² em Torre, pedido R$ 7.500/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 10
+    "facade": 4
   },
   {
     "id": "chv-38146761",
@@ -15527,7 +15694,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11971,
     "lng": -34.85065,
-    "thesis": "Portal · 30 m² em Torre, pedido R$ 4.000/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 30 m² em Torre, pedido R$ 4.000/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15564,7 +15731,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.117,
     "lng": -34.85796,
-    "thesis": "Portal · 214 m² em Torre, pedido R$ 2.336/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 214 m² em Torre, pedido R$ 2.336/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15575,19 +15742,56 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 15
   },
   {
-    "id": "chv-46140257",
-    "title": "Casa de alto padrão a venda em condomínio no bairro jardim cidade universitária em joão pe",
+    "id": "chv-38039302",
+    "title": "Casa com 3 quartos à venda na Avenida Rui Barbosa, Torre, João Pessoa",
+    "type": "casa",
+    "bairroId": "torre",
+    "street": "Avenida Rui Barbosa, ",
+    "area": 195,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 590000,
+    "condo": 0,
+    "iptu": 2950,
+    "seaMeters": 2800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.12545,
+    "lng": -34.86003,
+    "thesis": "Portal · 195 m² em Torre, pedido R$ 3.026/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
+  },
+  {
+    "id": "chv-45624289",
+    "title": "Casa com 4 quartos à venda no Bancários, João Pessoa",
     "type": "casa",
     "bairroId": "bancarios",
     "street": "Bancários, João Pessoa",
-    "area": 190,
-    "rooms": 3,
-    "suites": 1,
+    "area": 148,
+    "rooms": 4,
+    "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 2350000,
+    "ask": 790000,
     "condo": 0,
-    "iptu": 11750,
+    "iptu": 3950,
     "seaMeters": 5200,
     "condition": 0.88,
     "daysListed": 28,
@@ -15596,18 +15800,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
+      "preco",
       "rua"
     ],
-    "lat": -7.14576,
-    "lng": -34.864239999999995,
-    "thesis": "Portal · 190 m² em Bancários, pedido R$ 12.368/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1502,
+    "lng": -34.85476,
+    "thesis": "Portal · 148 m² em Bancários, pedido R$ 5.338/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 16
+    "facade": 6
   },
   {
     "id": "chv-22314898",
@@ -15636,7 +15841,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15248,
     "lng": -34.85968,
-    "thesis": "Portal · 200 m² em Bancários, pedido R$ 4.850/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Bancários, pedido R$ 4.850/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15674,7 +15879,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1459504,
     "lng": -34.8482069,
-    "thesis": "Portal · 330 m² em Bancários, pedido R$ 2.273/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 330 m² em Bancários, pedido R$ 2.273/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15711,7 +15916,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14768,
     "lng": -34.847319999999996,
-    "thesis": "Portal · 148 m² em Bancários, pedido R$ 5.405/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 148 m² em Bancários, pedido R$ 5.405/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -15746,7 +15951,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15294,
     "lng": -34.82886,
-    "thesis": "Portal · 190 m² em Bancários, pedido R$ 11.000/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 190 m² em Bancários, pedido R$ 11.000/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -15754,41 +15959,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 19
-  },
-  {
-    "id": "chv-44753494",
-    "title": "Casa com 3 quartos à venda no Bancários, João Pessoa",
-    "type": "casa",
-    "bairroId": "bancarios",
-    "street": "Bancários, João Pessoa",
-    "area": 90,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 830000,
-    "condo": 0,
-    "iptu": 4150,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.14828,
-    "lng": -34.85452,
-    "thesis": "Portal · 90 m² em Bancários, pedido R$ 9.222/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
   },
   {
     "id": "chv-38888683",
@@ -15816,7 +15986,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15452,
     "lng": -34.849959999999996,
-    "thesis": "Portal · 97 m² em Bancários, pedido R$ 9.227/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 97 m² em Bancários, pedido R$ 9.227/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -15852,7 +16022,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1532029,
     "lng": -34.8367254,
-    "thesis": "Portal · 180 m² em Bancários, pedido R$ 1.944/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 180 m² em Bancários, pedido R$ 1.944/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15889,7 +16059,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14828,
     "lng": -34.86532,
-    "thesis": "Portal · 201 m² em Bancários, pedido R$ 4.975/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 201 m² em Bancários, pedido R$ 4.975/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15926,7 +16096,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14576,
     "lng": -34.85776,
-    "thesis": "Portal · 384 m² em Bancários, pedido R$ 2.214/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 384 m² em Bancários, pedido R$ 2.214/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -15935,42 +16105,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-45624289",
-    "title": "Casa com 4 quartos à venda no Bancários, João Pessoa",
-    "type": "casa",
-    "bairroId": "bancarios",
-    "street": "Bancários, João Pessoa",
-    "area": 148,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 790000,
-    "condo": 0,
-    "iptu": 3950,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.1502,
-    "lng": -34.85476,
-    "thesis": "Portal · 148 m² em Bancários, pedido R$ 5.338/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 6
   },
   {
     "id": "chv-38684070",
@@ -15999,7 +16133,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14625,
     "lng": -34.83675,
-    "thesis": "Portal · 320 m² em Bancários, pedido R$ 2.313/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 320 m² em Bancários, pedido R$ 2.313/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16008,6 +16142,76 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
+  },
+  {
+    "id": "chv-39022832",
+    "title": "Casa com 3 quartos à venda no Bancários, João Pessoa",
+    "type": "casa",
+    "bairroId": "bancarios",
+    "street": "Bancários, João Pessoa",
+    "area": 150,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 890000,
+    "condo": 0,
+    "iptu": 4450,
+    "seaMeters": 5200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.15344,
+    "lng": -34.86304,
+    "thesis": "Portal · 150 m² em Bancários, pedido R$ 5.933/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
+  },
+  {
+    "id": "chv-37416833",
+    "title": "Casa para Venda em João Pessoa, Bancários, 4 dormitórios, 4 suítes, 5 banheiros, 2 vagas",
+    "type": "casa",
+    "bairroId": "bancarios",
+    "street": "Rua Radialista Antônio Assunção, 1275",
+    "area": 300,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 2500000,
+    "condo": 0,
+    "iptu": 12500,
+    "seaMeters": 5200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.15321,
+    "lng": -34.83673,
+    "thesis": "Portal · 300 m² em Bancários, pedido R$ 8.333/m² contra 6.255 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
   },
   {
     "id": "chv-42148439",
@@ -16036,7 +16240,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10796,
     "lng": -34.85494,
-    "thesis": "Portal · 320 m² em Estados, pedido R$ 1.719/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 320 m² em Estados, pedido R$ 1.719/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16073,7 +16277,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1238,
     "lng": -34.86012,
-    "thesis": "Portal · 335 m² em Estados, pedido R$ 3.881/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 335 m² em Estados, pedido R$ 3.881/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16082,43 +16286,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-44876369",
-    "title": "Casa 306m² 3 quartos sendo 2 suítes no Bairro dos Estados à Venda",
-    "type": "casa",
-    "bairroId": "estados",
-    "street": "Estados, João Pessoa",
-    "area": 306,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1000000,
-    "condo": 0,
-    "iptu": 5000,
-    "seaMeters": 2200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.11432,
-    "lng": -34.85664,
-    "thesis": "Portal · 306 m² em Estados, pedido R$ 3.268/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 7
   },
   {
     "id": "chv-42148440",
@@ -16147,7 +16314,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10796,
     "lng": -34.85494,
-    "thesis": "Portal · 306 m² em Estados, pedido R$ 4.248/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 306 m² em Estados, pedido R$ 4.248/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16156,43 +16323,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 20
-  },
-  {
-    "id": "chv-42921607",
-    "title": "Casa 400m² 7 quartos sendo 4 suítes no Bairro dos Estados à Venda",
-    "type": "casa",
-    "bairroId": "estados",
-    "street": "Estados, João Pessoa",
-    "area": 400,
-    "rooms": 7,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1490000,
-    "condo": 0,
-    "iptu": 7450,
-    "seaMeters": 2200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.11816,
-    "lng": -34.858200000000004,
-    "thesis": "Portal · 400 m² em Estados, pedido R$ 3.725/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 8
   },
   {
     "id": "chv-40575812",
@@ -16221,7 +16351,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11874,
     "lng": -34.86287,
-    "thesis": "Portal · 400 m² em Estados, pedido R$ 3.725/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 400 m² em Estados, pedido R$ 3.725/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16230,43 +16360,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-41622770",
-    "title": "Casa com excelente localização no Bairro dos Estados próximo ao Shopping Sebrae - CA0226.",
-    "type": "casa",
-    "bairroId": "estados",
-    "street": "Estados, João Pessoa",
-    "area": 320,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 550000,
-    "condo": 0,
-    "iptu": 2750,
-    "seaMeters": 2200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.11874,
-    "lng": -34.86287,
-    "thesis": "Portal · 320 m² em Estados, pedido R$ 1.719/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 8
   },
   {
     "id": "chv-44818233",
@@ -16295,7 +16388,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11128,
     "lng": -34.85238,
-    "thesis": "Portal · 217 m² em Estados, pedido R$ 3.456/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 217 m² em Estados, pedido R$ 3.456/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16332,7 +16425,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11874,
     "lng": -34.86287,
-    "thesis": "Portal · 384 m² em Estados, pedido R$ 1.563/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 384 m² em Estados, pedido R$ 1.563/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16369,7 +16462,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11178,
     "lng": -34.85905,
-    "thesis": "Portal · 170 m² em Estados, pedido R$ 3.824/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 170 m² em Estados, pedido R$ 3.824/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16406,7 +16499,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1135,
     "lng": -34.85363,
-    "thesis": "Portal · 282 m² em Estados, pedido R$ 2.482/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 282 m² em Estados, pedido R$ 2.482/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16443,7 +16536,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11874,
     "lng": -34.86287,
-    "thesis": "Portal · 320 m² em Estados, pedido R$ 2.188/m² contra 6.791 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 320 m² em Estados, pedido R$ 2.188/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16452,6 +16545,117 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 5
+  },
+  {
+    "id": "chv-17842106",
+    "title": "Casa com 4 dormitórios à venda, 217 m² por R$ 750.000,00 - Bairro dos Estados - João Pesso",
+    "type": "casa",
+    "bairroId": "estados",
+    "street": "Estados, João Pessoa",
+    "area": 217,
+    "rooms": 4,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 750000,
+    "condo": 0,
+    "iptu": 3750,
+    "seaMeters": 2200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.11874,
+    "lng": -34.86287,
+    "thesis": "Portal · 217 m² em Estados, pedido R$ 3.456/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 7
+  },
+  {
+    "id": "chv-39103495",
+    "title": "Casa com 3 dormitórios à venda, 190 m² por R$ 720.000,00 - Estados - João Pessoa/PB",
+    "type": "casa",
+    "bairroId": "estados",
+    "street": "Estados, João Pessoa",
+    "area": 190,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 720000,
+    "condo": 0,
+    "iptu": 3600,
+    "seaMeters": 2200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.11874,
+    "lng": -34.86287,
+    "thesis": "Portal · 190 m² em Estados, pedido R$ 3.789/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 12
+  },
+  {
+    "id": "chv-45887797",
+    "title": "Casa com 4 quartos à venda na Avenida Espírito Santo, 513, Estados, João Pessoa",
+    "type": "casa",
+    "bairroId": "estados",
+    "street": "Avenida Espírito Santo, 513",
+    "area": 300,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1250000,
+    "condo": 0,
+    "iptu": 6250,
+    "seaMeters": 2200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.11353,
+    "lng": -34.85628,
+    "thesis": "Portal · 300 m² em Estados, pedido R$ 4.167/m² contra 6.791 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
   },
   {
     "id": "chv-46340910",
@@ -16480,7 +16684,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12875,
     "lng": -34.85488,
-    "thesis": "Portal · 399 m² em Expedicionários, pedido R$ 3.506/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 399 m² em Expedicionários, pedido R$ 3.506/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16489,6 +16693,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
+  },
+  {
+    "id": "chv-42714719",
+    "title": "Casa com 3 quartos à venda na Rua Escritor José Vieira, Expedicionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "expedicionarios",
+    "street": "Rua Escritor José Vieira, ",
+    "area": 160,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 600000,
+    "condo": 0,
+    "iptu": 3000,
+    "seaMeters": 3200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.12672,
+    "lng": -34.85377,
+    "thesis": "Portal · 160 m² em Expedicionários, pedido R$ 3.750/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
   },
   {
     "id": "chv-14509974",
@@ -16518,7 +16759,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12326,
     "lng": -34.85332,
-    "thesis": "Portal · 110 m² em Expedicionários, pedido R$ 5.455/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 110 m² em Expedicionários, pedido R$ 5.455/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -16554,7 +16795,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12466,
     "lng": -34.85427,
-    "thesis": "Portal · 220 m² em Expedicionários, pedido R$ 2.273/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Expedicionários, pedido R$ 2.273/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16591,7 +16832,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12326,
     "lng": -34.85332,
-    "thesis": "Portal · 201 m² em Expedicionários, pedido R$ 2.239/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 201 m² em Expedicionários, pedido R$ 2.239/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16628,7 +16869,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12616,
     "lng": -34.85421,
-    "thesis": "Portal · 170 m² em Expedicionários, pedido R$ 4.706/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 170 m² em Expedicionários, pedido R$ 4.706/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16665,7 +16906,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12326,
     "lng": -34.85332,
-    "thesis": "Portal · 325 m² em Expedicionários, pedido R$ 2.000/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 325 m² em Expedicionários, pedido R$ 2.000/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16674,43 +16915,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 7
-  },
-  {
-    "id": "chv-42714719",
-    "title": "Casa com 3 quartos à venda na Rua Escritor José Vieira, Expedicionários, João Pessoa",
-    "type": "casa",
-    "bairroId": "expedicionarios",
-    "street": "Rua Escritor José Vieira, ",
-    "area": 160,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 550000,
-    "condo": 0,
-    "iptu": 2750,
-    "seaMeters": 3200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.12672,
-    "lng": -34.85377,
-    "thesis": "Portal · 160 m² em Expedicionários, pedido R$ 3.438/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 20
   },
   {
     "id": "chv-43263448",
@@ -16739,7 +16943,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12686,
     "lng": -34.8555,
-    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.815/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Expedicionários, pedido R$ 4.815/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16776,7 +16980,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12715,
     "lng": -34.8543,
-    "thesis": "Portal · 218 m² em Expedicionários, pedido R$ 3.440/m² contra 5.987 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 218 m² em Expedicionários, pedido R$ 3.440/m² contra 5.987 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16813,7 +17017,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12357,
     "lng": -34.87439,
-    "thesis": "Portal · 360 m² em Centro, pedido R$ 1.250/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 360 m² em Centro, pedido R$ 1.250/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16822,6 +17026,43 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 18
+  },
+  {
+    "id": "chv-44204988",
+    "title": "Casa com 4 quartos à venda no Centro, João Pessoa",
+    "type": "casa",
+    "bairroId": "centro",
+    "street": "Centro, João Pessoa",
+    "area": 190,
+    "rooms": 4,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 500000,
+    "condo": 0,
+    "iptu": 2500,
+    "seaMeters": 2400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.12202,
+    "lng": -34.8856,
+    "thesis": "Portal · 190 m² em Centro, pedido R$ 2.632/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 5
   },
   {
     "id": "chv-43876365",
@@ -16850,7 +17091,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12166,
     "lng": -34.89508,
-    "thesis": "Portal · 320 m² em Centro, pedido R$ 1.094/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 320 m² em Centro, pedido R$ 1.094/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16886,7 +17127,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1214,
     "lng": -34.878,
-    "thesis": "Portal · 333 m² em Centro, pedido R$ 5.856/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 333 m² em Centro, pedido R$ 5.856/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -16922,7 +17163,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12544,
     "lng": -34.88218,
-    "thesis": "Portal · 196 m² em Centro, pedido R$ 2.041/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 196 m² em Centro, pedido R$ 2.041/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -16958,7 +17199,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11712,
     "lng": -34.87812,
-    "thesis": "Portal · 191 m² em Centro, pedido R$ 5.759/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 191 m² em Centro, pedido R$ 5.759/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -16994,7 +17235,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12284,
     "lng": -34.87667,
-    "thesis": "Portal · 297 m² em Centro, pedido R$ 1.549/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 297 m² em Centro, pedido R$ 1.549/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17003,117 +17244,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 3
-  },
-  {
-    "id": "chv-38584536",
-    "title": "Casa com 3 quartos à venda na Rua Professora Alice Azevedo, Centro, João Pessoa",
-    "type": "casa",
-    "bairroId": "centro",
-    "street": "Rua Professora Alice Azevedo, ",
-    "area": 200,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 550000,
-    "condo": 0,
-    "iptu": 2750,
-    "seaMeters": 2400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.12418,
-    "lng": -34.88306,
-    "thesis": "Portal · 200 m² em Centro, pedido R$ 2.750/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 16
-  },
-  {
-    "id": "chv-44204988",
-    "title": "Casa com 4 quartos à venda no Centro, João Pessoa",
-    "type": "casa",
-    "bairroId": "centro",
-    "street": "Centro, João Pessoa",
-    "area": 190,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 500000,
-    "condo": 0,
-    "iptu": 2500,
-    "seaMeters": 2400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.12202,
-    "lng": -34.8856,
-    "thesis": "Portal · 190 m² em Centro, pedido R$ 2.632/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
-  },
-  {
-    "id": "chv-37358146",
-    "title": "Casa com 3 dormitórios à venda, 180 m² por R$ 450.000 - Centro - João Pessoa/PB",
-    "type": "casa",
-    "bairroId": "centro",
-    "street": "Rua Pereira Da Silva, 36",
-    "area": 180,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 450000,
-    "condo": 0,
-    "iptu": 2250,
-    "seaMeters": 2400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.1225,
-    "lng": -34.87106,
-    "thesis": "Portal · 180 m² em Centro, pedido R$ 2.500/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
   },
   {
     "id": "chv-38039458",
@@ -17142,7 +17272,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.118,
     "lng": -34.88154,
-    "thesis": "Portal · 98 m² em Centro, pedido R$ 34.694/m² contra 4.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 98 m² em Centro, pedido R$ 34.694/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17150,6 +17280,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-38039561",
+    "title": "Casa com 3 quartos à venda na Avenida Dom Pedro I, Centro, João Pessoa",
+    "type": "casa",
+    "bairroId": "centro",
+    "street": "Avenida Dom Pedro I, ",
+    "area": 371,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 3800000,
+    "condo": 0,
+    "iptu": 19000,
+    "seaMeters": 2400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.11712,
+    "lng": -34.87812,
+    "thesis": "Portal · 371 m² em Centro, pedido R$ 10.243/m² contra 4.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
   },
   {
     "id": "chv-37130170",
@@ -17177,7 +17342,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16056,
     "lng": -34.8388,
-    "thesis": "Portal · 193 m² em Portal do Sol, pedido R$ 12.953/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 193 m² em Portal do Sol, pedido R$ 12.953/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17213,7 +17378,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1584,
     "lng": -34.84084,
-    "thesis": "Portal · 270 m² em Portal do Sol, pedido R$ 5.370/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 270 m² em Portal do Sol, pedido R$ 5.370/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17248,7 +17413,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15334,
     "lng": -34.82212,
-    "thesis": "Portal · 197 m² em Portal do Sol, pedido R$ 7.563/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 197 m² em Portal do Sol, pedido R$ 7.563/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17256,6 +17421,41 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 6
+  },
+  {
+    "id": "chv-45862894",
+    "title": "Casa para Venda em João Pessoa, Portal do Sol, 3 dormitórios, 3 suítes, 4 banheiros, 2 vag",
+    "type": "casa",
+    "bairroId": "portal-do-sol",
+    "street": "Rua Empresário João Valdeci Gonçalves, 100",
+    "area": 110,
+    "rooms": 3,
+    "suites": 1,
+    "parking": 1,
+    "year": 1998,
+    "ask": 900000,
+    "condo": 0,
+    "iptu": 4500,
+    "seaMeters": 1600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.14676,
+    "lng": -34.8132,
+    "thesis": "Portal · 110 m² em Portal do Sol, pedido R$ 8.182/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 11
   },
   {
     "id": "chv-39837507",
@@ -17283,7 +17483,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1581600000000005,
     "lng": -34.8526,
-    "thesis": "Portal · 280 m² em Portal do Sol, pedido R$ 5.536/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 280 m² em Portal do Sol, pedido R$ 5.536/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17291,41 +17491,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 8
-  },
-  {
-    "id": "chv-45425287",
-    "title": "Casa com 4 quartos à venda no Portal do Sol, João Pessoa",
-    "type": "casa",
-    "bairroId": "portal-do-sol",
-    "street": "Portal do Sol, João Pessoa",
-    "area": 170,
-    "rooms": 4,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1540000,
-    "condo": 0,
-    "iptu": 7700,
-    "seaMeters": 1600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.154920000000001,
-    "lng": -34.84276,
-    "thesis": "Portal · 170 m² em Portal do Sol, pedido R$ 9.059/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 4
   },
   {
     "id": "chv-46256803",
@@ -17353,7 +17518,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.161040000000001,
     "lng": -34.8454,
-    "thesis": "Portal · 102 m² em Portal do Sol, pedido R$ 6.863/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 102 m² em Portal do Sol, pedido R$ 6.863/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17363,19 +17528,55 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 4
   },
   {
-    "id": "chv-39269031",
+    "id": "chv-46217240",
+    "title": "Casa com 5 quartos à venda no Portal do Sol, João Pessoa , 262 m2 por R$ 1.350.000",
+    "type": "casa",
+    "bairroId": "portal-do-sol",
+    "street": "Portal do Sol, João Pessoa",
+    "area": 262,
+    "rooms": 5,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 1350000,
+    "condo": 0,
+    "iptu": 6750,
+    "seaMeters": 1600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.160080000000001,
+    "lng": -34.8472,
+    "thesis": "Portal · 262 m² em Portal do Sol, pedido R$ 5.153/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 20
+  },
+  {
+    "id": "chv-40282932",
     "title": "Casa com 4 quartos à venda no Portal do Sol, João Pessoa",
     "type": "casa",
     "bairroId": "portal-do-sol",
     "street": "Portal do Sol, João Pessoa",
-    "area": 170,
+    "area": 120,
     "rooms": 4,
     "suites": 1,
     "parking": 1,
     "year": 1998,
-    "ask": 1490000,
+    "ask": 850000,
     "condo": 0,
-    "iptu": 7450,
+    "iptu": 4250,
     "seaMeters": 1600,
     "condition": 0.88,
     "daysListed": 28,
@@ -17386,16 +17587,16 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "radars": [
       "rua"
     ],
-    "lat": -7.15732,
-    "lng": -34.84756,
-    "thesis": "Portal · 170 m² em Portal do Sol, pedido R$ 8.765/m² contra 5.722 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.153840000000001,
+    "lng": -34.85116,
+    "thesis": "Portal · 120 m² em Portal do Sol, pedido R$ 7.083/m² contra 5.722 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 11
+    "facade": 12
   },
   {
     "id": "chv-24341990",
@@ -17424,7 +17625,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15464,
     "lng": -34.8311,
-    "thesis": "Portal · 176 m² em Jd. Cidade Universitária, pedido R$ 3.580/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 176 m² em Jd. Cidade Universitária, pedido R$ 3.580/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17460,7 +17661,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15321,
     "lng": -34.83237,
-    "thesis": "Portal · 360 m² em Jd. Cidade Universitária, pedido R$ 6.528/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 360 m² em Jd. Cidade Universitária, pedido R$ 6.528/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17495,7 +17696,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14984,
     "lng": -34.85228,
-    "thesis": "Portal · 190 m² em Jd. Cidade Universitária, pedido R$ 12.053/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 190 m² em Jd. Cidade Universitária, pedido R$ 12.053/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17503,41 +17704,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-42921598",
-    "title": "Casa 190m² 3 quartos sendo 3 suítes no Cond. Reserva do Atlântico à Venda",
-    "type": "casa",
-    "bairroId": "jcu",
-    "street": "Jd. Cidade Universitária, João Pessoa",
-    "area": 190,
-    "rooms": 3,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 2350000,
-    "condo": 0,
-    "iptu": 11750,
-    "seaMeters": 4500,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.14588,
-    "lng": -34.84736,
-    "thesis": "Portal · 190 m² em Jd. Cidade Universitária, pedido R$ 12.368/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 15
   },
   {
     "id": "chv-26481515",
@@ -17566,7 +17732,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1585612,
     "lng": -34.842005,
-    "thesis": "Portal · 164 m² em Jd. Cidade Universitária, pedido R$ 4.573/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 164 m² em Jd. Cidade Universitária, pedido R$ 4.573/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17603,7 +17769,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15565,
     "lng": -34.83193,
-    "thesis": "Portal · 202 m² em Jd. Cidade Universitária, pedido R$ 4.703/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 202 m² em Jd. Cidade Universitária, pedido R$ 4.703/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17640,7 +17806,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15304,
     "lng": -34.83943,
-    "thesis": "Portal · 365 m² em Jd. Cidade Universitária, pedido R$ 2.274/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 365 m² em Jd. Cidade Universitária, pedido R$ 2.274/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17676,7 +17842,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15502,
     "lng": -34.8425,
-    "thesis": "Portal · 99 m² em Jd. Cidade Universitária, pedido R$ 8.990/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 99 m² em Jd. Cidade Universitária, pedido R$ 8.990/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17712,7 +17878,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15818,
     "lng": -34.83512,
-    "thesis": "Portal · 283 m² em Jd. Cidade Universitária, pedido R$ 3.180/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 283 m² em Jd. Cidade Universitária, pedido R$ 3.180/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17748,7 +17914,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15128,
     "lng": -34.84064,
-    "thesis": "Portal · 99 m² em Jd. Cidade Universitária, pedido R$ 8.990/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 99 m² em Jd. Cidade Universitária, pedido R$ 8.990/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17784,7 +17950,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15514,
     "lng": -34.83858,
-    "thesis": "Portal · 370 m² em Jd. Cidade Universitária, pedido R$ 2.297/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 370 m² em Jd. Cidade Universitária, pedido R$ 2.297/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17821,7 +17987,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15514,
     "lng": -34.83858,
-    "thesis": "Portal · 300 m² em Jd. Cidade Universitária, pedido R$ 2.333/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 300 m² em Jd. Cidade Universitária, pedido R$ 2.333/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17858,7 +18024,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.150440000000001,
     "lng": -34.85048,
-    "thesis": "Portal · 326 m² em Jd. Cidade Universitária, pedido R$ 4.279/m² contra 5.856 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 326 m² em Jd. Cidade Universitária, pedido R$ 4.279/m² contra 5.856 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -17869,19 +18035,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 18
   },
   {
-    "id": "chv-45256504",
-    "title": "Casa para Venda em João Pessoa, Gramame, 2 dormitórios, 1 banheiro, 2 vagas",
+    "id": "chv-45477795",
+    "title": "Casa com 2 quartos à venda na Rua Elias Justino da Cunha, 161, Gramame, João Pessoa",
     "type": "casa",
     "bairroId": "gramame",
-    "street": "Rua Bernadete Xavier Batista., 154",
-    "area": 67,
+    "street": "Rua Elias Justino Da Cunha, 161",
+    "area": 60,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 155000,
+    "ask": 240000,
     "condo": 0,
-    "iptu": 800,
+    "iptu": 1200,
     "seaMeters": 8200,
     "condition": 0.88,
     "daysListed": 28,
@@ -17890,21 +18056,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "airbnb",
       "rua"
     ],
-    "lat": -7.18733,
-    "lng": -34.88738,
-    "thesis": "Portal · 67 m² em Gramame, pedido R$ 2.313/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.20184,
+    "lng": -34.87979,
+    "thesis": "Portal · 60 m² em Gramame, pedido R$ 4.000/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 5
+    "facade": 12
   },
   {
     "id": "chv-40194983",
@@ -17933,7 +18097,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20599,
     "lng": -34.87714,
-    "thesis": "Portal · 56 m² em Gramame, pedido R$ 3.750/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Gramame, pedido R$ 3.750/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -17969,7 +18133,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20336,
     "lng": -34.8634,
-    "thesis": "Portal · 100 m² em Gramame, pedido R$ 2.000/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 100 m² em Gramame, pedido R$ 2.000/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18006,7 +18170,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.21552,
     "lng": -34.85195,
-    "thesis": "Portal · 55 m² em Gramame, pedido R$ 4.436/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Gramame, pedido R$ 4.436/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18043,7 +18207,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.2144097,
     "lng": -34.8458256,
-    "thesis": "Portal · 160 m² em Gramame, pedido R$ 1.219/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 160 m² em Gramame, pedido R$ 1.219/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18081,7 +18245,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.2077,
     "lng": -34.8712,
-    "thesis": "Portal · 68 m² em Gramame, pedido R$ 3.235/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 68 m² em Gramame, pedido R$ 3.235/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18118,7 +18282,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.2077,
     "lng": -34.8712,
-    "thesis": "Portal · 68 m² em Gramame, pedido R$ 3.235/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 68 m² em Gramame, pedido R$ 3.235/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18154,7 +18318,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.19664,
     "lng": -34.88159,
-    "thesis": "Portal · 49 m² em Gramame, pedido R$ 4.490/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 49 m² em Gramame, pedido R$ 4.490/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18165,7 +18329,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
   },
   {
     "id": "chv-39693411",
-    "title": "Casa com 2 dormitórios à venda, 84 m² por R$ 249.000,00 - Gramame - João Pessoa/PB",
+    "title": "Casa com 2 dormitórios à venda, 84 m² por R$ 259.000,00 - Gramame - João Pessoa/PB",
     "type": "casa",
     "bairroId": "gramame",
     "street": "Gramame, João Pessoa",
@@ -18174,9 +18338,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 249000,
+    "ask": 259000,
     "condo": 0,
-    "iptu": 1245,
+    "iptu": 1295,
     "seaMeters": 8200,
     "condition": 0.88,
     "daysListed": 28,
@@ -18191,7 +18355,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20396,
     "lng": -34.86103,
-    "thesis": "Portal · 84 m² em Gramame, pedido R$ 2.964/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 84 m² em Gramame, pedido R$ 3.083/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18228,7 +18392,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20396,
     "lng": -34.86103,
-    "thesis": "Portal · 76 m² em Gramame, pedido R$ 3.553/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 76 m² em Gramame, pedido R$ 3.553/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18264,7 +18428,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20396,
     "lng": -34.86103,
-    "thesis": "Portal · 58 m² em Gramame, pedido R$ 3.966/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Gramame, pedido R$ 3.966/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18300,7 +18464,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20396,
     "lng": -34.86103,
-    "thesis": "Portal · 56 m² em Gramame, pedido R$ 4.107/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Gramame, pedido R$ 4.107/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18308,80 +18472,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
-  },
-  {
-    "id": "chv-45477796",
-    "title": "Casa com 4 quartos à venda na Rua Monte Horebe, Gramame, João Pessoa",
-    "type": "casa",
-    "bairroId": "gramame",
-    "street": "Rua Monte Horebe, ",
-    "area": 250,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 180000,
-    "condo": 0,
-    "iptu": 900,
-    "seaMeters": 8200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.20973,
-    "lng": -34.85113,
-    "thesis": "Portal · 250 m² em Gramame, pedido R$ 720/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
-  },
-  {
-    "id": "chv-37861705",
-    "title": "Lançamento – casas estilo vila para venda à partir r$ 180.000,00",
-    "type": "casa",
-    "bairroId": "gramame",
-    "street": "Rua José Reinaldo De Brito Silva, ",
-    "area": 53,
-    "rooms": 2,
-    "suites": 1,
-    "parking": 1,
-    "year": 1998,
-    "ask": 185000,
-    "condo": 0,
-    "iptu": 925,
-    "seaMeters": 8200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.20017,
-    "lng": -34.88615,
-    "thesis": "Portal · 53 m² em Gramame, pedido R$ 3.491/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 6
   },
   {
     "id": "chv-33996388",
@@ -18409,7 +18499,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.20396,
     "lng": -34.86103,
-    "thesis": "Portal · 60 m² em Gramame, pedido R$ 4.417/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Gramame, pedido R$ 4.417/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18444,7 +18534,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1707600000000005,
     "lng": -34.84856,
-    "thesis": "Portal · 109 m² em Mangabeira, pedido R$ 6.606/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 109 m² em Mangabeira, pedido R$ 6.606/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18481,7 +18571,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17052,
     "lng": -34.84465,
-    "thesis": "Portal · 52 m² em Mangabeira, pedido R$ 3.558/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 52 m² em Mangabeira, pedido R$ 3.558/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18490,41 +18580,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
-  },
-  {
-    "id": "chv-44182030",
-    "title": "Casa duplex a venda no bairro de mangabeira em joão pessoa / pb",
-    "type": "casa",
-    "bairroId": "mangabeira",
-    "street": "Mangabeira, João Pessoa",
-    "area": 90,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 480000,
-    "condo": 0,
-    "iptu": 2400,
-    "seaMeters": 7000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.17628,
-    "lng": -34.85216,
-    "thesis": "Portal · 90 m² em Mangabeira, pedido R$ 5.333/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
   },
   {
     "id": "chv-39138281",
@@ -18554,7 +18609,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17678,
     "lng": -34.83448,
-    "thesis": "Portal · 220 m² em Mangabeira, pedido R$ 1.364/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Mangabeira, pedido R$ 1.364/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18591,7 +18646,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1692,
     "lng": -34.86092,
-    "thesis": "Portal · 270 m² em Mangabeira, pedido R$ 2.407/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 270 m² em Mangabeira, pedido R$ 2.407/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18627,7 +18682,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17366,
     "lng": -34.84189,
-    "thesis": "Portal · 85 m² em Mangabeira, pedido R$ 7.647/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 85 m² em Mangabeira, pedido R$ 7.647/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18635,6 +18690,118 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 21
+  },
+  {
+    "id": "chv-40692215",
+    "title": "Casa com 2 quartos à venda na Avenida Jatobá, 55, Mangabeira, João Pessoa",
+    "type": "casa",
+    "bairroId": "mangabeira",
+    "street": "Avenida Jatobá, 55",
+    "area": 120,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 105000,
+    "condo": 0,
+    "iptu": 800,
+    "seaMeters": 7000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.18091,
+    "lng": -34.83661,
+    "thesis": "Portal · 120 m² em Mangabeira, pedido R$ 875/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-46440851",
+    "title": "Casa com 3 quartos à venda na Rua Maestro Joaquim Pereira, 212, Mangabeira, João Pessoa",
+    "type": "casa",
+    "bairroId": "mangabeira",
+    "street": "Rua Maestro Joaquim Pereira, 212",
+    "area": 200,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 350000,
+    "condo": 0,
+    "iptu": 1750,
+    "seaMeters": 7000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.16916,
+    "lng": -34.83305,
+    "thesis": "Portal · 200 m² em Mangabeira, pedido R$ 1.750/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 10
+  },
+  {
+    "id": "chv-43010601",
+    "title": "Casa com 3 quartos à venda na Rua Francisco de Assis Pinto Ramalho, 1, Mangabeira, João Pe",
+    "type": "casa",
+    "bairroId": "mangabeira",
+    "street": "Rua Francisco De Assis Pinto Ramalho, 1",
+    "area": 130,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7000,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.16979,
+    "lng": -34.82851,
+    "thesis": "Portal · 130 m² em Mangabeira, pedido R$ 1.308/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 2
   },
   {
     "id": "chv-45886596",
@@ -18662,7 +18829,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18107,
     "lng": -34.83595,
-    "thesis": "Portal · 98 m² em Mangabeira, pedido R$ 4.898/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 98 m² em Mangabeira, pedido R$ 4.898/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18670,44 +18837,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 13
-  },
-  {
-    "id": "chv-45867149",
-    "title": "Casa com 2 quartos à venda na Rua Severina Cézar Pessoa de Araújo, CS 103, Mangabeira, Joã",
-    "type": "casa",
-    "bairroId": "mangabeira",
-    "street": "Rua Severina Cézar Pessoa De Araújo, CS 103",
-    "area": 75,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 165000,
-    "condo": 0,
-    "iptu": 825,
-    "seaMeters": 7000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.18397,
-    "lng": -34.84003,
-    "thesis": "Portal · 75 m² em Mangabeira, pedido R$ 2.200/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 8
   },
   {
     "id": "chv-39527882",
@@ -18736,7 +18865,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18107,
     "lng": -34.83595,
-    "thesis": "Portal · 130 m² em Mangabeira, pedido R$ 2.154/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 130 m² em Mangabeira, pedido R$ 2.154/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18773,7 +18902,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18107,
     "lng": -34.83595,
-    "thesis": "Portal · 200 m² em Mangabeira, pedido R$ 1.750/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Mangabeira, pedido R$ 1.750/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18809,7 +18938,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1749600000000004,
     "lng": -34.86344,
-    "thesis": "Portal · 58 m² em Mangabeira, pedido R$ 6.034/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Mangabeira, pedido R$ 6.034/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18845,7 +18974,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17011,
     "lng": -34.83873,
-    "thesis": "Portal · 150 m² em Mangabeira, pedido R$ 2.067/m² contra 4.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 150 m² em Mangabeira, pedido R$ 2.067/m² contra 4.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18882,7 +19011,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13832,
     "lng": -34.882239999999996,
-    "thesis": "Portal · 290 m² em Cruz das Armas, pedido R$ 1.966/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 290 m² em Cruz das Armas, pedido R$ 1.966/m² contra 4.100 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18919,7 +19048,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13688,
     "lng": -34.8832,
-    "thesis": "Portal · 56 m² em Cruz das Armas, pedido R$ 5.179/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Cruz das Armas, pedido R$ 5.179/m² contra 4.100 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -18955,7 +19084,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1389519,
     "lng": -34.8883,
-    "thesis": "Portal · 128 m² em Cruz das Armas, pedido R$ 2.500/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 128 m² em Cruz das Armas, pedido R$ 2.500/m² contra 4.100 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -18964,43 +19093,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
-  },
-  {
-    "id": "chv-42899112",
-    "title": "Casa com 4 quartos à venda na Rua São Benedito, 51, Cruz das Armas, João Pessoa",
-    "type": "casa",
-    "bairroId": "cruz-das-armas",
-    "street": "Rua São Benedito, 51",
-    "area": 300,
-    "rooms": 4,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 390000,
-    "condo": 0,
-    "iptu": 1950,
-    "seaMeters": 5600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.15416,
-    "lng": -34.89472,
-    "thesis": "Portal · 300 m² em Cruz das Armas, pedido R$ 1.300/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
   },
   {
     "id": "chv-19229834",
@@ -19029,7 +19121,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14469,
     "lng": -34.88383,
-    "thesis": "Portal · 140 m² em Cruz das Armas, pedido R$ 1.786/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 140 m² em Cruz das Armas, pedido R$ 1.786/m² contra 4.100 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19066,7 +19158,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14019,
     "lng": -34.88405,
-    "thesis": "Portal · 190 m² em Cruz das Armas, pedido R$ 3.421/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 190 m² em Cruz das Armas, pedido R$ 3.421/m² contra 4.100 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19074,42 +19166,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 1
-  },
-  {
-    "id": "chv-45867231",
-    "title": "Casa com 2 quartos à venda na Avenida Lima Filho, S/N, Cruz das Armas, João Pessoa",
-    "type": "casa",
-    "bairroId": "cruz-das-armas",
-    "street": "Avenida Lima Filho, S/N",
-    "area": 54,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 290000,
-    "condo": 0,
-    "iptu": 1450,
-    "seaMeters": 5600,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.14088,
-    "lng": -34.88513,
-    "thesis": "Portal · 54 m² em Cruz das Armas, pedido R$ 5.370/m² contra 4.100 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 11
   },
   {
     "id": "chv-39299285",
@@ -19139,7 +19195,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15124,
     "lng": -34.88418,
-    "thesis": "Portal · 160 m² em Cristo Redentor, pedido R$ 1.938/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 160 m² em Cristo Redentor, pedido R$ 1.938/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19150,19 +19206,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 2
   },
   {
-    "id": "chv-39104214",
-    "title": "Casa com 2 quartos à venda na Avenida Francisco Lustosa Cabral, Cristo Redentor, João Pess",
+    "id": "chv-21625720",
+    "title": "Casa com 3 quartos à venda na Rua José Francisco da Silva, 281, Cristo Redentor, João Pess",
     "type": "casa",
     "bairroId": "cristo",
-    "street": "Avenida Francisco Lustosa Cabral, ",
-    "area": 57,
-    "rooms": 2,
+    "street": "Rua José Francisco Da Silva, 281",
+    "area": 125,
+    "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 234500,
+    "ask": 370000,
     "condo": 0,
-    "iptu": 1173,
+    "iptu": 1850,
     "seaMeters": 6400,
     "condition": 0.88,
     "daysListed": 28,
@@ -19172,19 +19228,160 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "radars": [
       "preco",
-      "airbnb",
       "rua"
     ],
-    "lat": -7.15069,
-    "lng": -34.88283,
-    "thesis": "Portal · 57 m² em Cristo Redentor, pedido R$ 4.114/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.14875,
+    "lng": -34.8801,
+    "thesis": "Portal · 125 m² em Cristo Redentor, pedido R$ 2.960/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 21
+  },
+  {
+    "id": "chv-41992972",
+    "title": "Casa com 3 quartos à venda na Rua dos Milagres, 44, Cristo Redentor, João Pessoa",
+    "type": "casa",
+    "bairroId": "cristo",
+    "street": "Rua Dos Milagres, 44",
+    "area": 75,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 380000,
+    "condo": 0,
+    "iptu": 1900,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.15271,
+    "lng": -34.88285,
+    "thesis": "Portal · 75 m² em Cristo Redentor, pedido R$ 5.067/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 15
+    "facade": 10
+  },
+  {
+    "id": "chv-30647818",
+    "title": "Casa padrao/ casa no cristo redentor/ casa com 3 quartos/ casa beira mar/ casa em joao pes",
+    "type": "casa",
+    "bairroId": "cristo",
+    "street": "Rua José Francisco Da Silva, ",
+    "area": 105,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 600000,
+    "condo": 0,
+    "iptu": 3000,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.15136,
+    "lng": -34.87757,
+    "thesis": "Portal · 105 m² em Cristo Redentor, pedido R$ 5.714/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
+  },
+  {
+    "id": "chv-46391865",
+    "title": "Casa com 5 quartos à venda na Rua José Francisco da Silva, Cristo Redentor, João Pessoa",
+    "type": "casa",
+    "bairroId": "cristo",
+    "street": "Rua José Francisco Da Silva, ",
+    "area": 200,
+    "rooms": 5,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 990000,
+    "condo": 0,
+    "iptu": 4950,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "rua"
+    ],
+    "lat": -7.15198,
+    "lng": -34.87694,
+    "thesis": "Portal · 200 m² em Cristo Redentor, pedido R$ 4.950/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 3
+  },
+  {
+    "id": "chv-45528221",
+    "title": "Casa com 3 quartos à venda na Rua José Gomes da Silveira, 900, Cristo Redentor, João Pesso",
+    "type": "casa",
+    "bairroId": "cristo",
+    "street": "Rua José Gomes Da Silveira, 900",
+    "area": 120,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 450000,
+    "condo": 0,
+    "iptu": 2250,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.15194,
+    "lng": -34.8761,
+    "thesis": "Portal · 120 m² em Cristo Redentor, pedido R$ 3.750/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 1
   },
   {
     "id": "chv-43322685",
@@ -19213,7 +19410,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16516,
     "lng": -34.87556,
-    "thesis": "Portal · 150 m² em Ernesto Geisel, pedido R$ 2.653/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 150 m² em Ernesto Geisel, pedido R$ 2.653/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19251,7 +19448,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1847,
     "lng": -34.86882,
-    "thesis": "Portal · 59 m² em Ernesto Geisel, pedido R$ 4.407/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 59 m² em Ernesto Geisel, pedido R$ 4.407/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19259,6 +19456,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
+  },
+  {
+    "id": "chv-45477814",
+    "title": "Casa com 3 quartos à venda na Rua Irmã Maria Evangelie, Ernesto Geisel, João Pessoa",
+    "type": "casa",
+    "bairroId": "geisel",
+    "street": "Rua Irmã Maria Evangelie, ",
+    "area": 150,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 630000,
+    "condo": 0,
+    "iptu": 3150,
+    "seaMeters": 6200,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.178,
+    "lng": -34.87275,
+    "thesis": "Portal · 150 m² em Ernesto Geisel, pedido R$ 4.200/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
   },
   {
     "id": "chv-43490056",
@@ -19287,7 +19520,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16348,
     "lng": -34.8716,
-    "thesis": "Portal · 300 m² em Ernesto Geisel, pedido R$ 2.267/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 300 m² em Ernesto Geisel, pedido R$ 2.267/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19324,7 +19557,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18355,
     "lng": -34.87177,
-    "thesis": "Portal · 160 m² em Ernesto Geisel, pedido R$ 2.488/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 160 m² em Ernesto Geisel, pedido R$ 2.488/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19362,7 +19595,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1666,
     "lng": -34.8716,
-    "thesis": "Portal · 135 m² em Ernesto Geisel, pedido R$ 2.889/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 135 m² em Ernesto Geisel, pedido R$ 2.889/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19399,7 +19632,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17467,
     "lng": -34.87034,
-    "thesis": "Portal · 380 m² em Ernesto Geisel, pedido R$ 2.632/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 380 m² em Ernesto Geisel, pedido R$ 2.632/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19436,7 +19669,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16576,
     "lng": -34.865719999999996,
-    "thesis": "Portal · 56 m² em Ernesto Geisel, pedido R$ 4.732/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 56 m² em Ernesto Geisel, pedido R$ 4.732/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19472,7 +19705,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17896,
     "lng": -34.87252,
-    "thesis": "Portal · 60 m² em Ernesto Geisel, pedido R$ 5.000/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Ernesto Geisel, pedido R$ 5.000/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19508,7 +19741,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17896,
     "lng": -34.87252,
-    "thesis": "Portal · 200 m² em Ernesto Geisel, pedido R$ 2.000/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Ernesto Geisel, pedido R$ 2.000/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19545,7 +19778,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.18558,
     "lng": -34.87085,
-    "thesis": "Portal · 57 m² em Ernesto Geisel, pedido R$ 5.000/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 57 m² em Ernesto Geisel, pedido R$ 5.000/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19582,7 +19815,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17896,
     "lng": -34.87252,
-    "thesis": "Portal · 80 m² em Ernesto Geisel, pedido R$ 3.625/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Ernesto Geisel, pedido R$ 3.625/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19619,7 +19852,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17896,
     "lng": -34.87252,
-    "thesis": "Portal · 200 m² em Ernesto Geisel, pedido R$ 2.350/m² contra 4.700 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Ernesto Geisel, pedido R$ 2.350/m² contra 4.700 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19656,7 +19889,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.13069,
     "lng": -34.84128,
-    "thesis": "Portal · 200 m² em Castelo Branco, pedido R$ 2.200/m² contra 5.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Castelo Branco, pedido R$ 2.200/m² contra 5.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19693,7 +19926,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1371,
     "lng": -34.83381,
-    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 6.818/m² contra 10.550 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 220 m² em Altiplano, pedido R$ 6.818/m² contra 10.550 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19702,44 +19935,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 14
-  },
-  {
-    "id": "chv-27299153",
-    "title": "Casa com 2 quartos à venda no Bancários, João Pessoa",
-    "type": "casa",
-    "bairroId": "bancarios",
-    "street": "Bancários, João Pessoa",
-    "area": 150,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 529900,
-    "condo": 0,
-    "iptu": 2650,
-    "seaMeters": 5200,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.14625,
-    "lng": -34.83675,
-    "thesis": "Portal · 150 m² em Bancários, pedido R$ 3.533/m² contra 6.255 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 12
   },
   {
     "id": "chv-33301094",
@@ -19767,7 +19962,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14572,
     "lng": -34.88024,
-    "thesis": "Portal · 80 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19777,19 +19972,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 11
   },
   {
-    "id": "chv-30647818",
-    "title": "Casa padrao/ casa no cristo redentor/ casa com 3 quartos/ casa beira mar/ casa em joao pes",
+    "id": "chv-40826457",
+    "title": "Casa com 4 quartos à venda no Cristo Redentor, João Pessoa",
     "type": "casa",
     "bairroId": "cristo",
-    "street": "Rua José Francisco Da Silva, ",
-    "area": 105,
-    "rooms": 3,
+    "street": "Cristo Redentor, João Pessoa",
+    "area": 247,
+    "rooms": 4,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 600000,
+    "ask": 410000,
     "condo": 0,
-    "iptu": 3000,
+    "iptu": 2050,
     "seaMeters": 6400,
     "condition": 0.88,
     "daysListed": 28,
@@ -19798,18 +19993,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
+      "preco",
       "rua"
     ],
-    "lat": -7.15136,
-    "lng": -34.87757,
-    "thesis": "Portal · 105 m² em Cristo Redentor, pedido R$ 5.714/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.14992,
+    "lng": -34.87712,
+    "thesis": "Portal · 247 m² em Cristo Redentor, pedido R$ 1.660/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 19
+    "facade": 16
   },
   {
     "id": "chv-42369762",
@@ -19837,7 +20034,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16078,
     "lng": -34.87863,
-    "thesis": "Portal · 125 m² em Cristo Redentor, pedido R$ 4.720/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 125 m² em Cristo Redentor, pedido R$ 4.720/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19847,19 +20044,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 21
   },
   {
-    "id": "chv-42840523",
-    "title": "Excelente casa a venda no bairro do cristo redentor em joão pessoa / pb",
+    "id": "chv-31808025",
+    "title": "Casa com 4 quartos à venda na Rua Pedro Ivo de Paiva, 111, Cristo Redentor, João Pessoa, 1",
     "type": "casa",
     "bairroId": "cristo",
-    "street": "Cristo Redentor, João Pessoa",
-    "area": 178,
-    "rooms": 3,
-    "suites": 1,
+    "street": "Rua Pedro Ivo De Paiva, 111",
+    "area": 150,
+    "rooms": 4,
+    "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 600000,
+    "ask": 510000,
     "condo": 0,
-    "iptu": 3000,
+    "iptu": 2550,
     "seaMeters": 6400,
     "condition": 0.88,
     "daysListed": 28,
@@ -19871,9 +20068,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "rua"
     ],
-    "lat": -7.14896,
-    "lng": -34.88624,
-    "thesis": "Portal · 178 m² em Cristo Redentor, pedido R$ 3.371/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.16542,
+    "lng": -34.87173,
+    "thesis": "Portal · 150 m² em Cristo Redentor, pedido R$ 3.400/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19881,7 +20078,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 3
+    "facade": 5
   },
   {
     "id": "chv-41102483",
@@ -19909,7 +20106,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16022,
     "lng": -34.87132,
-    "thesis": "Portal · 80 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -19945,7 +20142,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15914,
     "lng": -34.87228,
-    "thesis": "Portal · 387 m² em Cristo Redentor, pedido R$ 904/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 387 m² em Cristo Redentor, pedido R$ 904/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -19954,41 +20151,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 18
-  },
-  {
-    "id": "chv-41992972",
-    "title": "Casa com 3 quartos à venda na Rua dos Milagres, 44, Cristo Redentor, João Pessoa",
-    "type": "casa",
-    "bairroId": "cristo",
-    "street": "Rua Dos Milagres, 44",
-    "area": 75,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 380000,
-    "condo": 0,
-    "iptu": 1900,
-    "seaMeters": 6400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.15271,
-    "lng": -34.88285,
-    "thesis": "Portal · 75 m² em Cristo Redentor, pedido R$ 5.067/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
   },
   {
     "id": "chv-21625721",
@@ -20017,7 +20179,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16096,
     "lng": -34.86719,
-    "thesis": "Portal · 360 m² em Cristo Redentor, pedido R$ 1.250/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 360 m² em Cristo Redentor, pedido R$ 1.250/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20054,7 +20216,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.16425,
     "lng": -34.87135,
-    "thesis": "Portal · 352 m² em Cristo Redentor, pedido R$ 1.278/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 352 m² em Cristo Redentor, pedido R$ 1.278/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20063,78 +20225,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 7
-  },
-  {
-    "id": "chv-21625720",
-    "title": "Casa com 3 quartos à venda na Rua José Francisco da Silva, 281, Cristo Redentor, João Pess",
-    "type": "casa",
-    "bairroId": "cristo",
-    "street": "Rua José Francisco Da Silva, 281",
-    "area": 125,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 370000,
-    "condo": 0,
-    "iptu": 1850,
-    "seaMeters": 6400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.14875,
-    "lng": -34.8801,
-    "thesis": "Portal · 125 m² em Cristo Redentor, pedido R$ 2.960/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 21
-  },
-  {
-    "id": "chv-21625712",
-    "title": "Casa com 3 quartos à venda na Rua José Francisco da Silva, 2110, Cristo Redentor, João Pes",
-    "type": "casa",
-    "bairroId": "cristo",
-    "street": "Rua José Francisco Da Silva, 2110",
-    "area": 160,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 1100000,
-    "condo": 0,
-    "iptu": 5500,
-    "seaMeters": 6400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "rua"
-    ],
-    "lat": -7.1606,
-    "lng": -34.8683,
-    "thesis": "Portal · 160 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
   },
   {
     "id": "chv-36976032",
@@ -20163,7 +20253,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.15106,
     "lng": -34.90737,
-    "thesis": "Portal · 300 m² em Oitizeiro, pedido R$ 1.933/m² contra 3.500 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 300 m² em Oitizeiro, pedido R$ 1.933/m² contra 3.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20174,19 +20264,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 12
   },
   {
-    "id": "chv-44204985",
-    "title": "Casa com 3 quartos à venda na Av São Judas Tadeu, 005, Cristo Redentor, João Pessoa",
+    "id": "chv-40755799",
+    "title": "Casa com 3 dormitórios à venda, 300 m² por R$ 590.000,00 - Cristo Redentor - João Pessoa/P",
     "type": "casa",
     "bairroId": "cristo",
-    "street": "Av São Judas Tadeu, 005",
-    "area": 80,
+    "street": "Cristo Redentor, João Pessoa",
+    "area": 300,
     "rooms": 3,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 550000,
+    "ask": 590000,
     "condo": 0,
-    "iptu": 2750,
+    "iptu": 2950,
     "seaMeters": 6400,
     "condition": 0.88,
     "daysListed": 28,
@@ -20195,18 +20285,209 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
+      "preco",
       "rua"
     ],
-    "lat": -7.15671,
-    "lng": -34.88575,
-    "thesis": "Portal · 80 m² em Cristo Redentor, pedido R$ 6.875/m² contra 4.500 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.16078,
+    "lng": -34.87863,
+    "thesis": "Portal · 300 m² em Cristo Redentor, pedido R$ 1.967/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 16
+  },
+  {
+    "id": "chv-38814344",
+    "title": "Casa com 2 dormitórios à venda, 58 m² por R$ 240.000,00 - Cristo Redentor - João Pessoa/PB",
+    "type": "casa",
+    "bairroId": "cristo",
+    "street": "Cristo Redentor, João Pessoa",
+    "area": 58,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 240000,
+    "condo": 0,
+    "iptu": 1200,
+    "seaMeters": 6400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.16078,
+    "lng": -34.87863,
+    "thesis": "Portal · 58 m² em Cristo Redentor, pedido R$ 4.138/m² contra 4.500 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 2
+    "facade": 3
+  },
+  {
+    "id": "chv-46607127",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.19732,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 7
+  },
+  {
+    "id": "chv-46607134",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.193720000000001,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 14
+  },
+  {
+    "id": "chv-46607129",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.197080000000001,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 9
+  },
+  {
+    "id": "chv-46607131",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.1940800000000005,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 11
   },
   {
     "id": "chv-42604937",
@@ -20234,7 +20515,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17924,
     "lng": -34.88235,
-    "thesis": "Portal · 120 m² em Funcionários, pedido R$ 5.167/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Funcionários, pedido R$ 5.167/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -20242,6 +20523,82 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 17
+  },
+  {
+    "id": "chv-46607133",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.193840000000001,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 13
+  },
+  {
+    "id": "chv-46607130",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.1942,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 10
   },
   {
     "id": "chv-13646659",
@@ -20270,7 +20627,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 120 m² em Funcionários, pedido R$ 1.833/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Funcionários, pedido R$ 1.833/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20308,7 +20665,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 279 m² em Funcionários, pedido R$ 1.434/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 279 m² em Funcionários, pedido R$ 1.434/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20317,6 +20674,44 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
+  },
+  {
+    "id": "chv-46607128",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.1972000000000005,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 8
   },
   {
     "id": "chv-39247533",
@@ -20344,7 +20739,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 110 m² em Funcionários, pedido R$ 3.818/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 110 m² em Funcionários, pedido R$ 3.818/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -20380,7 +20775,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17919,
     "lng": -34.88619,
-    "thesis": "Portal · 180 m² em Funcionários, pedido R$ 1.389/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 180 m² em Funcionários, pedido R$ 1.389/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20391,19 +20786,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 8
   },
   {
-    "id": "chv-43828213",
-    "title": "Casa com 2 quartos à venda na Rua Presidente Médici, 476, Funcionários, João Pessoa",
+    "id": "chv-46607132",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
     "type": "casa",
     "bairroId": "funcionarios",
-    "street": "Rua Presidente Médici, 476",
-    "area": 69,
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
     "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 180000,
+    "ask": 170000,
     "condo": 0,
-    "iptu": 900,
+    "iptu": 850,
     "seaMeters": 7600,
     "condition": 0.88,
     "daysListed": 28,
@@ -20416,9 +20811,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "airbnb",
       "rua"
     ],
-    "lat": -7.18448,
-    "lng": -34.88793,
-    "thesis": "Portal · 69 m² em Funcionários, pedido R$ 2.609/m² contra 4.000 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.193960000000001,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20426,7 +20821,45 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 14
+    "facade": 12
+  },
+  {
+    "id": "chv-46607135",
+    "title": "Casa com 2 quartos à venda no Funcionários, João Pessoa",
+    "type": "casa",
+    "bairroId": "funcionarios",
+    "street": "Funcionários, João Pessoa",
+    "area": 55,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 170000,
+    "condo": 0,
+    "iptu": 850,
+    "seaMeters": 7600,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.203200000000001,
+    "lng": -34.86372,
+    "thesis": "Portal · 55 m² em Funcionários, pedido R$ 3.091/m² contra 4.000 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 15
   },
   {
     "id": "chv-24646665",
@@ -20455,7 +20888,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11992,
     "lng": -34.85936,
-    "thesis": "Portal · 237 m² em Miramar, pedido R$ 5.063/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 237 m² em Miramar, pedido R$ 5.063/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20466,19 +20899,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 3
   },
   {
-    "id": "chv-25604079",
-    "title": "Casa com 6 dormitórios à venda, 400 m² por R$ 2.990.000,00 - Miramar - João Pessoa/PB",
+    "id": "chv-46591873",
+    "title": "Casa com 2 quartos à venda na Rua Hilda Coutinho Lucena, Miramar, João Pessoa",
     "type": "casa",
     "bairroId": "miramar",
-    "street": "Miramar, João Pessoa",
-    "area": 400,
-    "rooms": 6,
+    "street": "Rua Hilda Coutinho Lucena, ",
+    "area": 170,
+    "rooms": 2,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 2990000,
+    "ask": 980000,
     "condo": 0,
-    "iptu": 14950,
+    "iptu": 4900,
     "seaMeters": 1800,
     "condition": 0.88,
     "daysListed": 28,
@@ -20487,18 +20920,21 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
+      "preco",
+      "airbnb",
       "rua"
     ],
-    "lat": -7.12064,
-    "lng": -34.86596,
-    "thesis": "Portal · 400 m² em Miramar, pedido R$ 7.475/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.12137,
+    "lng": -34.83607,
+    "thesis": "Portal · 170 m² em Miramar, pedido R$ 5.765/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 17
+    "facade": 11
   },
   {
     "id": "chv-35838942",
@@ -20527,7 +20963,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12336,
     "lng": -34.83691,
-    "thesis": "Portal · 392 m² em Miramar, pedido R$ 3.291/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 392 m² em Miramar, pedido R$ 3.291/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20538,19 +20974,19 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 1
   },
   {
-    "id": "chv-42226221",
-    "title": "Casa com 3 quartos à venda na Rua João de Pessoa, Miramar, João Pessoa",
+    "id": "chv-25604079",
+    "title": "Casa com 6 dormitórios à venda, 400 m² por R$ 2.990.000,00 - Miramar - João Pessoa/PB",
     "type": "casa",
     "bairroId": "miramar",
-    "street": "Rua João De Pessoa, ",
-    "area": 147,
-    "rooms": 3,
+    "street": "Miramar, João Pessoa",
+    "area": 400,
+    "rooms": 6,
     "suites": 0,
     "parking": 1,
     "year": 1998,
-    "ask": 950000,
+    "ask": 2990000,
     "condo": 0,
-    "iptu": 4750,
+    "iptu": 14950,
     "seaMeters": 1800,
     "condition": 0.88,
     "daysListed": 28,
@@ -20559,19 +20995,18 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "radars": [
-      "preco",
       "rua"
     ],
-    "lat": -7.12093,
-    "lng": -34.83824,
-    "thesis": "Portal · 147 m² em Miramar, pedido R$ 6.463/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.12064,
+    "lng": -34.86596,
+    "thesis": "Portal · 400 m² em Miramar, pedido R$ 7.475/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
       "portal"
     ],
-    "facade": 1
+    "facade": 17
   },
   {
     "id": "chv-41723710",
@@ -20600,7 +21035,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.12226,
     "lng": -34.83993,
-    "thesis": "Portal · 237 m² em Miramar, pedido R$ 5.063/m² contra 7.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 237 m² em Miramar, pedido R$ 5.063/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20609,6 +21044,42 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 11
+  },
+  {
+    "id": "chv-42226221",
+    "title": "Casa com 3 quartos à venda na Rua João de Pessoa, Miramar, João Pessoa",
+    "type": "casa",
+    "bairroId": "miramar",
+    "street": "Rua João De Pessoa, ",
+    "area": 147,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 900000,
+    "condo": 0,
+    "iptu": 4500,
+    "seaMeters": 1800,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.12093,
+    "lng": -34.83824,
+    "thesis": "Portal · 147 m² em Miramar, pedido R$ 6.122/m² contra 7.200 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 1
   },
   {
     "id": "chv-45352423",
@@ -20637,7 +21108,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11576,
     "lng": -34.86348,
-    "thesis": "Portal · 200 m² em Treze de Maio, pedido R$ 2.950/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Treze de Maio, pedido R$ 2.950/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20648,11 +21119,11 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 3
   },
   {
-    "id": "chv-37358453",
-    "title": "Casa com 3 quartos à venda na Avenida Mandacaru, 290, Treze de Maio, João Pessoa",
+    "id": "chv-41702302",
+    "title": "Casa com 3 quartos à venda na Avenida Mandacaru, --, Treze de Maio, João Pessoa",
     "type": "casa",
     "bairroId": "treze-de-maio",
-    "street": "Avenida Mandacaru, 290",
+    "street": "Avenida Mandacaru, --",
     "area": 330,
     "rooms": 3,
     "suites": 0,
@@ -20672,9 +21143,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "rua"
     ],
-    "lat": -7.10794,
-    "lng": -34.86918,
-    "thesis": "Portal · 330 m² em Treze de Maio, pedido R$ 2.091/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.10556,
+    "lng": -34.86664,
+    "thesis": "Portal · 330 m² em Treze de Maio, pedido R$ 2.091/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20682,44 +21153,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "portal"
     ],
-    "facade": 12
-  },
-  {
-    "id": "chv-45471709",
-    "title": "Casa com 3 quartos à venda no Treze de Maio, João Pessoa",
-    "type": "casa",
-    "bairroId": "treze-de-maio",
-    "street": "Treze de Maio, João Pessoa",
-    "area": 200,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 590000,
-    "condo": 0,
-    "iptu": 2950,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.13872,
-    "lng": -34.85312,
-    "thesis": "Portal · 200 m² em Treze de Maio, pedido R$ 2.950/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 10
+    "facade": 3
   },
   {
     "id": "chv-39145079",
@@ -20749,7 +21183,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11807,
     "lng": -34.86624,
-    "thesis": "Portal · 80 m² em Treze de Maio, pedido R$ 3.750/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Treze de Maio, pedido R$ 3.750/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20786,7 +21220,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11,
     "lng": -34.86215,
-    "thesis": "Portal · 185 m² em Treze de Maio, pedido R$ 3.508/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 185 m² em Treze de Maio, pedido R$ 3.508/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20823,7 +21257,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.11201,
     "lng": -34.86619,
-    "thesis": "Portal · 200 m² em Treze de Maio, pedido R$ 2.950/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Treze de Maio, pedido R$ 2.950/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20860,7 +21294,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.10893,
     "lng": -34.86786,
-    "thesis": "Portal · 120 m² em Treze de Maio, pedido R$ 4.375/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Treze de Maio, pedido R$ 4.375/m² contra 5.200 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -20868,43 +21302,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 7
-  },
-  {
-    "id": "chv-41702302",
-    "title": "Casa com 3 quartos à venda na Avenida Mandacaru, --, Treze de Maio, João Pessoa",
-    "type": "casa",
-    "bairroId": "treze-de-maio",
-    "street": "Avenida Mandacaru, --",
-    "area": 330,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 690000,
-    "condo": 0,
-    "iptu": 3450,
-    "seaMeters": 5000,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.10556,
-    "lng": -34.86664,
-    "thesis": "Portal · 330 m² em Treze de Maio, pedido R$ 2.091/m² contra 5.200 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 3
   },
   {
     "id": "chv-8221558",
@@ -20934,7 +21331,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 200 m² em Alto do Mateus, pedido R$ 2.000/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 200 m² em Alto do Mateus, pedido R$ 2.000/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -20971,7 +21368,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 80 m² em Alto do Mateus, pedido R$ 1.063/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 80 m² em Alto do Mateus, pedido R$ 1.063/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21008,7 +21405,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.14016,
     "lng": -34.91128,
-    "thesis": "Portal · 378 m² em Alto do Mateus, pedido R$ 661/m² contra 3.800 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 378 m² em Alto do Mateus, pedido R$ 661/m² contra 3.800 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21046,7 +21443,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 120 m² em Indústrias, pedido R$ 1.500/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 120 m² em Indústrias, pedido R$ 1.500/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21055,82 +21452,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 12
-  },
-  {
-    "id": "chv-45867367",
-    "title": "Casa com 2 quartos à venda na Rua Idonésia, 140, Indústrias, João Pessoa",
-    "type": "casa",
-    "bairroId": "industrias",
-    "street": "Rua Idonésia, 140",
-    "area": 190,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 180000,
-    "condo": 0,
-    "iptu": 900,
-    "seaMeters": 7400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.186159999999999,
-    "lng": -34.86484,
-    "thesis": "Portal · 190 m² em Indústrias, pedido R$ 947/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 5
-  },
-  {
-    "id": "chv-45867123",
-    "title": "Casa com 2 quartos à venda na Rua Bolívia, 257, Indústrias, João Pessoa",
-    "type": "casa",
-    "bairroId": "industrias",
-    "street": "Rua Bolívia, 257",
-    "area": 70,
-    "rooms": 2,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 205000,
-    "condo": 0,
-    "iptu": 1025,
-    "seaMeters": 7400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "airbnb",
-      "rua"
-    ],
-    "lat": -7.18544,
-    "lng": -34.86592,
-    "thesis": "Portal · 70 m² em Indústrias, pedido R$ 2.929/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 3
   },
   {
     "id": "chv-36599414",
@@ -21159,7 +21480,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.1848399999999994,
     "lng": -34.87792,
-    "thesis": "Portal · 60 m² em Indústrias, pedido R$ 3.217/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 60 m² em Indústrias, pedido R$ 3.217/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -21167,43 +21488,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 15
-  },
-  {
-    "id": "chv-45867354",
-    "title": "Casa com 3 quartos à venda na Rua Cidade de Conceição, 236, Indústrias, João Pessoa",
-    "type": "casa",
-    "bairroId": "industrias",
-    "street": "Rua Cidade De Conceição, 236",
-    "area": 85,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 220000,
-    "condo": 0,
-    "iptu": 1100,
-    "seaMeters": 7400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.19048,
-    "lng": -34.86496,
-    "thesis": "Portal · 85 m² em Indústrias, pedido R$ 2.588/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 13
   },
   {
     "id": "chv-44886935",
@@ -21232,7 +21516,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 55 m² em Indústrias, pedido R$ 3.545/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 55 m² em Indústrias, pedido R$ 3.545/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -21240,42 +21524,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 15
-  },
-  {
-    "id": "chv-24346207",
-    "title": "Casa com 3 quartos à venda na Indústrias, João Pessoa",
-    "type": "casa",
-    "bairroId": "industrias",
-    "street": "Indústrias, João Pessoa",
-    "area": 76,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 230000,
-    "condo": 0,
-    "iptu": 1150,
-    "seaMeters": 7400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.190239999999999,
-    "lng": -34.86928,
-    "thesis": "Portal · 76 m² em Indústrias, pedido R$ 3.026/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 8
   },
   {
     "id": "chv-44686453",
@@ -21305,7 +21553,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.19072,
     "lng": -34.87132,
-    "thesis": "Portal · 58 m² em Indústrias, pedido R$ 3.362/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 58 m² em Indústrias, pedido R$ 3.362/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
@@ -21313,43 +21561,6 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 12
-  },
-  {
-    "id": "chv-45867361",
-    "title": "Casa com 3 quartos à venda na Rua Sibéria, 01, Indústrias, João Pessoa",
-    "type": "casa",
-    "bairroId": "industrias",
-    "street": "Rua Sibéria, 01",
-    "area": 200,
-    "rooms": 3,
-    "suites": 0,
-    "parking": 1,
-    "year": 1998,
-    "ask": 200000,
-    "condo": 0,
-    "iptu": 1000,
-    "seaMeters": 7400,
-    "condition": 0.88,
-    "daysListed": 28,
-    "portalCount": 1,
-    "sources": [
-      "portal"
-    ],
-    "radars": [
-      "preco",
-      "rua"
-    ],
-    "lat": -7.1868799999999995,
-    "lng": -34.86484,
-    "thesis": "Portal · 200 m² em Indústrias, pedido R$ 1.000/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
-    "risks": [
-      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
-    ],
-    "extras": [
-      "portal"
-    ],
-    "facade": 20
   },
   {
     "id": "chv-46264029",
@@ -21379,7 +21590,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 100 m² em Indústrias, pedido R$ 1.600/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 100 m² em Indústrias, pedido R$ 1.600/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21388,6 +21599,44 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "portal"
     ],
     "facade": 9
+  },
+  {
+    "id": "chv-36316760",
+    "title": "Casa para Venda em João Pessoa / PB no bairro bairro das industrias",
+    "type": "casa",
+    "bairroId": "industrias",
+    "street": "Rua Motorista Iractan Alves Dos Santos, ",
+    "area": 100,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 185000,
+    "condo": 0,
+    "iptu": 925,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
+    "sources": [
+      "portal"
+    ],
+    "radars": [
+      "preco",
+      "airbnb",
+      "rua"
+    ],
+    "lat": -7.1746,
+    "lng": -34.91232,
+    "thesis": "Portal · 100 m² em Indústrias, pedido R$ 1.850/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "portal"
+    ],
+    "facade": 19
   },
   {
     "id": "chv-26703665",
@@ -21417,7 +21666,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 305 m² em Indústrias, pedido R$ 689/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 305 m² em Indústrias, pedido R$ 689/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21454,7 +21703,7 @@ export const HARVESTED_LISTINGS: Listing[] = [
     ],
     "lat": -7.17766,
     "lng": -34.91876,
-    "thesis": "Portal · 364 m² em Indústrias, pedido R$ 1.058/m² contra 3.600 do bairro. Colheita 8 de set. de 2026.",
+    "thesis": "Portal · 364 m² em Indústrias, pedido R$ 1.058/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Anúncio de portal — conferir condomínio, IPTU e estado na visita.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21465,54 +21714,53 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "facade": 1
   },
   {
-    "id": "cx-2240991",
-    "title": "Apartamento Caixa 2240991",
-    "type": "apto",
-    "bairroId": "gramame",
-    "street": "Apartamento Caixa em João Pessoa / PB - 2240991 RUA MARIA EMILIA DE ALMEIDA WAND",
-    "area": 60,
+    "id": "chv-30647108",
+    "title": "Casa padrao/ casa naa indústrias/ casa beira mar/ casa em joao pessoa",
+    "type": "casa",
+    "bairroId": "industrias",
+    "street": "Avenida Cidade De Manaíra, ",
+    "area": 57,
     "rooms": 2,
     "suites": 0,
-    "parking": 0,
-    "year": 2012,
-    "ask": 94815,
-    "condo": 540,
-    "iptu": 800,
-    "seaMeters": 8200,
-    "condition": 0.78,
-    "daysListed": 14,
-    "portalCount": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 200000,
+    "condo": 0,
+    "iptu": 1000,
+    "seaMeters": 7400,
+    "condition": 0.88,
+    "daysListed": 28,
+    "portalCount": 1,
     "sources": [
-      "leilao"
+      "portal"
     ],
     "radars": [
-      "preco",
-      "airbnb"
+      "airbnb",
+      "rua"
     ],
-    "lat": -7.2169799999999995,
-    "lng": -34.84708,
-    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 1.580/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.1920399999999995,
+    "lng": -34.86496,
+    "thesis": "Portal · 57 m² em Indústrias, pedido R$ 3.509/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
-      "Leilão: conferir ocupação, débitos e o edital antes do lance.",
-      "Spread alto pede motivo: reforma, processo ou liquidez."
+      "Anúncio de portal — conferir condomínio, IPTU e estado na visita."
     ],
     "extras": [
-      "leilao-caixa"
+      "portal"
     ],
-    "facade": 8
+    "facade": 9
   },
   {
-    "id": "cx-2783616",
-    "title": "Apartamento Caixa 2783616",
+    "id": "cx-2938493",
+    "title": "Apartamento Caixa 2938493",
     "type": "apto",
     "bairroId": "gramame",
-    "street": "Apartamento Caixa em João Pessoa / PB - 2783616 RUA ESTUDANTE ROBERTA RODRIGUES ",
+    "street": "Apartamento em Leilão em João Pessoa / PB - 2938493 RUA MILTON DE OLIVEIRA MELO,",
     "area": 60,
     "rooms": 2,
     "suites": 0,
     "parking": 0,
     "year": 2012,
-    "ask": 149527,
+    "ask": 154000,
     "condo": 540,
     "iptu": 800,
     "seaMeters": 8200,
@@ -21526,9 +21774,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "airbnb"
     ],
-    "lat": -7.2105,
-    "lng": -34.84456,
-    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 2.492/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.2118199999999995,
+    "lng": -34.84492,
+    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 2.567/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Leilão: conferir ocupação, débitos e o edital antes do lance.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21536,20 +21784,20 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "leilao-caixa"
     ],
-    "facade": 17
+    "facade": 10
   },
   {
-    "id": "cx-2969959",
-    "title": "Apartamento Caixa 2969959",
+    "id": "cx-2990375",
+    "title": "Apartamento Caixa 2990375",
     "type": "apto",
     "bairroId": "gramame",
-    "street": "Apartamento em Leilão em João Pessoa / PB - 2969959 RUA NIZA SIQUEIRA DE MELO,N.",
+    "street": "Apartamento em Leilão em João Pessoa / PB - 2990375 RUA ASSIS FERREIRA DE LIMA,N",
     "area": 60,
     "rooms": 2,
     "suites": 0,
     "parking": 0,
     "year": 2012,
-    "ask": 149527,
+    "ask": 140000,
     "condo": 540,
     "iptu": 800,
     "seaMeters": 8200,
@@ -21563,9 +21811,9 @@ export const HARVESTED_LISTINGS: Listing[] = [
       "preco",
       "airbnb"
     ],
-    "lat": -7.21434,
-    "lng": -34.84756,
-    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 2.492/m² contra 3.900 do bairro. Colheita 8 de set. de 2026.",
+    "lat": -7.21218,
+    "lng": -34.851279999999996,
+    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 2.333/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
     "risks": [
       "Leilão: conferir ocupação, débitos e o edital antes do lance.",
       "Spread alto pede motivo: reforma, processo ou liquidez."
@@ -21573,6 +21821,117 @@ export const HARVESTED_LISTINGS: Listing[] = [
     "extras": [
       "leilao-caixa"
     ],
-    "facade": 18
+    "facade": 13
+  },
+  {
+    "id": "cx-2981493",
+    "title": "Apartamento Caixa 2981493",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Apartamento em Leilão em João Pessoa / PB - 2981493 RUA COMERCIANTE ALVARO ANTER",
+    "area": 60,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 144000,
+    "condo": 540,
+    "iptu": 800,
+    "seaMeters": 8200,
+    "condition": 0.78,
+    "daysListed": 14,
+    "portalCount": 0,
+    "sources": [
+      "leilao"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.2158999999999995,
+    "lng": -34.85212,
+    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 2.400/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Leilão: conferir ocupação, débitos e o edital antes do lance.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "leilao-caixa"
+    ],
+    "facade": 10
+  },
+  {
+    "id": "cx-2990367",
+    "title": "Apartamento Caixa 2990367",
+    "type": "apto",
+    "bairroId": "gramame",
+    "street": "Apartamento em Leilão em João Pessoa / PB - 2990367 RUA MANOEL RODRIGUES DE LACE",
+    "area": 60,
+    "rooms": 2,
+    "suites": 0,
+    "parking": 0,
+    "year": 2012,
+    "ask": 188146,
+    "condo": 540,
+    "iptu": 941,
+    "seaMeters": 8200,
+    "condition": 0.78,
+    "daysListed": 14,
+    "portalCount": 0,
+    "sources": [
+      "leilao"
+    ],
+    "radars": [
+      "preco",
+      "airbnb"
+    ],
+    "lat": -7.2158999999999995,
+    "lng": -34.851279999999996,
+    "thesis": "Leilão Caixa · 60 m² em Gramame, pedido R$ 3.136/m² contra 3.900 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Leilão: conferir ocupação, débitos e o edital antes do lance.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "leilao-caixa"
+    ],
+    "facade": 5
+  },
+  {
+    "id": "cx-2938490",
+    "title": "Casa Caixa 2938490",
+    "type": "casa",
+    "bairroId": "industrias",
+    "street": "Casa em Leilão em João Pessoa / PB - 2938490 RUA ANTONIO LUIZ DO NASCIMENTO,N. 4",
+    "area": 120,
+    "rooms": 3,
+    "suites": 0,
+    "parking": 1,
+    "year": 1998,
+    "ask": 147045,
+    "condo": 0,
+    "iptu": 800,
+    "seaMeters": 7400,
+    "condition": 0.78,
+    "daysListed": 14,
+    "portalCount": 0,
+    "sources": [
+      "leilao"
+    ],
+    "radars": [
+      "preco",
+      "rua"
+    ],
+    "lat": -7.18748,
+    "lng": -34.87492,
+    "thesis": "Leilão Caixa · 120 m² em Indústrias, pedido R$ 1.225/m² contra 3.600 do bairro. Colheita 14 de set. de 2026.",
+    "risks": [
+      "Leilão: conferir ocupação, débitos e o edital antes do lance.",
+      "Spread alto pede motivo: reforma, processo ou liquidez."
+    ],
+    "extras": [
+      "leilao-caixa"
+    ],
+    "facade": 7
   }
 ] as Listing[];
